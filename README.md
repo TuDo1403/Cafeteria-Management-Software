@@ -13,6 +13,7 @@ It can provide a flexible and simple solution for any types of cafeteria or fast
 - Customer' placed orders can vary, depend on their interests. 
 - Display statistics of daily/monthly/yearly revenue. 
 - Create bill format.
+- User login feature for staff.
 - (Updating)... 
 
 
