@@ -10,16 +10,13 @@ It can provide a flexible and simple solution for any types of cafeteria or fast
 
 ## Features
 - Easily add new food, beverage and modify them.  
-- Customer' placed orders can vary, depend on their interests. 
-- Display statistics of daily/monthly/yearly revenue. 
+- Customer' placed orders can vary, depend on their interests (add more topping like scream, jelly, fruit,...)
+- Display statistics of daily, monthly, yearly revenue. 
 - Create bill format.
-- User login feature for staffs .
-- User login feature for staffs and employers.
+- User login feature for staffs.
 - Can play music based on the weather (automatically) or on requested by guest.
 
-
 ## Contributions
-
 Special thanks to [datdatga113](https://github.com/datdatga113) and [thanhchinguyenpk](https://github.com/thanhchinguyenpk) for their contributions!
 
 
