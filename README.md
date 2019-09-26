@@ -2,11 +2,8 @@
 
 > ## Introduction
 
-	Nowadays, people seem to be more under a lot of pressure from work and life, so they often go to quiet places like coffee shop to relax. That is the reason why many coffee shops are open. And to help manage the coffee more effectively, our software was born  
+Nowadays, people seem to be more under a lot of pressure from work and life, so they often go to quiet places like coffee shop to relax. That is the reason why many coffee shops are open. And to help manage the coffee more effectively, our software was born  
 
-> ## Proficience
-
-	A simple solution for managing your cafeteria or even bigger, a franchise.It can provide a flexible and simple solution for any types of cafeteria stores you are operating.  
 
 > ## Features
 
