@@ -11,22 +11,22 @@
 > ## Features
 
 ##### 1. Drink management
--Displays information as well as the price and composition of drinks.
--Update new drinks with new recipes easylly.
--Delete or edit the information of drinks and cakes
+- Displays information as well as the price and composition of drinks.
+- Update new drinks with new recipes easylly.
+- Delete or edit the information of drinks and cakes
 ##### 2. Oder
--Order drinks and cakes for requiring.
--Add more or less topping in the beverage.
+- Order drinks and cakes for requiring.
+- Add more or less topping in the beverage.
 ##### 3. Statistic
--Statistic of the number of orders is sold in the day, month, year.
--Statistic of the best seller products.
--Statistic of the worst seller products and give specific solutions.
+- Statistic of the number of orders is sold in the day, month, year.
+- Statistic of the best seller products.
+- Statistic of the worst seller products and give specific solutions.
 ##### 4.Display Music
--Integrated smart music display (automatically) to suit the mood of the patron, helping to impress the customers.
--Display music for requiring.
+- Integrated smart music display (automatically) to suit the mood of the patron, helping to impress the customers.
+- Display music for requiring.
 ##### 5. Employee management
--Capture the number of employees
--Add , delete or modify information of them.
+- Capture the number of employees
+- Add , delete or modify information of them.
 
 > ## Contributions
 
