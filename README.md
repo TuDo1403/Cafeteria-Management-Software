@@ -25,6 +25,17 @@ Nowadays, people seem to be more under a lot of pressure from work and life, so 
 - Capture the number of employees
 - Add , delete or modify information of them.
 
+> ## Roadmap
+
+1. Each member learns additional knowledge required for the project such as WPF or Winform, SQL Server...
+2. Design OOP class Diagram and create simple database.
+3. Create simple application with its only core features and make it work.
+4. Write test cases and refactor code if neccesary.
+5. Provide additional features.
+6. Write test cases and refactor code again to see if new extras conflict with core features.
+7. Project finishes.
+
+
 > ## Contributions
 
  - Do Minh Tu - ID: 18521578 - emai: <18521578@gm.uit.edu.vn>
