@@ -27,13 +27,28 @@ Nowadays, people seem to be more under a lot of pressure from work and life, so 
 
 > ## Roadmap
 
-1. Each member learns additional knowledge required for the project such as WPF or Winform, SQL Server...
-2. Design OOP class Diagram and create simple database.
-3. Create simple application with its only core features and make it work.
-4. Write test cases and refactor code if neccesary.
-5. Provide additional features.
-6. Write test cases and refactor code again to see if new extras conflict with core features.
-7. Project finishes.
+
+
+#### I. The First Stage
+1.Search and collect information about coffee software management. 
+2.Scrutinize the features of the software thoroughly.
+3.Implement features, build ideas on UI/UX Mocup.
+3.Absorb basic knowledge about Winform, OOP C#, QSL.
+#### II.The Second Stage
+1.Building a relational database model between entities.
+2.Creating object class.
+3.Discussing and releasing the final UI/UX version.
+4.Shape Main building features.
+5.Testing the main fatures meticulously.
+6.Developing the details features.
+7.Testing the detais features.
+8.Collecting information about the software comments.
+9.Reviewing.
+####III.The Third Stage
+1.Discussing and Considering to add features.
+2.Add features.
+3.Testing new feature.
+4.Finishing.
 
 
 > ## Contributions
