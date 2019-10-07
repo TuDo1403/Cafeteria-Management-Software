@@ -1,15 +1,13 @@
-# Cafeteria Management Software
-
 > ## Introduction
 
-Nowadays, people seem to be more under a lot of pressure from work and life, so they often go to quiet places like coffee shop to relax. That is the reason why many coffee shops are open. And to help manage the coffee more effectively, our software was born  
+Nowadays, people seem to be more under a lot of pressure from work and life, so they often go to quiet places like a coffee shop to relax. That is the reason why many coffee shops are open. And to help manage the coffee more effectively, our software was born  
 
 
 > ## Features
 
 ##### 1. Drink management
 - Displays information as well as the price and composition of drinks.
-- Update new drinks with new recipes easylly.
+- Update new drinks with new recipes easily.
 - Delete or edit the information of drinks and cakes
 ##### 2. Oder
 - Order drinks and cakes for requiring.
@@ -23,7 +21,7 @@ Nowadays, people seem to be more under a lot of pressure from work and life, so 
 - Display music for requiring.
 ##### 5. Employee management
 - Capture the number of employees
-- Add , delete or modify information of them.
+- Add, delete or modify information of them.
 
 > ## Roadmap
 
@@ -32,7 +30,7 @@ Nowadays, people seem to be more under a lot of pressure from work and life, so 
 #### I. The First Stage
 1. Searching and collecting information about coffee software management.     
 2. Scrutinizing the features of the software thoroughly.  
-3. Implement features, build ideas on UI/UX Mocup.   
+3. Implement features, build ideas on UI/UX Mockup.   
 4. Absorbing basic knowledge about Winform, OOP C#, QSL.
 
   
@@ -41,18 +39,20 @@ Nowadays, people seem to be more under a lot of pressure from work and life, so 
 2. Creating object class.   
 3. Discussing and releasing the final UI/UX version.
 4. Shape Main building features.   
-5. Testing the main fatures meticulously.  
+5. Testing the main features meticulously.  
 6. Developing the details features.  
-7. Testing the detais features.   
+7. Testing the details features.   
 8. Collecting information about the software comments.   
 9. Reviewing.     
 
     
 #### III.The Third Stage  
-1.Discussing and Considering to add features.   
-2.Add features.    
-3.Testing new feature.    
+1. Discussing and Considering to add features.   
+2. Add features.    
+3. Testing a new features.    
 4.Finishing.     
+
+
 
 
 > ## Contributions
