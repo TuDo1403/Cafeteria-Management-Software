@@ -9,7 +9,7 @@ Nowadays, people seem to be more under a lot of pressure from work and life, so 
 - Displays information as well as the price and composition of drinks.
 - Update new drinks with new recipes easily.
 - Delete or edit the information of drinks and cakes
-##### 2. Oder
+##### 2. Order
 - Order drinks and cakes for requiring.
 - Add more or less topping in the beverage.
 ##### 3. Statistic
@@ -49,8 +49,8 @@ Nowadays, people seem to be more under a lot of pressure from work and life, so 
 #### III.The Third Stage  
 1. Discussing and Considering to add features.   
 2. Add features.    
-3. Testing a new features.    
-4.Finishing.     
+3. Testing a new features.
+4.Finishing.
 
 
 
