@@ -50,7 +50,7 @@ Nowadays, people seem to be more under a lot of pressure from work and life, so 
 1. Discussing and Considering to add features.   
 2. Add features.    
 3. Testing a new features.
-4.Finishing.
+4. Finishing.
 
 
 
