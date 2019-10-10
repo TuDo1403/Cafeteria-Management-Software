@@ -34,5 +34,7 @@ namespace CafeteriaManagement
                 textBoxSearchMenu.ForeColor = Color.Gray;
             }
         }
+
+        
     }
 }

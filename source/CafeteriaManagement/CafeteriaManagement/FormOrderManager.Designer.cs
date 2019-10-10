@@ -35,11 +35,8 @@
             this.labelTotal = new System.Windows.Forms.Label();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.buttonBill = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.buttonAddTopping = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelCategory = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBoxCatetory = new System.Windows.Forms.ComboBox();
             this.listViewItemAdded = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -56,7 +53,6 @@
             this.addToQueueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,23 +88,20 @@
             this.panel2.Controls.Add(this.labelTotal);
             this.panel2.Controls.Add(this.textBoxTotal);
             this.panel2.Controls.Add(this.buttonBill);
-            this.panel2.Controls.Add(this.numericUpDown1);
             this.panel2.Controls.Add(this.buttonAddTopping);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.labelCategory);
-            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.comboBoxCatetory);
             this.panel2.Controls.Add(this.listViewItemAdded);
             this.panel2.Location = new System.Drawing.Point(423, 29);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(610, 483);
+            this.panel2.Size = new System.Drawing.Size(408, 483);
             this.panel2.TabIndex = 1;
             // 
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(477, 414);
+            this.labelTotal.Location = new System.Drawing.Point(5, 392);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(61, 25);
             this.labelTotal.TabIndex = 11;
@@ -117,80 +110,54 @@
             // textBoxTotal
             // 
             this.textBoxTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTotal.Location = new System.Drawing.Point(396, 442);
+            this.textBoxTotal.Location = new System.Drawing.Point(72, 380);
             this.textBoxTotal.Name = "textBoxTotal";
             this.textBoxTotal.ReadOnly = true;
-            this.textBoxTotal.Size = new System.Drawing.Size(211, 38);
+            this.textBoxTotal.Size = new System.Drawing.Size(318, 38);
             this.textBoxTotal.TabIndex = 10;
             // 
             // buttonBill
             // 
             this.buttonBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBill.Location = new System.Drawing.Point(396, 296);
+            this.buttonBill.Location = new System.Drawing.Point(157, 427);
             this.buttonBill.Name = "buttonBill";
-            this.buttonBill.Size = new System.Drawing.Size(211, 92);
+            this.buttonBill.Size = new System.Drawing.Size(233, 53);
             this.buttonBill.TabIndex = 9;
             this.buttonBill.Text = "Bill";
             this.buttonBill.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(339, 20);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(51, 20);
-            this.numericUpDown1.TabIndex = 3;
-            // 
             // buttonAddTopping
             // 
-            this.buttonAddTopping.Location = new System.Drawing.Point(258, 5);
+            this.buttonAddTopping.Location = new System.Drawing.Point(10, 427);
             this.buttonAddTopping.Name = "buttonAddTopping";
-            this.buttonAddTopping.Size = new System.Drawing.Size(75, 47);
+            this.buttonAddTopping.Size = new System.Drawing.Size(141, 53);
             this.buttonAddTopping.TabIndex = 7;
-            this.buttonAddTopping.Text = "Add";
             this.buttonAddTopping.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Topping";
             // 
             // labelCategory
             // 
             this.labelCategory.AutoSize = true;
             this.labelCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategory.Location = new System.Drawing.Point(3, 6);
+            this.labelCategory.Location = new System.Drawing.Point(7, 7);
             this.labelCategory.Name = "labelCategory";
             this.labelCategory.Size = new System.Drawing.Size(73, 17);
             this.labelCategory.TabIndex = 5;
             this.labelCategory.Text = "Category";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(86, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
-            this.comboBox1.TabIndex = 2;
             // 
             // comboBoxCatetory
             // 
             this.comboBoxCatetory.FormattingEnabled = true;
             this.comboBoxCatetory.Location = new System.Drawing.Point(86, 3);
             this.comboBoxCatetory.Name = "comboBoxCatetory";
-            this.comboBoxCatetory.Size = new System.Drawing.Size(166, 21);
+            this.comboBoxCatetory.Size = new System.Drawing.Size(304, 21);
             this.comboBoxCatetory.TabIndex = 1;
             // 
             // listViewItemAdded
             // 
             this.listViewItemAdded.HideSelection = false;
-            this.listViewItemAdded.Location = new System.Drawing.Point(3, 56);
+            this.listViewItemAdded.Location = new System.Drawing.Point(3, 30);
             this.listViewItemAdded.Name = "listViewItemAdded";
-            this.listViewItemAdded.Size = new System.Drawing.Size(387, 424);
+            this.listViewItemAdded.Size = new System.Drawing.Size(387, 344);
             this.listViewItemAdded.TabIndex = 0;
             this.listViewItemAdded.UseCompatibleStateImageBehavior = false;
             // 
@@ -202,7 +169,7 @@
             this.musicBoxToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1045, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(843, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -219,19 +186,19 @@
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.infoToolStripMenuItem.Text = "Info";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.logoutToolStripMenuItem.Text = "Shift Change";
             // 
             // logOutToolStripMenuItem1
             // 
             this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
-            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.logOutToolStripMenuItem1.Text = "Log out";
             // 
             // adminToolStripMenuItem
@@ -246,13 +213,13 @@
             // editMenuToolStripMenuItem
             // 
             this.editMenuToolStripMenuItem.Name = "editMenuToolStripMenuItem";
-            this.editMenuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editMenuToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.editMenuToolStripMenuItem.Text = "Edit Menu";
             // 
             // statisticToolStripMenuItem
             // 
             this.statisticToolStripMenuItem.Name = "statisticToolStripMenuItem";
-            this.statisticToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statisticToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.statisticToolStripMenuItem.Text = "Statistic";
             // 
             // musicBoxToolStripMenuItem
@@ -268,26 +235,26 @@
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.stopToolStripMenuItem.Text = "Stop";
             // 
             // resumeToolStripMenuItem
             // 
             this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.resumeToolStripMenuItem.Text = "Resume";
             // 
             // addToQueueToolStripMenuItem
             // 
             this.addToQueueToolStripMenuItem.Name = "addToQueueToolStripMenuItem";
-            this.addToQueueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToQueueToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.addToQueueToolStripMenuItem.Text = "Add to Queue";
             // 
             // FormOrderManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 540);
+            this.ClientSize = new System.Drawing.Size(843, 527);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -299,7 +266,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -313,13 +279,10 @@
         private System.Windows.Forms.TextBox textBoxSearchMenu;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutMenu;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBoxCatetory;
         private System.Windows.Forms.ListView listViewItemAdded;
         private System.Windows.Forms.Button buttonAddTopping;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelCategory;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.Button buttonBill;
