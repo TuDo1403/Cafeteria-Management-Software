@@ -34,7 +34,10 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearchMusic = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.progressBarDownload = new System.Windows.Forms.ProgressBar();
             this.dataGridViewSearchResult = new System.Windows.Forms.DataGridView();
+            this.labelYoutube = new System.Windows.Forms.Label();
+            this.buttonQueue = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -52,6 +55,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.buttonQueue);
+            this.panel3.Controls.Add(this.labelYoutube);
             this.panel3.Controls.Add(this.buttonSearch);
             this.panel3.Controls.Add(this.textBoxSearchMusic);
             this.panel3.Location = new System.Drawing.Point(6, 3);
@@ -61,7 +66,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(564, 18);
+            this.buttonSearch.Location = new System.Drawing.Point(464, 16);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(75, 23);
             this.buttonSearch.TabIndex = 1;
@@ -72,21 +77,30 @@
             // textBoxSearchMusic
             // 
             this.textBoxSearchMusic.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBoxSearchMusic.Location = new System.Drawing.Point(13, 18);
+            this.textBoxSearchMusic.Location = new System.Drawing.Point(70, 18);
             this.textBoxSearchMusic.Name = "textBoxSearchMusic";
-            this.textBoxSearchMusic.Size = new System.Drawing.Size(534, 20);
+            this.textBoxSearchMusic.Size = new System.Drawing.Size(368, 20);
             this.textBoxSearchMusic.TabIndex = 0;
             this.textBoxSearchMusic.Text = "Search";
             this.textBoxSearchMusic.Enter += new System.EventHandler(this.textBoxSearchMusic_Enter);
+            this.textBoxSearchMusic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearchMusic_KeyDown);
             this.textBoxSearchMusic.Leave += new System.EventHandler(this.textBoxSearchMusic_Leave);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.progressBarDownload);
             this.panel2.Controls.Add(this.dataGridViewSearchResult);
             this.panel2.Location = new System.Drawing.Point(6, 69);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(654, 281);
             this.panel2.TabIndex = 0;
+            // 
+            // progressBarDownload
+            // 
+            this.progressBarDownload.Location = new System.Drawing.Point(13, 232);
+            this.progressBarDownload.Name = "progressBarDownload";
+            this.progressBarDownload.Size = new System.Drawing.Size(128, 23);
+            this.progressBarDownload.TabIndex = 1;
             // 
             // dataGridViewSearchResult
             // 
@@ -107,9 +121,28 @@
             this.dataGridViewSearchResult.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewSearchResult.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSearchResult.Size = new System.Drawing.Size(626, 275);
+            this.dataGridViewSearchResult.Size = new System.Drawing.Size(626, 213);
             this.dataGridViewSearchResult.TabIndex = 0;
             this.dataGridViewSearchResult.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewSearchResult_RowHeaderMouseDoubleClick);
+            // 
+            // labelYoutube
+            // 
+            this.labelYoutube.AutoSize = true;
+            this.labelYoutube.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelYoutube.Location = new System.Drawing.Point(10, 21);
+            this.labelYoutube.Name = "labelYoutube";
+            this.labelYoutube.Size = new System.Drawing.Size(54, 13);
+            this.labelYoutube.TabIndex = 2;
+            this.labelYoutube.Text = "Youtube";
+            // 
+            // buttonQueue
+            // 
+            this.buttonQueue.Location = new System.Drawing.Point(564, 16);
+            this.buttonQueue.Name = "buttonQueue";
+            this.buttonQueue.Size = new System.Drawing.Size(75, 23);
+            this.buttonQueue.TabIndex = 3;
+            this.buttonQueue.Text = "Queue";
+            this.buttonQueue.UseVisualStyleBackColor = true;
             // 
             // FormMusicBox
             // 
@@ -137,5 +170,8 @@
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TextBox textBoxSearchMusic;
         private System.Windows.Forms.DataGridView dataGridViewSearchResult;
+        private System.Windows.Forms.ProgressBar progressBarDownload;
+        private System.Windows.Forms.Button buttonQueue;
+        private System.Windows.Forms.Label labelYoutube;
     }
 }
