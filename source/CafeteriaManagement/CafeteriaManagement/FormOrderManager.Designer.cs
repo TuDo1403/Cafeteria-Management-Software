@@ -235,20 +235,21 @@
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stopToolStripMenuItem.Text = "Stop";
             // 
             // resumeToolStripMenuItem
             // 
             this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resumeToolStripMenuItem.Text = "Resume";
             // 
             // addToQueueToolStripMenuItem
             // 
             this.addToQueueToolStripMenuItem.Name = "addToQueueToolStripMenuItem";
-            this.addToQueueToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.addToQueueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToQueueToolStripMenuItem.Text = "Add to Queue";
+            this.addToQueueToolStripMenuItem.Click += new System.EventHandler(this.addToQueueToolStripMenuItem_Click);
             // 
             // FormOrderManager
             // 

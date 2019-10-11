@@ -35,6 +35,12 @@ namespace CafeteriaManagement
             }
         }
 
-        
+        private void addToQueueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formMusicBox = new FormMusicBox();
+            //this.Hide();
+            formMusicBox.Show();
+            //this.Show();
+        }
     }
 }
