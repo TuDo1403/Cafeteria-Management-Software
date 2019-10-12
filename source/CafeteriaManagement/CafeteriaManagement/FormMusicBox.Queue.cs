@@ -15,9 +15,27 @@ namespace CafeteriaManagement
 {
     public partial class FormQueue : Form
     {
+        List<Song> playHistories;
         public FormQueue()
         {
             InitializeComponent();
+            MusicPlayer.SongChanged += MusicPlayer_SongChangedHandler;
+            playHistories = new List<Song>();
+            if (MusicPlayer.playList.Count >= 1)
+            {
+                dataGridViewNextUp.DataSource = MusicPlayer.playList.Where(s => true).ToList();
+            }
+        }
+
+        private void MusicPlayer_SongChangedHandler(object sender, Queue<Song> e)
+        {
+            playHistories.Add(e.Peek());
+            dataGridViewHistory.DataSource = playHistories;
+            dataGridViewPlaying.DataSource = e.Where(s => s == e.Peek()).ToList();
+            if (e.Count >= 1)
+            {
+                dataGridViewNextUp.DataSource = e.Where(s => s != e.Peek()).ToList();
+            }
         }
 
         private void buttonPlay_Click(object sender, EventArgs e)

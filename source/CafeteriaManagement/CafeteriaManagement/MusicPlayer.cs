@@ -10,6 +10,12 @@ namespace CafeteriaManagement
 {
     public class MusicPlayer
     {
+        bool _isMediaEnded = false;
+
+        bool _isPaused = false;
+
+        public static event EventHandler<Queue<Song>> SongChanged;
+
         public static Queue<Song> playList = new Queue<Song>();
 
         private static MusicPlayer musicPlayer;
@@ -27,11 +33,24 @@ namespace CafeteriaManagement
 
         public void Play()
         {
-            if (PlayList.Count >= 1 && _isPaused == false)
-                windowsMediaPlayer.URL = PlayList.Dequeue().Url;
-            else if (_isPaused)
-                _isPaused = false;
-            windowsMediaPlayer.controls.play();
+            if (playList.Count >= 1)
+            {
+                if (_isPaused == false)
+                {
+                    OnSongChanging();
+                    windowsMediaPlayer.URL = playList.Dequeue().Url;
+                }
+                    
+                else if (_isPaused)
+                    _isPaused = false;
+                windowsMediaPlayer.controls.play();
+            }
+            
+        }
+
+        private void OnSongChanging()
+        {
+            (SongChanged as EventHandler<Queue<Song>>)?.Invoke(this, playList);
         }
 
         public void Pause()
@@ -45,11 +64,8 @@ namespace CafeteriaManagement
             windowsMediaPlayer.PlayStateChange += WindowsMediaPlayer_PlayStateChange;
         }
 
-        bool _isMediaEnded = false;
+        
 
-        bool _isPaused = false;
-
-        internal static Queue<Song> PlayList { get => playList; set => playList = value; }
 
         //idea from https://multisoftextreme.blogspot.com/2009/08/windows-media-player-end-of-stream.html
         private void WindowsMediaPlayer_PlayStateChange(int NewState)
