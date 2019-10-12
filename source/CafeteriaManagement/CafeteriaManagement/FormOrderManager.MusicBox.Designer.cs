@@ -31,11 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonQueue = new System.Windows.Forms.Button();
             this.labelYoutube = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearchMusic = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonQueue = new System.Windows.Forms.Button();
             this.dataGridViewSearchResult = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -61,16 +61,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(552, 60);
             this.panel3.TabIndex = 1;
-            // 
-            // buttonQueue
-            // 
-            this.buttonQueue.Location = new System.Drawing.Point(464, 244);
-            this.buttonQueue.Name = "buttonQueue";
-            this.buttonQueue.Size = new System.Drawing.Size(75, 23);
-            this.buttonQueue.TabIndex = 3;
-            this.buttonQueue.Text = "Queue";
-            this.buttonQueue.UseVisualStyleBackColor = true;
-            this.buttonQueue.Click += new System.EventHandler(this.buttonQueue_Click);
             // 
             // labelYoutube
             // 
@@ -112,6 +102,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(552, 281);
             this.panel2.TabIndex = 0;
+            // 
+            // buttonQueue
+            // 
+            this.buttonQueue.Location = new System.Drawing.Point(464, 244);
+            this.buttonQueue.Name = "buttonQueue";
+            this.buttonQueue.Size = new System.Drawing.Size(75, 23);
+            this.buttonQueue.TabIndex = 3;
+            this.buttonQueue.Text = "Queue";
+            this.buttonQueue.UseVisualStyleBackColor = true;
+            this.buttonQueue.Click += new System.EventHandler(this.buttonQueue_Click);
             // 
             // dataGridViewSearchResult
             // 

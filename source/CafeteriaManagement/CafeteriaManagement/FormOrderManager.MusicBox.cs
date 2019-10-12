@@ -13,6 +13,7 @@ using YoutubeSearch;
 using YoutubeExplode.Models.MediaStreams;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 namespace CafeteriaManagement
 {
@@ -22,9 +23,19 @@ namespace CafeteriaManagement
 
         public static string musicSavePath = $@"C:\Users\{Environment.UserName}\Music\";
 
+        public static event EventHandler<int> ConvertCompleted;
+
+        public bool IsConverted { get; set; }
+
         public FormMusicBox()
         {
             InitializeComponent();
+            //ConvertCompleted += FormMusicBox_ConvertCompletedHandler;
+        }
+
+        private void FormMusicBox_ConvertCompletedHandler(object sender, int e)
+        {
+            DeleteAudioStream(e);
         }
 
         private void textBoxSearchMusic_Enter(object sender, EventArgs e)
@@ -82,6 +93,10 @@ namespace CafeteriaManagement
                     DownloadSelectedRowAudio(e.RowIndex);
                 });
             }
+            else
+            {
+                OnConvertComplete(e.RowIndex);
+            }
             AddMusicToQueue(e.RowIndex);
         }
 
@@ -104,14 +119,24 @@ namespace CafeteriaManagement
         private async void DownloadSelectedRowAudio(int rowIndex)
         {
             await GetAudioStreamSelectedRow(rowIndex);
-            ConvertAudioStreamToMp3(rowIndex);
-            DeleteAudioStream(rowIndex);
+            await Task.Run(() =>
+            {
+                ConvertAudioStreamToMp3(rowIndex);
+            });
+            await Task.Run(() =>
+            {
+                DeleteAudioStream(rowIndex);
+            });
         }
 
+
+        //solution found from: https://stackoverflow.com/questions/3420737/file-delete-error-the-process-cannot-access-the-file-because-it-is-being-used-b
         private void DeleteAudioStream(int rowIndex)
         {
             if (File.Exists(GetSongUrl(rowIndex, false)))
             {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
                 File.Delete(GetSongUrl(rowIndex, false));
             }
         }
@@ -122,21 +147,15 @@ namespace CafeteriaManagement
             var output = new MediaFile { Filename = GetSongUrl(rowIndex) };
             using (var engine = new Engine())
             {
-                engine.ConversionCompleteEvent += Engine_ConversionCompleteEventHandler;
-                engine.ConvertProgressEvent += Engine_ConvertProgressEventHandler;
                 engine.GetMetadata(input);
                 engine.Convert(input, output);
+                OnConvertComplete(rowIndex);
             }
         }
 
-        private void Engine_ConvertProgressEventHandler(object sender, ConvertProgressEventArgs e)
+        private void OnConvertComplete(int rowIndex)
         {
-            throw new NotImplementedException();
-        }
-
-        private void Engine_ConversionCompleteEventHandler(object sender, ConversionCompleteEventArgs e)
-        {
-            throw new NotImplementedException();
+            (ConvertCompleted as EventHandler<int>)?.Invoke(this, rowIndex);
         }
 
         private async Task GetAudioStreamSelectedRow(int rowIndex)

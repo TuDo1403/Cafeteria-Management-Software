@@ -25,11 +25,22 @@ namespace CafeteriaManagement
             {
                 dataGridViewNextUp.DataSource = MusicPlayer.playList.Where(s => true).ToList();
             }
+            FormMusicBox.ConvertCompleted += FormMusicBox_ConvertCompletedHandler;
+        }
+
+        private void FormMusicBox_ConvertCompletedHandler(object sender, int e)
+        {
+            //prevent cross thread operation not valid
+            buttonPlay.Invoke((Action)delegate
+            {
+                buttonPlay.Enabled = true;
+            });
         }
 
         private void MusicPlayer_SongChangedHandler(object sender, Queue<Song> e)
         {
             playHistories.Add(e.Peek());
+            dataGridViewHistory.DataSource = null;
             dataGridViewHistory.DataSource = playHistories;
             dataGridViewPlaying.DataSource = e.Where(s => s == e.Peek()).ToList();
             if (e.Count >= 1)
