@@ -17,5 +17,15 @@ namespace CafeteriaManagement
 
         public string Url { get; set; }
 
+        public Song ToSong(string path)
+        {
+            return new Song
+            {
+                Title = this.Title,
+                Duration = this.Duration,
+                Artist = this.Author,
+                Url = path
+            };
+        }
     }
 }

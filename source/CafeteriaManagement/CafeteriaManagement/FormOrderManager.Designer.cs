@@ -248,8 +248,8 @@
             // 
             this.addToQueueToolStripMenuItem.Name = "addToQueueToolStripMenuItem";
             this.addToQueueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addToQueueToolStripMenuItem.Text = "Add to Queue";
-            this.addToQueueToolStripMenuItem.Click += new System.EventHandler(this.addToQueueToolStripMenuItem_Click);
+            this.addToQueueToolStripMenuItem.Text = "Search Box";
+            this.addToQueueToolStripMenuItem.Click += new System.EventHandler(this.searchBoxStripMenuItem_Click);
             // 
             // FormOrderManager
             // 
