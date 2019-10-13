@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CafeteriaManagement
 {
-    class Video
+    public class Video
     {
         public string Title { get; set; }
 

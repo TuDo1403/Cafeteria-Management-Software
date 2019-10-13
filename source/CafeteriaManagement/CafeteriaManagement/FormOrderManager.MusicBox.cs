@@ -19,23 +19,45 @@ namespace CafeteriaManagement
 {
     public partial class FormMusicBox : Form
     {
+        int addToQueueClickCount = 0;
+
+        List<VideoInfo> downnloadList;
+
         List<Video> videos;
 
         public static string musicSavePath = $@"C:\Users\{Environment.UserName}\Music\";
 
         public static event EventHandler<int> ConvertCompleted;
 
+        public static event EventHandler<List<VideoInfo>> FormLeft;
+
         public bool IsConverted { get; set; }
 
         public FormMusicBox()
         {
             InitializeComponent();
-            //ConvertCompleted += FormMusicBox_ConvertCompletedHandler;
+            downnloadList = new List<VideoInfo>();
+            FormLeft += FormMusicBox_FormLeftHandlerAsync;
         }
 
-        private void FormMusicBox_ConvertCompletedHandler(object sender, int e)
+        private async void FormMusicBox_FormLeftHandlerAsync(object sender, List<VideoInfo> e)
         {
-            DeleteAudioStream(e);
+            foreach (var videoInfo in e)
+            {
+                if (!File.Exists(GetAudioSavePathFrom(videoInfo.Title)))
+                {
+                    await DownloadAudioStreamFrom(videoInfo);
+                    await Task.Run(() =>
+                    {
+                        ConvertAudioStreamToMp3By(videoInfo);
+                        DeleteAudioStreamBy(videoInfo.Title);
+                    });
+                }
+                else
+                {
+                    OnConvertComplete(videoInfo.PlayIndex);
+                }
+            }
         }
 
         private void textBoxSearchMusic_Enter(object sender, EventArgs e)
@@ -56,7 +78,7 @@ namespace CafeteriaManagement
             }
         }
 
-        private void buttonSearch_Click(object sender, EventArgs e)
+        private async void buttonSearch_Click(object sender, EventArgs e)
         {
             if (textBoxSearchMusic.Text == "Enter Keyword")
             {
@@ -64,13 +86,19 @@ namespace CafeteriaManagement
             }
             else
             {
-                var items = new VideoSearch();
-                videos = SearchedResultsToVideos(items);
-                dataGridViewSearchResult.DataSource = videos;
+                await Task.Run(() =>
+                {
+                    var items = new VideoSearch();
+                    videos = SearchedResultsToListOfVideos(items);
+                    dataGridViewSearchResult.Invoke((Action)delegate
+                    {
+                        dataGridViewSearchResult.DataSource = videos;
+                    });
+                });
             }
         }
 
-        private List<Video> SearchedResultsToVideos(VideoSearch items)
+        private List<Video> SearchedResultsToListOfVideos(VideoSearch items)
         {
             var videos = (from item in items.SearchQuery(textBoxSearchMusic.Text, 1)
                           select new Video
@@ -84,87 +112,87 @@ namespace CafeteriaManagement
             return videos;
         }
 
-        private async void dataGridViewSearchResult_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGridViewSearchResult_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (!File.Exists(GetSongUrl(e.RowIndex)))
+            addToQueueClickCount++;
+            var selectedVideoInfo = new VideoInfo
             {
-                await Task.Run(() =>
-                {
-                    DownloadSelectedRowAudio(e.RowIndex);
-                });
-            }
-            else
-            {
-                OnConvertComplete(e.RowIndex);
-            }
-            AddMusicToQueue(e.RowIndex);
+                Title = videos[e.RowIndex].Title,
+                Url = videos[e.RowIndex].Url,
+                PlayIndex = addToQueueClickCount
+            };
+
+            //if (!File.Exists(GetAudioSavePathFrom(selectedVideo.Title)))
+            //{
+            //    downnloadList.Add(selectedVideo);
+            //}
+            //else
+            //{
+            //    OnConvertComplete(selectedVideo.PlayIndex);
+            //}
+            downnloadList.Add(selectedVideoInfo);
+            AddMusicToQueue(videos[e.RowIndex]);
         }
 
-        private void AddMusicToQueue(int rowIndex)
+        private void AddMusicToQueue(Video video)
         {
-            var song = videos[rowIndex].ToSong(GetSongUrl(rowIndex));
+            var song = video.ToSong(GetAudioSavePathFrom(video.Title));
             MusicPlayer.playList.Enqueue(song);
             MessageBox.Show("Song added!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private string GetSongUrl(int rowIndex, bool isConverted = true)
+        private string GetAudioSavePathFrom(string title, bool isConverted = true)
         {
             if (isConverted)
             {
-                return musicSavePath + videos[rowIndex].Title.RemoveIllegalChars() + ".mp3";
+                return musicSavePath + title.RemoveIllegalChars() + ".mp3";
             }
-            return musicSavePath + videos[rowIndex].Title.RemoveIllegalChars() + ".WebM";
+            return musicSavePath + title.RemoveIllegalChars() + ".WebM";
         }
 
-        private async void DownloadSelectedRowAudio(int rowIndex)
+        private async Task DownloadSelectedRowAudioAsync(int rowIndex)
         {
-            await GetAudioStreamSelectedRow(rowIndex);
-            await Task.Run(() =>
-            {
-                ConvertAudioStreamToMp3(rowIndex);
-            });
-            await Task.Run(() =>
-            {
-                DeleteAudioStream(rowIndex);
-            });
+            //await GetAudioStreamSelectedRow(rowIndex);
+            //ConvertAudioStreamToMp3(rowIndex);
+            //DeleteAudioStream(rowIndex);
         }
 
 
         //solution found from: https://stackoverflow.com/questions/3420737/file-delete-error-the-process-cannot-access-the-file-because-it-is-being-used-b
-        private void DeleteAudioStream(int rowIndex)
+        private void DeleteAudioStreamBy(string title)
         {
-            if (File.Exists(GetSongUrl(rowIndex, false)))
+            if (File.Exists(GetAudioSavePathFrom(title, false)))
             {
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
-                File.Delete(GetSongUrl(rowIndex, false));
+                File.Delete(GetAudioSavePathFrom(title, false));
             }
         }
 
-        private void ConvertAudioStreamToMp3(int rowIndex)
+        private void ConvertAudioStreamToMp3By(VideoInfo videoInfo)
         {
-            var input = new MediaFile { Filename = GetSongUrl(rowIndex, false) };
-            var output = new MediaFile { Filename = GetSongUrl(rowIndex) };
+            var input = new MediaFile { Filename = GetAudioSavePathFrom(videoInfo.Title, false) };
+            var output = new MediaFile { Filename = GetAudioSavePathFrom(videoInfo.Title) };
             using (var engine = new Engine())
             {
                 engine.GetMetadata(input);
                 engine.Convert(input, output);
-                OnConvertComplete(rowIndex);
+                OnConvertComplete(videoInfo.PlayIndex);
             }
         }
 
-        private void OnConvertComplete(int rowIndex)
+        private void OnConvertComplete(int index)
         {
-            (ConvertCompleted as EventHandler<int>)?.Invoke(this, rowIndex);
+            (ConvertCompleted as EventHandler<int>)?.Invoke(this, index);
         }
 
-        private async Task GetAudioStreamSelectedRow(int rowIndex)
+        private async Task DownloadAudioStreamFrom(VideoInfo videoInfo)
         {
-            var videoIdFromUrl = YoutubeClient.ParseVideoId(videos[rowIndex].Url);
+            var videoIdFromUrl = YoutubeClient.ParseVideoId(videoInfo.Url);
             var streamInfoSet = await new YoutubeClient().GetVideoMediaStreamInfosAsync(videoIdFromUrl);
             var streamInfo = streamInfoSet.Audio.OrderByDescending(audio => audio.Bitrate)
                                                 .First(a => a.Container == YoutubeExplode.Models.MediaStreams.Container.WebM);
-            await new YoutubeClient().DownloadMediaStreamAsync(streamInfo, GetSongUrl(rowIndex, false));
+            await new YoutubeClient().DownloadMediaStreamAsync(streamInfo, GetAudioSavePathFrom(videoInfo.Title, false));
         }
 
         private void textBoxSearchMusic_KeyDown(object sender, KeyEventArgs e)
@@ -177,10 +205,16 @@ namespace CafeteriaManagement
 
         private void buttonQueue_Click(object sender, EventArgs e)
         {
+            OnFormLeaving();
             var formQueue = new FormQueue();
             this.Hide();
             formQueue.ShowDialog();
             this.Show();
+        }
+
+        private void OnFormLeaving()
+        {
+            (FormLeft as EventHandler<List<VideoInfo>>)?.Invoke(this, downnloadList);
         }
     }
 }

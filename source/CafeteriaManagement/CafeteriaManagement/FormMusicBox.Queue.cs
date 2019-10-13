@@ -28,13 +28,24 @@ namespace CafeteriaManagement
             FormMusicBox.ConvertCompleted += FormMusicBox_ConvertCompletedHandler;
         }
 
+
+
         private void FormMusicBox_ConvertCompletedHandler(object sender, int e)
         {
-            //prevent cross thread operation not valid
-            buttonPlay.Invoke((Action)delegate
+            
+            if (IsFirstInTheQueue(e))
             {
-                buttonPlay.Enabled = true;
-            });
+                //prevent cross thread operation not valid
+                buttonPlay.Invoke((Action)delegate
+                {
+                    buttonPlay.Enabled = true;
+                });
+            }
+        }
+
+        private bool IsFirstInTheQueue(int e)
+        {
+            return e == 1;
         }
 
         private void MusicPlayer_SongChangedHandler(object sender, Queue<Song> e)
