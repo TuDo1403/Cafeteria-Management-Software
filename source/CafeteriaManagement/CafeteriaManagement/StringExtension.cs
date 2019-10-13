@@ -9,9 +9,6 @@ namespace CafeteriaManagement
 {
     public static class StringExtension
     {
-        public static string RemoveIllegalChars(this string source)
-        {
-            return string.Join("_", source.Split(Path.GetInvalidFileNameChars()));
-        }
+        public static string RemoveIllegalChars(this string source) => string.Join("_", source.Split(Path.GetInvalidFileNameChars()));
     }
 }
