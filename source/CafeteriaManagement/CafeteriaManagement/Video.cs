@@ -19,15 +19,6 @@ namespace CafeteriaManagement
 
 
 
-        public Song ToSong(string savePath)
-        {
-            return new Song
-            {
-                Title = this.Title,
-                Duration = this.Duration,
-                Artist = this.Author,
-                Url = savePath
-            };
-        }
+        
     }
 }

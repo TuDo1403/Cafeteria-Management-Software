@@ -36,7 +36,7 @@ namespace CafeteriaManagement
 
         private void textBoxUsername_Leave(object sender, EventArgs e)
         {
-            if (textBoxUsername.Text == "")
+            if (textBoxUsername.Text.Length == 0)
             {
                 textBoxUsername.Text = "Username or Phone";
                 textBoxUsername.ForeColor = Color.Gray;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
@@ -15,8 +16,11 @@ namespace CafeteriaManagement
 {
     public partial class FormQueue : Form
     {
-        private Timer timer = new Timer();
+        private static FormQueue formQueue;
+        private readonly Timer timer = new Timer();
         private List<Song> _playHistories;
+
+        public static List<int> ConvertedPlayIndex { get; } = new List<int>();
 
         public static event EventHandler SongNext;
 
@@ -24,8 +28,21 @@ namespace CafeteriaManagement
 
 
 
-        public FormQueue()
+        public static FormQueue CreateInstance()
         {
+            if (formQueue == null)
+            {
+                formQueue = new FormQueue();
+            }
+            return formQueue;
+        }
+
+        private FormQueue()
+        {
+            if (!this.IsHandleCreated)
+            {
+                this.CreateHandle();
+            }
             InitializeComponent();
 
             _playHistories = new List<Song>();
@@ -36,8 +53,15 @@ namespace CafeteriaManagement
 
             FormMusicBox.ConvertCompleted += FormMusicBox_ConvertCompletedHandler;
 
+            FormMusicBox.FormQueueEntered1stTime += FormMusicBox_FormQueueEnteredHandler;
+
             timer.Interval = 1000;
             timer.Tick += Timer_TickHandler;
+        }
+
+        private void FormMusicBox_FormQueueEnteredHandler(object sender, EventArgs e)
+        {
+            UpdateDataGridViewNextUpFromUserAddedPlaylist();
         }
 
         private void UpdateDataGridViewNextUpFromUserAddedPlaylist()
@@ -52,6 +76,11 @@ namespace CafeteriaManagement
         {
             InitializeStartAndEndTimeLabels(e);
             InitializeTrackBarSongDuration(e);
+            UpdateDataGridVIew(e);
+        }
+
+        private void UpdateDataGridVIew(Queue<Song> e)
+        {
             BindPlayingSongToDataGridViewHistory(e);
             BindPlayingSongToDataGridViewPlaying(e);
             BindSongsInTheQueueToDataGridViewNextUp(e);
@@ -60,7 +89,8 @@ namespace CafeteriaManagement
         private void InitializeTrackBarSongDuration(Queue<Song> e)
         {
             var duration = e.Peek().Duration.Trim().Split(':');
-            trackBarSongDuration.Maximum = Convert.ToInt32(duration[0]) * 60 + Convert.ToInt32(duration[1]);
+            trackBarSongDuration.Maximum = 
+                Convert.ToInt32(duration[0], CultureInfo.InvariantCulture) * 60 + Convert.ToInt32(duration[1], CultureInfo.InvariantCulture);
             trackBarSongDuration.Value = 0;
         }
 
@@ -103,13 +133,17 @@ namespace CafeteriaManagement
             dataGridViewHistory.DataSource = _playHistories;
         }
 
-        private void FormMusicBox_ConvertCompletedHandler(object sender, int e)
+        private void FormMusicBox_ConvertCompletedHandler(object sender, VideoInfo e)
         {
+            ConvertedPlayIndex.Add(e.PlayIndex);
+
+            //solve exception: Invoke or BeginInvoke cannot be called on a control until the window handle has been created
             if (!this.IsHandleCreated)
             {
                 this.CreateHandle();
             }
-            if (IsFirstInTheQueue(e))
+
+            if (IsFirstInTheQueue(e.PlayIndex))
             {
                 //prevent cross thread operation not valid
                 buttonPlay.Invoke((Action)delegate
@@ -119,7 +153,9 @@ namespace CafeteriaManagement
             }
         }
 
-        private bool IsFirstInTheQueue(int e)
+        
+
+        private static bool IsFirstInTheQueue(int e)
         {
             return e == 1;
         }
@@ -156,8 +192,13 @@ namespace CafeteriaManagement
         {
             if (_playHistories.Count > 1)
             {
-                OnSongChangingPrev(_playHistories[_playHistories.Count - 2]);
+                OnSongChangingPrev(_playHistories[GetLastSongIndex()]);
             }
+        }
+
+        private int GetLastSongIndex()
+        {
+            return _playHistories.Count - 2;
         }
 
         private void OnSongChangingPrev(Song lastPlayedSong)

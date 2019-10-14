@@ -28,7 +28,7 @@ namespace CafeteriaManagement
 
         private void textBoxSearchMenu_Leave(object sender, EventArgs e)
         {
-            if (textBoxSearchMenu.Text == "")
+            if (textBoxSearchMenu.Text.Length == 0)
             {
                 textBoxSearchMenu.Text = "Search";
                 textBoxSearchMenu.ForeColor = Color.Gray;
@@ -39,6 +39,13 @@ namespace CafeteriaManagement
         {
             var formMusicBox = new FormMusicBox();
             formMusicBox.Show();
+        }
+
+        private void queueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formQueue = FormQueue.CreateInstance();
+            formQueue.ShowDialog();
+            this.Show();
         }
     }
 }

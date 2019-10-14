@@ -14,14 +14,12 @@ namespace CafeteriaManagement
     {
         private static MusicPlayer musicPlayer;
         private bool _isMediaEnded = false;
-        private bool _isPaused = false;
         private WindowsMediaPlayer windowsMediaPlayer;
 
         public static event EventHandler<Queue<Song>> SongChanged;
 
-        public static Queue<Song> PlayList { get; set; } = new Queue<Song>();
-
-
+        public static Queue<Song> PlayList { get; private set; } = new Queue<Song>();
+        public static bool IsPaused { get; set; } = false;
 
         public static MusicPlayer GetInstance()
         {
@@ -43,13 +41,23 @@ namespace CafeteriaManagement
 
         private void FormQueue_SongNextHandler(object sender, EventArgs e)
         {
-            if (PlayList.Count >= 1)
+            if (PlayList.Count >= 1 && NextSongIsConverted(PlayList.Peek()))
             {
                 OnSongChanging();
                 windowsMediaPlayer.controls.stop();
                 windowsMediaPlayer.URL = PlayList.Dequeue().Url;
                 windowsMediaPlayer.controls.play();
             }
+        }
+
+        private bool NextSongIsConverted(Song e)
+        {
+            foreach (var index in FormQueue.ConvertedPlayIndex)
+            {
+                if (index == e.Index)
+                    return true;
+            }
+            return false;
         }
 
         private void FormQueue_SongPrevHandler(object sender, Song e)
@@ -76,20 +84,20 @@ namespace CafeteriaManagement
                 }
             }
             else if (windowsMediaPlayer.playState == WMPPlayState.wmppsPaused)
-                _isPaused = true;
+                IsPaused = true;
         }
 
 
 
         public void Play()
         {
-            if (_isPaused == false && PlayList.Count >= 1)
+            if (IsPaused == false && PlayList.Count >= 1)
             {
                 OnSongChanging();
                 windowsMediaPlayer.URL = PlayList.Dequeue().Url;
             }
-            else if (_isPaused)
-                _isPaused = false;
+            else if (IsPaused)
+                IsPaused = false;
             windowsMediaPlayer.controls.play();
 
         }
