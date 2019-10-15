@@ -104,7 +104,7 @@
             // textBoxSearchMusic
             // 
             this.textBoxSearchMusic.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBoxSearchMusic.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.textBoxSearchMusic.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllUrl;
             this.textBoxSearchMusic.ForeColor = System.Drawing.SystemColors.GrayText;
             this.textBoxSearchMusic.Location = new System.Drawing.Point(70, 18);
             this.textBoxSearchMusic.Name = "textBoxSearchMusic";

@@ -262,6 +262,7 @@
             // 
             // trackBarSongDuration
             // 
+            this.trackBarSongDuration.Enabled = false;
             this.trackBarSongDuration.LargeChange = 0;
             this.trackBarSongDuration.Location = new System.Drawing.Point(147, 62);
             this.trackBarSongDuration.Name = "trackBarSongDuration";

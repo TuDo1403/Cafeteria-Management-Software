@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using WMPLib;
 
 namespace CafeteriaManagement
@@ -65,18 +61,6 @@ namespace CafeteriaManagement
 
         private static void FormQueue_SongNextHandler(object sender, EventArgs e)
         {
-            //if (PlayList.Count >= 1 && NextSongIsConverted(PlayList.Peek()))
-            //{
-            //    OnSongChanging();
-            //    //OnSongFinishing();
-            //    windowsMediaPlayer.controls.stop();
-            //    windowsMediaPlayer.URL = PlayList.Dequeue().Url;
-            //    windowsMediaPlayer.controls.play();
-            //}
-            //else
-            //{
-            //    //OnSongConverting();
-            //}
             if (NextSongIsConverted(PlayList.Peek()) && PlayList.Count >= 2)
             {
                 Play();
@@ -103,7 +87,6 @@ namespace CafeteriaManagement
                 if (_isMediaEnded)
                 {
                     _isMediaEnded = false;
-
                     Play();
                 }
             }
