@@ -295,9 +295,11 @@
       <DependentUpon>FormMusicBox.Queue.cs</DependentUpon>
     </Compile>
     <Compile Include="Song.cs" />
+    <Compile Include="SongDownloader.cs" />
     <Compile Include="StringExtension.cs" />
     <Compile Include="Video.cs" />
     <Compile Include="VideoInfo.cs" />
+    <Compile Include="VideoSearcher.cs" />
     <EmbeddedResource Include="FormAccountInfo.resx">
       <DependentUpon>FormAccountInfo.cs</DependentUpon>
     </EmbeddedResource>

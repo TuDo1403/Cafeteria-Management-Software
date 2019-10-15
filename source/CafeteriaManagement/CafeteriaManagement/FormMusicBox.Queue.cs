@@ -18,13 +18,10 @@ namespace CafeteriaManagement
     {
         private static FormQueue formQueue;
         private readonly Timer timer = new Timer();
-        private List<Song> _playHistories;
 
-        public static List<int> ConvertedPlayIndex { get; } = new List<int>();
 
         public static event EventHandler SongNext;
-
-        public static event EventHandler<Song> SongPrev;
+        public static event EventHandler SongPrev;
 
 
 
@@ -45,30 +42,36 @@ namespace CafeteriaManagement
             }
             InitializeComponent();
 
-            _playHistories = new List<Song>();
+            //_playHistories = new List<Song>();
 
             UpdateDataGridViewNextUpFromUserAddedPlaylist();
 
             MusicPlayer.SongChanged += MusicPlayer_SongChangedHandler;
+            MusicPlayer.SongAdded += MusicPlayer_SongAddedHandler;
+            SongDownloader.ConvertCompleted += FormMusicBox_ConvertCompletedHandler;
 
-            FormMusicBox.ConvertCompleted += FormMusicBox_ConvertCompletedHandler;
-
-            FormMusicBox.FormQueueEntered1stTime += FormMusicBox_FormQueueEnteredHandler;
+            //FormMusicBox.FormQueueEntered1stTime += FormMusicBox_FormQueueEnteredHandler;
 
             timer.Interval = 1000;
             timer.Tick += Timer_TickHandler;
         }
 
-        private void FormMusicBox_FormQueueEnteredHandler(object sender, EventArgs e)
-        {
-            UpdateDataGridViewNextUpFromUserAddedPlaylist();
-        }
+        private void MusicPlayer_SongAddedHandler(object sender, Song e) => UpdateDataGridViewNextUpFromUserAddedPlaylist();
+
+
 
         private void UpdateDataGridViewNextUpFromUserAddedPlaylist()
         {
+            if (!this.IsHandleCreated)
+            {
+                this.CreateHandle();
+            }
             if (MusicPlayer.PlayList.Count >= 1)
             {
-                dataGridViewNextUp.DataSource = MusicPlayer.PlayList.Where(s => true).ToList();
+                dataGridViewNextUp.Invoke((Action)delegate
+                {
+                    dataGridViewNextUp.DataSource = MusicPlayer.PlayList.Where(s => true).ToList();
+                });
             }
         }
 
@@ -115,27 +118,47 @@ namespace CafeteriaManagement
 
         private void BindSongsInTheQueueToDataGridViewNextUp(Queue<Song> e)
         {
+            if (!this.IsHandleCreated)
+            {
+                this.CreateHandle();
+            }
             if (e.Count >= 1)
             {
-                dataGridViewNextUp.DataSource = e.Where(s => s != e.Peek()).ToList();
+                dataGridViewNextUp.Invoke((Action)delegate
+                {
+                    dataGridViewNextUp.DataSource = e.Where(s => s != e.Peek()).ToList();
+                });
             }
         }
 
         private void BindPlayingSongToDataGridViewPlaying(Queue<Song> e)
         {
-            dataGridViewPlaying.DataSource = e.Where(s => s == e.Peek()).ToList();
+            if (!this.IsHandleCreated)
+            {
+                this.CreateHandle();
+            }
+            dataGridViewPlaying.Invoke((Action)delegate
+            {
+                dataGridViewPlaying.DataSource = e.Where(s => s == e.Peek()).ToList();
+            });
         }
 
         private void BindPlayingSongToDataGridViewHistory(Queue<Song> e)
         {
-            _playHistories.Add(e.Peek());
-            dataGridViewHistory.DataSource = null;
-            dataGridViewHistory.DataSource = _playHistories;
+            if (!this.IsHandleCreated)
+            {
+                this.CreateHandle();
+            }
+            dataGridViewPlaying.Invoke((Action)delegate
+            {
+                dataGridViewHistory.DataSource = null;
+                dataGridViewHistory.DataSource = MusicPlayer.PlayHistories;
+            });
         }
 
         private void FormMusicBox_ConvertCompletedHandler(object sender, VideoInfo e)
         {
-            ConvertedPlayIndex.Add(e.PlayIndex);
+            
 
             //solve exception: Invoke or BeginInvoke cannot be called on a control until the window handle has been created
             if (!this.IsHandleCreated)
@@ -153,57 +176,35 @@ namespace CafeteriaManagement
             }
         }
 
-        
 
-        private static bool IsFirstInTheQueue(int e)
-        {
-            return e == 1;
-        }
 
-        
+        private static bool IsFirstInTheQueue(int e) => e == 1;
+
+
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             if (buttonPlay.Text == "Play")
             {
                 buttonPlay.Text = "Pause";
-                MusicPlayer.GetInstance().Play();
+                MusicPlayer.Play();
                 timer.Start();
             }
             else
             {
                 buttonPlay.Text = "Play";
-                MusicPlayer.GetInstance().Pause();
+                MusicPlayer.Pause();
                 timer.Stop();
             }
         }
 
-        private void buttonNext_Click(object sender, EventArgs e)
-        {
-            OnSongChangingNext();
-        }
+        private void buttonNext_Click(object sender, EventArgs e) => OnSongChangingNext();
 
-        private void OnSongChangingNext()
-        {
-            (SongNext as EventHandler)?.Invoke(this, EventArgs.Empty);
-        }
+        private void OnSongChangingNext() => (SongNext as EventHandler)?.Invoke(this, EventArgs.Empty);
 
-        private void buttonPrevious_Click(object sender, EventArgs e)
-        {
-            if (_playHistories.Count > 1)
-            {
-                OnSongChangingPrev(_playHistories[GetLastSongIndex()]);
-            }
-        }
+        private void buttonPrevious_Click(object sender, EventArgs e) => OnSongChangingPrev();
 
-        private int GetLastSongIndex()
-        {
-            return _playHistories.Count - 2;
-        }
 
-        private void OnSongChangingPrev(Song lastPlayedSong)
-        {
-            (SongPrev as EventHandler<Song>)?.Invoke(this, lastPlayedSong);
-        }
+        private void OnSongChangingPrev() => (SongPrev as EventHandler)?.Invoke(this, EventArgs.Empty);
     }
 }

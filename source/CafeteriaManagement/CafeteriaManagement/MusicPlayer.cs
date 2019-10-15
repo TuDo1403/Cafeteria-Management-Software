@@ -12,14 +12,17 @@ namespace CafeteriaManagement
     //MusicPlayer class with Singleton Pattern
     public class MusicPlayer
     {
+        public static List<int> ConvertedSongIndexes { get; private set; } = new List<int>();
         private static MusicPlayer musicPlayer;
-        private bool _isMediaEnded = false;
-        private WindowsMediaPlayer windowsMediaPlayer;
+        private static bool _isMediaEnded = false;
+        private static readonly WindowsMediaPlayer windowsMediaPlayer = new WindowsMediaPlayer();
 
         public static event EventHandler<Queue<Song>> SongChanged;
+        public static event EventHandler<Song> SongAdded;
 
         public static Queue<Song> PlayList { get; private set; } = new Queue<Song>();
         public static bool IsPaused { get; set; } = false;
+        public static List<Song> PlayHistories { get; private set; } = new List<Song>();
 
         public static MusicPlayer GetInstance()
         {
@@ -32,27 +35,57 @@ namespace CafeteriaManagement
 
         private MusicPlayer()
         {
-            windowsMediaPlayer = new WindowsMediaPlayer();
             windowsMediaPlayer.PlayStateChange += WindowsMediaPlayer_PlayStateChangeHandler;
             FormQueue.SongPrev += FormQueue_SongPrevHandler;
             FormQueue.SongNext += FormQueue_SongNextHandler;
+
+            SongDownloader.ConvertCompleted += SongDownloader_ConvertCompletedHandler;
         }
 
-
-        private void FormQueue_SongNextHandler(object sender, EventArgs e)
+        private void FormQueue_SongPrevHandler(object sender, EventArgs e)
         {
-            if (PlayList.Count >= 1 && NextSongIsConverted(PlayList.Peek()))
+            //add last song to the beginning of the queue
+            if (PlayHistories.Count >= 1)
             {
-                OnSongChanging();
-                windowsMediaPlayer.controls.stop();
-                windowsMediaPlayer.URL = PlayList.Dequeue().Url;
-                windowsMediaPlayer.controls.play();
+                PlayList = new Queue<Song>(PlayList.Prepend(PlayHistories.Last()));
+                Play();
+            }
+
+            //OnSongChanging();
+            //windowsMediaPlayer.controls.stop();
+            //windowsMediaPlayer.URL = PlayList.Dequeue().Url;
+            //windowsMediaPlayer.controls.play();
+
+        }
+
+        private static void SongDownloader_ConvertCompletedHandler(object sender, VideoInfo e)
+        {
+            ConvertedSongIndexes.Add(e.PlayIndex);
+        }
+
+        private static void FormQueue_SongNextHandler(object sender, EventArgs e)
+        {
+            //if (PlayList.Count >= 1 && NextSongIsConverted(PlayList.Peek()))
+            //{
+            //    OnSongChanging();
+            //    //OnSongFinishing();
+            //    windowsMediaPlayer.controls.stop();
+            //    windowsMediaPlayer.URL = PlayList.Dequeue().Url;
+            //    windowsMediaPlayer.controls.play();
+            //}
+            //else
+            //{
+            //    //OnSongConverting();
+            //}
+            if (NextSongIsConverted(PlayList.Peek()) && PlayList.Count >= 2)
+            {
+                Play();
             }
         }
 
-        private bool NextSongIsConverted(Song e)
+        private static bool NextSongIsConverted(Song e)
         {
-            foreach (var index in FormQueue.ConvertedPlayIndex)
+            foreach (var index in ConvertedSongIndexes)
             {
                 if (index == e.Index)
                     return true;
@@ -60,18 +93,8 @@ namespace CafeteriaManagement
             return false;
         }
 
-        private void FormQueue_SongPrevHandler(object sender, Song e)
-        {
-            //add last song to the beginning of the queue
-            PlayList = new Queue<Song>(PlayList.Prepend(e));
-            OnSongChanging();
-            windowsMediaPlayer.controls.stop();
-            windowsMediaPlayer.URL = PlayList.Dequeue().Url;
-            windowsMediaPlayer.controls.play();
-        }
-
         //idea from https://multisoftextreme.blogspot.com/2009/08/windows-media-player-end-of-stream.html
-        private void WindowsMediaPlayer_PlayStateChangeHandler(int NewState)
+        private static void WindowsMediaPlayer_PlayStateChangeHandler(int NewState)
         {
             if (windowsMediaPlayer.playState == WMPPlayState.wmppsMediaEnded)
                 _isMediaEnded = true;
@@ -80,6 +103,7 @@ namespace CafeteriaManagement
                 if (_isMediaEnded)
                 {
                     _isMediaEnded = false;
+
                     Play();
                 }
             }
@@ -89,10 +113,11 @@ namespace CafeteriaManagement
 
 
 
-        public void Play()
+        public static void Play()
         {
             if (IsPaused == false && PlayList.Count >= 1)
             {
+                PlayHistories.Add(PlayList.Peek());
                 OnSongChanging();
                 windowsMediaPlayer.URL = PlayList.Dequeue().Url;
             }
@@ -102,16 +127,26 @@ namespace CafeteriaManagement
 
         }
 
-        private void OnSongChanging()
+        private static void OnSongChanging() => (SongChanged as EventHandler<Queue<Song>>)?.Invoke(musicPlayer, PlayList);
+
+
+        public static void Pause() => windowsMediaPlayer.controls.pause();
+
+        public static void AddSongToQueue(int searchIndex, int playIndex)
         {
-            (SongChanged as EventHandler<Queue<Song>>)?.Invoke(this, PlayList);
+            var videoInfo = new VideoInfo
+            {
+                Title = VideoSearcher.videos[searchIndex].Title,
+                Duration = VideoSearcher.videos[searchIndex].Duration,
+                Url = VideoSearcher.videos[searchIndex].Url,
+                PlayIndex = playIndex
+            };
+
+            var song = videoInfo.ToSong(SongDownloader.GetAudioSavePathFrom(videoInfo.Title));
+            PlayList.Enqueue(song);
+            OnSongAdding(song);
         }
 
-
-
-        public void Pause()
-        {
-            windowsMediaPlayer.controls.pause();
-        }
+        private static void OnSongAdding(Song song) => (SongAdded as EventHandler<Song>)?.Invoke(musicPlayer, song);
     }
 }

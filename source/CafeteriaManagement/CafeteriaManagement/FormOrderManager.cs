@@ -15,6 +15,7 @@ namespace CafeteriaManagement
         public FormOrderManager()
         {
             InitializeComponent();
+            FormQueue.CreateInstance();
         }
 
         private void textBoxSearchMenu_Enter(object sender, EventArgs e)
@@ -43,8 +44,7 @@ namespace CafeteriaManagement
 
         private void queueToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formQueue = FormQueue.CreateInstance();
-            formQueue.ShowDialog();
+            FormQueue.CreateInstance().ShowDialog();
             this.Show();
         }
     }
