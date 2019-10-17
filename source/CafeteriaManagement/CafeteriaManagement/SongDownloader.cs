@@ -2,72 +2,77 @@
 using MediaToolkit.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using YoutubeExplode;
 
 namespace CafeteriaManagement
 {
-    public class SongDownloader
+    public sealed class SongDownloader : IDisposable
     {
-        public static readonly string musicSavePath = $@"C:\Users\{Environment.UserName}\Music\";
-        private static bool _isProcessing = false;
+        private static SongDownloader _songDownloader;
         private static Queue<VideoInfo> _downloadQueue = new Queue<VideoInfo>();
-        public static event EventHandler QueueCountChanged;
+        private readonly BackgroundWorker _backgroundWorker = new BackgroundWorker();
+
+        public static readonly string musicSavePath = $@"C:\Users\{Environment.UserName}\Music\";
         public static event EventHandler<VideoInfo> ConvertCompleted;
-        private static SongDownloader songDownloader = new SongDownloader();
 
 
 
-        public static void DownloadSongBy(int searchIndex, int playIndex)
+        public static SongDownloader CreateInstance()
         {
-            QueueCountChanged += SongDownloader_QueueCountChangedHandler;
-            ConvertCompleted += SongDownloader_ConvertCompletedHandler;
-
-            var selectedVideoInfo = new VideoInfo
+            if (_songDownloader == null)
             {
-                Title = VideoSearcher.videos[searchIndex].Title,
-                Duration = VideoSearcher.videos[searchIndex].Duration,
-                Url = VideoSearcher.videos[searchIndex].Url,
-                PlayIndex = playIndex
-            };
-
-            _downloadQueue.Enqueue(selectedVideoInfo);
-            OnQueueCountChanging();
-        }
-
-
-        private static async void SongDownloader_ConvertCompletedHandler(object sender, VideoInfo e)
-        {
-            if (_isProcessing == false && _downloadQueue.Count > 0)
-            {
-                _isProcessing = true;
-                await WriteConvertedAudioFilesToPathFrom(_downloadQueue.Peek()).ConfigureAwait(true);
+                _songDownloader = new SongDownloader();
             }
+            return _songDownloader;
         }
 
-        private static async Task WriteConvertedAudioFilesToPathFrom(VideoInfo videoInfo)
+
+        private SongDownloader()
         {
-            if (AlreadyExistedAudioConvertedFrom(videoInfo) == false)
+            _backgroundWorker.DoWork += _backgroundWorker_DoWorkHandler;
+            _backgroundWorker.WorkerSupportsCancellation = true;
+        }
+
+        private void _backgroundWorker_DoWorkHandler(object sender, DoWorkEventArgs e)
+        {
+            while(_downloadQueue.Count >= 1)
             {
-                await DownloadAudioStreamFrom(videoInfo).ConfigureAwait(true);
-                await Task.Run(() =>
+                if (AlreadyExistedAudioConvertedFrom(_downloadQueue.Peek()) == false)
                 {
-                    ConvertAudioStreamToMp3By(videoInfo);
-                    DeleteAudioStreamBy(videoInfo.Title);
-                    WriteDownloadedSongToTxt(videoInfo);
-                    
-                }).ConfigureAwait(true);
+                    GetAudioFileFrom(_downloadQueue.Dequeue());
+                }
+                else
+                {
+                    var convertedFile = _downloadQueue.Dequeue();
+                    OnConvertComplete(convertedFile);
+                }
             }
-            else
-            {
-                OnConvertComplete(videoInfo);
-            }
+            _backgroundWorker.CancelAsync();
         }
 
-        private static void OnConvertComplete(VideoInfo videoInfo) => (ConvertCompleted as EventHandler<VideoInfo>)?.Invoke(songDownloader, videoInfo);
+        private static void OnConvertComplete(VideoInfo videoInfo)
+        {
+            videoInfo.IsConverted = true;
+            (ConvertCompleted as EventHandler<VideoInfo>)?.Invoke(_downloadQueue, videoInfo);
+        }
+
+
+        private static async void GetAudioFileFrom(VideoInfo videoInfo)
+        {
+            await DownloadAudioStreamFrom(videoInfo).ConfigureAwait(true);
+            await Task.Run(() =>
+            {
+                ConvertAudioStreamToMp3By(videoInfo);
+                DeleteAudioStreamBy(videoInfo.Title);
+                WriteDownloadedSongToTxt(videoInfo);
+            }).ConfigureAwait(true);
+        }
 
         private static void WriteDownloadedSongToTxt(VideoInfo videoInfo)
         {
@@ -92,14 +97,7 @@ namespace CafeteriaManagement
 
         private static bool ExistedAudioStreamWith(string title) => File.Exists(GetAudioSavePathFrom(title, false));
 
-        public static string GetAudioSavePathFrom(string title, bool isConverted = true)
-        {
-            if (isConverted)
-            {
-                return musicSavePath + title.RemoveIllegalChars() + ".mp3";
-            }
-            return musicSavePath + title.RemoveIllegalChars() + ".WebM";
-        }
+
 
         private static void ConvertAudioStreamToMp3By(VideoInfo videoInfo)
         {
@@ -110,16 +108,19 @@ namespace CafeteriaManagement
                 engine.GetMetadata(input);
                 engine.Convert(input, output);
 
-                videoInfo.IsConverted = true;
                 OnConvertComplete(videoInfo);
-
-                _isProcessing = false;
-                _downloadQueue.Dequeue();
-                OnQueueCountChanging();
             }
         }
 
-        private static void OnQueueCountChanging() => (QueueCountChanged as EventHandler)?.Invoke(songDownloader, EventArgs.Empty);
+        public static string GetAudioSavePathFrom(string title, bool isConverted = true)
+        {
+            if (isConverted)
+            {
+                return musicSavePath + title.RemoveIllegalChars() + ".mp3";
+            }
+            return musicSavePath + title.RemoveIllegalChars() + ".WebM";
+        }
+
 
         private static async Task DownloadAudioStreamFrom(VideoInfo videoInfo)
         {
@@ -132,15 +133,33 @@ namespace CafeteriaManagement
                                      .ConfigureAwait(true);
         }
 
+
         private static bool AlreadyExistedAudioConvertedFrom(VideoInfo videoInfo) => File.Exists(GetAudioSavePathFrom(videoInfo.Title));
 
-        private static async void SongDownloader_QueueCountChangedHandler(object sender, EventArgs e)
+
+        public void DownloadSongBy(int searchIndex, int playIndex)
         {
-            if (_isProcessing == false && _downloadQueue.Count > 0)
+            var selectedVideoInfo = new VideoInfo
             {
-                _isProcessing = true;
-                await WriteConvertedAudioFilesToPathFrom(_downloadQueue.Peek()).ConfigureAwait(true);
+                Title = VideoSearcher.videos[searchIndex].Title,
+                Duration = VideoSearcher.videos[searchIndex].Duration,
+                Url = VideoSearcher.videos[searchIndex].Url,
+                PlayIndex = playIndex
+            };
+
+            _downloadQueue.Enqueue(selectedVideoInfo);
+
+            if (_backgroundWorker.IsBusy == false)
+            {
+                _backgroundWorker.RunWorkerAsync();
             }
+        }
+
+
+
+        public void Dispose()
+        {
+            _backgroundWorker.Dispose();
         }
     }
 }

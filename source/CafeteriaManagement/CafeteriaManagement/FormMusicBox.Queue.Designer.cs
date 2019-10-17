@@ -218,7 +218,6 @@
             // 
             // buttonPlay
             // 
-            this.buttonPlay.Enabled = false;
             this.buttonPlay.Location = new System.Drawing.Point(353, 20);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.Size = new System.Drawing.Size(75, 23);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -9,13 +10,10 @@ namespace CafeteriaManagement
     {
         private int _addToQueueClickCount = 0;
 
-
-
         private void buttonQueue_Click(object sender, EventArgs e)
         {
-            var formQueue = FormQueue.CreateInstance();
             this.Hide();
-            formQueue.ShowDialog();
+            FormQueue.CreateInstance().ShowDialog();
             this.Show();
         }
 
@@ -24,14 +22,17 @@ namespace CafeteriaManagement
             InitializeComponent();
         }
 
+
+
+
         private void dataGridViewSearchResult_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             _addToQueueClickCount++;
-            SongDownloader.DownloadSongBy(e.RowIndex, _addToQueueClickCount);
+            MusicPlayer.CreateInstance();
+            SongDownloader.CreateInstance().DownloadSongBy(e.RowIndex, _addToQueueClickCount);
             MusicPlayer.AddSongToQueue(e.RowIndex, _addToQueueClickCount);
             MessageBox.Show("Song added!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }        
-
+        }
 
         private void textBoxSearchMusic_KeyDown(object sender, KeyEventArgs e)
         {

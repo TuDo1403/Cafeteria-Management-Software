@@ -49,10 +49,6 @@
             this.statisticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.musicBoxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToQueueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.queueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pauseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resumeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -227,8 +223,7 @@
             // musicBoxToolStripMenuItem
             // 
             this.musicBoxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToQueueToolStripMenuItem,
-            this.queueToolStripMenuItem});
+            this.addToQueueToolStripMenuItem});
             this.musicBoxToolStripMenuItem.Name = "musicBoxToolStripMenuItem";
             this.musicBoxToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.musicBoxToolStripMenuItem.Text = "Music Box";
@@ -239,35 +234,6 @@
             this.addToQueueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToQueueToolStripMenuItem.Text = "Search Box";
             this.addToQueueToolStripMenuItem.Click += new System.EventHandler(this.searchBoxStripMenuItem_Click);
-            // 
-            // queueToolStripMenuItem
-            // 
-            this.queueToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pauseToolStripMenuItem,
-            this.resumeToolStripMenuItem,
-            this.stopToolStripMenuItem});
-            this.queueToolStripMenuItem.Name = "queueToolStripMenuItem";
-            this.queueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.queueToolStripMenuItem.Text = "Queue";
-            this.queueToolStripMenuItem.Click += new System.EventHandler(this.queueToolStripMenuItem_Click);
-            // 
-            // pauseToolStripMenuItem
-            // 
-            this.pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
-            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pauseToolStripMenuItem.Text = "Pause";
-            // 
-            // resumeToolStripMenuItem
-            // 
-            this.resumeToolStripMenuItem.Name = "resumeToolStripMenuItem";
-            this.resumeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.resumeToolStripMenuItem.Text = "Resume";
-            // 
-            // stopToolStripMenuItem
-            // 
-            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.stopToolStripMenuItem.Text = "Stop";
             // 
             // FormOrderManager
             // 
@@ -315,9 +281,5 @@
         private System.Windows.Forms.ToolStripMenuItem statisticToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem musicBoxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToQueueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem queueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pauseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resumeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
     }
 }

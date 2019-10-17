@@ -18,8 +18,14 @@ namespace CafeteriaManagement
 
         public static IEnumerable<Song> ToSong(this IEnumerable<string> source)
         {
+            
             foreach (var line in source)
             {
+                if (string.IsNullOrEmpty(line))
+                {
+                    throw new ArgumentNullException(nameof(source));
+                }
+
                 var columns = line.Split(',');
                 yield return new Song
                 {
