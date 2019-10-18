@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,10 +21,20 @@ namespace CafeteriaManagement
         public FormMusicBox()
         {
             InitializeComponent();
+            LoadHistoryToAutoCompleteSource();
         }
 
-
-
+        private void LoadHistoryToAutoCompleteSource()
+        {
+            var source = File.ReadAllText(SongDownloader.musicSavePath + @"\History.txt");
+            var keyWords = source.Split(',');
+            var autoCompleteStringCollection = new AutoCompleteStringCollection();
+            foreach (var word in keyWords)
+            {
+                autoCompleteStringCollection.Add(word);
+            }
+            textBoxSearchMusic.AutoCompleteCustomSource = autoCompleteStringCollection;
+        }
 
         private void dataGridViewSearchResult_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -52,13 +63,31 @@ namespace CafeteriaManagement
             {
                 await Task.Run(() =>
                 {
+                    SaveToHistory();
                     var searchResults = VideoSearcher.GetListOfVideosFrom(textBoxSearchMusic.Text);
                     //prevent cross thread operation not valid error
                     dataGridViewSearchResult.Invoke((Action)delegate
                     {
                         dataGridViewSearchResult.DataSource = searchResults;
                     });
+                    
                 }).ConfigureAwait(true);
+            }
+        }
+
+        private void SaveToHistory()
+        {
+            var words = File.ReadAllText(SongDownloader.musicSavePath + @"\History.txt");
+            if (!words.Contains(textBoxSearchMusic.Text))
+            {
+                textBoxSearchMusic.Invoke((Action)delegate
+                {
+                    textBoxSearchMusic.AutoCompleteCustomSource.Add(textBoxSearchMusic.Text);
+                });
+                using (var streamWriter = new StreamWriter(SongDownloader.musicSavePath + @"\History.txt", true))
+                {
+                    streamWriter.Write(textBoxSearchMusic.Text + ",");
+                }
             }
         }
 
@@ -80,6 +109,5 @@ namespace CafeteriaManagement
                 textBoxSearchMusic.ForeColor = Color.Gray;
             }
         }
-
     }
 }
