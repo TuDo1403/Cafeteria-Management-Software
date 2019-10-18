@@ -15,7 +15,6 @@ namespace CafeteriaManagement
         public FormOrderManager()
         {
             InitializeComponent();
-            //FormQueue.CreateInstance();
         }
 
         private void textBoxSearchMenu_Enter(object sender, EventArgs e)
@@ -51,11 +50,6 @@ namespace CafeteriaManagement
         private void pauseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MusicPlayer.CreateInstance().Pause();
-        }
-
-        private void stopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

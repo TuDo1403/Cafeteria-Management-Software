@@ -27,13 +27,16 @@ namespace CafeteriaManagement
         private void LoadHistoryToAutoCompleteSource()
         {
             var source = File.ReadAllText(SongDownloader.musicSavePath + @"\History.txt");
-            var keyWords = source.Split(',');
-            var autoCompleteStringCollection = new AutoCompleteStringCollection();
-            foreach (var word in keyWords)
+            if (!string.IsNullOrEmpty(source))
             {
-                autoCompleteStringCollection.Add(word);
+                var keyWords = source.Split(',');
+                var autoCompleteStringCollection = new AutoCompleteStringCollection();
+                foreach (var word in keyWords)
+                {
+                    autoCompleteStringCollection.Add(word);
+                }
+                textBoxSearchMusic.AutoCompleteCustomSource = autoCompleteStringCollection;
             }
-            textBoxSearchMusic.AutoCompleteCustomSource = autoCompleteStringCollection;
         }
 
         private void dataGridViewSearchResult_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -61,9 +64,9 @@ namespace CafeteriaManagement
             }
             else
             {
+                SaveToHistory();
                 await Task.Run(() =>
-                {
-                    SaveToHistory();
+                { 
                     var searchResults = VideoSearcher.GetListOfVideosFrom(textBoxSearchMusic.Text);
                     //prevent cross thread operation not valid error
                     dataGridViewSearchResult.Invoke((Action)delegate
@@ -78,7 +81,7 @@ namespace CafeteriaManagement
         private void SaveToHistory()
         {
             var words = File.ReadAllText(SongDownloader.musicSavePath + @"\History.txt");
-            if (!words.Contains(textBoxSearchMusic.Text))
+            if (string.IsNullOrEmpty(words) || !words.Contains(textBoxSearchMusic.Text))
             {
                 textBoxSearchMusic.Invoke((Action)delegate
                 {
