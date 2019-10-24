@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCateGory = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstProduct = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,16 +40,16 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmbCateGory
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(38, 12);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(225, 28);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbCateGory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbCateGory.FormattingEnabled = true;
+            this.cmbCateGory.Location = new System.Drawing.Point(38, 12);
+            this.cmbCateGory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbCateGory.Name = "cmbCateGory";
+            this.cmbCateGory.Size = new System.Drawing.Size(225, 28);
+            this.cmbCateGory.TabIndex = 0;
+            this.cmbCateGory.SelectedIndexChanged += new System.EventHandler(this.cmbCateGory_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -60,17 +60,16 @@
             this.textBox1.Size = new System.Drawing.Size(218, 28);
             this.textBox1.TabIndex = 1;
             // 
-            // listBox1
+            // lstProduct
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(38, 81);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(372, 384);
-            this.listBox1.TabIndex = 2;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.lstProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lstProduct.FormattingEnabled = true;
+            this.lstProduct.ItemHeight = 20;
+            this.lstProduct.Location = new System.Drawing.Point(38, 81);
+            this.lstProduct.Margin = new System.Windows.Forms.Padding(0);
+            this.lstProduct.Name = "lstProduct";
+            this.lstProduct.Size = new System.Drawing.Size(372, 384);
+            this.lstProduct.TabIndex = 2;
             // 
             // listBox2
             // 
@@ -94,7 +93,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Menu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -105,7 +103,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Selected Items";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
@@ -116,7 +113,6 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Refesh";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -157,14 +153,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstProduct);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbCateGory);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PaymentUserControl";
             this.Size = new System.Drawing.Size(779, 507);
-            this.Load += new System.EventHandler(this.HomeUserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,9 +167,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCateGory;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstProduct;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

@@ -12,9 +12,15 @@ namespace UICoffeeManagement
 {
     public partial class StatiticUserControl : UserControl
     {
+        //a=7;
         public StatiticUserControl()
         {
             InitializeComponent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

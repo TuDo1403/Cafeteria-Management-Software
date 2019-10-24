@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaoClass
+namespace UICoffeeManagement
 {
     class Item:Product
     {

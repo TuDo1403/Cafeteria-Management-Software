@@ -12,6 +12,7 @@ namespace UICoffeeManagement
 {
     public partial class MusicUserControl : UserControl
     {
+         //MainForm.c=4;
         public MusicUserControl()
         {
             InitializeComponent();
@@ -28,6 +29,11 @@ namespace UICoffeeManagement
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

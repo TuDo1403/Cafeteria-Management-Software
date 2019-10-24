@@ -10,8 +10,12 @@ using System.Windows.Forms;
 
 namespace UICoffeeManagement
 {
+   
     public partial class MainForm : Form
     {
+
+        public static int c = 3;
+
         public MainForm()
         {
             InitializeComponent();
@@ -44,31 +48,46 @@ namespace UICoffeeManagement
         private void buttonPayMent_Click(object sender, EventArgs e)
         {
             paymentUserControl1.BringToFront();
+           //collectionUserControl 
         }
 
         private void buttonMusic_Click(object sender, EventArgs e)
         {
-            musicUserControl1.BringToFront();
+           //musicUserControl1.BringToFront();
         }
 
         private void buttonEmployee_Click(object sender, EventArgs e)
         {
-            employeeUserControl1.BringToFront();
+           // employeeUserControl1.BringToFront();
         }
 
         private void buttonStatic_Click(object sender, EventArgs e)
         {
-            statiticUserControl1.BringToFront();
+           // statiticUserControl1.BringToFront();
         }
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            homeUserControl1.BringToFront();
+            //homeUserControl1.BringToFront();
+          //  PaymentUserControl pm = new PaymentUserControl();
+          //  pm.Show();
+           // PaymentUserControl.a = 3;
+            
+
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            homeUserControl1.BringToFront();
+            //homeUserControl1.BringToFront();
+            //homeUserControl1
+          //  PaymentUserControl pm = new PaymentUserControl();
+          //  pm.Show();
+        }
+
+        private void collectionUserControl1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

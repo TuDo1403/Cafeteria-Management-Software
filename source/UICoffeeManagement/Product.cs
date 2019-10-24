@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaoClass
+namespace UICoffeeManagement
 {
     class Product
     {
@@ -30,7 +30,7 @@ namespace TaoClass
 
         public override string ToString()
         {
-            return id;
+            return name;
         }
 
 
