@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CafeteriaManagement
+﻿namespace CafeteriaManagement
 {
-    class Video
+    public class Video
     {
         public string Title { get; set; }
 
@@ -16,6 +9,5 @@ namespace CafeteriaManagement
         public string Author { get; set; }
 
         public string Url { get; set; }
-
     }
 }

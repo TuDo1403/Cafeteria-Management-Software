@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CafeteriaManagement
+namespace CafeteriaManagement.CustomUserControl
 {
-    public partial class FormMenuEdit : Form
+    public partial class UCHome : UserControl
     {
-        public FormMenuEdit()
+        public UCHome()
         {
             InitializeComponent();
         }

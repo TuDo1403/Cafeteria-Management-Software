@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace CafeteriaManagement
 {
-    public partial class FormOrderManager : Form
+    public partial class UCOrderManager : UserControl
     {
-        public FormOrderManager()
+        public UCOrderManager()
         {
             InitializeComponent();
         }
+
 
         private void textBoxSearchMenu_Enter(object sender, EventArgs e)
         {
@@ -26,21 +27,18 @@ namespace CafeteriaManagement
             }
         }
 
-        private void textBoxSearchMenu_Leave(object sender, EventArgs e)
+        private void TextBoxSearchMenu_Leave(object sender, EventArgs e)
         {
-            if (textBoxSearchMenu.Text == "")
+            if (textBoxSearchMenu.Text.Length == 0)
             {
-                textBoxSearchMenu.Text = "Search";
+                textBoxSearchMenu.Text = Properties.Resources.textBoxSearchMenuText;
                 textBoxSearchMenu.ForeColor = Color.Gray;
             }
         }
 
-        private void addToQueueToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ComboBoxCatetory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var formMusicBox = new FormMusicBox();
-            //this.Hide();
-            formMusicBox.Show();
-            //this.Show();
+
         }
     }
 }
