@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CafeteriaManagement\CafeteriaManagement.csproj">
-      <Project>{0666cedc-65c1-43c1-9ca1-73fe8d4cdec7}</Project>
-      <Name>CafeteriaManagement</Name>
+    <ProjectReference Include="..\CM.BLL\CM.BLL.csproj">
+      <Project>{dad1295d-d7ba-4cfc-aac1-40b0682095dd}</Project>
+      <Name>CM.BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

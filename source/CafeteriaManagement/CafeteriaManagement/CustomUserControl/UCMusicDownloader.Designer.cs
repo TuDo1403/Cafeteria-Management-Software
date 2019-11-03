@@ -1,13 +1,13 @@
 ﻿namespace CafeteriaManagement
 {
-    partial class FormMusicBox
+    partial class UCMusicDownloader
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,14 +20,20 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tabControlOnlineLocal = new System.Windows.Forms.TabControl();
+            this.tabPageOnline = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelYoutube = new System.Windows.Forms.Label();
@@ -36,9 +42,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonQueue = new System.Windows.Forms.Button();
             this.dataGridViewSearchResult = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tabControlOnlineLocal = new System.Windows.Forms.TabControl();
-            this.tabPageOnline = new System.Windows.Forms.TabPage();
             this.tabPageLocal = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -47,20 +50,53 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.buttonQueue1 = new System.Windows.Forms.Button();
             this.dataGridViewLocalSongs = new System.Windows.Forms.DataGridView();
-            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.labelPlayQueue = new System.Windows.Forms.Label();
+            this.panel4.SuspendLayout();
+            this.tabControlOnlineLocal.SuspendLayout();
+            this.tabPageOnline.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchResult)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.tabControlOnlineLocal.SuspendLayout();
-            this.tabPageOnline.SuspendLayout();
             this.tabPageLocal.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocalSongs)).BeginInit();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.tabControlOnlineLocal);
+            this.panel4.Location = new System.Drawing.Point(3, 54);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(822, 455);
+            this.panel4.TabIndex = 2;
+            // 
+            // tabControlOnlineLocal
+            // 
+            this.tabControlOnlineLocal.Controls.Add(this.tabPageOnline);
+            this.tabControlOnlineLocal.Controls.Add(this.tabPageLocal);
+            this.tabControlOnlineLocal.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlOnlineLocal.Location = new System.Drawing.Point(4, 3);
+            this.tabControlOnlineLocal.Name = "tabControlOnlineLocal";
+            this.tabControlOnlineLocal.SelectedIndex = 0;
+            this.tabControlOnlineLocal.Size = new System.Drawing.Size(815, 449);
+            this.tabControlOnlineLocal.TabIndex = 1;
+            // 
+            // tabPageOnline
+            // 
+            this.tabPageOnline.Controls.Add(this.panel1);
+            this.tabPageOnline.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageOnline.Location = new System.Drawing.Point(4, 24);
+            this.tabPageOnline.Name = "tabPageOnline";
+            this.tabPageOnline.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageOnline.Size = new System.Drawing.Size(807, 421);
+            this.tabPageOnline.TabIndex = 0;
+            this.tabPageOnline.Text = "Online";
+            this.tabPageOnline.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -68,7 +104,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 353);
+            this.panel1.Size = new System.Drawing.Size(795, 411);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -78,42 +114,44 @@
             this.panel3.Controls.Add(this.textBoxSearchMusic);
             this.panel3.Location = new System.Drawing.Point(6, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(552, 60);
+            this.panel3.Size = new System.Drawing.Size(786, 60);
             this.panel3.TabIndex = 1;
             // 
             // labelYoutube
             // 
             this.labelYoutube.AutoSize = true;
-            this.labelYoutube.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelYoutube.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelYoutube.Location = new System.Drawing.Point(10, 21);
             this.labelYoutube.Name = "labelYoutube";
-            this.labelYoutube.Size = new System.Drawing.Size(54, 13);
+            this.labelYoutube.Size = new System.Drawing.Size(52, 14);
             this.labelYoutube.TabIndex = 2;
             this.labelYoutube.Text = "Youtube";
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(464, 16);
+            this.buttonSearch.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.Location = new System.Drawing.Point(708, 16);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(75, 23);
             this.buttonSearch.TabIndex = 1;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // textBoxSearchMusic
             // 
             this.textBoxSearchMusic.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.textBoxSearchMusic.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxSearchMusic.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchMusic.ForeColor = System.Drawing.SystemColors.GrayText;
             this.textBoxSearchMusic.Location = new System.Drawing.Point(70, 18);
             this.textBoxSearchMusic.Name = "textBoxSearchMusic";
-            this.textBoxSearchMusic.Size = new System.Drawing.Size(368, 20);
+            this.textBoxSearchMusic.Size = new System.Drawing.Size(632, 20);
             this.textBoxSearchMusic.TabIndex = 0;
             this.textBoxSearchMusic.Text = "Enter Keyword";
-            this.textBoxSearchMusic.Enter += new System.EventHandler(this.textBoxSearchMusic_Enter);
-            this.textBoxSearchMusic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearchMusic_KeyDown);
-            this.textBoxSearchMusic.Leave += new System.EventHandler(this.textBoxSearchMusic_Leave);
+            this.textBoxSearchMusic.Enter += new System.EventHandler(this.TextBoxSearchMusic_Enter);
+            this.textBoxSearchMusic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchMusic_KeyDown);
+            this.textBoxSearchMusic.Leave += new System.EventHandler(this.TextBoxSearchMusic_Leave);
             // 
             // panel2
             // 
@@ -121,63 +159,58 @@
             this.panel2.Controls.Add(this.dataGridViewSearchResult);
             this.panel2.Location = new System.Drawing.Point(6, 69);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(552, 281);
+            this.panel2.Size = new System.Drawing.Size(786, 339);
             this.panel2.TabIndex = 0;
             // 
             // buttonQueue
             // 
-            this.buttonQueue.Location = new System.Drawing.Point(464, 244);
+            this.buttonQueue.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQueue.Location = new System.Drawing.Point(708, 313);
             this.buttonQueue.Name = "buttonQueue";
             this.buttonQueue.Size = new System.Drawing.Size(75, 23);
             this.buttonQueue.TabIndex = 3;
             this.buttonQueue.Text = "Queue";
             this.buttonQueue.UseVisualStyleBackColor = true;
-            this.buttonQueue.Click += new System.EventHandler(this.buttonQueue_Click);
+            this.buttonQueue.Click += new System.EventHandler(this.ButtonQueue_Click);
             // 
             // dataGridViewSearchResult
             // 
             this.dataGridViewSearchResult.AllowUserToAddRows = false;
             this.dataGridViewSearchResult.AllowUserToDeleteRows = false;
             this.dataGridViewSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSearchResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridViewSearchResult.Location = new System.Drawing.Point(13, 3);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSearchResult.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewSearchResult.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewSearchResult.Name = "dataGridViewSearchResult";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSearchResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewSearchResult.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewSearchResult.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSearchResult.Size = new System.Drawing.Size(526, 235);
+            this.dataGridViewSearchResult.Size = new System.Drawing.Size(780, 304);
             this.dataGridViewSearchResult.TabIndex = 0;
-            this.dataGridViewSearchResult.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewSearchResult_RowHeaderMouseDoubleClick);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.tabControlOnlineLocal);
-            this.panel4.Location = new System.Drawing.Point(12, 12);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(591, 404);
-            this.panel4.TabIndex = 1;
-            // 
-            // tabControlOnlineLocal
-            // 
-            this.tabControlOnlineLocal.Controls.Add(this.tabPageOnline);
-            this.tabControlOnlineLocal.Controls.Add(this.tabPageLocal);
-            this.tabControlOnlineLocal.Location = new System.Drawing.Point(4, 3);
-            this.tabControlOnlineLocal.Name = "tabControlOnlineLocal";
-            this.tabControlOnlineLocal.SelectedIndex = 0;
-            this.tabControlOnlineLocal.Size = new System.Drawing.Size(584, 393);
-            this.tabControlOnlineLocal.TabIndex = 1;
-            // 
-            // tabPageOnline
-            // 
-            this.tabPageOnline.Controls.Add(this.panel1);
-            this.tabPageOnline.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageOnline.Location = new System.Drawing.Point(4, 22);
-            this.tabPageOnline.Name = "tabPageOnline";
-            this.tabPageOnline.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageOnline.Size = new System.Drawing.Size(576, 367);
-            this.tabPageOnline.TabIndex = 0;
-            this.tabPageOnline.Text = "Online";
-            this.tabPageOnline.UseVisualStyleBackColor = true;
+            this.dataGridViewSearchResult.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewSearchResult_RowHeaderMouseDoubleClick);
             // 
             // tabPageLocal
             // 
@@ -185,7 +218,7 @@
             this.tabPageLocal.Location = new System.Drawing.Point(4, 22);
             this.tabPageLocal.Name = "tabPageLocal";
             this.tabPageLocal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLocal.Size = new System.Drawing.Size(576, 367);
+            this.tabPageLocal.Size = new System.Drawing.Size(807, 423);
             this.tabPageLocal.TabIndex = 1;
             this.tabPageLocal.Text = "Local";
             this.tabPageLocal.UseVisualStyleBackColor = true;
@@ -228,8 +261,6 @@
             this.textBoxLocalSearch.Size = new System.Drawing.Size(420, 20);
             this.textBoxLocalSearch.TabIndex = 0;
             this.textBoxLocalSearch.Text = "Enter Keyword";
-            this.textBoxLocalSearch.Enter += new System.EventHandler(this.textBoxSearchMusic_Enter);
-            this.textBoxLocalSearch.Leave += new System.EventHandler(this.textBoxSearchMusic_Leave);
             // 
             // panel7
             // 
@@ -248,7 +279,6 @@
             this.buttonQueue1.TabIndex = 3;
             this.buttonQueue1.Text = "Queue";
             this.buttonQueue1.UseVisualStyleBackColor = true;
-            this.buttonQueue1.Click += new System.EventHandler(this.buttonQueue_Click);
             // 
             // dataGridViewLocalSongs
             // 
@@ -263,56 +293,73 @@
             this.dataGridViewLocalSongs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewLocalSongs.Size = new System.Drawing.Size(526, 235);
             this.dataGridViewLocalSongs.TabIndex = 0;
-            this.dataGridViewLocalSongs.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewSearchResult_RowHeaderMouseDoubleClick);
             // 
-            // FormMusicBox
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.labelPlayQueue);
+            this.panel8.Location = new System.Drawing.Point(3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(822, 45);
+            this.panel8.TabIndex = 6;
+            // 
+            // labelPlayQueue
+            // 
+            this.labelPlayQueue.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayQueue.Location = new System.Drawing.Point(3, 0);
+            this.labelPlayQueue.Name = "labelPlayQueue";
+            this.labelPlayQueue.Size = new System.Drawing.Size(263, 33);
+            this.labelPlayQueue.TabIndex = 0;
+            this.labelPlayQueue.Text = "Music Downloader";
+            // 
+            // UCMusicDownloader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 425);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel4);
-            this.Name = "FormMusicBox";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Playlist";
+            this.Name = "UCMusicDownloader";
+            this.Size = new System.Drawing.Size(828, 512);
+            this.panel4.ResumeLayout(false);
+            this.tabControlOnlineLocal.ResumeLayout(false);
+            this.tabPageOnline.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchResult)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.tabControlOnlineLocal.ResumeLayout(false);
-            this.tabPageOnline.ResumeLayout(false);
             this.tabPageLocal.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocalSongs)).EndInit();
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.TextBox textBoxSearchMusic;
-        private System.Windows.Forms.DataGridView dataGridViewSearchResult;
-        private System.Windows.Forms.Button buttonQueue;
-        private System.Windows.Forms.Label labelYoutube;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TabControl tabControlOnlineLocal;
         private System.Windows.Forms.TabPage tabPageOnline;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label labelYoutube;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearchMusic;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonQueue;
+        private System.Windows.Forms.DataGridView dataGridViewSearchResult;
         private System.Windows.Forms.TabPage tabPageLocal;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label labelLocalSearch;
         private System.Windows.Forms.TextBox textBoxLocalSearch;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button buttonQueue1;
         private System.Windows.Forms.DataGridView dataGridViewLocalSongs;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
-        private System.Windows.Forms.Label labelLocalSearch;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label labelPlayQueue;
     }
 }

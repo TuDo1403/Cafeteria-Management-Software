@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
 using System.Data;
-using System.Globalization;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace CafeteriaManagement
 {
-    public partial class FormQueue : Form
+    public partial class UCQueueBox : UserControl, IDisposable
     {
-        private static FormQueue _formQueue;
         private readonly Timer timer = new Timer();
 
         public static event EventHandler SongNext;
@@ -17,21 +20,8 @@ namespace CafeteriaManagement
 
 
 
-        public static FormQueue CreateInstance()
+        public UCQueueBox()
         {
-            if (_formQueue == null)
-            {
-                _formQueue = new FormQueue();
-            }
-            return _formQueue;
-        }
-
-        private FormQueue()
-        {
-            //if (!this.IsHandleCreated)
-            //{
-            //    this.CreateHandle();
-            //}
             InitializeComponent();
 
             UpdateDataGridViewNextUpFromUserAddedPlaylist();
@@ -39,11 +29,11 @@ namespace CafeteriaManagement
             MusicPlayer.SongChanged += MusicPlayer_SongChangedHandler;
             MusicPlayer.SongAdded += MusicPlayer_SongAddedHandler;
             SongDownloader.ConvertCompleted += SongDownloader_ConvertCompletedHandler;
-            //FormMusicBox.BackGroundWorker.RunWorkerCompleted += BackGroundWorker_RunWorkerCompletedHandler;
 
             timer.Interval = 1000;
             timer.Tick += Timer_TickHandler;
         }
+
 
         private void Timer_TickHandler(object sender, EventArgs e)
         {
@@ -59,16 +49,7 @@ namespace CafeteriaManagement
         }
 
 
-        private void SongDownloader_ConvertCompletedHandler(object sender, VideoInfo e)
-        {
-            //solve exception: Invoke or BeginInvoke cannot be called on a control until the window handle has been created
-            if (!this.IsHandleCreated)
-            {
-                this.CreateHandle();
-            }
-
-            UpdateDataGridViewNextUpFromUserAddedPlaylist();
-        }
+        private void SongDownloader_ConvertCompletedHandler(object sender, VideoInfo e) => UpdateDataGridViewNextUpFromUserAddedPlaylist();
 
 
         private void MusicPlayer_SongAddedHandler(object sender, Song e) => UpdateDataGridViewNextUpFromUserAddedPlaylist();
@@ -84,11 +65,6 @@ namespace CafeteriaManagement
 
         private void UpdateDataGridViewNextUpFromUserAddedPlaylist()
         {
-            if (!this.IsHandleCreated)
-            {
-                this.CreateHandle();
-            }
-
             if (MusicPlayer.PlayList.Count >= 1)
             {
                 dataGridViewNextUp.Invoke((Action)delegate
@@ -98,11 +74,11 @@ namespace CafeteriaManagement
             }
         }
 
-        
+
 
         private void UpdateDataGridVIew(Queue<Song> e)
         {
-            BindPlayingSongToDataGridViewHistory(e);
+            BindPlayingSongToDataGridViewHistory();
             BindPlayingSongToDataGridViewPlaying(e);
             BindSongsInTheQueueToDataGridViewNextUp(e);
         }
@@ -125,10 +101,6 @@ namespace CafeteriaManagement
 
         private void BindPlayingSongToDataGridViewPlaying(Queue<Song> e)
         {
-            if (!this.IsHandleCreated)
-            {
-                this.CreateHandle();
-            }
             dataGridViewPlaying.Invoke((Action)delegate
             {
                 dataGridViewPlaying.DataSource = e.Where(s => s == e.Peek()).ToList();
@@ -136,12 +108,8 @@ namespace CafeteriaManagement
         }
 
 
-        private void BindPlayingSongToDataGridViewHistory(Queue<Song> e)
+        private void BindPlayingSongToDataGridViewHistory()
         {
-            if (!this.IsHandleCreated)
-            {
-                this.CreateHandle();
-            }
             dataGridViewPlaying.Invoke((Action)delegate
             {
                 dataGridViewHistory.DataSource = null;
@@ -153,7 +121,7 @@ namespace CafeteriaManagement
         private void InitializeTrackBarSongDuration(Queue<Song> e)
         {
             var duration = e.Peek().Duration.Trim().Split(':');
-            trackBarSongDuration.Maximum = 
+            trackBarSongDuration.Maximum =
                 Convert.ToInt32(duration[0], CultureInfo.InvariantCulture) * 60 + Convert.ToInt32(duration[1], CultureInfo.InvariantCulture);
             trackBarSongDuration.Value = 0;
         }
@@ -161,37 +129,39 @@ namespace CafeteriaManagement
 
         private void InitializeStartAndEndTimeLabels(Queue<Song> e)
         {
-            labelTime.Text = "0:0";
+            labelTime.Text = Properties.Resources.labelTextInitializeTime;
             labelDuration.Text = e.Peek().Duration;
         }
 
 
 
-        private void buttonPlay_Click(object sender, EventArgs e)
+        private void ButtonPlay_Click(object sender, EventArgs e)
         {
-            if (MusicPlayer.PlayList.Peek().IsConverted)
+            if (MusicPlayer.PlayList.Count > 0 && MusicPlayer.PlayList.Peek().IsConverted)
             {
-                if (buttonPlay.Text == "Play")
-                {
-                    buttonPlay.Text = "Pause";
-                    MusicPlayer.CreateInstance().Play();
-                    timer.Start();
-                }
-                else
-                {
-                    buttonPlay.Text = "Play";
-                    MusicPlayer.CreateInstance().Pause();
-                    timer.Stop();
-                }
+                MusicPlayer.CreateInstance();
+                MusicPlayer.Play();
+                timer.Start();
+                buttonPlay.SendToBack();
             }
         }
 
-        private void buttonNext_Click(object sender, EventArgs e) => OnSongChangingNext();
+        private void ButtonPause_Click(object sender, EventArgs e)
+        {
+            MusicPlayer.Pause();
+            buttonPause.SendToBack();
+            timer.Stop();
+        }
+
+        private void ButtonNext_Click(object sender, EventArgs e) => OnSongChangingNext();
 
         private void OnSongChangingNext() => (SongNext as EventHandler)?.Invoke(this, EventArgs.Empty);
 
-        private void buttonPrevious_Click(object sender, EventArgs e) => OnSongChangingPrev();
+        private void ButtonPrevious_Click(object sender, EventArgs e) => OnSongChangingPrev();
 
         private void OnSongChangingPrev() => (SongPrev as EventHandler)?.Invoke(this, EventArgs.Empty);
+
+
+
     }
 }

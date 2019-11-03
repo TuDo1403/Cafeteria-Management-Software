@@ -48,14 +48,8 @@
       <HintPath>..\packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="libvideo, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VideoLibrary.2.0.3\lib\netstandard1.1\libvideo.dll</HintPath>
-    </Reference>
     <Reference Include="LtGt, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LtGt.1.0.1\lib\net45\LtGt.dll</HintPath>
-    </Reference>
-    <Reference Include="MediaToolkit, Version=1.1.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MediaToolkit.1.1.0.1\lib\net40\MediaToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis, Version=3.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeAnalysis.Common.3.4.0-beta1-final\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
@@ -235,19 +229,19 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="YoutubeExplode, Version=4.7.10.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YoutubeExplode.4.7.10\lib\net45\YoutubeExplode.dll</HintPath>
-    </Reference>
-    <Reference Include="YoutubeSearch, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\YoutubeSearch.dll.1.1\lib\YoutubeSearch.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAccountInfo.cs">
-      <SubType>Form</SubType>
+    <Compile Include="CustomUserControl\UCAccountInfo.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FormAccountInfo.Designer.cs">
-      <DependentUpon>FormAccountInfo.cs</DependentUpon>
+    <Compile Include="CustomUserControl\UCAccountInfo.Designer.cs">
+      <DependentUpon>UCAccountInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUserControl\UCHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControl\UCHome.Designer.cs">
+      <DependentUpon>UCHome.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -255,71 +249,59 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOrderManager.MusicBox.cs">
+    <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOrderManager.MusicBox.Designer.cs">
-      <DependentUpon>FormOrderManager.MusicBox.cs</DependentUpon>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOrderManager.cs">
+    <Compile Include="FormUCOrderManager.Topping.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOrderManager.Designer.cs">
-      <DependentUpon>FormOrderManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormStatistic.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormStatistic.Designer.cs">
-      <DependentUpon>FormStatistic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOrderManager.Topping.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOrderManager.Topping.Designer.cs">
-      <DependentUpon>FormOrderManager.Topping.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormMenuEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMenuEdit.Designer.cs">
-      <DependentUpon>FormMenuEdit.cs</DependentUpon>
+    <Compile Include="FormUCOrderManager.Topping.Designer.cs">
+      <DependentUpon>FormUCOrderManager.Topping.cs</DependentUpon>
     </Compile>
     <Compile Include="MusicPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormMusicBox.Queue.cs">
-      <SubType>Form</SubType>
+    <Compile Include="CustomUserControl\UCEditMenu.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FormMusicBox.Queue.Designer.cs">
-      <DependentUpon>FormMusicBox.Queue.cs</DependentUpon>
+    <Compile Include="CustomUserControl\UCEditMenu.Designer.cs">
+      <DependentUpon>UCEditMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Song.cs" />
-    <Compile Include="SongDownloader.cs" />
-    <Compile Include="StringExtension.cs" />
-    <Compile Include="Video.cs" />
-    <Compile Include="VideoInfo.cs" />
-    <Compile Include="VideoSearcher.cs" />
-    <EmbeddedResource Include="FormAccountInfo.resx">
-      <DependentUpon>FormAccountInfo.cs</DependentUpon>
+    <Compile Include="CustomUserControl\UCMusicDownloader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControl\UCMusicDownloader.Designer.cs">
+      <DependentUpon>UCMusicDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUserControl\UCOrderManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControl\UCOrderManager.Designer.cs">
+      <DependentUpon>UCOrderManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUserControl\UCQueueBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControl\UCQueueBox.Designer.cs">
+      <DependentUpon>UCQueueBox.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomUserControl\UCAccountInfo.resx">
+      <DependentUpon>UCAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomUserControl\UCHome.resx">
+      <DependentUpon>UCHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMusicBox.Queue.resx">
-      <DependentUpon>FormMusicBox.Queue.cs</DependentUpon>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOrderManager.MusicBox.resx">
-      <DependentUpon>FormOrderManager.MusicBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOrderManager.resx">
-      <DependentUpon>FormOrderManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOrderManager.Topping.resx">
-      <DependentUpon>FormOrderManager.Topping.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMenuEdit.resx">
-      <DependentUpon>FormMenuEdit.cs</DependentUpon>
+    <EmbeddedResource Include="FormUCOrderManager.Topping.resx">
+      <DependentUpon>FormUCOrderManager.Topping.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -329,7 +311,20 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="CustomUserControl\UCEditMenu.resx">
+      <DependentUpon>UCEditMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomUserControl\UCMusicDownloader.resx">
+      <DependentUpon>UCMusicDownloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomUserControl\UCOrderManager.resx">
+      <DependentUpon>UCOrderManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomUserControl\UCQueueBox.resx">
+      <DependentUpon>UCQueueBox.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -356,6 +351,16 @@
     <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.6\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.6\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.6\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CM.BLL\CM.BLL.csproj">
+      <Project>{dad1295d-d7ba-4cfc-aac1-40b0682095dd}</Project>
+      <Name>CM.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CM.DTO\CM.DTO.csproj">
+      <Project>{c81db875-8f7c-439e-9ff0-bd8d4907ee9a}</Project>
+      <Name>CM.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

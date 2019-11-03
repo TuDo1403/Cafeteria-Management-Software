@@ -12,20 +12,19 @@ namespace CafeteriaManagement
 {
     public partial class FormLogin : Form
     {
-        public FormLogin()
-        {
-            InitializeComponent();
-        }
+        public FormLogin() => InitializeComponent();
 
-        private void buttonLogin_Click(object sender, EventArgs e)
+        private void ButtonLogin_Click(object sender, EventArgs e)
         {
-            var formOrderManager = new FormOrderManager();
             this.Hide();
-            formOrderManager.ShowDialog();
+            using (var formMain = new FormMain())
+            {
+                formMain.ShowDialog();
+            }
             this.Show();
         }
 
-        private void textBoxUsername_Enter(object sender, EventArgs e)
+        private void TextBoxUsername_Enter(object sender, EventArgs e)
         {
             if (textBoxUsername.Text == "Username or Phone")
             {
@@ -34,11 +33,11 @@ namespace CafeteriaManagement
             }
         }
 
-        private void textBoxUsername_Leave(object sender, EventArgs e)
+        private void TextBoxUsername_Leave(object sender, EventArgs e)
         {
             if (textBoxUsername.Text.Length == 0)
             {
-                textBoxUsername.Text = "Username or Phone";
+                textBoxUsername.Text = Properties.Resources.textBoxText;
                 textBoxUsername.ForeColor = Color.Gray;
             }
         }

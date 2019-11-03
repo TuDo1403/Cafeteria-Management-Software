@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using WMPLib;
 
 namespace CafeteriaManagement
@@ -8,7 +9,6 @@ namespace CafeteriaManagement
     //MusicPlayer class with Singleton Pattern
     public class MusicPlayer
     {
-        
         private static MusicPlayer _musicPlayer;
         private static bool _isMediaEnded = false;
         private static readonly WindowsMediaPlayer windowsMediaPlayer = new WindowsMediaPlayer();
@@ -32,8 +32,8 @@ namespace CafeteriaManagement
         private MusicPlayer()
         {
             windowsMediaPlayer.PlayStateChange += WindowsMediaPlayer_PlayStateChangeHandler;
-            FormQueue.SongPrev += FormQueue_SongPrevHandler;
-            FormQueue.SongNext += FormQueue_SongNextHandler;
+            UCQueueBox.SongPrev += FormQueue_SongPrevHandler;
+            UCQueueBox.SongNext += FormQueue_SongNextHandler;
             SongDownloader.ConvertCompleted += SongDownloader_ConvertCompletedHandler;
         }
 
@@ -44,6 +44,7 @@ namespace CafeteriaManagement
                 if (song.Title == e.Title)
                 {
                     song.IsConverted = true;
+                    break;
                 }
             }
         }
@@ -81,7 +82,7 @@ namespace CafeteriaManagement
 
 
 
-        public void Play()
+        public static void Play()
         {
             if (IsPaused == false && PlayList.Count >= 1 && PlayList.Peek().IsConverted)
             {
@@ -93,14 +94,12 @@ namespace CafeteriaManagement
                 IsPaused = false;
 
             windowsMediaPlayer.controls.play();
-            
         }
 
         private static void OnSongChanging() => (SongChanged as EventHandler<Queue<Song>>)?.Invoke(_musicPlayer, PlayList);
 
 
-
-        public void Pause() => windowsMediaPlayer.controls.pause();
+        public static void Pause() => windowsMediaPlayer.controls.pause();
 
         public static void AddSongToQueue(int searchIndex, int playIndex)
         {
@@ -118,5 +117,9 @@ namespace CafeteriaManagement
         }
 
         private static void OnSongAdding(Song song) => (SongAdded as EventHandler<Song>)?.Invoke(_musicPlayer, song);
+
+
+
+        public static void Resume() => windowsMediaPlayer.controls.play();
     }
 }

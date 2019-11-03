@@ -15,11 +15,12 @@ namespace CafeteriaManagement
         [STAThread]
         static void Main()
         {
-            var playSongHistory = SongDownloader.musicSavePath + @"\History.txt";
-            using (var streamWriter = new StreamWriter(playSongHistory, true)) ;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            using (var formLogin = new FormLogin())
+            {
+                Application.Run(formLogin);
+            }
         }
     }
 }
