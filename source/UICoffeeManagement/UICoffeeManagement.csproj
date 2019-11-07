@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bill.cs" />
+    <Compile Include="BillDetails.cs" />
     <Compile Include="CateGory.cs" />
     <Compile Include="CollectionUserControl.cs">
       <SubType>UserControl</SubType>

@@ -54,6 +54,7 @@
             this.cbmListItems.Name = "cbmListItems";
             this.cbmListItems.Size = new System.Drawing.Size(225, 28);
             this.cbmListItems.TabIndex = 2;
+            this.cbmListItems.SelectedIndexChanged += new System.EventHandler(this.cbmListItems_SelectedIndexChanged);
             // 
             // btnAdd
             // 

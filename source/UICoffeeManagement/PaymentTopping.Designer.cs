@@ -30,17 +30,17 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.rdoSizeS = new System.Windows.Forms.RadioButton();
+            this.rdoSizeM = new System.Windows.Forms.RadioButton();
+            this.rdoSizeL = new System.Windows.Forms.RadioButton();
+            this.ckbBubbleCream = new System.Windows.Forms.CheckBox();
+            this.CkbJelly = new System.Windows.Forms.CheckBox();
+            this.ckbPeanut = new System.Windows.Forms.CheckBox();
+            this.CkbWhitePearl = new System.Windows.Forms.CheckBox();
+            this.ckbWipingCream = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,85 +62,85 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Price: ... $";
             // 
-            // radioButton1
+            // rdoSizeS
             // 
-            this.radioButton1.Location = new System.Drawing.Point(220, 61);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 42);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "S";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoSizeS.Location = new System.Drawing.Point(220, 61);
+            this.rdoSizeS.Name = "rdoSizeS";
+            this.rdoSizeS.Size = new System.Drawing.Size(67, 42);
+            this.rdoSizeS.TabIndex = 2;
+            this.rdoSizeS.TabStop = true;
+            this.rdoSizeS.Text = "S";
+            this.rdoSizeS.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdoSizeM
             // 
-            this.radioButton2.Location = new System.Drawing.Point(313, 70);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(58, 24);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "M";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoSizeM.Location = new System.Drawing.Point(313, 70);
+            this.rdoSizeM.Name = "rdoSizeM";
+            this.rdoSizeM.Size = new System.Drawing.Size(58, 24);
+            this.rdoSizeM.TabIndex = 3;
+            this.rdoSizeM.TabStop = true;
+            this.rdoSizeM.Text = "M";
+            this.rdoSizeM.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdoSizeL
             // 
-            this.radioButton3.Location = new System.Drawing.Point(399, 70);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(66, 24);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "L";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdoSizeL.Location = new System.Drawing.Point(399, 70);
+            this.rdoSizeL.Name = "rdoSizeL";
+            this.rdoSizeL.Size = new System.Drawing.Size(66, 24);
+            this.rdoSizeL.TabIndex = 4;
+            this.rdoSizeL.TabStop = true;
+            this.rdoSizeL.Text = "L";
+            this.rdoSizeL.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // ckbBubbleCream
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(224, 238);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(106, 24);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbBubbleCream.AutoSize = true;
+            this.ckbBubbleCream.Location = new System.Drawing.Point(224, 238);
+            this.ckbBubbleCream.Name = "ckbBubbleCream";
+            this.ckbBubbleCream.Size = new System.Drawing.Size(129, 24);
+            this.ckbBubbleCream.TabIndex = 5;
+            this.ckbBubbleCream.Text = "Bubble Cream";
+            this.ckbBubbleCream.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // CkbJelly
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(224, 178);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(106, 24);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.CkbJelly.AutoSize = true;
+            this.CkbJelly.Location = new System.Drawing.Point(224, 178);
+            this.CkbJelly.Name = "CkbJelly";
+            this.CkbJelly.Size = new System.Drawing.Size(58, 24);
+            this.CkbJelly.TabIndex = 6;
+            this.CkbJelly.Text = "Jelly";
+            this.CkbJelly.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // ckbPeanut
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(224, 208);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(106, 24);
-            this.checkBox3.TabIndex = 7;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.ckbPeanut.AutoSize = true;
+            this.ckbPeanut.Location = new System.Drawing.Point(224, 208);
+            this.ckbPeanut.Name = "ckbPeanut";
+            this.ckbPeanut.Size = new System.Drawing.Size(79, 24);
+            this.ckbPeanut.TabIndex = 7;
+            this.ckbPeanut.Text = "Peanut";
+            this.ckbPeanut.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // CkbWhitePearl
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(224, 268);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(106, 24);
-            this.checkBox4.TabIndex = 8;
-            this.checkBox4.Text = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.CkbWhitePearl.AutoSize = true;
+            this.CkbWhitePearl.Location = new System.Drawing.Point(224, 268);
+            this.CkbWhitePearl.Name = "CkbWhitePearl";
+            this.CkbWhitePearl.Size = new System.Drawing.Size(109, 24);
+            this.CkbWhitePearl.TabIndex = 8;
+            this.CkbWhitePearl.Text = "White Pearl";
+            this.CkbWhitePearl.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // ckbWipingCream
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(224, 148);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(106, 24);
-            this.checkBox5.TabIndex = 9;
-            this.checkBox5.Text = "checkBox5";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.ckbWipingCream.AutoSize = true;
+            this.ckbWipingCream.Location = new System.Drawing.Point(224, 148);
+            this.ckbWipingCream.Name = "ckbWipingCream";
+            this.ckbWipingCream.Size = new System.Drawing.Size(127, 24);
+            this.ckbWipingCream.TabIndex = 9;
+            this.ckbWipingCream.Text = "Wiping Cream";
+            this.ckbWipingCream.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -160,23 +160,23 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "2.  Topping";
             // 
-            // button1
+            // btnOk
             // 
-            this.button1.Location = new System.Drawing.Point(435, 279);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnOk.Location = new System.Drawing.Point(435, 279);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 30);
+            this.btnOk.TabIndex = 12;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.MenuText;
+            this.label4.BackColor = System.Drawing.Color.Gray;
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(533, 25);
+            this.label4.Size = new System.Drawing.Size(549, 25);
             this.label4.TabIndex = 13;
             this.label4.Text = "America";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,20 +186,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(533, 321);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(548, 321);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.ckbWipingCream);
+            this.Controls.Add(this.CkbWhitePearl);
+            this.Controls.Add(this.ckbPeanut);
+            this.Controls.Add(this.CkbJelly);
+            this.Controls.Add(this.ckbBubbleCream);
+            this.Controls.Add(this.rdoSizeL);
+            this.Controls.Add(this.rdoSizeM);
+            this.Controls.Add(this.rdoSizeS);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -207,6 +207,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PaymentTopping";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PaymentTopping";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -218,17 +219,17 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.RadioButton rdoSizeS;
+        private System.Windows.Forms.RadioButton rdoSizeM;
+        private System.Windows.Forms.RadioButton rdoSizeL;
+        private System.Windows.Forms.CheckBox ckbBubbleCream;
+        private System.Windows.Forms.CheckBox CkbJelly;
+        private System.Windows.Forms.CheckBox ckbPeanut;
+        private System.Windows.Forms.CheckBox CkbWhitePearl;
+        private System.Windows.Forms.CheckBox ckbWipingCream;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label label4;
     }
 }

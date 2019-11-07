@@ -38,10 +38,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.collectionUserControl1 = new UICoffeeManagement.CollectionUserControl();
             this.paymentUserControl1 = new UICoffeeManagement.PaymentUserControl();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.homeUserControl1 = new UICoffeeManagement.HomeUserControl();
+            this.employeeUserControl1 = new UICoffeeManagement.EmployeeUserControl();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -49,7 +50,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonStatic);
             this.panel1.Controls.Add(this.buttonEmployee);
             this.panel1.Controls.Add(this.buttonMusic);
@@ -162,6 +162,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.employeeUserControl1);
+            this.panel4.Controls.Add(this.homeUserControl1);
             this.panel4.Controls.Add(this.collectionUserControl1);
             this.panel4.Controls.Add(this.paymentUserControl1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -169,15 +171,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(779, 507);
             this.panel4.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(736, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 23);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // collectionUserControl1
             // 
@@ -198,15 +191,32 @@
             this.paymentUserControl1.Size = new System.Drawing.Size(779, 507);
             this.paymentUserControl1.TabIndex = 0;
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(113, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
+            this.button1.Location = new System.Drawing.Point(736, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 23);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // homeUserControl1
+            // 
+            this.homeUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.homeUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.homeUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.homeUserControl1.Name = "homeUserControl1";
+            this.homeUserControl1.Size = new System.Drawing.Size(779, 507);
+            this.homeUserControl1.TabIndex = 2;
+            // 
+            // employeeUserControl1
+            // 
+            this.employeeUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.employeeUserControl1.Location = new System.Drawing.Point(0, -5);
+            this.employeeUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.employeeUserControl1.Name = "employeeUserControl1";
+            this.employeeUserControl1.Size = new System.Drawing.Size(779, 507);
+            this.employeeUserControl1.TabIndex = 3;
             // 
             // MainForm
             // 
@@ -222,7 +232,6 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -244,7 +253,8 @@
         private System.Windows.Forms.Panel panel4;
         private PaymentUserControl paymentUserControl1;
         private CollectionUserControl collectionUserControl1;
-        private System.Windows.Forms.Label label1;
+        private HomeUserControl homeUserControl1;
+        private EmployeeUserControl employeeUserControl1;
     }
 }
 

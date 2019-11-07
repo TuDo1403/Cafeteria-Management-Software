@@ -58,7 +58,7 @@ namespace UICoffeeManagement
 
         private void buttonEmployee_Click(object sender, EventArgs e)
         {
-           // employeeUserControl1.BringToFront();
+            employeeUserControl1.BringToFront();
         }
 
         private void buttonStatic_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace UICoffeeManagement
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            //homeUserControl1.BringToFront();
+            homeUserControl1.BringToFront();
           //  PaymentUserControl pm = new PaymentUserControl();
           //  pm.Show();
            // PaymentUserControl.a = 3;
@@ -79,7 +79,7 @@ namespace UICoffeeManagement
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //homeUserControl1.BringToFront();
+            homeUserControl1.BringToFront();
             //homeUserControl1
           //  PaymentUserControl pm = new PaymentUserControl();
           //  pm.Show();

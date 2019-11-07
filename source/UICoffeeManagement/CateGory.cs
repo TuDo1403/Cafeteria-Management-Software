@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UICoffeeManagement
 {
-    class CateGory
+    public class CateGory
     {
         public List<Product> pr = new List<Product>();
         public string name { get; set; }

@@ -10,8 +10,11 @@ namespace UICoffeeManagement
     {
         private int kind;
 
-    
-        public Item(string ID, string NAME, string PRICE, int NUMBER,int KIND):base(ID,NAME,PRICE,NUMBER)
+        public Item():base()
+        {
+
+        }
+        public Item(string ID, string NAME, int PRICE, int NUMBER,int KIND):base(ID,NAME,PRICE,NUMBER)
         {
             kind = KIND;
         }

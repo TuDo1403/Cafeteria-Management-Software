@@ -6,13 +6,27 @@ using System.Threading.Tasks;
 
 namespace UICoffeeManagement
 {
-    class Desert:Product
+   public class Desert:Product
     {
         private string exp { get; set; }
         private string mfg { get; set; }
 
 
-        public Desert(string ID, string NAME, string PRICE, int NUMBER,string EXP,string MFG):base(ID,NAME,PRICE,NUMBER)
+        public Desert():base()
+        {
+
+        }
+        public Desert(Drinking a):base(a)
+        {
+
+        }
+
+        public Desert(Product a) : base(a)
+        {
+
+        }
+
+        public Desert(string ID, string NAME, int PRICE, int NUMBER,string EXP,string MFG):base(ID,NAME,PRICE,NUMBER)
         {
             exp = EXP;
             mfg = MFG;

@@ -6,20 +6,31 @@ using System.Threading.Tasks;
 
 namespace UICoffeeManagement
 {
-    class Product
+   public class Product
     {
         protected string id { get; set; }
         protected string name { get; set; }
-        protected string price { get; set; }
+        protected int price { get; set; }
         protected int number { get; set; }
 
-        public  Product(string ID,string NAME,string PRICE,int NUMBER)
+        public  Product(string ID,string NAME,int PRICE,int NUMBER)
         {
             id = ID;
             name = NAME;
             price = PRICE;
             number = NUMBER;
            
+        }
+        public Product()
+        {
+
+        }
+        public Product(Product a)
+        {
+            id = a.id;
+            name =a.name;
+            price = a.price;
+            number = a.number;
         }
        
         public virtual float countMoney()
