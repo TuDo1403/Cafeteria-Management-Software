@@ -50,6 +50,18 @@
     <Compile Include="Bill.cs" />
     <Compile Include="BillDetails.cs" />
     <Compile Include="CateGory.cs" />
+    <Compile Include="CollectionAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CollectionAdd.Designer.cs">
+      <DependentUpon>CollectionAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CollectionDelete.Designer.cs">
+      <DependentUpon>CollectionDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="CollectionUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +116,12 @@
     <Compile Include="StatiticUserControl.Designer.cs">
       <DependentUpon>StatiticUserControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CollectionAdd.resx">
+      <DependentUpon>CollectionAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollectionDelete.resx">
+      <DependentUpon>CollectionDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CollectionUserControl.resx">
       <DependentUpon>CollectionUserControl.cs</DependentUpon>
     </EmbeddedResource>

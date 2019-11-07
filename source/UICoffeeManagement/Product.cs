@@ -13,6 +13,19 @@ namespace UICoffeeManagement
         protected int price { get; set; }
         protected int number { get; set; }
 
+        public void setId(string a)
+        {
+            id = a;
+        }
+        public void setName(string a)
+        {
+            name = a;
+        }
+        public void setPrice(int a)
+        {
+            price = a;
+        }
+
         public  Product(string ID,string NAME,int PRICE,int NUMBER)
         {
             id = ID;

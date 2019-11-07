@@ -13,6 +13,8 @@ namespace UICoffeeManagement
     public partial class CollectionUserControl : UserControl
     {
        public  static List<CateGory> lsCateGory = new List<CateGory>();
+       Button Lasted = null;
+
 
         public CollectionUserControl()
         {
@@ -112,15 +114,41 @@ namespace UICoffeeManagement
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Label lbl = new Label();
+            CollectionAdd fCollectionAdd = new CollectionAdd();
+
+            if (fCollectionAdd.ShowDialog() == DialogResult.OK)
+            {
+
+                Drinking temp = new Drinking();
+                
+                temp.setId(fCollectionAdd.id);
+                temp.setName(fCollectionAdd.name);
+                int a = int.Parse(fCollectionAdd.price);
+                temp.setPrice(a);
+                string name = temp.ToString();
+
+                lsCateGory[0].addProduct(temp);
+
+
+
+                CreateLablel(name);
+            }
+        }
+
+         public void CreateLablel(string name)
+        {
+            Button lbl = new Button();
             // Random rd = new Random();
-            lbl.Text = count + " ";
+            lbl.Text = name;
             lbl.Width = 180;
-            lbl.Height =100;
+            lbl.Height = 100;
+            
             lbl.BackColor = System.Drawing.Color.LightGray;
-                // this.label1.BackColor = System.Drawing.Color.LightGray;
+            lbl.Click += Btn_Click;
+            // this.label1.BackColor = System.Drawing.Color.LightGray;
+            lbl.Tag = count++;
             flpProduct.Controls.Add(lbl);
-              // btn.Click += Btn_Click;
+            // btn.Click += Btn_Click;
 
             count++;
             if (count == 4)
@@ -136,16 +164,61 @@ namespace UICoffeeManagement
 
             foreach (Product pr in cg.pr)
             {
-                Label lbl = new Label();
+                Button lbl = new Button();
                 // Random rd = new Random();
                 lbl.Text = pr.ToString();
                 lbl.Width = 180;
                 lbl.Height = 100;
                 lbl.BackColor = System.Drawing.Color.LightGray;
+                // lbl.ImageIndex = count++;
+                lbl.Click += Btn_Click;
+                lbl.Tag = count++;
+
+
                 // this.label1.BackColor = System.Drawing.Color.LightGray;
                 flpProduct.Controls.Add(lbl);
                 // btn.Click += Btn_Click;
             }
+
+           // loadToFlowLayoutPanel();
+        }
+
+        void loadToFlowLayoutPanel()
+        {
+           
+        }
+
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            //object sender là cái control mà chúng ta nhấn vào,ở đây là button
+            // EventArgs e là các sự kiện tác động lên nó như mouse click, mouse up,...
+            if (Lasted != null)
+            {
+                Lasted.BackColor = Button.DefaultBackColor;
+            }
+            Button btn = sender as Button;
+            btn.BackColor = Color.Pink;
+            Lasted = btn;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (Lasted != null)
+            {
+                CollectionDelete fCollectionDelete = new CollectionDelete();
+                if (fCollectionDelete.ShowDialog() == DialogResult.OK)
+                {
+                    flpProduct.Controls.Remove(Lasted);
+                    int index = int.Parse(Lasted.Tag.ToString());
+                    lsCateGory[0].removeProduct(index);
+                    // loadToFlowLayoutPanel();
+                }
+            }
+          //  string index = Lasted.Text;
+            
+            
+            
         }
     }
 }

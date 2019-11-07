@@ -16,6 +16,13 @@ namespace UICoffeeManagement
         {
             pr.Add(temp);
         }
+        public void removeProduct(int index)
+        {
+            
+                    pr.RemoveAt(index);
+           
+            
+        }
         public override string ToString()
         {
             return name;
