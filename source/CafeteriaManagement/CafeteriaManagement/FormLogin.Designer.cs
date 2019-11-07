@@ -70,7 +70,7 @@
             this.buttonLogin.TabIndex = 3;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.buttonLogin.Click += new System.EventHandler(this.ButtonLogin_Click);
             // 
             // panel3
             // 
@@ -119,8 +119,8 @@
             this.textBoxUsername.Size = new System.Drawing.Size(163, 20);
             this.textBoxUsername.TabIndex = 1;
             this.textBoxUsername.Text = "Username or Phone";
-            this.textBoxUsername.Enter += new System.EventHandler(this.textBoxUsername_Enter);
-            this.textBoxUsername.Leave += new System.EventHandler(this.textBoxUsername_Leave);
+            this.textBoxUsername.Enter += new System.EventHandler(this.TextBoxUsername_Enter);
+            this.textBoxUsername.Leave += new System.EventHandler(this.TextBoxUsername_Leave);
             // 
             // labelUsername
             // 
@@ -138,6 +138,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 447);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CafeteriaManagement
+namespace UICoffeeManagement
 {
     static class Program
     {
@@ -17,10 +16,7 @@ namespace CafeteriaManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (var formLogin = new FormLogin())
-            {
-                Application.Run(formLogin);
-            }
+            Application.Run(new MainForm());
         }
     }
 }
