@@ -358,7 +358,7 @@
       <Name>CM.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CM.DTO\CM.DTO.csproj">
-      <Project>{c81db875-8f7c-439e-9ff0-bd8d4907ee9a}</Project>
+      <Project>{ee1642d6-ac9a-4769-b5f7-fe30a2b0bfe9}</Project>
       <Name>CM.DTO</Name>
     </ProjectReference>
   </ItemGroup>

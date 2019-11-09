@@ -13,7 +13,6 @@ namespace CafeteriaManagement
 {
     public partial class UCMusicDownloader : UserControl
     {
-        private int _addToQueueClickCount = 0;
         private UserControl _queue;
 
         private void ButtonQueue_Click(object sender, EventArgs e)
@@ -49,10 +48,9 @@ namespace CafeteriaManagement
 
         private void DataGridViewSearchResult_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            _addToQueueClickCount++;
             MusicPlayer.CreateInstance();
-            SongDownloader.CreateInstance().DownloadSongBy(e.RowIndex, _addToQueueClickCount);
-            MusicPlayer.AddSongToQueue(e.RowIndex, _addToQueueClickCount);
+            SongDownloader.CreateInstance().DownloadSongBy(e.RowIndex, e.Clicks);
+            MusicPlayer.AddSongToQueue(e.RowIndex, e.Clicks);
             MessageBox.Show(Properties.Resources.songAddedText, Properties.Resources.songAddedCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

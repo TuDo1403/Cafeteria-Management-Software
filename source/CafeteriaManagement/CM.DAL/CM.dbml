@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CAFETERIAMANAGEMENT" Class="CMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-LEUEET4;Initial Catalog=CAFETERIAMANAGEMENT;Integrated Security=True" SettingsObjectName="CM.DAL.Properties.Settings" SettingsPropertyName="CAFETERIAMANAGEMENTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PRODUCT" Member="PRODUCTs">
+    <Type Name="PRODUCT">
+      <Column Name="PRODID" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRODNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PRODTYPE" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PRODDESCR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ISTOPPING" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PRODUCTTYPE_PRODUCT" Member="PRODUCTTYPE" ThisKey="PRODTYPE" OtherKey="TYPEID" Type="PRODUCTTYPE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCTTYPE" Member="PRODUCTTYPEs">
+    <Type Name="PRODUCTTYPE">
+      <Column Name="TYPEID" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TYPENAME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="PRODUCTTYPE_PRODUCT" Member="PRODUCTs" ThisKey="TYPEID" OtherKey="PRODTYPE" Type="PRODUCT" />
+    </Type>
+  </Table>
+</Database>

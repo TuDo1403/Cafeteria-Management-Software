@@ -61,6 +61,15 @@ namespace CafeteriaManagement.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        internal static string initialPrice {
+            get {
+                return ResourceManager.GetString("initialPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 0:0.
         /// </summary>
         internal static string labelTextInitializeTime {

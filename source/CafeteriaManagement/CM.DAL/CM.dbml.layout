@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CM">
+  <DataContextMoniker Name="/CMDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f03cf336-a2ce-49ac-b606-4b578d7253bf" absoluteBounds="5.75, 2.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/CMDataContext/PRODUCT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3277f210-271d-4344-9542-01133c04e030" absoluteBounds="5.765, 2.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56a42577-9e3a-400f-87d0-52ec4b1ef3d7" absoluteBounds="3.625, 3.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CMDataContext/PRODUCTTYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99de75b8-7d54-41ad-bb4c-15653c653f9b" absoluteBounds="3.6399999999999997, 3.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 3.91909912109375); (5.75 : 3.91909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CMDataContext/PRODUCTTYPE/PRODUCTTYPE_PRODUCT" />
+      <nodes>
+        <classShapeMoniker Id="56a42577-9e3a-400f-87d0-52ec4b1ef3d7" />
+        <classShapeMoniker Id="f03cf336-a2ce-49ac-b606-4b578d7253bf" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

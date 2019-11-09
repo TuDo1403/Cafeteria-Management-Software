@@ -32,6 +32,7 @@
             this.comboBoxCatetory = new System.Windows.Forms.ComboBox();
             this.textBoxSearchMenu = new System.Windows.Forms.TextBox();
             this.panelUser = new System.Windows.Forms.Panel();
+            this.dataGridViewSelectedItems = new System.Windows.Forms.DataGridView();
             this.panelButton = new System.Windows.Forms.Panel();
             this.labelRefresh = new System.Windows.Forms.Button();
             this.buttonBill = new System.Windows.Forms.Button();
@@ -39,12 +40,12 @@
             this.labelSum = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.labelSelectedItems = new System.Windows.Forms.Label();
-            this.listViewItemAdded = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuListView = new System.Windows.Forms.ListView();
             this.menuLabel = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panelUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelectedItems)).BeginInit();
             this.panelButton.SuspendLayout();
             this.panelBill.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,19 +79,28 @@
             this.textBoxSearchMenu.Size = new System.Drawing.Size(225, 29);
             this.textBoxSearchMenu.TabIndex = 4;
             this.textBoxSearchMenu.Text = "Search";
-            this.textBoxSearchMenu.Enter += new System.EventHandler(this.textBoxSearchMenu_Enter);
+            this.textBoxSearchMenu.Enter += new System.EventHandler(this.TextBoxSearchMenu_Enter);
             this.textBoxSearchMenu.Leave += new System.EventHandler(this.TextBoxSearchMenu_Leave);
             // 
             // panelUser
             // 
+            this.panelUser.Controls.Add(this.dataGridViewSelectedItems);
             this.panelUser.Controls.Add(this.panelButton);
             this.panelUser.Controls.Add(this.panelBill);
             this.panelUser.Controls.Add(this.labelSelectedItems);
-            this.panelUser.Controls.Add(this.listViewItemAdded);
             this.panelUser.Location = new System.Drawing.Point(414, 46);
             this.panelUser.Name = "panelUser";
             this.panelUser.Size = new System.Drawing.Size(408, 457);
             this.panelUser.TabIndex = 7;
+            // 
+            // dataGridViewSelectedItems
+            // 
+            this.dataGridViewSelectedItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSelectedItems.Location = new System.Drawing.Point(3, 30);
+            this.dataGridViewSelectedItems.Name = "dataGridViewSelectedItems";
+            this.dataGridViewSelectedItems.Size = new System.Drawing.Size(402, 343);
+            this.dataGridViewSelectedItems.TabIndex = 8;
+            this.dataGridViewSelectedItems.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewSelectedItems_RowHeaderMouseClick);
             // 
             // panelButton
             // 
@@ -110,6 +120,7 @@
             this.labelRefresh.TabIndex = 7;
             this.labelRefresh.Text = "Refresh";
             this.labelRefresh.UseVisualStyleBackColor = true;
+            this.labelRefresh.Click += new System.EventHandler(this.labelRefresh_Click);
             // 
             // buttonBill
             // 
@@ -139,7 +150,7 @@
             this.labelSum.Name = "labelSum";
             this.labelSum.Size = new System.Drawing.Size(146, 23);
             this.labelSum.TabIndex = 12;
-            this.labelSum.Text = "100000";
+            this.labelSum.Text = "0";
             this.labelSum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelTotal
@@ -162,16 +173,6 @@
             this.labelSelectedItems.TabIndex = 5;
             this.labelSelectedItems.Text = "Selected Items";
             // 
-            // listViewItemAdded
-            // 
-            this.listViewItemAdded.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listViewItemAdded.HideSelection = false;
-            this.listViewItemAdded.Location = new System.Drawing.Point(3, 29);
-            this.listViewItemAdded.Name = "listViewItemAdded";
-            this.listViewItemAdded.Size = new System.Drawing.Size(402, 344);
-            this.listViewItemAdded.TabIndex = 0;
-            this.listViewItemAdded.UseCompatibleStateImageBehavior = false;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.menuListView);
@@ -189,6 +190,8 @@
             this.menuListView.Size = new System.Drawing.Size(399, 425);
             this.menuListView.TabIndex = 6;
             this.menuListView.UseCompatibleStateImageBehavior = false;
+            this.menuListView.View = System.Windows.Forms.View.List;
+            this.menuListView.DoubleClick += new System.EventHandler(this.MenuListView_DoubleClick);
             // 
             // menuLabel
             // 
@@ -215,6 +218,7 @@
             this.panel5.PerformLayout();
             this.panelUser.ResumeLayout(false);
             this.panelUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelectedItems)).EndInit();
             this.panelButton.ResumeLayout(false);
             this.panelBill.ResumeLayout(false);
             this.panelBill.PerformLayout();
@@ -236,9 +240,9 @@
         private System.Windows.Forms.Label labelSum;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label labelSelectedItems;
-        private System.Windows.Forms.ListView listViewItemAdded;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView menuListView;
         private System.Windows.Forms.Label menuLabel;
+        private System.Windows.Forms.DataGridView dataGridViewSelectedItems;
     }
 }
