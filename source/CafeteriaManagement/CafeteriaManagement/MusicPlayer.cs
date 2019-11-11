@@ -54,7 +54,7 @@ namespace CafeteriaManagement
             //add last song to the beginning of the queue
             if (PlayHistories.Count >= 1)
             {
-                PlayList = new Queue<Song>(PlayList.Prepend(PlayHistories.Last()));
+               // PlayList = new Queue<Song>(PlayList.Prepend(PlayHistories.Last()));
                 Play();
             }
         }

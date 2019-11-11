@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.panel5 = new System.Windows.Forms.Panel();
-            this.comboBoxCatetory = new System.Windows.Forms.ComboBox();
+            this.cmbCateGory = new System.Windows.Forms.ComboBox();
             this.textBoxSearchMenu = new System.Windows.Forms.TextBox();
             this.panelUser = new System.Windows.Forms.Panel();
+            this.lstbSelectedItems = new System.Windows.Forms.ListBox();
             this.panelButton = new System.Windows.Forms.Panel();
             this.labelRefresh = new System.Windows.Forms.Button();
             this.buttonBill = new System.Windows.Forms.Button();
@@ -39,9 +40,8 @@
             this.labelSum = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.labelSelectedItems = new System.Windows.Forms.Label();
-            this.listViewItemAdded = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.menuListView = new System.Windows.Forms.ListView();
+            this.lstProduct = new System.Windows.Forms.ListBox();
             this.menuLabel = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panelUser.SuspendLayout();
@@ -52,45 +52,55 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.comboBoxCatetory);
+            this.panel5.Controls.Add(this.cmbCateGory);
             this.panel5.Controls.Add(this.textBoxSearchMenu);
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(819, 37);
             this.panel5.TabIndex = 8;
             // 
-            // comboBoxCatetory
+            // cmbCateGory
             // 
-            this.comboBoxCatetory.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCatetory.FormattingEnabled = true;
-            this.comboBoxCatetory.Location = new System.Drawing.Point(411, 3);
-            this.comboBoxCatetory.Name = "comboBoxCatetory";
-            this.comboBoxCatetory.Size = new System.Drawing.Size(258, 30);
-            this.comboBoxCatetory.TabIndex = 1;
-            this.comboBoxCatetory.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCatetory_SelectedIndexChanged);
+            this.cmbCateGory.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCateGory.FormattingEnabled = true;
+            this.cmbCateGory.Location = new System.Drawing.Point(7, 3);
+            this.cmbCateGory.Name = "cmbCateGory";
+            this.cmbCateGory.Size = new System.Drawing.Size(258, 30);
+            this.cmbCateGory.TabIndex = 1;
+            this.cmbCateGory.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCatetory_SelectedIndexChanged);
             // 
             // textBoxSearchMenu
             // 
             this.textBoxSearchMenu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchMenu.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBoxSearchMenu.Location = new System.Drawing.Point(3, 4);
+            this.textBoxSearchMenu.Location = new System.Drawing.Point(414, 3);
             this.textBoxSearchMenu.Name = "textBoxSearchMenu";
             this.textBoxSearchMenu.Size = new System.Drawing.Size(225, 29);
             this.textBoxSearchMenu.TabIndex = 4;
-            this.textBoxSearchMenu.Text = "Search";
             this.textBoxSearchMenu.Enter += new System.EventHandler(this.textBoxSearchMenu_Enter);
             this.textBoxSearchMenu.Leave += new System.EventHandler(this.TextBoxSearchMenu_Leave);
             // 
             // panelUser
             // 
+            this.panelUser.Controls.Add(this.lstbSelectedItems);
             this.panelUser.Controls.Add(this.panelButton);
             this.panelUser.Controls.Add(this.panelBill);
             this.panelUser.Controls.Add(this.labelSelectedItems);
-            this.panelUser.Controls.Add(this.listViewItemAdded);
+            this.panelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panelUser.Location = new System.Drawing.Point(414, 46);
             this.panelUser.Name = "panelUser";
             this.panelUser.Size = new System.Drawing.Size(408, 457);
             this.panelUser.TabIndex = 7;
+            // 
+            // lstbSelectedItems
+            // 
+            this.lstbSelectedItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lstbSelectedItems.FormattingEnabled = true;
+            this.lstbSelectedItems.ItemHeight = 25;
+            this.lstbSelectedItems.Location = new System.Drawing.Point(6, 26);
+            this.lstbSelectedItems.Name = "lstbSelectedItems";
+            this.lstbSelectedItems.Size = new System.Drawing.Size(399, 354);
+            this.lstbSelectedItems.TabIndex = 10;
             // 
             // panelButton
             // 
@@ -103,7 +113,7 @@
             // 
             // labelRefresh
             // 
-            this.labelRefresh.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRefresh.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelRefresh.Location = new System.Drawing.Point(3, 3);
             this.labelRefresh.Name = "labelRefresh";
             this.labelRefresh.Size = new System.Drawing.Size(94, 31);
@@ -113,7 +123,7 @@
             // 
             // buttonBill
             // 
-            this.buttonBill.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBill.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonBill.Location = new System.Drawing.Point(126, 3);
             this.buttonBill.Name = "buttonBill";
             this.buttonBill.Size = new System.Drawing.Size(56, 31);
@@ -125,6 +135,7 @@
             // 
             this.panelBill.Controls.Add(this.labelSum);
             this.panelBill.Controls.Add(this.labelTotal);
+            this.panelBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panelBill.Location = new System.Drawing.Point(3, 379);
             this.panelBill.Name = "panelBill";
             this.panelBill.Size = new System.Drawing.Size(402, 38);
@@ -139,63 +150,54 @@
             this.labelSum.Name = "labelSum";
             this.labelSum.Size = new System.Drawing.Size(146, 23);
             this.labelSum.TabIndex = 12;
-            this.labelSum.Text = "100000";
             this.labelSum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
-            this.labelTotal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelTotal.Location = new System.Drawing.Point(101, 7);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(50, 22);
+            this.labelTotal.Size = new System.Drawing.Size(52, 23);
             this.labelTotal.TabIndex = 11;
             this.labelTotal.Text = "Total";
             // 
             // labelSelectedItems
             // 
             this.labelSelectedItems.AutoSize = true;
-            this.labelSelectedItems.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelectedItems.Location = new System.Drawing.Point(145, 8);
+            this.labelSelectedItems.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelSelectedItems.Location = new System.Drawing.Point(143, 0);
             this.labelSelectedItems.Name = "labelSelectedItems";
-            this.labelSelectedItems.Size = new System.Drawing.Size(120, 19);
+            this.labelSelectedItems.Size = new System.Drawing.Size(142, 23);
             this.labelSelectedItems.TabIndex = 5;
             this.labelSelectedItems.Text = "Selected Items";
             // 
-            // listViewItemAdded
-            // 
-            this.listViewItemAdded.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listViewItemAdded.HideSelection = false;
-            this.listViewItemAdded.Location = new System.Drawing.Point(3, 29);
-            this.listViewItemAdded.Name = "listViewItemAdded";
-            this.listViewItemAdded.Size = new System.Drawing.Size(402, 344);
-            this.listViewItemAdded.TabIndex = 0;
-            this.listViewItemAdded.UseCompatibleStateImageBehavior = false;
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.menuListView);
+            this.panel1.Controls.Add(this.lstProduct);
             this.panel1.Controls.Add(this.menuLabel);
             this.panel1.Location = new System.Drawing.Point(3, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(405, 457);
             this.panel1.TabIndex = 6;
             // 
-            // menuListView
+            // lstProduct
             // 
-            this.menuListView.HideSelection = false;
-            this.menuListView.Location = new System.Drawing.Point(3, 29);
-            this.menuListView.Name = "menuListView";
-            this.menuListView.Size = new System.Drawing.Size(399, 425);
-            this.menuListView.TabIndex = 6;
-            this.menuListView.UseCompatibleStateImageBehavior = false;
+            this.lstProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lstProduct.FormattingEnabled = true;
+            this.lstProduct.ItemHeight = 25;
+            this.lstProduct.Location = new System.Drawing.Point(3, 34);
+            this.lstProduct.Name = "lstProduct";
+            this.lstProduct.Size = new System.Drawing.Size(402, 429);
+            this.lstProduct.TabIndex = 6;
+            this.lstProduct.SelectedIndexChanged += new System.EventHandler(this.lstProduct_SelectedIndexChanged);
             // 
             // menuLabel
             // 
             this.menuLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.menuLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuLabel.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.menuLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.menuLabel.Location = new System.Drawing.Point(3, 0);
+            this.menuLabel.Location = new System.Drawing.Point(6, 3);
             this.menuLabel.Name = "menuLabel";
             this.menuLabel.Size = new System.Drawing.Size(399, 31);
             this.menuLabel.TabIndex = 5;
@@ -226,7 +228,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ComboBox comboBoxCatetory;
+        private System.Windows.Forms.ComboBox cmbCateGory;
         private System.Windows.Forms.TextBox textBoxSearchMenu;
         private System.Windows.Forms.Panel panelUser;
         private System.Windows.Forms.Panel panelButton;
@@ -236,9 +238,9 @@
         private System.Windows.Forms.Label labelSum;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label labelSelectedItems;
-        private System.Windows.Forms.ListView listViewItemAdded;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView menuListView;
         private System.Windows.Forms.Label menuLabel;
+        private System.Windows.Forms.ListBox lstbSelectedItems;
+        private System.Windows.Forms.ListBox lstProduct;
     }
 }

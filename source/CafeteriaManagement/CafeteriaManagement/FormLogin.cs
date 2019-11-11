@@ -17,7 +17,7 @@ namespace CafeteriaManagement
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (var formMain = new FormMain())
+            using (var formMain = new FormMainNew())
             {
                 formMain.ShowDialog();
             }

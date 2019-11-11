@@ -27,7 +27,10 @@ namespace CafeteriaManagement
             using (var streamWriter = new StreamWriter(playSongHistory, true)) { };
             InitializeComponent();
             LoadHistoryToAutoCompleteSource();
-            FormMain.FormMainLoaded += FormMain_FormMainLoadedHandler;
+           // FormMain.FormMainLoaded += FormMain_FormMainLoadedHandler;
+
+            //coi lai cho nay gium nha
+            
         }
 
         private void FormMain_FormMainLoadedHandler(object sender, UserControl e) => _queue = e;

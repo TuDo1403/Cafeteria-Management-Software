@@ -8,10 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace CafeteriaManagement
 {
     public partial class UCOrderManager : UserControl
     {
+
+
+
+        public static List<Bill> lsBill = new List<Bill>();
+        public static List<Product> lsproducts = new List<Product>();
+        public static string nhan;
+
+
         public UCOrderManager()
         {
             InitializeComponent();
@@ -37,6 +47,11 @@ namespace CafeteriaManagement
         }
 
         private void ComboBoxCatetory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -17,10 +17,10 @@ namespace CafeteriaManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (var formLogin = new FormLogin())
-            {
-                Application.Run(formLogin);
-            }
+           
+                FormMainNew f = new  FormMainNew();
+                Application.Run(f);
+            
         }
     }
 }
