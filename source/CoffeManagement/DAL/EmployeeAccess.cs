@@ -44,5 +44,45 @@ namespace CoffeManagement
 
 
         }
+
+        public bool DeleteEmployee(string ma)
+        {
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "delete from EMPLOYEES where EMPLOYEEID=@ma";
+
+            command.Connection = conn;
+            command.Parameters.Add("@ma", SqlDbType.Char).Value = ma;
+
+            int kq = command.ExecuteNonQuery();
+
+            return kq > 0;
+        }
+
+        public bool UpdateEmployee(Employee ep,string where)
+        {
+            OpenConnection();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "Update EMPLOYEES set NAME=@name,PHONE=@phone,ADDRESS=@adress" +
+                " where EMPLOYEEID=@employeeid";
+
+            command.Connection = conn;
+            command.Parameters.Add("@employeeid", SqlDbType.Char).Value =where;
+            command.Parameters.Add("@name", SqlDbType.VarChar).Value = ep.name;
+            command.Parameters.Add("@phone", SqlDbType.NVarChar).Value =ep.phone;
+            command.Parameters.Add("@adress", SqlDbType.NVarChar).Value =ep.adress;
+
+            int kq = command.ExecuteNonQuery();
+
+            return kq > 0;
+
+
+        }
+
+
+
+      
     }
 }

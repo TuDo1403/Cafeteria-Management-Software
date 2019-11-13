@@ -15,5 +15,15 @@ namespace CoffeManagement
 
             return spa.LayToanBoNhanVien();
         }
+
+        public bool DeleteEmployeeBLL(string ma)
+        {
+            return spa.DeleteEmployee(ma);
+        }
+
+        public bool UpdateEmployeeBLL(Employee ep,string where)
+        {
+            return spa.UpdateEmployee(ep,where);
+        }
     }
 }

@@ -8,10 +8,11 @@ namespace CoffeManagement
 {
    public class Product
     {
-        protected string id { get; set; }
-        protected string name { get; set; }
-        protected int price { get; set; }
-        protected int number { get; set; }
+        public string id { get; set; }
+        public string name { get; set; }
+        public int price { get; set; }
+        public int number { get; set; }
+        public int type { get; set; }
 
         public void setId(string a)
         {

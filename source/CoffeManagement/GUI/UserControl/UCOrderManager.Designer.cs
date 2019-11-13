@@ -28,136 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel5 = new System.Windows.Forms.Panel();
             this.cmbCateGory = new System.Windows.Forms.ComboBox();
-            this.textBoxSearchMenu = new System.Windows.Forms.TextBox();
-            this.panelUser = new System.Windows.Forms.Panel();
-            this.lstbSelectedItems = new System.Windows.Forms.ListBox();
-            this.panelButton = new System.Windows.Forms.Panel();
             this.labelRefresh = new System.Windows.Forms.Button();
-            this.buttonBill = new System.Windows.Forms.Button();
-            this.panelBill = new System.Windows.Forms.Panel();
-            this.labelSum = new System.Windows.Forms.Label();
+            this.btnBill = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.labelSelectedItems = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lstProduct = new System.Windows.Forms.ListBox();
             this.menuLabel = new System.Windows.Forms.Label();
-            this.panel5.SuspendLayout();
-            this.panelUser.SuspendLayout();
-            this.panelButton.SuspendLayout();
-            this.panelBill.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.lvDetails = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.flProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.cmbCateGory);
-            this.panel5.Controls.Add(this.textBoxSearchMenu);
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(819, 37);
-            this.panel5.TabIndex = 8;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // cmbCateGory
             // 
             this.cmbCateGory.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCateGory.FormattingEnabled = true;
-            this.cmbCateGory.Location = new System.Drawing.Point(7, 3);
+            this.cmbCateGory.Location = new System.Drawing.Point(18, 23);
             this.cmbCateGory.Name = "cmbCateGory";
             this.cmbCateGory.Size = new System.Drawing.Size(258, 30);
             this.cmbCateGory.TabIndex = 1;
             this.cmbCateGory.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCatetory_SelectedIndexChanged);
             // 
-            // textBoxSearchMenu
-            // 
-            this.textBoxSearchMenu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearchMenu.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBoxSearchMenu.Location = new System.Drawing.Point(414, 3);
-            this.textBoxSearchMenu.Name = "textBoxSearchMenu";
-            this.textBoxSearchMenu.Size = new System.Drawing.Size(225, 29);
-            this.textBoxSearchMenu.TabIndex = 4;
-            this.textBoxSearchMenu.Enter += new System.EventHandler(this.textBoxSearchMenu_Enter);
-            this.textBoxSearchMenu.Leave += new System.EventHandler(this.TextBoxSearchMenu_Leave);
-            // 
-            // panelUser
-            // 
-            this.panelUser.Controls.Add(this.lstbSelectedItems);
-            this.panelUser.Controls.Add(this.panelButton);
-            this.panelUser.Controls.Add(this.panelBill);
-            this.panelUser.Controls.Add(this.labelSelectedItems);
-            this.panelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panelUser.Location = new System.Drawing.Point(414, 46);
-            this.panelUser.Name = "panelUser";
-            this.panelUser.Size = new System.Drawing.Size(408, 457);
-            this.panelUser.TabIndex = 7;
-            // 
-            // lstbSelectedItems
-            // 
-            this.lstbSelectedItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lstbSelectedItems.FormattingEnabled = true;
-            this.lstbSelectedItems.ItemHeight = 25;
-            this.lstbSelectedItems.Location = new System.Drawing.Point(6, 26);
-            this.lstbSelectedItems.Name = "lstbSelectedItems";
-            this.lstbSelectedItems.Size = new System.Drawing.Size(399, 354);
-            this.lstbSelectedItems.TabIndex = 10;
-            // 
-            // panelButton
-            // 
-            this.panelButton.Controls.Add(this.labelRefresh);
-            this.panelButton.Controls.Add(this.buttonBill);
-            this.panelButton.Location = new System.Drawing.Point(219, 419);
-            this.panelButton.Name = "panelButton";
-            this.panelButton.Size = new System.Drawing.Size(186, 38);
-            this.panelButton.TabIndex = 7;
-            // 
             // labelRefresh
             // 
             this.labelRefresh.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelRefresh.Location = new System.Drawing.Point(3, 3);
+            this.labelRefresh.Location = new System.Drawing.Point(604, 471);
             this.labelRefresh.Name = "labelRefresh";
             this.labelRefresh.Size = new System.Drawing.Size(94, 31);
             this.labelRefresh.TabIndex = 7;
             this.labelRefresh.Text = "Refresh";
             this.labelRefresh.UseVisualStyleBackColor = true;
+            this.labelRefresh.Click += new System.EventHandler(this.labelRefresh_Click);
             // 
-            // buttonBill
+            // btnBill
             // 
-            this.buttonBill.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonBill.Location = new System.Drawing.Point(126, 3);
-            this.buttonBill.Name = "buttonBill";
-            this.buttonBill.Size = new System.Drawing.Size(56, 31);
-            this.buttonBill.TabIndex = 9;
-            this.buttonBill.Text = "Bill";
-            this.buttonBill.UseVisualStyleBackColor = true;
+            this.btnBill.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBill.Location = new System.Drawing.Point(713, 471);
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(94, 31);
+            this.btnBill.TabIndex = 9;
+            this.btnBill.Text = "Bill";
+            this.btnBill.UseVisualStyleBackColor = true;
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
-            // panelBill
+            // txtTotal
             // 
-            this.panelBill.Controls.Add(this.labelSum);
-            this.panelBill.Controls.Add(this.labelTotal);
-            this.panelBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panelBill.Location = new System.Drawing.Point(3, 379);
-            this.panelBill.Name = "panelBill";
-            this.panelBill.Size = new System.Drawing.Size(402, 38);
-            this.panelBill.TabIndex = 5;
-            // 
-            // labelSum
-            // 
-            this.labelSum.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelSum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSum.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSum.Location = new System.Drawing.Point(216, 7);
-            this.labelSum.Name = "labelSum";
-            this.labelSum.Size = new System.Drawing.Size(146, 23);
-            this.labelSum.TabIndex = 12;
-            this.labelSum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtTotal.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTotal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(661, 433);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(146, 31);
+            this.txtTotal.TabIndex = 12;
+            this.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelTotal.Location = new System.Drawing.Point(101, 7);
+            this.labelTotal.Location = new System.Drawing.Point(571, 441);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(52, 23);
             this.labelTotal.TabIndex = 11;
@@ -167,81 +100,102 @@
             // 
             this.labelSelectedItems.AutoSize = true;
             this.labelSelectedItems.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelSelectedItems.Location = new System.Drawing.Point(143, 0);
+            this.labelSelectedItems.Location = new System.Drawing.Point(456, 64);
             this.labelSelectedItems.Name = "labelSelectedItems";
             this.labelSelectedItems.Size = new System.Drawing.Size(142, 23);
             this.labelSelectedItems.TabIndex = 5;
             this.labelSelectedItems.Text = "Selected Items";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lstProduct);
-            this.panel1.Controls.Add(this.menuLabel);
-            this.panel1.Location = new System.Drawing.Point(3, 46);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(405, 457);
-            this.panel1.TabIndex = 6;
-            // 
-            // lstProduct
-            // 
-            this.lstProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lstProduct.FormattingEnabled = true;
-            this.lstProduct.ItemHeight = 25;
-            this.lstProduct.Location = new System.Drawing.Point(3, 34);
-            this.lstProduct.Name = "lstProduct";
-            this.lstProduct.Size = new System.Drawing.Size(402, 429);
-            this.lstProduct.TabIndex = 6;
-            this.lstProduct.SelectedIndexChanged += new System.EventHandler(this.lstProduct_SelectedIndexChanged);
             // 
             // menuLabel
             // 
             this.menuLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.menuLabel.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.menuLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.menuLabel.Location = new System.Drawing.Point(6, 3);
+            this.menuLabel.Location = new System.Drawing.Point(18, 64);
             this.menuLabel.Name = "menuLabel";
-            this.menuLabel.Size = new System.Drawing.Size(399, 31);
+            this.menuLabel.Size = new System.Drawing.Size(411, 31);
             this.menuLabel.TabIndex = 5;
             this.menuLabel.Text = "Menu";
             this.menuLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.menuLabel.Click += new System.EventHandler(this.menuLabel_Click);
+            // 
+            // lvDetails
+            // 
+            this.lvDetails.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lvDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lvDetails.FullRowSelect = true;
+            this.lvDetails.GridLines = true;
+            this.lvDetails.HideSelection = false;
+            this.lvDetails.Location = new System.Drawing.Point(460, 90);
+            this.lvDetails.Name = "lvDetails";
+            this.lvDetails.Size = new System.Drawing.Size(347, 336);
+            this.lvDetails.TabIndex = 8;
+            this.lvDetails.UseCompatibleStateImageBehavior = false;
+            this.lvDetails.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Product";
+            this.columnHeader1.Width = 130;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Number";
+            this.columnHeader2.Width = 90;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Size";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Sum";
+            // 
+            // flProduct
+            // 
+            this.flProduct.Location = new System.Drawing.Point(18, 109);
+            this.flProduct.Name = "flProduct";
+            this.flProduct.Size = new System.Drawing.Size(420, 328);
+            this.flProduct.TabIndex = 13;
             // 
             // UCOrderManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panelUser);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flProduct);
+            this.Controls.Add(this.btnBill);
+            this.Controls.Add(this.labelRefresh);
+            this.Controls.Add(this.labelTotal);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.lvDetails);
+            this.Controls.Add(this.menuLabel);
+            this.Controls.Add(this.labelSelectedItems);
+            this.Controls.Add(this.cmbCateGory);
             this.Name = "UCOrderManager";
             this.Size = new System.Drawing.Size(828, 510);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panelUser.ResumeLayout(false);
-            this.panelUser.PerformLayout();
-            this.panelButton.ResumeLayout(false);
-            this.panelBill.ResumeLayout(false);
-            this.panelBill.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.UCOrderManager_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox cmbCateGory;
-        private System.Windows.Forms.TextBox textBoxSearchMenu;
-        private System.Windows.Forms.Panel panelUser;
-        private System.Windows.Forms.Panel panelButton;
         private System.Windows.Forms.Button labelRefresh;
-        private System.Windows.Forms.Button buttonBill;
-        private System.Windows.Forms.Panel panelBill;
-        private System.Windows.Forms.Label labelSum;
+        private System.Windows.Forms.Button btnBill;
+        private System.Windows.Forms.Label txtTotal;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label labelSelectedItems;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label menuLabel;
-        private System.Windows.Forms.ListBox lstbSelectedItems;
-        private System.Windows.Forms.ListBox lstProduct;
+        private System.Windows.Forms.ListView lvDetails;
+        private System.Windows.Forms.FlowLayoutPanel flProduct;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

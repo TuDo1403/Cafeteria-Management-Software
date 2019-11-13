@@ -24,19 +24,20 @@ namespace CoffeManagement
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            ucHome.BringToFront();
+            ucHome1.BringToFront();
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-           // ucOrderManager.BringToFront();
-            paymentUserControl1.BringToFront();
+            // ucOrderManager.BringToFront();
+            // paymentUserControl1.BringToFront();
+            ucOrderManager1.BringToFront();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-           // ucEditMenu.BringToFront();
-            collectionUserControl1.BringToFront();
+            ucEditMenu.BringToFront();
+          
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
@@ -46,12 +47,38 @@ namespace CoffeManagement
 
         private void button4_Click(object sender, EventArgs e)
         {
-          
+          //  collectionUserControl1.BringToFront();
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
+          // ucOrderManager1.BringToFront();
+        }
+
+        private void ucOrderManager_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void collectionUserControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void paymentUserControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucHome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucEmployee_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

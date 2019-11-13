@@ -11,9 +11,8 @@ namespace CoffeManagement
     {
         string idBill { get; set; }
         string date { get; set; }
-        int price { get; set; }
-        string idCustomer { get; set; }
         string idEmployee { get; set; }
+        int price { get; set; }
 
         List<Product> lsproducts = new List<Product>();
 

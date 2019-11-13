@@ -9,24 +9,24 @@ namespace CoffeManagement
    public class BillDetails
     {
        public string idBill { get; set; }
-       public Product dr { get; set; }
-       public int numberOfProduct { get; set; }
+       public string idProduct { get; set; }
+       public int number { get; set; }
+        public string name { get; set; }
+        public string size { get; set; }
+        public int priceThisProduct { get; set; }
+
+        public int sum()
+        {
+            return number * priceThisProduct;
+        }
+
         
 
 
-        public float countmoney()
-        {
-            float price = 0;
-            numberOfProduct = 1;
-            price = dr.countMoney() * numberOfProduct;
-            return price;
-        }
+     
 
 
 
-        public override string ToString()
-        {
-            return dr.ToString();
-        }
+        
     }
 }

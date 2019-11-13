@@ -15,6 +15,8 @@ namespace CoffeManagement
         public string id ;
         public string name;
         public string price;
+        public int type;
+        public int intprice;
 
         public CollectionAdd()
         {
@@ -28,6 +30,8 @@ namespace CoffeManagement
             id = txtId.Text;
             name = txtName.Text;
             price = txtPrice.Text;
+            type = int.Parse(txtType.Text);
+            intprice = int.Parse(txtPrice.Text);
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)
@@ -36,6 +40,16 @@ namespace CoffeManagement
         }
 
         private void CollectionAdd_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
         {
 
         }

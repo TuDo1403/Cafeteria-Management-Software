@@ -58,11 +58,23 @@
     <Compile Include="Form\CollectionDelete.designer.cs">
       <DependentUpon>CollectionDelete.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\CollectionModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\CollectionModify.Designer.cs">
+      <DependentUpon>CollectionModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\OrderManagerTopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\OrderManagerTopping.Designer.cs">
+      <DependentUpon>OrderManagerTopping.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\PaymentTopping.cs">
       <SubType>Form</SubType>
@@ -114,8 +126,14 @@
     <EmbeddedResource Include="Form\CollectionDelete.resx">
       <DependentUpon>CollectionDelete.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\CollectionModify.resx">
+      <DependentUpon>CollectionModify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\OrderManagerTopping.resx">
+      <DependentUpon>OrderManagerTopping.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\PaymentTopping.resx">
       <DependentUpon>PaymentTopping.cs</DependentUpon>
@@ -128,6 +146,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserControl\CollectionUserControl.resx">
       <DependentUpon>CollectionUserControl.cs</DependentUpon>
@@ -169,6 +188,15 @@
       <Project>{b0ed4075-1db8-46bb-b8b2-49d557ebfd06}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noimage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-image-box.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

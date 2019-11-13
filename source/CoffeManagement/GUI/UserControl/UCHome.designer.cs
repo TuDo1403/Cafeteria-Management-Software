@@ -36,18 +36,19 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(79, 75);
+            this.label1.Location = new System.Drawing.Point(22, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 323);
+            this.label1.Size = new System.Drawing.Size(251, 67);
             this.label1.TabIndex = 3;
             this.label1.Text = "Chạy các chương trình quảng cáo";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(391, 52);
+            this.pictureBox1.Image = global::GUI.Properties.Resources.no_image_box;
+            this.pictureBox1.Location = new System.Drawing.Point(414, 185);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(359, 406);
+            this.pictureBox1.Size = new System.Drawing.Size(329, 174);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
