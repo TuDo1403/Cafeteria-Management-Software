@@ -55,8 +55,9 @@ namespace CoffeManagement
             //thu 0 la no.1
             txtNo.Text = lvi.SubItems[0].Text;
             txtName.Text = lvi.SubItems[1].Text;
-            txtAdress.Text = lvi.SubItems[2].Text;
-            txtPhone.Text = lvi.SubItems[3].Text;
+            txtPhone.Text = lvi.SubItems[2].Text;
+            txtAdress.Text = lvi.SubItems[3].Text;
+           
         }
 
         private void btnDeleteE_Click(object sender, EventArgs e)

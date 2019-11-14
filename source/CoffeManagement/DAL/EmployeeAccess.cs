@@ -18,7 +18,7 @@ namespace CoffeManagement
 
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.Text;
-            command.CommandText = "Select * from EMPLOYEES";
+            command.CommandText = "Select * from EMPLOYEES order by EMPLOYEEID asc";
             command.Connection = conn;
 
             SqlDataReader reader = command.ExecuteReader();
