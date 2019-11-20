@@ -54,6 +54,7 @@
       <DependentUpon>CM.dbml</DependentUpon>
     </Compile>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="EntityFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

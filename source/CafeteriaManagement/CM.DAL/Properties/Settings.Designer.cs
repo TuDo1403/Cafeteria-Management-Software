@@ -26,11 +26,10 @@ namespace CM.DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-LEUEET4;Initial Catalog=CAFETERIAMANAGEMENT;Integrated Securi" +
-            "ty=True")]
-        public string CAFETERIAMANAGEMENTConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=CAFEMANAGEMENT;Integrated Security=True")]
+        public string CAFEMANAGEMENTConnectionString1 {
             get {
-                return ((string)(this["CAFETERIAMANAGEMENTConnectionString"]));
+                return ((string)(this["CAFEMANAGEMENTConnectionString1"]));
             }
         }
     }

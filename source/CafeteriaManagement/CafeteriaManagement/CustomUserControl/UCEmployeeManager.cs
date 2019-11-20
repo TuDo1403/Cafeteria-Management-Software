@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CafeteriaManagement.CustomUserControl
 {
-    public partial class UCAccountInfo : UserControl
+    public partial class UCEmployeeManager : UserControl
     {
-        public UCAccountInfo()
+        public UCEmployeeManager()
         {
             InitializeComponent();
         }

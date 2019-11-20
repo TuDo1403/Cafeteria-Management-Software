@@ -11,7 +11,7 @@ using System.Globalization;
 
 namespace CafeteriaManagement
 {
-    public partial class UCQueueBox : UserControl, IDisposable
+    public partial class UCQueueBox : UserControl
     {
         private readonly Timer timer = new Timer();
 

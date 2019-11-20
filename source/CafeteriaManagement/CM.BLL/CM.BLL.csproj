@@ -194,6 +194,7 @@
   <ItemGroup>
     <Compile Include="DataProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectedList.cs" />
     <Compile Include="SongProcess\SongDownloader.cs" />
     <Compile Include="SongProcess\StringExtension.cs" />
     <Compile Include="SongProcess\VideoSearcher.cs" />

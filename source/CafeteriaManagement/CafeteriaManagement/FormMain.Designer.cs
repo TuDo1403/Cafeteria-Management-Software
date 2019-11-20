@@ -35,13 +35,13 @@
             this.buttonUserInfo = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
-            this.buttonAdmin = new System.Windows.Forms.Button();
+            this.buttonEditMenu = new System.Windows.Forms.Button();
             this.ucOrderManager = new CafeteriaManagement.UCOrderManager();
             this.ucEditMenu = new CafeteriaManagement.UCEditMenu();
             this.ucMusicDownloader = new CafeteriaManagement.UCMusicDownloader();
             this.ucQueueBox = new CafeteriaManagement.UCQueueBox();
             this.ucHome = new CafeteriaManagement.CustomUserControl.UCHome();
-            this.ucAccountInfo = new CafeteriaManagement.CustomUserControl.UCAccountInfo();
+            this.ucAccountInfo = new CafeteriaManagement.CustomUserControl.UCEmployeeManager();
             this.panelSliding.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.panelSliding.Controls.Add(this.buttonUserInfo);
             this.panelSliding.Controls.Add(this.button3);
             this.panelSliding.Controls.Add(this.buttonHome);
-            this.panelSliding.Controls.Add(this.buttonAdmin);
+            this.panelSliding.Controls.Add(this.buttonEditMenu);
             this.panelSliding.Location = new System.Drawing.Point(12, 78);
             this.panelSliding.Name = "panelSliding";
             this.panelSliding.Size = new System.Drawing.Size(166, 510);
@@ -67,7 +67,7 @@
             // 
             // buttonMusic
             // 
-            this.buttonMusic.Location = new System.Drawing.Point(3, 331);
+            this.buttonMusic.Location = new System.Drawing.Point(3, 243);
             this.buttonMusic.Name = "buttonMusic";
             this.buttonMusic.Size = new System.Drawing.Size(160, 60);
             this.buttonMusic.TabIndex = 5;
@@ -77,7 +77,7 @@
             // 
             // buttonStatistic
             // 
-            this.buttonStatistic.Location = new System.Drawing.Point(3, 275);
+            this.buttonStatistic.Location = new System.Drawing.Point(3, 312);
             this.buttonStatistic.Name = "buttonStatistic";
             this.buttonStatistic.Size = new System.Drawing.Size(160, 60);
             this.buttonStatistic.TabIndex = 4;
@@ -86,17 +86,17 @@
             // 
             // buttonUserInfo
             // 
-            this.buttonUserInfo.Location = new System.Drawing.Point(3, 218);
+            this.buttonUserInfo.Location = new System.Drawing.Point(3, 177);
             this.buttonUserInfo.Name = "buttonUserInfo";
             this.buttonUserInfo.Size = new System.Drawing.Size(160, 60);
             this.buttonUserInfo.TabIndex = 3;
             this.buttonUserInfo.Text = "User Info";
             this.buttonUserInfo.UseVisualStyleBackColor = true;
-            this.buttonUserInfo.Click += new System.EventHandler(this.buttonUserInfo_Click);
+            this.buttonUserInfo.Click += new System.EventHandler(this.ButtonUserInfo_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 161);
+            this.button3.Location = new System.Drawing.Point(3, 111);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(160, 60);
             this.button3.TabIndex = 2;
@@ -106,23 +106,23 @@
             // 
             // buttonHome
             // 
-            this.buttonHome.Location = new System.Drawing.Point(3, 105);
+            this.buttonHome.Location = new System.Drawing.Point(3, 45);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(160, 60);
             this.buttonHome.TabIndex = 1;
             this.buttonHome.Text = "Home";
             this.buttonHome.UseVisualStyleBackColor = true;
-            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            this.buttonHome.Click += new System.EventHandler(this.ButtonHome_Click);
             // 
-            // buttonAdmin
+            // buttonEditMenu
             // 
-            this.buttonAdmin.Location = new System.Drawing.Point(3, 48);
-            this.buttonAdmin.Name = "buttonAdmin";
-            this.buttonAdmin.Size = new System.Drawing.Size(160, 60);
-            this.buttonAdmin.TabIndex = 0;
-            this.buttonAdmin.Text = "Admin";
-            this.buttonAdmin.UseVisualStyleBackColor = true;
-            this.buttonAdmin.Click += new System.EventHandler(this.ButtonAdmin_Click);
+            this.buttonEditMenu.Location = new System.Drawing.Point(3, 378);
+            this.buttonEditMenu.Name = "buttonEditMenu";
+            this.buttonEditMenu.Size = new System.Drawing.Size(160, 60);
+            this.buttonEditMenu.TabIndex = 0;
+            this.buttonEditMenu.Text = "Edit Menu";
+            this.buttonEditMenu.UseVisualStyleBackColor = true;
+            this.buttonEditMenu.Click += new System.EventHandler(this.ButtonAdmin_Click);
             // 
             // ucOrderManager
             // 
@@ -131,10 +131,10 @@
             this.ucOrderManager.Size = new System.Drawing.Size(828, 510);
             this.ucOrderManager.TabIndex = 0;
             // 
-            // ucEditMenu1
+            // ucEditMenu
             // 
             this.ucEditMenu.Location = new System.Drawing.Point(184, 82);
-            this.ucEditMenu.Name = "ucEditMenu1";
+            this.ucEditMenu.Name = "ucEditMenu";
             this.ucEditMenu.Size = new System.Drawing.Size(828, 510);
             this.ucEditMenu.TabIndex = 8;
             // 
@@ -159,10 +159,10 @@
             this.ucHome.Size = new System.Drawing.Size(828, 510);
             this.ucHome.TabIndex = 9;
             // 
-            // ucAccountInfo1
+            // ucAccountInfo
             // 
             this.ucAccountInfo.Location = new System.Drawing.Point(184, 78);
-            this.ucAccountInfo.Name = "ucAccountInfo1";
+            this.ucAccountInfo.Name = "ucAccountInfo";
             this.ucAccountInfo.Size = new System.Drawing.Size(828, 510);
             this.ucAccountInfo.TabIndex = 10;
             // 
@@ -200,10 +200,10 @@
         private System.Windows.Forms.Button buttonUserInfo;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonHome;
-        private System.Windows.Forms.Button buttonAdmin;
+        private System.Windows.Forms.Button buttonEditMenu;
         private UCQueueBox ucQueueBox;
         private UCEditMenu ucEditMenu;
         private CustomUserControl.UCHome ucHome;
-        private CustomUserControl.UCAccountInfo ucAccountInfo;
+        private CustomUserControl.UCEmployeeManager ucAccountInfo;
     }
 }

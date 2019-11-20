@@ -13,5 +13,12 @@ namespace CM.DTO
         public int Amount { get; set; }
 
         public string Description { get; set; }
+
+        private readonly List<string> _toppings = new List<string>();
+
+        public void AddTopping(string topping)
+        {
+            _toppings.Add(topping);
+        }
     }
 }

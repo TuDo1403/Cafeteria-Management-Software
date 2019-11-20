@@ -14,6 +14,7 @@ namespace CafeteriaManagement
     public partial class UCMusicDownloader : UserControl
     {
         private UserControl _queue;
+        private int _queueCount = 0;
 
         private void ButtonQueue_Click(object sender, EventArgs e)
         {
@@ -48,9 +49,10 @@ namespace CafeteriaManagement
 
         private void DataGridViewSearchResult_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            _queueCount++;
             MusicPlayer.CreateInstance();
-            SongDownloader.CreateInstance().DownloadSongBy(e.RowIndex, e.Clicks);
-            MusicPlayer.AddSongToQueue(e.RowIndex, e.Clicks);
+            SongDownloader.CreateInstance().DownloadSongBy(e.RowIndex, _queueCount);
+            MusicPlayer.AddSongToQueue(e.RowIndex, _queueCount);
             MessageBox.Show(Properties.Resources.songAddedText, Properties.Resources.songAddedCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -92,10 +94,8 @@ namespace CafeteriaManagement
                 {
                     textBoxSearchMusic.AutoCompleteCustomSource.Add(textBoxSearchMusic.Text);
                 });
-                using (var streamWriter = new StreamWriter(SongDownloader.musicSavePath + @"\History.txt", true))
-                {
-                    streamWriter.Write(textBoxSearchMusic.Text + ",");
-                }
+                using var streamWriter = new StreamWriter(SongDownloader.musicSavePath + @"\History.txt", true);
+                streamWriter.Write(textBoxSearchMusic.Text + ",");
             }
         }
 

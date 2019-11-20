@@ -10,13 +10,12 @@ using System.Windows.Forms;
 using BLL;
 using CM.DTO;
 using System.Globalization;
+using CM.DAL;
 
 namespace CafeteriaManagement
 {
     public partial class UCOrderManager : UserControl
     {
-        private readonly List<Product> _selectedProducts = new List<Product>();
-
         public static event EventHandler<IEnumerable<string>> ItemChosen;
 
 
@@ -24,16 +23,22 @@ namespace CafeteriaManagement
         public UCOrderManager()
         {
             InitializeComponent();
-            comboBoxCatetory.DataSource = DataProcess.RetrieveCategory();
+            LoadDataFromDatabase();
             FormTopping.ToppingsSelected += FormTopping_ToppingsSelectedHandler;
+        }
+
+        private void LoadDataFromDatabase()
+        {
+            comboBoxCatetory.DataSource = DataProvider.RetrieveCategory();
         }
 
         private void FormTopping_ToppingsSelectedHandler(object sender, List<string> e)
         {
+            var selectedItemIndex = dataGridViewSelectedItems.SelectedRows[0].Index;
             foreach (var topping in e)
             {
-                var item = DataProcess.RetrieveProductFrom(topping);
-                _selectedProducts.Add(item);
+                var item = DataProvider.RetrieveProductFrom(topping);
+                SelectedList.AddTopping(item, selectedItemIndex);
                 UpdateSelectedItemsDataGrid(item);
             }
         }
@@ -59,7 +64,7 @@ namespace CafeteriaManagement
         private void ComboBoxCatetory_SelectedIndexChanged(object sender, EventArgs e)
         {
             menuListView.Clear();
-            foreach (var item in DataProcess.RetrieveMenuFrom(comboBoxCatetory.SelectedItem as string))
+            foreach (var item in DataProvider.RetrieveMenuFrom(comboBoxCatetory.SelectedItem as string))
             {
                 menuListView.Items.Add(item);
             }
@@ -69,8 +74,8 @@ namespace CafeteriaManagement
         {
             if (menuListView.SelectedItems.Count == 1)
             {
-                var selectedItem = DataProcess.RetrieveProductFrom(menuListView.SelectedItems[0].Text);
-                _selectedProducts.Add(selectedItem);
+                var selectedItem = DataProvider.RetrieveProductFrom(menuListView.SelectedItems[0].Text);
+                SelectedList.Add(selectedItem);
                 UpdateSelectedItemsDataGrid(selectedItem);
             }
         }
@@ -78,7 +83,7 @@ namespace CafeteriaManagement
         private void UpdateSelectedItemsDataGrid(Product selectedItem)
         {
             dataGridViewSelectedItems.DataSource = null;
-            dataGridViewSelectedItems.DataSource = _selectedProducts;
+            dataGridViewSelectedItems.DataSource = SelectedList.GetSelectedItems();
 
             CalculateBill(selectedItem.Price);
         }
@@ -90,22 +95,29 @@ namespace CafeteriaManagement
             labelSum.Text = currentPrice.ToString(CultureInfo.InvariantCulture);
         }
 
-        private void DataGridViewSelectedItems_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DataGridViewSelectedItems_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             using (var formTopping = new FormTopping())
             {
-                var menuTopping = DataProcess.RetrieveMenuToppingFrom(_selectedProducts[e.RowIndex].Name);
-                OnItemChoosing(menuTopping);
-                formTopping.ShowDialog();
+                var menuTopping = DataProcess.RetrieveMenuToppingFrom(SelectedList.GetSelectedItems()[e.RowIndex].Name);
+                if (menuTopping != null)
+                {
+                    OnItemChoosing(menuTopping);
+                    formTopping.ShowDialog();
+                }
             };
         }
 
         private void OnItemChoosing(IEnumerable<string> menuTopping) => (ItemChosen as EventHandler<IEnumerable<string>>)?.Invoke(this, menuTopping);
 
-        private void labelRefresh_Click(object sender, EventArgs e)
+        private void LabelRefresh_Click(object sender, EventArgs e)
         {
             dataGridViewSelectedItems.DataSource = null;
             labelSum.Text = Properties.Resources.initialPrice;
+            SelectedList.ClearList();
+            LoadDataFromDatabase();
         }
+
+        private void ButtonBill_Click(object sender, EventArgs e) => DataProcess.InsertBill(SelectedList.GetSelectedItems(), labelSum.Text);
     }
 }

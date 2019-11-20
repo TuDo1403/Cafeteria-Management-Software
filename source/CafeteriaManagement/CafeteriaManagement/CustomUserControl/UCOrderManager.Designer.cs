@@ -100,7 +100,7 @@
             this.dataGridViewSelectedItems.Name = "dataGridViewSelectedItems";
             this.dataGridViewSelectedItems.Size = new System.Drawing.Size(402, 343);
             this.dataGridViewSelectedItems.TabIndex = 8;
-            this.dataGridViewSelectedItems.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewSelectedItems_RowHeaderMouseClick);
+            this.dataGridViewSelectedItems.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewSelectedItems_RowHeaderMouseDoubleClick);
             // 
             // panelButton
             // 
@@ -120,7 +120,7 @@
             this.labelRefresh.TabIndex = 7;
             this.labelRefresh.Text = "Refresh";
             this.labelRefresh.UseVisualStyleBackColor = true;
-            this.labelRefresh.Click += new System.EventHandler(this.labelRefresh_Click);
+            this.labelRefresh.Click += new System.EventHandler(this.LabelRefresh_Click);
             // 
             // buttonBill
             // 
@@ -131,6 +131,7 @@
             this.buttonBill.TabIndex = 9;
             this.buttonBill.Text = "Bill";
             this.buttonBill.UseVisualStyleBackColor = true;
+            this.buttonBill.Click += new System.EventHandler(this.ButtonBill_Click);
             // 
             // panelBill
             // 

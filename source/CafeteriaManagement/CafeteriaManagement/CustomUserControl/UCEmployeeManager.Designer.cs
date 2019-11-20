@@ -1,6 +1,6 @@
 ﻿namespace CafeteriaManagement.CustomUserControl
 {
-    partial class UCAccountInfo
+    partial class UCEmployeeManager
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -39,27 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelEmployeeGridView = new System.Windows.Forms.Panel();
+            this.dataGridViewEmployee = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelEmployeeGridView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(66, 253);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(697, 25);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Name                             Adress                                     Phone" +
-    "                          Work";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(66, 277);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(697, 199);
-            this.listBox1.TabIndex = 21;
             // 
             // textBox4
             // 
@@ -133,12 +116,27 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // panelEmployeeGridView
+            // 
+            this.panelEmployeeGridView.Controls.Add(this.dataGridViewEmployee);
+            this.panelEmployeeGridView.Location = new System.Drawing.Point(66, 278);
+            this.panelEmployeeGridView.Name = "panelEmployeeGridView";
+            this.panelEmployeeGridView.Size = new System.Drawing.Size(709, 209);
+            this.panelEmployeeGridView.TabIndex = 21;
+            // 
+            // dataGridViewEmployee
+            // 
+            this.dataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEmployee.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewEmployee.Name = "dataGridViewEmployee";
+            this.dataGridViewEmployee.Size = new System.Drawing.Size(703, 203);
+            this.dataGridViewEmployee.TabIndex = 0;
+            // 
             // UCAccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.panelEmployeeGridView);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -151,15 +149,14 @@
             this.Name = "UCAccountInfo";
             this.Size = new System.Drawing.Size(828, 510);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelEmployeeGridView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
@@ -169,5 +166,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelEmployeeGridView;
+        private System.Windows.Forms.DataGridView dataGridViewEmployee;
     }
 }

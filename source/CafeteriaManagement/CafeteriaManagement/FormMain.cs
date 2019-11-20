@@ -28,8 +28,8 @@ namespace CafeteriaManagement
 
         private void ButtonAdmin_Click(object sender, EventArgs e) => ucEditMenu.BringToFront();
 
-        private void buttonHome_Click(object sender, EventArgs e) => ucHome.BringToFront();
+        private void ButtonHome_Click(object sender, EventArgs e) => ucHome.BringToFront();
 
-        private void buttonUserInfo_Click(object sender, EventArgs e) => ucAccountInfo.BringToFront();
+        private void ButtonUserInfo_Click(object sender, EventArgs e) => ucAccountInfo.BringToFront();
     }
 }

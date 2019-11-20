@@ -1,21 +1,60 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CAFETERIAMANAGEMENT" Class="CMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-LEUEET4;Initial Catalog=CAFETERIAMANAGEMENT;Integrated Security=True" SettingsObjectName="CM.DAL.Properties.Settings" SettingsPropertyName="CAFETERIAMANAGEMENTConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CAFEMANAGEMENT" Class="CMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=CAFEMANAGEMENT;Integrated Security=True" SettingsObjectName="CM.DAL.Properties.Settings" SettingsPropertyName="CAFEMANAGEMENTConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BILL" Member="BILLs">
+    <Type Name="BILL">
+      <Column Name="Id" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EmployeeId" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="CustomerId" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="BILL_PRODUCT_BILL" Member="PRODUCT_BILLs" ThisKey="Id" OtherKey="BillId" Type="PRODUCT_BILL" />
+      <Association Name="CUSTOMER_BILL" Member="CUSTOMER" ThisKey="CustomerId" OtherKey="Id" Type="CUSTOMER" IsForeignKey="true" />
+      <Association Name="EMPLOYEE_BILL" Member="EMPLOYEE" ThisKey="EmployeeId" OtherKey="Id" Type="EMPLOYEE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CUSTOMER" Member="CUSTOMERs">
+    <Type Name="CUSTOMER">
+      <Column Name="Id" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CUSTOMER_BILL" Member="BILLs" ThisKey="Id" OtherKey="CustomerId" Type="BILL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EMPLOYEE" Member="EMPLOYEEs">
+    <Type Name="EMPLOYEE">
+      <Column Name="Id" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Daystart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="EMPLOYEE_BILL" Member="BILLs" ThisKey="Id" OtherKey="EmployeeId" Type="BILL" />
+    </Type>
+  </Table>
   <Table Name="dbo.PRODUCT" Member="PRODUCTs">
     <Type Name="PRODUCT">
-      <Column Name="PRODID" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PRODNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="PRODTYPE" Type="System.String" DbType="Char(5)" CanBeNull="true" />
-      <Column Name="PRICE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="PRODDESCR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ISTOPPING" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="PRODUCTTYPE_PRODUCT" Member="PRODUCTTYPE" ThisKey="PRODTYPE" OtherKey="TYPEID" Type="PRODUCTTYPE" IsForeignKey="true" />
+      <Column Name="Id" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IsTopping" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PRODUCT_PRODUCT_BILL" Member="PRODUCT_BILLs" ThisKey="Id" OtherKey="ProductId" Type="PRODUCT_BILL" />
+      <Association Name="PRODUCTTYPE_PRODUCT" Member="PRODUCTTYPE" ThisKey="ProductId" OtherKey="Id" Type="PRODUCTTYPE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCT_BILL" Member="PRODUCT_BILLs">
+    <Type Name="PRODUCT_BILL">
+      <Column Name="BillId" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BILL_PRODUCT_BILL" Member="BILL" ThisKey="BillId" OtherKey="Id" Type="BILL" IsForeignKey="true" />
+      <Association Name="PRODUCT_PRODUCT_BILL" Member="PRODUCT" ThisKey="ProductId" OtherKey="Id" Type="PRODUCT" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PRODUCTTYPE" Member="PRODUCTTYPEs">
     <Type Name="PRODUCTTYPE">
-      <Column Name="TYPEID" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TYPENAME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Association Name="PRODUCTTYPE_PRODUCT" Member="PRODUCTs" ThisKey="TYPEID" OtherKey="PRODTYPE" Type="PRODUCT" />
+      <Column Name="Id" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="PRODUCTTYPE_PRODUCT" Member="PRODUCTs" ThisKey="Id" OtherKey="ProductId" Type="PRODUCT" />
     </Type>
   </Table>
 </Database>
