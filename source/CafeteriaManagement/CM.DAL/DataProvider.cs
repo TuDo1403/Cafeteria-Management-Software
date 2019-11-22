@@ -55,11 +55,17 @@ namespace CM.DAL
             return menu;
         }
 
-
-
-
-
-
+        public static string GetAccountId(string username, string hashedPassword)
+        {
+            var id = "";
+            if (_database.ACCOUNTs.Any(a => a.UserName == username))
+            {
+                id = (from account in _database.ACCOUNTs
+                      where account.UserName == username && account.PassWord == hashedPassword
+                      select account.Id).Single();
+            }
+            return id;
+        }
 
         public static void InsertRecord(object record, string tableName)
         {

@@ -90,6 +90,7 @@
             this.textBoxPassword.Size = new System.Drawing.Size(163, 20);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.UseSystemPasswordChar = true;
+            this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxPassword_KeyDown);
             // 
             // labelPassword
             // 

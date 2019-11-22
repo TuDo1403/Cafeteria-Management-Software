@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CM.DTO
@@ -19,6 +20,18 @@ namespace CM.DTO
         public void AddTopping(string topping)
         {
             _toppings.Add(topping);
+            var stringBuilder = new StringBuilder();
+            var temp = new List<string>();
+            foreach (var item in _toppings)
+            {
+                if (!temp.Any(c => c == item))
+                {
+                    var count = _toppings.Where(c => c == item).Count();
+                    stringBuilder.Append($"{item}: ({count}), ");
+                    temp.Add(item);
+                }
+            }
+            Description = stringBuilder.ToString();
         }
     }
 }

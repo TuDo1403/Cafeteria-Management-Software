@@ -28,8 +28,6 @@ namespace BLL
 
         public static void AddTopping(Product product, int index)
         {
-            // remember to use regex
-            _selectedItems[index].Description += $"{product.Name} ({product.Amount + 1}) ";
             _selectedItems[index].AddTopping(product.Name);
             Add(product);
         }

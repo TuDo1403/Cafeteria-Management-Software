@@ -95,9 +95,11 @@
             // 
             // dataGridViewSelectedItems
             // 
+            this.dataGridViewSelectedItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewSelectedItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSelectedItems.Location = new System.Drawing.Point(3, 30);
             this.dataGridViewSelectedItems.Name = "dataGridViewSelectedItems";
+            this.dataGridViewSelectedItems.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewSelectedItems.Size = new System.Drawing.Size(402, 343);
             this.dataGridViewSelectedItems.TabIndex = 8;
             this.dataGridViewSelectedItems.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewSelectedItems_RowHeaderMouseDoubleClick);

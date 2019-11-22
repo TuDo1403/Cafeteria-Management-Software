@@ -233,6 +233,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomUserControl\UCAccountInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControl\UCAccountInfo.Designer.cs">
+      <DependentUpon>UCAccountInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomUserControl\UCEmployeeManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -262,6 +268,12 @@
     </Compile>
     <Compile Include="FormProductInfo.Designer.cs">
       <DependentUpon>FormProductInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSignUp.Designer.cs">
+      <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUCOrderManager.Topping.cs">
       <SubType>Form</SubType>
@@ -296,6 +308,9 @@
     <Compile Include="CustomUserControl\UCQueueBox.Designer.cs">
       <DependentUpon>UCQueueBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomUserControl\UCAccountInfo.resx">
+      <DependentUpon>UCAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomUserControl\UCEmployeeManager.resx">
       <DependentUpon>UCEmployeeManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductInfo.resx">
       <DependentUpon>FormProductInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSignUp.resx">
+      <DependentUpon>FormSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUCOrderManager.Topping.resx">
       <DependentUpon>FormUCOrderManager.Topping.cs</DependentUpon>

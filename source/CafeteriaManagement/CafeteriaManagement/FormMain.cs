@@ -16,7 +16,16 @@ namespace CafeteriaManagement
 
 
 
-        public FormMain() => InitializeComponent();
+        public FormMain()
+        {
+            InitializeComponent();
+            FormLogin.LoginSucceeded += FormLogin_LoginSucceededHandler;
+        }
+
+        private void FormLogin_LoginSucceededHandler(object sender, string e)
+        {
+            labelLoggedInId.Text = $"Logged in as: {e}";
+        }
 
         private void ButtonMusic_Click(object sender, EventArgs e) => ucMusicDownloader.BringToFront();
 

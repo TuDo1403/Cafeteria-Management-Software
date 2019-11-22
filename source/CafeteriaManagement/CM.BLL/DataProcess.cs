@@ -3,6 +3,7 @@ using CM.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,10 +21,7 @@ namespace BLL
             return DataProvider.RetrieveMenuToppingFrom(productName);
         }
 
-        
-
-
-
+       
         public static string GetNextProductId()
         {
             var lastId = DataProvider.GetLastProductId();
@@ -47,6 +45,22 @@ namespace BLL
             return string.Format("B{0:00000}", nextIndex);
         }
 
+        public static string GetAccountId(string username, string password)
+        {
+            var bytesFromPassword = Encoding.UTF8.GetBytes(password);
+            using var hashAlgorithm = MD5.Create();
+            var hash = hashAlgorithm.ComputeHash(bytesFromPassword);
+
+            var stringBuilder = new StringBuilder();
+            foreach (var item in hash)
+            {
+                // convert to hexadecimal
+                stringBuilder.Append(item.ToString("x2"));
+            }
+            var hashedPassword = stringBuilder.ToString();
+            var id = DataProvider.GetAccountId(username, hashedPassword);
+            return id;
+        }
 
         public static void InsertProduct(PRODUCT addedProduct) => DataProvider.InsertRecord(addedProduct, "PRODUCT");
 

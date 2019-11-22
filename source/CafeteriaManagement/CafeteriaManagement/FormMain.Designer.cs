@@ -32,7 +32,7 @@
             this.panelSliding = new System.Windows.Forms.Panel();
             this.buttonMusic = new System.Windows.Forms.Button();
             this.buttonStatistic = new System.Windows.Forms.Button();
-            this.buttonUserInfo = new System.Windows.Forms.Button();
+            this.buttonManageEmployee = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonEditMenu = new System.Windows.Forms.Button();
@@ -42,6 +42,7 @@
             this.ucQueueBox = new CafeteriaManagement.UCQueueBox();
             this.ucHome = new CafeteriaManagement.CustomUserControl.UCHome();
             this.ucAccountInfo = new CafeteriaManagement.CustomUserControl.UCEmployeeManager();
+            this.labelLoggedInId = new System.Windows.Forms.Label();
             this.panelSliding.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,9 +55,10 @@
             // 
             // panelSliding
             // 
+            this.panelSliding.Controls.Add(this.labelLoggedInId);
             this.panelSliding.Controls.Add(this.buttonMusic);
             this.panelSliding.Controls.Add(this.buttonStatistic);
-            this.panelSliding.Controls.Add(this.buttonUserInfo);
+            this.panelSliding.Controls.Add(this.buttonManageEmployee);
             this.panelSliding.Controls.Add(this.button3);
             this.panelSliding.Controls.Add(this.buttonHome);
             this.panelSliding.Controls.Add(this.buttonEditMenu);
@@ -84,15 +86,15 @@
             this.buttonStatistic.Text = "Statistic";
             this.buttonStatistic.UseVisualStyleBackColor = true;
             // 
-            // buttonUserInfo
+            // buttonManageEmployee
             // 
-            this.buttonUserInfo.Location = new System.Drawing.Point(3, 177);
-            this.buttonUserInfo.Name = "buttonUserInfo";
-            this.buttonUserInfo.Size = new System.Drawing.Size(160, 60);
-            this.buttonUserInfo.TabIndex = 3;
-            this.buttonUserInfo.Text = "User Info";
-            this.buttonUserInfo.UseVisualStyleBackColor = true;
-            this.buttonUserInfo.Click += new System.EventHandler(this.ButtonUserInfo_Click);
+            this.buttonManageEmployee.Location = new System.Drawing.Point(3, 177);
+            this.buttonManageEmployee.Name = "buttonManageEmployee";
+            this.buttonManageEmployee.Size = new System.Drawing.Size(160, 60);
+            this.buttonManageEmployee.TabIndex = 3;
+            this.buttonManageEmployee.Text = "Manage Employee";
+            this.buttonManageEmployee.UseVisualStyleBackColor = true;
+            this.buttonManageEmployee.Click += new System.EventHandler(this.ButtonUserInfo_Click);
             // 
             // button3
             // 
@@ -166,6 +168,16 @@
             this.ucAccountInfo.Size = new System.Drawing.Size(828, 510);
             this.ucAccountInfo.TabIndex = 10;
             // 
+            // labelLoggedInId
+            // 
+            this.labelLoggedInId.AutoSize = true;
+            this.labelLoggedInId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLoggedInId.Location = new System.Drawing.Point(23, 17);
+            this.labelLoggedInId.Name = "labelLoggedInId";
+            this.labelLoggedInId.Size = new System.Drawing.Size(110, 16);
+            this.labelLoggedInId.TabIndex = 6;
+            this.labelLoggedInId.Text = "Logged In As: {0}";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +197,7 @@
             this.Text = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panelSliding.ResumeLayout(false);
+            this.panelSliding.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -197,7 +210,7 @@
         private System.Windows.Forms.Panel panelSliding;
         private System.Windows.Forms.Button buttonMusic;
         private System.Windows.Forms.Button buttonStatistic;
-        private System.Windows.Forms.Button buttonUserInfo;
+        private System.Windows.Forms.Button buttonManageEmployee;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.Button buttonEditMenu;
@@ -205,5 +218,6 @@
         private UCEditMenu ucEditMenu;
         private CustomUserControl.UCHome ucHome;
         private CustomUserControl.UCEmployeeManager ucAccountInfo;
+        private System.Windows.Forms.Label labelLoggedInId;
     }
 }

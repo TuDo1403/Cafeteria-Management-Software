@@ -110,7 +110,9 @@ namespace CafeteriaManagement
 
         private void OnItemChoosing(IEnumerable<string> menuTopping) => (ItemChosen as EventHandler<IEnumerable<string>>)?.Invoke(this, menuTopping);
 
-        private void LabelRefresh_Click(object sender, EventArgs e)
+        private void LabelRefresh_Click(object sender, EventArgs e) => RefreshPage();
+
+        private void RefreshPage()
         {
             dataGridViewSelectedItems.DataSource = null;
             labelSum.Text = Properties.Resources.initialPrice;
@@ -118,6 +120,10 @@ namespace CafeteriaManagement
             LoadDataFromDatabase();
         }
 
-        private void ButtonBill_Click(object sender, EventArgs e) => DataProcess.InsertBill(SelectedList.GetSelectedItems(), labelSum.Text);
+        private void ButtonBill_Click(object sender, EventArgs e)
+        {
+            DataProcess.InsertBill(SelectedList.GetSelectedItems(), labelSum.Text);
+            RefreshPage();
+        }
     }
 }
