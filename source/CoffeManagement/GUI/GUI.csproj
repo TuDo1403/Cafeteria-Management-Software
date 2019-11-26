@@ -36,6 +36,9 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\..\..\Downloads\Bunifu_UI_v1.52\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -85,6 +88,18 @@
     </Compile>
     <Compile Include="Form\LogIn2.Designer.cs">
       <DependentUpon>LogIn2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LogIn3_SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\LogIn3_SignIn.Designer.cs">
+      <DependentUpon>LogIn3_SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LogIn3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\LogIn3.Designer.cs">
+      <DependentUpon>LogIn3.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\OrderManagerTopping.cs">
       <SubType>Form</SubType>
@@ -154,6 +169,12 @@
     <EmbeddedResource Include="Form\LogIn2.resx">
       <DependentUpon>LogIn2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\LogIn3_SignIn.resx">
+      <DependentUpon>LogIn3_SignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\LogIn3.resx">
+      <DependentUpon>LogIn3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\OrderManagerTopping.resx">
       <DependentUpon>OrderManagerTopping.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +209,7 @@
     <EmbeddedResource Include="UserControl\UCOrderManager.resx">
       <DependentUpon>UCOrderManager.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
