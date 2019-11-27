@@ -53,6 +53,9 @@
     <Reference Include="LtGt, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LtGt.1.0.1\lib\net45\LtGt.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeAnalysis, Version=3.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeAnalysis.Common.3.4.0-beta4-final\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>
@@ -281,6 +284,24 @@
     <Compile Include="FormUCOrderManager.Topping.Designer.cs">
       <DependentUpon>FormUCOrderManager.Topping.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogIn2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn2.designer.cs">
+      <DependentUpon>LogIn2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn3.Designer.cs">
+      <DependentUpon>LogIn3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn3_SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn3_SignIn.designer.cs">
+      <DependentUpon>LogIn3_SignIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="MusicPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -331,6 +352,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUCOrderManager.Topping.resx">
       <DependentUpon>FormUCOrderManager.Topping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn2.resx">
+      <DependentUpon>LogIn2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn3.resx">
+      <DependentUpon>LogIn3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn3_SignIn.resx">
+      <DependentUpon>LogIn3_SignIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

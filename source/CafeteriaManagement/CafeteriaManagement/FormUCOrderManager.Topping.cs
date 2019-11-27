@@ -39,5 +39,10 @@ namespace CafeteriaManagement
         }
 
         private void OnToppingsSelecting(List<string> selectedToppings) => (ToppingsSelected as EventHandler<List<string>>)?.Invoke(this, selectedToppings);
+
+        private void FormTopping_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

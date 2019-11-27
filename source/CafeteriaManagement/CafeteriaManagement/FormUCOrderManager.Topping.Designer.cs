@@ -206,6 +206,7 @@
             this.Name = "FormTopping";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Topping";
+            this.Load += new System.EventHandler(this.FormTopping_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

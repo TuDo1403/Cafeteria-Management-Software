@@ -125,5 +125,10 @@ namespace CafeteriaManagement
             DataProcess.InsertBill(SelectedList.GetSelectedItems(), labelSum.Text);
             RefreshPage();
         }
+
+        private void menuListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -68,5 +68,10 @@ namespace CafeteriaManagement
                 ButtonLogin_Click(sender, e);
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

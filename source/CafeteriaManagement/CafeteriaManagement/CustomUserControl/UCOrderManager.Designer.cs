@@ -194,6 +194,7 @@
             this.menuListView.TabIndex = 6;
             this.menuListView.UseCompatibleStateImageBehavior = false;
             this.menuListView.View = System.Windows.Forms.View.List;
+            this.menuListView.SelectedIndexChanged += new System.EventHandler(this.menuListView_SelectedIndexChanged);
             this.menuListView.DoubleClick += new System.EventHandler(this.MenuListView_DoubleClick);
             // 
             // menuLabel
