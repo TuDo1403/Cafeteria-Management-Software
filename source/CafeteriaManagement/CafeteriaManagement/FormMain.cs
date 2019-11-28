@@ -15,7 +15,6 @@ namespace CafeteriaManagement
         public static event EventHandler<UserControl> FormMainLoaded;
 
 
-
         public FormMain()
         {
             InitializeComponent();

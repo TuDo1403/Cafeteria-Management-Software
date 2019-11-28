@@ -35,6 +35,10 @@ namespace CM.DAL
             {
                 return database.PRODUCT_BILLs;
             }
+            if (tableName == "ACCOUNT")
+            {
+                return database.ACCOUNTs;
+            }
             return null;
         }
     }

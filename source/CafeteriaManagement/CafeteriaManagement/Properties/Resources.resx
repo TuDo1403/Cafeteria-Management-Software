@@ -129,13 +129,22 @@
   <data name="songAddedText" xml:space="preserve">
     <value>Added!</value>
   </data>
+  <data name="textBoxEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="textBoxPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="textBoxReEnterPassword" xml:space="preserve">
+    <value>Re-enter Password</value>
+  </data>
   <data name="textBoxSearchMenuText" xml:space="preserve">
     <value>Search</value>
   </data>
   <data name="textBoxSearchMenuText1" xml:space="preserve">
     <value>Enter Keyword</value>
   </data>
-  <data name="textBoxText" xml:space="preserve">
-    <value>Username or Phone</value>
+  <data name="textBoxUsername" xml:space="preserve">
+    <value>Username</value>
   </data>
 </root>

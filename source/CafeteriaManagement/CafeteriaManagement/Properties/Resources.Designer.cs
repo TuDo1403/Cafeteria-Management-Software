@@ -97,6 +97,33 @@ namespace CafeteriaManagement.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string textBoxEmail {
+            get {
+                return ResourceManager.GetString("textBoxEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string textBoxPassword {
+            get {
+                return ResourceManager.GetString("textBoxPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Re-enter Password.
+        /// </summary>
+        internal static string textBoxReEnterPassword {
+            get {
+                return ResourceManager.GetString("textBoxReEnterPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search.
         /// </summary>
         internal static string textBoxSearchMenuText {
@@ -115,11 +142,11 @@ namespace CafeteriaManagement.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Username or Phone.
+        ///   Looks up a localized string similar to Username.
         /// </summary>
-        internal static string textBoxText {
+        internal static string textBoxUsername {
             get {
-                return ResourceManager.GetString("textBoxText", resourceCulture);
+                return ResourceManager.GetString("textBoxUsername", resourceCulture);
             }
         }
     }

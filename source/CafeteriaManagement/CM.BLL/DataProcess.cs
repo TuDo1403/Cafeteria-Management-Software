@@ -2,6 +2,7 @@
 using CM.DTO;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -28,10 +29,10 @@ namespace BLL
             //remember to add out of range check
             if (string.IsNullOrEmpty(lastId))
             {
-                return string.Format("PD{0:000}", 0);
+                return string.Format(CultureInfo.InvariantCulture, "PD{0:000}", 0);
             }
-            var nextIndex = Convert.ToInt32(lastId.Remove(0, 2)) + 1;
-            return string.Format("PD{0:000}", nextIndex);
+            var nextIndex = Convert.ToInt32(lastId.Remove(0, 2), CultureInfo.InvariantCulture) + 1;
+            return string.Format(CultureInfo.InvariantCulture, "PD{0:000}", nextIndex);
         }
 
         public static string GetNextBillId()
@@ -39,10 +40,10 @@ namespace BLL
             var lastId = DataProvider.GetLastBillId();
             if (string.IsNullOrEmpty(lastId))
             {
-                return string.Format("B{0:00000}", 0);
+                return string.Format(CultureInfo.InvariantCulture, "B{0:00000}", 0);
             }
-            var nextIndex = Convert.ToInt32(lastId.Remove(0, 1)) + 1;
-            return string.Format("B{0:00000}", nextIndex);
+            var nextIndex = Convert.ToInt32(lastId.Remove(0, 1), CultureInfo.InvariantCulture) + 1;
+            return string.Format(CultureInfo.InvariantCulture, "B{0:00000}", nextIndex);
         }
 
         public static string GetAccountId(string username, string password)
@@ -55,7 +56,7 @@ namespace BLL
             foreach (var item in hash)
             {
                 // convert to hexadecimal
-                stringBuilder.Append(item.ToString("x2"));
+                stringBuilder.Append(item.ToString("x2", CultureInfo.InvariantCulture));
             }
             var hashedPassword = stringBuilder.ToString();
             var id = DataProvider.GetAccountId(username, hashedPassword);
@@ -66,13 +67,14 @@ namespace BLL
 
 
 
-        public static void InsertBill(List<Product> list, string total)
+        public static void InsertBill(List<Product> list, string total, string userId)
         {
             var bill = new BILL()
             {
                 Id = GetNextBillId(),
-                Total = Convert.ToDecimal(total),
+                Total = Convert.ToDecimal(total, CultureInfo.InvariantCulture),
                 DateCreated = DateTime.Today,
+                EmployeeId = DataProvider.GetEmployeeIdFrom(userId)
             };
             DataProvider.InsertRecord(bill, "BILL");
             foreach (var item in list)
@@ -92,5 +94,29 @@ namespace BLL
             var record = DataProvider.GetProductInfo(text);
             DataProvider.DeleteRecord(record, "PRODUCT");
         }
+
+        public static void RegisterUser(string username, string password, string  email)
+        {
+            var account = new ACCOUNT()
+            {
+                Id = GetNextAccountID(),
+                UserName = username,
+                PassWord = password,
+            };
+            DataProvider.InsertRecord(account, "ACCOUNT");
+        }
+
+        private static string GetNextAccountID()
+        {
+            var lastId = DataProvider.GetLastAccountId();
+            //remember to add out of range check
+            if (string.IsNullOrEmpty(lastId))
+            {
+                return string.Format(CultureInfo.InvariantCulture, "U{0:0000}", 0);
+            }
+            var nextIndex = Convert.ToInt32(lastId.Remove(0, 2), CultureInfo.InvariantCulture) + 1;
+            return string.Format(CultureInfo.InvariantCulture, "U{0:0000}", nextIndex);
+        }
     }
+    
 }

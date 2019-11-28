@@ -28,149 +28,172 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.labelUsername = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.labelDisplayName = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonSignUp = new System.Windows.Forms.Button();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.textBoxUsername = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.textBoxPasswordMatch = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.labelAlreadyHaveAccount = new MaterialSkin.Controls.MaterialLabel();
+            this.labelLogin = new MaterialSkin.Controls.MaterialLabel();
+            this.textBoxEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.textBoxPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.textBoxUsername);
-            this.panel2.Controls.Add(this.labelUsername);
-            this.panel2.Location = new System.Drawing.Point(135, 82);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(290, 47);
-            this.panel2.TabIndex = 2;
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBoxUsername.Location = new System.Drawing.Point(111, 16);
+            this.textBoxUsername.Depth = 0;
+            this.textBoxUsername.Hint = "";
+            this.textBoxUsername.Location = new System.Drawing.Point(22, 111);
+            this.textBoxUsername.MouseState = MaterialSkin.MouseState.HOVER;
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(163, 20);
-            this.textBoxUsername.TabIndex = 1;
-            this.textBoxUsername.Text = "Username or Phone";
+            this.textBoxUsername.PasswordChar = '\0';
+            this.textBoxUsername.SelectedText = "";
+            this.textBoxUsername.SelectionLength = 0;
+            this.textBoxUsername.SelectionStart = 0;
+            this.textBoxUsername.Size = new System.Drawing.Size(254, 23);
+            this.textBoxUsername.TabIndex = 0;
+            this.textBoxUsername.Text = "Username";
+            this.textBoxUsername.UseSystemPasswordChar = false;
+            this.textBoxUsername.Enter += new System.EventHandler(this.TextBoxUsername_Enter);
+            this.textBoxUsername.Leave += new System.EventHandler(this.TextBoxUsername_Leave);
             // 
-            // labelUsername
+            // textBoxPasswordMatch
             // 
-            this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.Location = new System.Drawing.Point(14, 16);
-            this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(81, 17);
-            this.labelUsername.TabIndex = 0;
-            this.labelUsername.Text = "Username";
+            this.textBoxPasswordMatch.Depth = 0;
+            this.textBoxPasswordMatch.Hint = "";
+            this.textBoxPasswordMatch.Location = new System.Drawing.Point(22, 270);
+            this.textBoxPasswordMatch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxPasswordMatch.Name = "textBoxPasswordMatch";
+            this.textBoxPasswordMatch.PasswordChar = '\0';
+            this.textBoxPasswordMatch.SelectedText = "";
+            this.textBoxPasswordMatch.SelectionLength = 0;
+            this.textBoxPasswordMatch.SelectionStart = 0;
+            this.textBoxPasswordMatch.Size = new System.Drawing.Size(254, 23);
+            this.textBoxPasswordMatch.TabIndex = 1;
+            this.textBoxPasswordMatch.Text = "Re-enter Password";
+            this.textBoxPasswordMatch.UseSystemPasswordChar = false;
+            this.textBoxPasswordMatch.Enter += new System.EventHandler(this.TextBoxPasswordMatch_Enter);
+            this.textBoxPasswordMatch.Leave += new System.EventHandler(this.TextBoxPasswordMatch_Leave);
             // 
-            // panel3
+            // materialRaisedButton1
             // 
-            this.panel3.Controls.Add(this.textBoxPassword);
-            this.panel3.Controls.Add(this.labelDisplayName);
-            this.panel3.Location = new System.Drawing.Point(71, 135);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(290, 47);
-            this.panel3.TabIndex = 3;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(192, 319);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(84, 29);
+            this.materialRaisedButton1.TabIndex = 3;
+            this.materialRaisedButton1.Text = "REGISTER";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.Button_Register_Click);
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(22, 383);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(254, 1);
+            this.materialDivider1.TabIndex = 4;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // labelAlreadyHaveAccount
+            // 
+            this.labelAlreadyHaveAccount.AutoSize = true;
+            this.labelAlreadyHaveAccount.BackColor = System.Drawing.Color.Transparent;
+            this.labelAlreadyHaveAccount.Depth = 0;
+            this.labelAlreadyHaveAccount.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelAlreadyHaveAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelAlreadyHaveAccount.Location = new System.Drawing.Point(18, 413);
+            this.labelAlreadyHaveAccount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelAlreadyHaveAccount.Name = "labelAlreadyHaveAccount";
+            this.labelAlreadyHaveAccount.Size = new System.Drawing.Size(179, 19);
+            this.labelAlreadyHaveAccount.TabIndex = 5;
+            this.labelAlreadyHaveAccount.Text = "Already have an account?";
+            // 
+            // labelLogin
+            // 
+            this.labelLogin.AutoSize = true;
+            this.labelLogin.BackColor = System.Drawing.Color.Transparent;
+            this.labelLogin.Depth = 0;
+            this.labelLogin.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelLogin.Location = new System.Drawing.Point(230, 413);
+            this.labelLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(46, 19);
+            this.labelLogin.TabIndex = 6;
+            this.labelLogin.Text = "Login";
+            this.labelLogin.Click += new System.EventHandler(this.Label_Login_Click);
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Depth = 0;
+            this.textBoxEmail.Hint = "";
+            this.textBoxEmail.Location = new System.Drawing.Point(22, 164);
+            this.textBoxEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.PasswordChar = '\0';
+            this.textBoxEmail.SelectedText = "";
+            this.textBoxEmail.SelectionLength = 0;
+            this.textBoxEmail.SelectionStart = 0;
+            this.textBoxEmail.Size = new System.Drawing.Size(254, 23);
+            this.textBoxEmail.TabIndex = 7;
+            this.textBoxEmail.Text = "Email";
+            this.textBoxEmail.UseSystemPasswordChar = false;
+            this.textBoxEmail.Enter += new System.EventHandler(this.TextBoxEmail_Enter);
+            this.textBoxEmail.Leave += new System.EventHandler(this.TextBoxEmail_Leave);
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(111, 16);
+            this.textBoxPassword.Depth = 0;
+            this.textBoxPassword.Hint = "";
+            this.textBoxPassword.Location = new System.Drawing.Point(22, 214);
+            this.textBoxPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(163, 20);
-            this.textBoxPassword.TabIndex = 2;
-            this.textBoxPassword.UseSystemPasswordChar = true;
-            // 
-            // labelDisplayName
-            // 
-            this.labelDisplayName.AutoSize = true;
-            this.labelDisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDisplayName.Location = new System.Drawing.Point(14, 16);
-            this.labelDisplayName.Name = "labelDisplayName";
-            this.labelDisplayName.Size = new System.Drawing.Size(80, 17);
-            this.labelDisplayName.TabIndex = 0;
-            this.labelDisplayName.Text = "Full Name";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(152, 226);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(290, 47);
-            this.panel1.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(111, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(163, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.UseSystemPasswordChar = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Password";
-            // 
-            // buttonSignUp
-            // 
-            this.buttonSignUp.Location = new System.Drawing.Point(573, 312);
-            this.buttonSignUp.Name = "buttonSignUp";
-            this.buttonSignUp.Size = new System.Drawing.Size(75, 23);
-            this.buttonSignUp.TabIndex = 5;
-            this.buttonSignUp.Text = "Sign Up";
-            this.buttonSignUp.UseVisualStyleBackColor = true;
+            this.textBoxPassword.PasswordChar = '\0';
+            this.textBoxPassword.SelectedText = "";
+            this.textBoxPassword.SelectionLength = 0;
+            this.textBoxPassword.SelectionStart = 0;
+            this.textBoxPassword.Size = new System.Drawing.Size(254, 23);
+            this.textBoxPassword.TabIndex = 8;
+            this.textBoxPassword.Text = "Password";
+            this.textBoxPassword.UseSystemPasswordChar = false;
+            this.textBoxPassword.Enter += new System.EventHandler(this.TextBoxPassword_Enter);
+            this.textBoxPassword.Leave += new System.EventHandler(this.TextBoxPassword_Leave);
             // 
             // FormSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonSignUp);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(300, 450);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.labelLogin);
+            this.Controls.Add(this.labelAlreadyHaveAccount);
+            this.Controls.Add(this.materialDivider1);
+            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.textBoxPasswordMatch);
+            this.Controls.Add(this.textBoxUsername);
             this.Name = "FormSignUp";
-            this.Text = "FormSignUp";
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sign Up";
+            this.Load += new System.EventHandler(this.LogIn3_SignIn_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBoxUsername;
-        private System.Windows.Forms.Label labelUsername;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.Label labelDisplayName;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonSignUp;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxUsername;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxPasswordMatch;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialLabel labelAlreadyHaveAccount;
+        private MaterialSkin.Controls.MaterialLabel labelLogin;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxEmail;
+        private MaterialSkin.Controls.MaterialSingleLineTextField textBoxPassword;
     }
 }

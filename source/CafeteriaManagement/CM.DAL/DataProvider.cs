@@ -82,6 +82,14 @@ namespace CM.DAL
             _database.SubmitChanges();
         }
 
+        public static string GetEmployeeIdFrom(string userId)
+        {
+            var employeeId = (from account in _database.ACCOUNTs
+                              where account.Id == userId
+                              select account.EmployeeId).Single();
+            return employeeId;
+        }
+
         public static void UpdateProduct(PRODUCT updatedProduct)
         {
             var item = (from product in _database.PRODUCTs
@@ -106,6 +114,8 @@ namespace CM.DAL
                              select (bool)product.IsTopping).FirstOrDefault();
             return isTopping;
         }
+
+
 
         public static PRODUCT GetProductInfo(string productName)
         {
@@ -168,7 +178,17 @@ namespace CM.DAL
             return id;
         }
 
-
+        public static string GetLastAccountId()
+        {
+            var hasElement = _database.ACCOUNTs.Any();
+            if (!hasElement)
+            {
+                return "";
+            }
+            var id = (from bill in _database.BILLs
+                      select bill.Id).AsEnumerable().Last();
+            return id;
+        }
 
     }
 }

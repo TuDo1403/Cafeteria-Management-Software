@@ -16,6 +16,7 @@ namespace CafeteriaManagement
 {
     public partial class UCOrderManager : UserControl
     {
+        private string _currentUser;
         public static event EventHandler<IEnumerable<string>> ItemChosen;
 
 
@@ -25,6 +26,12 @@ namespace CafeteriaManagement
             InitializeComponent();
             LoadDataFromDatabase();
             FormTopping.ToppingsSelected += FormTopping_ToppingsSelectedHandler;
+            FormLogin.LoginSucceeded += FormLogin_LoginSucceededHandler;
+        }
+
+        private void FormLogin_LoginSucceededHandler(object sender, string e)
+        {
+            _currentUser = e;
         }
 
         private void LoadDataFromDatabase()
@@ -122,8 +129,11 @@ namespace CafeteriaManagement
 
         private void ButtonBill_Click(object sender, EventArgs e)
         {
-            DataProcess.InsertBill(SelectedList.GetSelectedItems(), labelSum.Text);
-            RefreshPage();
+            if (SelectedList.GetSelectedItems().Count > 0)
+            {
+                DataProcess.InsertBill(SelectedList.GetSelectedItems(), labelSum.Text, _currentUser);
+                RefreshPage();
+            }
         }
 
         private void menuListView_SelectedIndexChanged(object sender, EventArgs e)
