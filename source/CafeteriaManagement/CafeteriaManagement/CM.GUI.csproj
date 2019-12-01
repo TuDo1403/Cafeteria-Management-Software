@@ -254,6 +254,12 @@
     <Compile Include="CustomUserControl\UCHome.Designer.cs">
       <DependentUpon>UCHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAnnouncement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnnouncement.designer.cs">
+      <DependentUpon>FormAnnouncement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +271,12 @@
     </Compile>
     <Compile Include="FormProductInfo.Designer.cs">
       <DependentUpon>FormProductInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormToppingNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormToppingNew.designer.cs">
+      <DependentUpon>FormToppingNew.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUCOrderManager.Topping.cs">
       <SubType>Form</SubType>
@@ -326,11 +338,17 @@
     <EmbeddedResource Include="CustomUserControl\UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAnnouncement.resx">
+      <DependentUpon>FormAnnouncement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductInfo.resx">
       <DependentUpon>FormProductInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormToppingNew.resx">
+      <DependentUpon>FormToppingNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUCOrderManager.Topping.resx">
       <DependentUpon>FormUCOrderManager.Topping.cs</DependentUpon>

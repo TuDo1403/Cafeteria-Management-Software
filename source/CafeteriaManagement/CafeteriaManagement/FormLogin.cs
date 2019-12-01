@@ -103,5 +103,10 @@ namespace CafeteriaManagement
                 ButtonLogin_Click(sender, e);
             }
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
