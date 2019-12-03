@@ -161,7 +161,9 @@ namespace CafeteriaManagement
 
         private void OnSongChangingPrev() => (SongPrev as EventHandler)?.Invoke(this, EventArgs.Empty);
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
-
+        }
     }
 }
