@@ -114,9 +114,23 @@ namespace BLL
             {
                 return string.Format(CultureInfo.InvariantCulture, "U{0:0000}", 0);
             }
-            var nextIndex = Convert.ToInt32(lastId.Remove(0, 2), CultureInfo.InvariantCulture) + 1;
+            var nextIndex = Convert.ToInt32(lastId.Remove(0, 1), CultureInfo.InvariantCulture) + 1;
             return string.Format(CultureInfo.InvariantCulture, "U{0:0000}", nextIndex);
         }
+
+        public static string GetNextEmployeeId()
+        {
+            var lastId = DataProvider.GetLastEmployeeId();
+
+            if (string.IsNullOrEmpty(lastId))
+            {
+                return string.Format(CultureInfo.InvariantCulture, "E{0:0000}", 0);
+            }
+            var nextIndex = Convert.ToInt32(lastId.Remove(0, 1), CultureInfo.InvariantCulture) + 1;
+            return string.Format(CultureInfo.InvariantCulture, "E{0:0000}", nextIndex);
+        }
+
+
     }
     
 }

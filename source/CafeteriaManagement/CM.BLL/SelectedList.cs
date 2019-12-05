@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class SelectedList
+    public static class SelectedList
     {
         private static readonly List<Product> _selectedItems = new List<Product>();
 

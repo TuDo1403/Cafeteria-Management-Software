@@ -32,12 +32,12 @@ namespace CafeteriaManagement
 
         private void OnFormLoading(UCQueueBox ucQueueBox) => (FormMainLoaded as EventHandler<UserControl>)?.Invoke(this, ucQueueBox);
 
-        private void ButtonOrderManager_Click(object sender, EventArgs e) => ucOrderManager.BringToFront();
+        private void ButtonOrderManager_Click(object sender, EventArgs e) => ucOrderNew1.BringToFront();
 
-        private void ButtonAdmin_Click(object sender, EventArgs e) => ucEditMenu.BringToFront();
+        private void ButtonAdmin_Click(object sender, EventArgs e) => ucEditMenuNew1.BringToFront();
 
         private void ButtonHome_Click(object sender, EventArgs e) => ucHome.BringToFront();
 
-        private void ButtonUserInfo_Click(object sender, EventArgs e) => ucAccountInfo.BringToFront();
+        private void ButtonUserInfo_Click(object sender, EventArgs e) => ucEmployeeNew1.BringToFront();
     }
 }

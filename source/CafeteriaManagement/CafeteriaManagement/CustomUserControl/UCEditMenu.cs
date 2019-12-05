@@ -27,10 +27,7 @@ namespace CafeteriaManagement
             comboBoxCatetory.DataSource = DataProvider.RetrieveCategory();
         }
 
-        private void FormProductInfo_ProductUpdatedHandler(object sender, EventArgs e)
-        {
-            LoadDataFromDatabase();
-        }
+        private void FormProductInfo_ProductUpdatedHandler(object sender, EventArgs e) => LoadDataFromDatabase();
 
         private void ComboBoxCatetory_SelectedIndexChanged(object sender, EventArgs e)
         {

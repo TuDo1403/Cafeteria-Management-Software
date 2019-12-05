@@ -30,19 +30,19 @@
         {
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelSliding = new System.Windows.Forms.Panel();
+            this.labelLoggedInId = new System.Windows.Forms.Label();
             this.buttonMusic = new System.Windows.Forms.Button();
             this.buttonStatistic = new System.Windows.Forms.Button();
             this.buttonManageEmployee = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonEditMenu = new System.Windows.Forms.Button();
-            this.ucOrderManager = new CafeteriaManagement.UCOrderManager();
-            this.ucEditMenu = new CafeteriaManagement.UCEditMenu();
             this.ucMusicDownloader = new CafeteriaManagement.UCMusicDownloader();
             this.ucQueueBox = new CafeteriaManagement.UCQueueBox();
             this.ucHome = new CafeteriaManagement.CustomUserControl.UCHome();
-            this.ucAccountInfo = new CafeteriaManagement.CustomUserControl.UCEmployeeManager();
-            this.labelLoggedInId = new System.Windows.Forms.Label();
+            this.ucEditMenuNew1 = new CafeteriaManagement.UCEditMenuNew();
+            this.ucEmployeeNew1 = new CafeteriaManagement.UCEmployeeNew();
+            this.ucOrderNew1 = new CafeteriaManagement.UCOrderNew();
             this.panelSliding.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,16 @@
             this.panelSliding.Name = "panelSliding";
             this.panelSliding.Size = new System.Drawing.Size(166, 510);
             this.panelSliding.TabIndex = 5;
+            // 
+            // labelLoggedInId
+            // 
+            this.labelLoggedInId.AutoSize = true;
+            this.labelLoggedInId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLoggedInId.Location = new System.Drawing.Point(23, 17);
+            this.labelLoggedInId.Name = "labelLoggedInId";
+            this.labelLoggedInId.Size = new System.Drawing.Size(110, 16);
+            this.labelLoggedInId.TabIndex = 6;
+            this.labelLoggedInId.Text = "Logged In As: {0}";
             // 
             // buttonMusic
             // 
@@ -126,20 +136,6 @@
             this.buttonEditMenu.UseVisualStyleBackColor = true;
             this.buttonEditMenu.Click += new System.EventHandler(this.ButtonAdmin_Click);
             // 
-            // ucOrderManager
-            // 
-            this.ucOrderManager.Location = new System.Drawing.Point(184, 78);
-            this.ucOrderManager.Name = "ucOrderManager";
-            this.ucOrderManager.Size = new System.Drawing.Size(828, 510);
-            this.ucOrderManager.TabIndex = 0;
-            // 
-            // ucEditMenu
-            // 
-            this.ucEditMenu.Location = new System.Drawing.Point(184, 82);
-            this.ucEditMenu.Name = "ucEditMenu";
-            this.ucEditMenu.Size = new System.Drawing.Size(828, 510);
-            this.ucEditMenu.TabIndex = 8;
-            // 
             // ucMusicDownloader
             // 
             this.ucMusicDownloader.Location = new System.Drawing.Point(184, 80);
@@ -161,36 +157,43 @@
             this.ucHome.Size = new System.Drawing.Size(828, 510);
             this.ucHome.TabIndex = 9;
             // 
-            // ucAccountInfo
+            // ucEditMenuNew1
             // 
-            this.ucAccountInfo.Location = new System.Drawing.Point(184, 78);
-            this.ucAccountInfo.Name = "ucAccountInfo";
-            this.ucAccountInfo.Size = new System.Drawing.Size(828, 510);
-            this.ucAccountInfo.TabIndex = 10;
+            this.ucEditMenuNew1.BackColor = System.Drawing.Color.Silver;
+            this.ucEditMenuNew1.Location = new System.Drawing.Point(184, 78);
+            this.ucEditMenuNew1.Name = "ucEditMenuNew1";
+            this.ucEditMenuNew1.Size = new System.Drawing.Size(828, 510);
+            this.ucEditMenuNew1.TabIndex = 11;
             // 
-            // labelLoggedInId
+            // ucEmployeeNew1
             // 
-            this.labelLoggedInId.AutoSize = true;
-            this.labelLoggedInId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLoggedInId.Location = new System.Drawing.Point(23, 17);
-            this.labelLoggedInId.Name = "labelLoggedInId";
-            this.labelLoggedInId.Size = new System.Drawing.Size(110, 16);
-            this.labelLoggedInId.TabIndex = 6;
-            this.labelLoggedInId.Text = "Logged In As: {0}";
+            this.ucEmployeeNew1.BackColor = System.Drawing.Color.Silver;
+            this.ucEmployeeNew1.Location = new System.Drawing.Point(184, 80);
+            this.ucEmployeeNew1.Name = "ucEmployeeNew1";
+            this.ucEmployeeNew1.Size = new System.Drawing.Size(828, 510);
+            this.ucEmployeeNew1.TabIndex = 12;
+            // 
+            // ucOrderNew1
+            // 
+            this.ucOrderNew1.BackColor = System.Drawing.Color.Silver;
+            this.ucOrderNew1.Location = new System.Drawing.Point(184, 78);
+            this.ucOrderNew1.Name = "ucOrderNew1";
+            this.ucOrderNew1.Size = new System.Drawing.Size(828, 510);
+            this.ucOrderNew1.TabIndex = 13;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.ucOrderManager);
+            this.Controls.Add(this.ucOrderNew1);
             this.Controls.Add(this.panelSliding);
             this.Controls.Add(this.panelTop);
-            this.Controls.Add(this.ucEditMenu);
+            this.Controls.Add(this.ucEditMenuNew1);
             this.Controls.Add(this.ucMusicDownloader);
             this.Controls.Add(this.ucQueueBox);
             this.Controls.Add(this.ucHome);
-            this.Controls.Add(this.ucAccountInfo);
+            this.Controls.Add(this.ucEmployeeNew1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -203,8 +206,6 @@
         }
 
         #endregion
-
-        private UCOrderManager ucOrderManager;
         private UCMusicDownloader ucMusicDownloader;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelSliding;
@@ -215,9 +216,10 @@
         private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.Button buttonEditMenu;
         private UCQueueBox ucQueueBox;
-        private UCEditMenu ucEditMenu;
         private CustomUserControl.UCHome ucHome;
-        private CustomUserControl.UCEmployeeManager ucAccountInfo;
         private System.Windows.Forms.Label labelLoggedInId;
+        private UCEditMenuNew ucEditMenuNew1;
+        private UCEmployeeNew ucEmployeeNew1;
+        private UCOrderNew ucOrderNew1;
     }
 }

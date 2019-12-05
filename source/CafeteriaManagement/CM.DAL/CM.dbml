@@ -20,28 +20,6 @@
       <Association Name="CUSTOMER_BILL" Member="BILLs" ThisKey="Id" OtherKey="CustomerId" Type="BILL" />
     </Type>
   </Table>
-  <Table Name="dbo.EMPLOYEE" Member="EMPLOYEEs">
-    <Type Name="EMPLOYEE">
-      <Column Name="Id" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Daystart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="EMPLOYEE_BILL" Member="BILLs" ThisKey="Id" OtherKey="EmployeeId" Type="BILL" />
-      <Association Name="EMPLOYEE_ACCOUNT" Member="ACCOUNTs" ThisKey="Id" OtherKey="EmployeeId" Type="ACCOUNT" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PRODUCT" Member="PRODUCTs">
-    <Type Name="PRODUCT">
-      <Column Name="Id" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="ProductId" Type="System.String" DbType="Char(4)" CanBeNull="true" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="IsTopping" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="PRODUCT_PRODUCT_BILL" Member="PRODUCT_BILLs" ThisKey="Id" OtherKey="ProductId" Type="PRODUCT_BILL" />
-      <Association Name="PRODUCTTYPE_PRODUCT" Member="PRODUCTTYPE" ThisKey="ProductId" OtherKey="Id" Type="PRODUCTTYPE" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.PRODUCT_BILL" Member="PRODUCT_BILLs">
     <Type Name="PRODUCT_BILL">
       <Column Name="BillId" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -67,6 +45,31 @@
       <Column Name="AccountType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="EmployeeId" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
       <Association Name="EMPLOYEE_ACCOUNT" Member="EMPLOYEE" ThisKey="EmployeeId" OtherKey="Id" Type="EMPLOYEE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EMPLOYEE" Member="EMPLOYEEs">
+    <Type Name="EMPLOYEE">
+      <Column Name="Id" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Daystart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="EMPLOYEE_BILL" Member="BILLs" ThisKey="Id" OtherKey="EmployeeId" Type="BILL" />
+      <Association Name="EMPLOYEE_ACCOUNT" Member="ACCOUNTs" ThisKey="Id" OtherKey="EmployeeId" Type="ACCOUNT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCT" Member="PRODUCTs">
+    <Type Name="PRODUCT">
+      <Column Name="Id" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsTopping" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PRODUCT_PRODUCT_BILL" Member="PRODUCT_BILLs" ThisKey="Id" OtherKey="ProductId" Type="PRODUCT_BILL" />
+      <Association Name="PRODUCTTYPE_PRODUCT" Member="PRODUCTTYPE" ThisKey="ProductId" OtherKey="Id" Type="PRODUCTTYPE" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

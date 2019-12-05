@@ -1,4 +1,6 @@
-﻿namespace CafeteriaManagement
+﻿using System;
+
+namespace CafeteriaManagement
 {
     partial class UCEditMenuNew
     {
@@ -28,144 +30,232 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.comboBoxCategory = new Bunifu.Framework.UI.BunifuDropdown();
+            this.buttonEdit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.buttonAdd = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.buttonDelete = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.dataGridViewMenu = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(43, 111);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(568, 286);
-            this.flowLayoutPanel1.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(43, 69);
+            this.label1.Location = new System.Drawing.Point(26, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(572, 30);
+            this.label1.Size = new System.Drawing.Size(617, 30);
             this.label1.TabIndex = 5;
             this.label1.Text = "Menu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuDropdown1
+            // comboBoxCategory
             // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 1;
-            this.bunifuDropdown1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[] {
-        "Male",
-        "Female",
-        "Other"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(43, 28);
-            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(240, 30);
-            this.bunifuDropdown1.TabIndex = 4;
+            this.comboBoxCategory.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxCategory.BorderRadius = 1;
+            this.comboBoxCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBoxCategory.ForeColor = System.Drawing.Color.White;
+            this.comboBoxCategory.Items = new string[0];
+            this.comboBoxCategory.Location = new System.Drawing.Point(26, 25);
+            this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.comboBoxCategory.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.comboBoxCategory.selectedIndex = -1;
+            this.comboBoxCategory.Size = new System.Drawing.Size(240, 30);
+            this.comboBoxCategory.TabIndex = 4;
+            this.comboBoxCategory.onItemSelected += new System.EventHandler(this.ComboBoxCategory_onItemSelected);
             // 
-            // bunifuFlatButton1
+            // buttonEdit
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 2;
-            this.bunifuFlatButton1.ButtonText = "        Edit";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = null;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 90D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(688, 135);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(80, 27);
-            this.bunifuFlatButton1.TabIndex = 7;
-            this.bunifuFlatButton1.Text = "        Edit";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonEdit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.buttonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.buttonEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonEdit.BorderRadius = 2;
+            this.buttonEdit.ButtonText = "Edit";
+            this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEdit.DisabledColor = System.Drawing.Color.Gray;
+            this.buttonEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonEdit.Iconcolor = System.Drawing.Color.Transparent;
+            this.buttonEdit.Iconimage = null;
+            this.buttonEdit.Iconimage_right = null;
+            this.buttonEdit.Iconimage_right_Selected = null;
+            this.buttonEdit.Iconimage_Selected = null;
+            this.buttonEdit.IconMarginLeft = 0;
+            this.buttonEdit.IconMarginRight = 0;
+            this.buttonEdit.IconRightVisible = true;
+            this.buttonEdit.IconRightZoom = 0D;
+            this.buttonEdit.IconVisible = true;
+            this.buttonEdit.IconZoom = 90D;
+            this.buttonEdit.IsTab = false;
+            this.buttonEdit.Location = new System.Drawing.Point(683, 135);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.buttonEdit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.buttonEdit.OnHoverTextColor = System.Drawing.Color.White;
+            this.buttonEdit.selected = false;
+            this.buttonEdit.Size = new System.Drawing.Size(80, 27);
+            this.buttonEdit.TabIndex = 7;
+            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonEdit.Textcolor = System.Drawing.Color.White;
+            this.buttonEdit.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
-            // bunifuFlatButton2
+            // buttonAdd
             // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 2;
-            this.bunifuFlatButton2.ButtonText = "        Add";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = null;
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 90D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(688, 182);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(80, 27);
-            this.bunifuFlatButton2.TabIndex = 8;
-            this.bunifuFlatButton2.Text = "        Add";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonAdd.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAdd.BorderRadius = 2;
+            this.buttonAdd.ButtonText = "Add";
+            this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAdd.DisabledColor = System.Drawing.Color.Gray;
+            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonAdd.Iconcolor = System.Drawing.Color.Transparent;
+            this.buttonAdd.Iconimage = null;
+            this.buttonAdd.Iconimage_right = null;
+            this.buttonAdd.Iconimage_right_Selected = null;
+            this.buttonAdd.Iconimage_Selected = null;
+            this.buttonAdd.IconMarginLeft = 0;
+            this.buttonAdd.IconMarginRight = 0;
+            this.buttonAdd.IconRightVisible = true;
+            this.buttonAdd.IconRightZoom = 0D;
+            this.buttonAdd.IconVisible = true;
+            this.buttonAdd.IconZoom = 90D;
+            this.buttonAdd.IsTab = false;
+            this.buttonAdd.Location = new System.Drawing.Point(683, 102);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.buttonAdd.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.buttonAdd.OnHoverTextColor = System.Drawing.Color.White;
+            this.buttonAdd.selected = false;
+            this.buttonAdd.Size = new System.Drawing.Size(80, 27);
+            this.buttonAdd.TabIndex = 8;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonAdd.Textcolor = System.Drawing.Color.White;
+            this.buttonAdd.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonDelete.BorderRadius = 2;
+            this.buttonDelete.ButtonText = "Delete";
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.DisabledColor = System.Drawing.Color.Gray;
+            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonDelete.Iconcolor = System.Drawing.Color.Transparent;
+            this.buttonDelete.Iconimage = null;
+            this.buttonDelete.Iconimage_right = null;
+            this.buttonDelete.Iconimage_right_Selected = null;
+            this.buttonDelete.Iconimage_Selected = null;
+            this.buttonDelete.IconMarginLeft = 0;
+            this.buttonDelete.IconMarginRight = 0;
+            this.buttonDelete.IconRightVisible = true;
+            this.buttonDelete.IconRightZoom = 0D;
+            this.buttonDelete.IconVisible = true;
+            this.buttonDelete.IconZoom = 90D;
+            this.buttonDelete.IsTab = false;
+            this.buttonDelete.Location = new System.Drawing.Point(683, 168);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.buttonDelete.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.buttonDelete.OnHoverTextColor = System.Drawing.Color.White;
+            this.buttonDelete.selected = false;
+            this.buttonDelete.Size = new System.Drawing.Size(80, 27);
+            this.buttonDelete.TabIndex = 9;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonDelete.Textcolor = System.Drawing.Color.White;
+            this.buttonDelete.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
+            // 
+            // dataGridViewMenu
+            // 
+            this.dataGridViewMenu.AllowUserToAddRows = false;
+            this.dataGridViewMenu.AllowUserToDeleteRows = false;
+            this.dataGridViewMenu.AllowUserToResizeColumns = false;
+            this.dataGridViewMenu.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            this.dataGridViewMenu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewMenu.BackgroundColor = System.Drawing.Color.Gray;
+            this.dataGridViewMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewMenu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewMenu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewMenu.ColumnHeadersHeight = 30;
+            this.dataGridViewMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMenu.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewMenu.DoubleBuffered = true;
+            this.dataGridViewMenu.EnableHeadersVisualStyles = false;
+            this.dataGridViewMenu.GridColor = System.Drawing.Color.White;
+            this.dataGridViewMenu.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dataGridViewMenu.HeaderForeColor = System.Drawing.Color.White;
+            this.dataGridViewMenu.Location = new System.Drawing.Point(26, 102);
+            this.dataGridViewMenu.MultiSelect = false;
+            this.dataGridViewMenu.Name = "dataGridViewMenu";
+            this.dataGridViewMenu.ReadOnly = true;
+            this.dataGridViewMenu.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewMenu.RowHeadersVisible = false;
+            this.dataGridViewMenu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewMenu.RowTemplate.Height = 30;
+            this.dataGridViewMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewMenu.Size = new System.Drawing.Size(617, 387);
+            this.dataGridViewMenu.TabIndex = 10;
+            this.dataGridViewMenu.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewMenu_RowHeaderMouseClick);
+            this.dataGridViewMenu.Click += new System.EventHandler(this.DataGridViewMenu_Click);
             // 
             // UCEditMenuNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.bunifuFlatButton2);
-            this.Controls.Add(this.bunifuFlatButton1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.dataGridViewMenu);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bunifuDropdown1);
+            this.Controls.Add(this.comboBoxCategory);
             this.Name = "UCEditMenuNew";
             this.Size = new System.Drawing.Size(828, 510);
             this.Load += new System.EventHandler(this.UCEditMenuNew_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
 
-        #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+
+        #endregion
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuDropdown comboBoxCategory;
+        private Bunifu.Framework.UI.BunifuFlatButton buttonEdit;
+        private Bunifu.Framework.UI.BunifuFlatButton buttonAdd;
+        private Bunifu.Framework.UI.BunifuFlatButton buttonDelete;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridViewMenu;
     }
 }

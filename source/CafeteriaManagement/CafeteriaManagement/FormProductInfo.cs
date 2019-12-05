@@ -31,7 +31,8 @@ namespace CafeteriaManagement
             {
                 buttonEdit.BringToFront();
             }
-            UCEditMenu.ProductChosen += UCEditMenu_ProductChosenHandler;
+            UCEditMenuNew.ProductChosen += UCEditMenu_ProductChosenHandler;
+            FormMenu.ProductChosen += UCEditMenu_ProductChosenHandler;
             comboBoxProductType.DataSource = DataProvider.RetrieveCategory();
         }
 

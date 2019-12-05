@@ -76,9 +76,17 @@ namespace CM.DAL
 
         public static void DeleteRecord(object record, string tableName)
         {
-            
             var table = EntityFactory.GetTableFrom(_database, tableName);
             table.DeleteOnSubmit(record);
+            _database.SubmitChanges();
+        }
+
+        public static void DeleteEmployee(string employeeId)
+        {
+            var target = (from employee in _database.EMPLOYEEs
+                          where employee.Id == employeeId
+                          select employee).Single();
+            _database.EMPLOYEEs.DeleteOnSubmit(target);
             _database.SubmitChanges();
         }
 
@@ -90,16 +98,37 @@ namespace CM.DAL
             return employeeId;
         }
 
+        public static void UpdateEmployee(EMPLOYEE updatedEmployee)
+        {
+            var updateTarget = (from employee in _database.EMPLOYEEs
+                                where employee.Id == updatedEmployee.Id
+                                select employee).Single();
+            UpdateEmployeeMember(updatedEmployee, ref updateTarget);
+            _database.SubmitChanges();
+        }
+
+        private static void UpdateEmployeeMember(EMPLOYEE updatedEmployee, ref EMPLOYEE updateTarget)
+        {
+            updateTarget.Name = updatedEmployee.Name;
+            updateTarget.Daystart = updatedEmployee.Daystart;
+            updateTarget.Birthday = updatedEmployee.Birthday;
+            updateTarget.Gender = updatedEmployee.Gender;
+            updateTarget.PhoneNumber = updatedEmployee.PhoneNumber;
+            updateTarget.Email = updatedEmployee.Email;
+        }
+
         public static void UpdateProduct(PRODUCT updatedProduct)
         {
             var item = (from product in _database.PRODUCTs
                         where product.Id == updatedProduct.Id
                         select product).Single();
-            UpdateItemMember(updatedProduct, ref item);
+            UpdateProductMember(updatedProduct, ref item);
             _database.SubmitChanges();
         }
 
-        private static void UpdateItemMember(PRODUCT updatedProduct, ref PRODUCT item)
+
+
+        private static void UpdateProductMember(PRODUCT updatedProduct, ref PRODUCT item)
         {
             item.Name = updatedProduct.Name;
             item.Price = updatedProduct.Price;
@@ -185,9 +214,28 @@ namespace CM.DAL
             {
                 return "";
             }
-            var id = (from bill in _database.BILLs
-                      select bill.Id).AsEnumerable().Last();
+            var id = (from account in _database.ACCOUNTs
+                      select account.Id).AsEnumerable().Last();
             return id;
+        }
+
+        public static string GetLastEmployeeId()
+        {
+            var hasElement = _database.EMPLOYEEs.Any();
+            if (!hasElement)
+            {
+                return "";
+            }
+            var id = (from employee in _database.BILLs
+                      select employee.Id).AsEnumerable().Last();
+            return id;
+        }
+
+        public static IEnumerable<EMPLOYEE> GetEMPLOYEEs()
+        {
+            var employees = from employee in _database.EMPLOYEEs
+                            select employee;
+            return employees;
         }
 
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace CafeteriaManagement
 {
@@ -34,6 +35,37 @@ namespace CafeteriaManagement
                     Url = columns[2]
                 };
             }
+        }
+
+        public static string Standardlize(this string source)
+        {
+            CatchInvalidNameException(source);
+            source = source.ToLower();
+            var columns = source.Split(' ').ToList();
+            columns.RemoveAll(s => string.IsNullOrWhiteSpace(s));
+            var result = "";
+            foreach (var column in columns)
+            {
+                result += column[0].ToString().ToUpper() + column.Substring(1) + " ";
+            }
+            return result.TrimEnd();
+        }
+
+        private static void CatchInvalidNameException(string source)
+        {
+            if (!source.IsValidName())
+            {
+                throw new Exception("Name is not valid!");
+            }
+        }
+
+        public static bool IsValidName(this string source)
+        {
+            if (source.Any(char.IsDigit))
+                return false;
+            if (!source.Contains(" "))
+                return false;
+            return true;
         }
 
     }
