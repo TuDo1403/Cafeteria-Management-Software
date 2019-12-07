@@ -1,4 +1,5 @@
-﻿namespace CoffeManagement
+﻿namespace CafeteriaManagement
+
 {
     partial class UCDisplayMusicNew
     {

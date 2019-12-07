@@ -32,8 +32,8 @@ namespace CafeteriaManagement
         private MusicPlayer()
         {
             windowsMediaPlayer.PlayStateChange += WindowsMediaPlayer_PlayStateChangeHandler;
-            UCQueueBox.SongPrev += FormQueue_SongPrevHandler;
-            UCQueueBox.SongNext += FormQueue_SongNextHandler;
+           // UCQueueBox.SongPrev += FormQueue_SongPrevHandler;
+           // UCQueueBox.SongNext += FormQueue_SongNextHandler;
             SongDownloader.ConvertCompleted += SongDownloader_ConvertCompletedHandler;
         }
 

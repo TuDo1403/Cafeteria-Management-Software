@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CoffeManagement
+namespace CafeteriaManagement
 {
+
     public partial class UCDisplayMusicNew : UserControl
     {
         int time = 20;

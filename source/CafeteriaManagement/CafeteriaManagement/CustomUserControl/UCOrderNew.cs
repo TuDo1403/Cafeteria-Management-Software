@@ -89,7 +89,26 @@ namespace CafeteriaManagement
             flowLayoutPanelMenu.Controls.Clear();
             foreach (var item in DataProvider.RetrieveMenuFrom(comboBoxCategory.selectedValue as string))
             {
-                var button = new BunifuFlatButton { Text = item as string, Size = new Size(120, 50) };
+                var button = new BunifuFlatButton {
+                    Text = item as string,
+                    Size = new Size(130, 46),
+                    Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87))))),
+                    BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79))))),
+                    BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch,
+                    BorderRadius = 5,
+                    DisabledColor = System.Drawing.Color.Gray,
+                    Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163))),
+                    Iconcolor = System.Drawing.Color.Transparent,
+                    Iconimage = null,
+                    TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                    TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163))),
+                    Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79))))),
+                    OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77))))),
+                    OnHoverTextColor = System.Drawing.Color.White,
+
+
+
+                };
                 button.Click += Button_Click;
                 flowLayoutPanelMenu.Controls.Add(button);
             }
@@ -120,6 +139,11 @@ namespace CafeteriaManagement
         private void OnItemChoosing(IEnumerable<string> menuTopping)
         {
             (ItemChosen as EventHandler<IEnumerable<string>>)?.Invoke(this, menuTopping);
+        }
+
+        private void flowLayoutPanelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace CafeteriaManagement
 {
+
     partial class UCQueueBox
     {
         /// <summary> 
@@ -28,331 +29,519 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelControl = new System.Windows.Forms.Panel();
-            this.labelDuration = new System.Windows.Forms.Label();
-            this.labelTime = new System.Windows.Forms.Label();
-            this.trackBarSongDuration = new System.Windows.Forms.TrackBar();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonPrevious = new System.Windows.Forms.Button();
-            this.buttonPlay = new System.Windows.Forms.Button();
-            this.buttonPause = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPageQueue = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.labelNextUp = new System.Windows.Forms.Label();
-            this.dataGridViewNextUp = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridViewPlaying = new System.Windows.Forms.DataGridView();
-            this.labelPlaying = new System.Windows.Forms.Label();
-            this.tabPageHistory = new System.Windows.Forms.TabPage();
-            this.dataGridViewHistory = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelPlayQueue = new System.Windows.Forms.Label();
-            this.panelControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarSongDuration)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPageQueue.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNextUp)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlaying)).BeginInit();
-            this.tabPageHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory)).BeginInit();
-            this.panel1.SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnlGreen = new System.Windows.Forms.Panel();
+            this.lblOffline = new System.Windows.Forms.Label();
+            this.lblOnline = new System.Windows.Forms.Label();
+            this.NowPlaying = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.NextUp = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.pnlQueue = new System.Windows.Forms.Panel();
+            this.bunifuTrackbar2 = new Bunifu.Framework.UI.BunifuTrackbar();
+            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuCustomDataGrid3 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuCustomDataGrid4 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pnlHistory = new System.Windows.Forms.Panel();
+            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuElipseHistory = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipseNextUp = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipseNowPlaying = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.timerQueue = new System.Windows.Forms.Timer(this.components);
+            this.timerHistory = new System.Windows.Forms.Timer(this.components);
+            this.timerQueueBack = new System.Windows.Forms.Timer(this.components);
+            this.timerHistoryBack = new System.Windows.Forms.Timer(this.components);
+            this.timerPanelGreenHistory = new System.Windows.Forms.Timer(this.components);
+            this.timerPanelGreenQueue = new System.Windows.Forms.Timer(this.components);
+            this.pnlQueue.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid4)).BeginInit();
+            this.pnlHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelControl
+            // pnlGreen
             // 
-            this.panelControl.Controls.Add(this.labelDuration);
-            this.panelControl.Controls.Add(this.labelTime);
-            this.panelControl.Controls.Add(this.trackBarSongDuration);
-            this.panelControl.Controls.Add(this.buttonNext);
-            this.panelControl.Controls.Add(this.buttonPrevious);
-            this.panelControl.Controls.Add(this.buttonPlay);
-            this.panelControl.Controls.Add(this.buttonPause);
-            this.panelControl.Location = new System.Drawing.Point(3, 396);
-            this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(822, 112);
-            this.panelControl.TabIndex = 7;
+            this.pnlGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(136)))), ((int)(((byte)(85)))));
+            this.pnlGreen.Location = new System.Drawing.Point(25, 50);
+            this.pnlGreen.Name = "pnlGreen";
+            this.pnlGreen.Size = new System.Drawing.Size(69, 3);
+            this.pnlGreen.TabIndex = 21;
             // 
-            // labelDuration
+            // lblOffline
             // 
-            this.labelDuration.AutoSize = true;
-            this.labelDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDuration.Location = new System.Drawing.Point(689, 68);
-            this.labelDuration.Name = "labelDuration";
-            this.labelDuration.Size = new System.Drawing.Size(22, 17);
-            this.labelDuration.TabIndex = 8;
-            this.labelDuration.Text = "-:-";
+            this.lblOffline.AutoSize = true;
+            this.lblOffline.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblOffline.Location = new System.Drawing.Point(121, 22);
+            this.lblOffline.Name = "lblOffline";
+            this.lblOffline.Size = new System.Drawing.Size(75, 25);
+            this.lblOffline.TabIndex = 20;
+            this.lblOffline.Text = "History";
+            this.lblOffline.Click += new System.EventHandler(this.lblOffline_Click);
             // 
-            // labelTime
+            // lblOnline
             // 
-            this.labelTime.AutoSize = true;
-            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTime.Location = new System.Drawing.Point(125, 68);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(22, 17);
-            this.labelTime.TabIndex = 7;
-            this.labelTime.Text = "-:-";
+            this.lblOnline.AutoSize = true;
+            this.lblOnline.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblOnline.Location = new System.Drawing.Point(22, 22);
+            this.lblOnline.Name = "lblOnline";
+            this.lblOnline.Size = new System.Drawing.Size(68, 25);
+            this.lblOnline.TabIndex = 19;
+            this.lblOnline.Text = "Queue";
+            this.lblOnline.Click += new System.EventHandler(this.lblOnline_Click);
             // 
-            // trackBarSongDuration
+            // NowPlaying
             // 
-            this.trackBarSongDuration.Enabled = false;
-            this.trackBarSongDuration.LargeChange = 0;
-            this.trackBarSongDuration.Location = new System.Drawing.Point(175, 49);
-            this.trackBarSongDuration.Name = "trackBarSongDuration";
-            this.trackBarSongDuration.Size = new System.Drawing.Size(497, 45);
-            this.trackBarSongDuration.SmallChange = 0;
-            this.trackBarSongDuration.TabIndex = 6;
+            this.NowPlaying.ElipseRadius = 5;
+            this.NowPlaying.TargetControl = this;
             // 
-            // buttonNext
+            // NextUp
             // 
-            this.buttonNext.Location = new System.Drawing.Point(484, 20);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(75, 23);
-            this.buttonNext.TabIndex = 5;
-            this.buttonNext.Text = "Next";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.ButtonNext_Click);
+            this.NextUp.ElipseRadius = 5;
+            this.NextUp.TargetControl = this;
             // 
-            // buttonPrevious
+            // pnlQueue
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(266, 20);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
-            this.buttonPrevious.TabIndex = 4;
-            this.buttonPrevious.Text = "Prev";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
-            this.buttonPrevious.Click += new System.EventHandler(this.ButtonPrevious_Click);
+            this.pnlQueue.Controls.Add(this.bunifuTrackbar2);
+            this.pnlQueue.Controls.Add(this.bunifuFlatButton4);
+            this.pnlQueue.Controls.Add(this.bunifuFlatButton5);
+            this.pnlQueue.Controls.Add(this.bunifuFlatButton6);
+            this.pnlQueue.Controls.Add(this.bunifuCustomDataGrid3);
+            this.pnlQueue.Controls.Add(this.bunifuCustomDataGrid4);
+            this.pnlQueue.Controls.Add(this.label3);
+            this.pnlQueue.Controls.Add(this.label4);
+            this.pnlQueue.Location = new System.Drawing.Point(15, 62);
+            this.pnlQueue.Name = "pnlQueue";
+            this.pnlQueue.Size = new System.Drawing.Size(785, 434);
+            this.pnlQueue.TabIndex = 31;
             // 
-            // buttonPlay
+            // bunifuTrackbar2
             // 
-            this.buttonPlay.Location = new System.Drawing.Point(373, 20);
-            this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(75, 23);
-            this.buttonPlay.TabIndex = 3;
-            this.buttonPlay.Text = "Play";
-            this.buttonPlay.UseVisualStyleBackColor = true;
-            this.buttonPlay.Click += new System.EventHandler(this.ButtonPlay_Click);
+            this.bunifuTrackbar2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuTrackbar2.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.bunifuTrackbar2.BorderRadius = 0;
+            this.bunifuTrackbar2.IndicatorColor = System.Drawing.Color.SeaGreen;
+            this.bunifuTrackbar2.Location = new System.Drawing.Point(111, 401);
+            this.bunifuTrackbar2.MaximumValue = 100;
+            this.bunifuTrackbar2.Name = "bunifuTrackbar2";
+            this.bunifuTrackbar2.Size = new System.Drawing.Size(590, 30);
+            this.bunifuTrackbar2.SliderRadius = 0;
+            this.bunifuTrackbar2.TabIndex = 38;
+            this.bunifuTrackbar2.Value = 0;
             // 
-            // buttonPause
+            // bunifuFlatButton4
             // 
-            this.buttonPause.Location = new System.Drawing.Point(373, 20);
-            this.buttonPause.Name = "buttonPause";
-            this.buttonPause.Size = new System.Drawing.Size(75, 23);
-            this.buttonPause.TabIndex = 9;
-            this.buttonPause.Text = "Pause";
-            this.buttonPause.UseVisualStyleBackColor = true;
-            this.buttonPause.Click += new System.EventHandler(this.ButtonPause_Click);
+            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton4.BorderRadius = 5;
+            this.bunifuFlatButton4.ButtonText = "Next";
+            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton4.Iconimage = null;
+            this.bunifuFlatButton4.Iconimage_right = null;
+            this.bunifuFlatButton4.Iconimage_right_Selected = null;
+            this.bunifuFlatButton4.Iconimage_Selected = null;
+            this.bunifuFlatButton4.IconMarginLeft = 0;
+            this.bunifuFlatButton4.IconMarginRight = 0;
+            this.bunifuFlatButton4.IconRightVisible = true;
+            this.bunifuFlatButton4.IconRightZoom = 0D;
+            this.bunifuFlatButton4.IconVisible = true;
+            this.bunifuFlatButton4.IconZoom = 90D;
+            this.bunifuFlatButton4.IsTab = false;
+            this.bunifuFlatButton4.Location = new System.Drawing.Point(476, 351);
+            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
+            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton4.selected = false;
+            this.bunifuFlatButton4.Size = new System.Drawing.Size(81, 34);
+            this.bunifuFlatButton4.TabIndex = 37;
+            this.bunifuFlatButton4.Text = "Next";
+            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             // 
-            // panel2
+            // bunifuFlatButton5
             // 
-            this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Location = new System.Drawing.Point(3, 42);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(822, 348);
-            this.panel2.TabIndex = 6;
+            this.bunifuFlatButton5.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton5.BorderRadius = 5;
+            this.bunifuFlatButton5.ButtonText = "Previous";
+            this.bunifuFlatButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton5.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton5.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton5.Iconimage = null;
+            this.bunifuFlatButton5.Iconimage_right = null;
+            this.bunifuFlatButton5.Iconimage_right_Selected = null;
+            this.bunifuFlatButton5.Iconimage_Selected = null;
+            this.bunifuFlatButton5.IconMarginLeft = 0;
+            this.bunifuFlatButton5.IconMarginRight = 0;
+            this.bunifuFlatButton5.IconRightVisible = true;
+            this.bunifuFlatButton5.IconRightZoom = 0D;
+            this.bunifuFlatButton5.IconVisible = true;
+            this.bunifuFlatButton5.IconZoom = 90D;
+            this.bunifuFlatButton5.IsTab = false;
+            this.bunifuFlatButton5.Location = new System.Drawing.Point(249, 351);
+            this.bunifuFlatButton5.Name = "bunifuFlatButton5";
+            this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton5.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton5.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton5.selected = false;
+            this.bunifuFlatButton5.Size = new System.Drawing.Size(81, 34);
+            this.bunifuFlatButton5.TabIndex = 36;
+            this.bunifuFlatButton5.Text = "Previous";
+            this.bunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton5.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             // 
-            // tabControl1
+            // bunifuFlatButton6
             // 
-            this.tabControl1.Controls.Add(this.tabPageQueue);
-            this.tabControl1.Controls.Add(this.tabPageHistory);
-            this.tabControl1.Location = new System.Drawing.Point(11, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(808, 342);
-            this.tabControl1.TabIndex = 0;
+            this.bunifuFlatButton6.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton6.BorderRadius = 5;
+            this.bunifuFlatButton6.ButtonText = "Play";
+            this.bunifuFlatButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton6.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton6.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton6.Iconimage = null;
+            this.bunifuFlatButton6.Iconimage_right = null;
+            this.bunifuFlatButton6.Iconimage_right_Selected = null;
+            this.bunifuFlatButton6.Iconimage_Selected = null;
+            this.bunifuFlatButton6.IconMarginLeft = 0;
+            this.bunifuFlatButton6.IconMarginRight = 0;
+            this.bunifuFlatButton6.IconRightVisible = true;
+            this.bunifuFlatButton6.IconRightZoom = 0D;
+            this.bunifuFlatButton6.IconVisible = true;
+            this.bunifuFlatButton6.IconZoom = 90D;
+            this.bunifuFlatButton6.IsTab = false;
+            this.bunifuFlatButton6.Location = new System.Drawing.Point(363, 351);
+            this.bunifuFlatButton6.Name = "bunifuFlatButton6";
+            this.bunifuFlatButton6.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton6.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton6.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton6.selected = false;
+            this.bunifuFlatButton6.Size = new System.Drawing.Size(81, 34);
+            this.bunifuFlatButton6.TabIndex = 35;
+            this.bunifuFlatButton6.Text = "Play";
+            this.bunifuFlatButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton6.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             // 
-            // tabPageQueue
+            // bunifuCustomDataGrid3
             // 
-            this.tabPageQueue.Controls.Add(this.panel4);
-            this.tabPageQueue.Controls.Add(this.panel3);
-            this.tabPageQueue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageQueue.Location = new System.Drawing.Point(4, 22);
-            this.tabPageQueue.Name = "tabPageQueue";
-            this.tabPageQueue.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageQueue.Size = new System.Drawing.Size(800, 316);
-            this.tabPageQueue.TabIndex = 0;
-            this.tabPageQueue.Text = "Queue";
-            this.tabPageQueue.UseVisualStyleBackColor = true;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
+            this.bunifuCustomDataGrid3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.bunifuCustomDataGrid3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuCustomDataGrid3.BackgroundColor = System.Drawing.Color.Gray;
+            this.bunifuCustomDataGrid3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuCustomDataGrid3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.bunifuCustomDataGrid3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.bunifuCustomDataGrid3.ColumnHeadersHeight = 30;
+            this.bunifuCustomDataGrid3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuCustomDataGrid3.DefaultCellStyle = dataGridViewCellStyle6;
+            this.bunifuCustomDataGrid3.DoubleBuffered = true;
+            this.bunifuCustomDataGrid3.EnableHeadersVisualStyles = false;
+            this.bunifuCustomDataGrid3.GridColor = System.Drawing.Color.White;
+            this.bunifuCustomDataGrid3.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomDataGrid3.HeaderForeColor = System.Drawing.Color.White;
+            this.bunifuCustomDataGrid3.Location = new System.Drawing.Point(42, 189);
+            this.bunifuCustomDataGrid3.Name = "bunifuCustomDataGrid3";
+            this.bunifuCustomDataGrid3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bunifuCustomDataGrid3.RowHeadersVisible = false;
+            this.bunifuCustomDataGrid3.RowTemplate.Height = 30;
+            this.bunifuCustomDataGrid3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bunifuCustomDataGrid3.Size = new System.Drawing.Size(735, 146);
+            this.bunifuCustomDataGrid3.TabIndex = 34;
             // 
-            // panel4
+            // dataGridViewTextBoxColumn3
             // 
-            this.panel4.Controls.Add(this.labelNextUp);
-            this.panel4.Controls.Add(this.dataGridViewNextUp);
-            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(6, 119);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(785, 191);
-            this.panel4.TabIndex = 1;
+            this.dataGridViewTextBoxColumn3.FillWeight = 40.60914F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Order";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // labelNextUp
+            // dataGridViewTextBoxColumn4
             // 
-            this.labelNextUp.AutoSize = true;
-            this.labelNextUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNextUp.Location = new System.Drawing.Point(3, 13);
-            this.labelNextUp.Name = "labelNextUp";
-            this.labelNextUp.Size = new System.Drawing.Size(65, 17);
-            this.labelNextUp.TabIndex = 1;
-            this.labelNextUp.Text = "Next Up";
+            this.dataGridViewTextBoxColumn4.FillWeight = 159.3909F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Name Music";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // dataGridViewNextUp
+            // bunifuCustomDataGrid4
             // 
-            this.dataGridViewNextUp.AllowUserToAddRows = false;
-            this.dataGridViewNextUp.AllowUserToDeleteRows = false;
-            this.dataGridViewNextUp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewNextUp.Location = new System.Drawing.Point(6, 44);
-            this.dataGridViewNextUp.Name = "dataGridViewNextUp";
-            this.dataGridViewNextUp.ReadOnly = true;
-            this.dataGridViewNextUp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewNextUp.Size = new System.Drawing.Size(776, 144);
-            this.dataGridViewNextUp.TabIndex = 0;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gray;
+            this.bunifuCustomDataGrid4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.bunifuCustomDataGrid4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuCustomDataGrid4.BackgroundColor = System.Drawing.Color.Gray;
+            this.bunifuCustomDataGrid4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuCustomDataGrid4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.bunifuCustomDataGrid4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.bunifuCustomDataGrid4.ColumnHeadersHeight = 30;
+            this.bunifuCustomDataGrid4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuCustomDataGrid4.DefaultCellStyle = dataGridViewCellStyle9;
+            this.bunifuCustomDataGrid4.DoubleBuffered = true;
+            this.bunifuCustomDataGrid4.EnableHeadersVisualStyles = false;
+            this.bunifuCustomDataGrid4.GridColor = System.Drawing.Color.White;
+            this.bunifuCustomDataGrid4.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomDataGrid4.HeaderForeColor = System.Drawing.Color.White;
+            this.bunifuCustomDataGrid4.Location = new System.Drawing.Point(42, 52);
+            this.bunifuCustomDataGrid4.Name = "bunifuCustomDataGrid4";
+            this.bunifuCustomDataGrid4.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bunifuCustomDataGrid4.RowHeadersVisible = false;
+            this.bunifuCustomDataGrid4.RowTemplate.Height = 30;
+            this.bunifuCustomDataGrid4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bunifuCustomDataGrid4.Size = new System.Drawing.Size(735, 80);
+            this.bunifuCustomDataGrid4.TabIndex = 33;
             // 
-            // panel3
+            // dataGridViewTextBoxColumn5
             // 
-            this.panel3.Controls.Add(this.dataGridViewPlaying);
-            this.panel3.Controls.Add(this.labelPlaying);
-            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(6, 6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(788, 107);
-            this.panel3.TabIndex = 0;
+            this.dataGridViewTextBoxColumn5.FillWeight = 40.60914F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Order";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // dataGridViewPlaying
+            // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewPlaying.AllowUserToAddRows = false;
-            this.dataGridViewPlaying.AllowUserToDeleteRows = false;
-            this.dataGridViewPlaying.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewPlaying.Location = new System.Drawing.Point(6, 40);
-            this.dataGridViewPlaying.Name = "dataGridViewPlaying";
-            this.dataGridViewPlaying.ReadOnly = true;
-            this.dataGridViewPlaying.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPlaying.Size = new System.Drawing.Size(779, 64);
-            this.dataGridViewPlaying.TabIndex = 1;
+            this.dataGridViewTextBoxColumn6.FillWeight = 159.3909F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Name Music";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // labelPlaying
+            // label3
             // 
-            this.labelPlaying.AutoSize = true;
-            this.labelPlaying.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlaying.Location = new System.Drawing.Point(3, 9);
-            this.labelPlaying.Name = "labelPlaying";
-            this.labelPlaying.Size = new System.Drawing.Size(96, 17);
-            this.labelPlaying.TabIndex = 0;
-            this.labelPlaying.Text = "Now Playing";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(17, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 25);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Next Up";
             // 
-            // tabPageHistory
+            // label4
             // 
-            this.tabPageHistory.Controls.Add(this.dataGridViewHistory);
-            this.tabPageHistory.Location = new System.Drawing.Point(4, 22);
-            this.tabPageHistory.Name = "tabPageHistory";
-            this.tabPageHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHistory.Size = new System.Drawing.Size(800, 316);
-            this.tabPageHistory.TabIndex = 1;
-            this.tabPageHistory.Text = "History";
-            this.tabPageHistory.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(17, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 25);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Now Playing";
             // 
-            // dataGridViewHistory
+            // pnlHistory
             // 
-            this.dataGridViewHistory.AllowUserToAddRows = false;
-            this.dataGridViewHistory.AllowUserToDeleteRows = false;
-            this.dataGridViewHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.pnlHistory.Controls.Add(this.bunifuCustomDataGrid1);
+            this.pnlHistory.Location = new System.Drawing.Point(2, 504);
+            this.pnlHistory.Name = "pnlHistory";
+            this.pnlHistory.Size = new System.Drawing.Size(785, 466);
+            this.pnlHistory.TabIndex = 39;
+            // 
+            // bunifuCustomDataGrid1
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gray;
+            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewHistory.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewHistory.Location = new System.Drawing.Point(11, 53);
-            this.dataGridViewHistory.Name = "dataGridViewHistory";
-            this.dataGridViewHistory.ReadOnly = true;
-            this.dataGridViewHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHistory.Size = new System.Drawing.Size(783, 257);
-            this.dataGridViewHistory.TabIndex = 2;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.bunifuCustomDataGrid1.ColumnHeadersHeight = 30;
+            this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuCustomDataGrid1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.bunifuCustomDataGrid1.DoubleBuffered = true;
+            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
+            this.bunifuCustomDataGrid1.GridColor = System.Drawing.Color.White;
+            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.White;
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(42, 25);
+            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
+            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bunifuCustomDataGrid1.RowHeadersVisible = false;
+            this.bunifuCustomDataGrid1.RowTemplate.Height = 30;
+            this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(735, 303);
+            this.bunifuCustomDataGrid1.TabIndex = 34;
             // 
-            // panel1
+            // dataGridViewTextBoxColumn1
             // 
-            this.panel1.Controls.Add(this.labelPlayQueue);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(822, 33);
-            this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.dataGridViewTextBoxColumn1.FillWeight = 40.60914F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Order";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // labelPlayQueue
+            // dataGridViewTextBoxColumn2
             // 
-            this.labelPlayQueue.AutoSize = true;
-            this.labelPlayQueue.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlayQueue.Location = new System.Drawing.Point(9, 1);
-            this.labelPlayQueue.Name = "labelPlayQueue";
-            this.labelPlayQueue.Size = new System.Drawing.Size(164, 32);
-            this.labelPlayQueue.TabIndex = 0;
-            this.labelPlayQueue.Text = "Play Queue";
+            this.dataGridViewTextBoxColumn2.FillWeight = 159.3909F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name Music";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // bunifuElipseHistory
+            // 
+            this.bunifuElipseHistory.ElipseRadius = 5;
+            this.bunifuElipseHistory.TargetControl = this.bunifuCustomDataGrid1;
+            // 
+            // bunifuElipseNextUp
+            // 
+            this.bunifuElipseNextUp.ElipseRadius = 5;
+            this.bunifuElipseNextUp.TargetControl = this.bunifuCustomDataGrid3;
+            // 
+            // bunifuElipseNowPlaying
+            // 
+            this.bunifuElipseNowPlaying.ElipseRadius = 5;
+            this.bunifuElipseNowPlaying.TargetControl = this.bunifuCustomDataGrid4;
+            // 
+            // timerQueue
+            // 
+            this.timerQueue.Interval = 1;
+            this.timerQueue.Tick += new System.EventHandler(this.timerQueue_Tick);
+            // 
+            // timerHistory
+            // 
+            this.timerHistory.Interval = 1;
+            this.timerHistory.Tick += new System.EventHandler(this.timerHistory_Tick);
+            // 
+            // timerQueueBack
+            // 
+            this.timerQueueBack.Interval = 1;
+            this.timerQueueBack.Tick += new System.EventHandler(this.timerQueueBack_Tick);
+            // 
+            // timerHistoryBack
+            // 
+            this.timerHistoryBack.Interval = 1;
+            this.timerHistoryBack.Tick += new System.EventHandler(this.timerHistoryBack_Tick);
+            // 
+            // timerPanelGreenHistory
+            // 
+            this.timerPanelGreenHistory.Interval = 1;
+            this.timerPanelGreenHistory.Tick += new System.EventHandler(this.timerPanelGreen_Tick);
+            // 
+            // timerPanelGreenQueue
+            // 
+            this.timerPanelGreenQueue.Interval = 1;
+            this.timerPanelGreenQueue.Tick += new System.EventHandler(this.timerPanelGreenQueue_Tick);
             // 
             // UCQueueBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelControl);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this.pnlHistory);
+            this.Controls.Add(this.pnlQueue);
+            this.Controls.Add(this.pnlGreen);
+            this.Controls.Add(this.lblOffline);
+            this.Controls.Add(this.lblOnline);
             this.Name = "UCQueueBox";
-            this.Size = new System.Drawing.Size(828, 512);
-            this.panelControl.ResumeLayout(false);
-            this.panelControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarSongDuration)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPageQueue.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNextUp)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlaying)).EndInit();
-            this.tabPageHistory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Size = new System.Drawing.Size(828, 510);
+            this.Load += new System.EventHandler(this.UCQueueBox_Load);
+            this.pnlQueue.ResumeLayout(false);
+            this.pnlQueue.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid4)).EndInit();
+            this.pnlHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelControl;
-        private System.Windows.Forms.Label labelDuration;
-        private System.Windows.Forms.Label labelTime;
-        private System.Windows.Forms.TrackBar trackBarSongDuration;
-        private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.Button buttonPrevious;
-        private System.Windows.Forms.Button buttonPlay;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPageQueue;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label labelNextUp;
-        private System.Windows.Forms.DataGridView dataGridViewNextUp;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridViewPlaying;
-        private System.Windows.Forms.Label labelPlaying;
-        private System.Windows.Forms.TabPage tabPageHistory;
-        private System.Windows.Forms.DataGridView dataGridViewHistory;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelPlayQueue;
-        private System.Windows.Forms.Button buttonPause;
+        private System.Windows.Forms.Panel pnlGreen;
+        private System.Windows.Forms.Label lblOffline;
+        private System.Windows.Forms.Label lblOnline;
+        private Bunifu.Framework.UI.BunifuElipse NowPlaying;
+        private Bunifu.Framework.UI.BunifuElipse NextUp;
+        private System.Windows.Forms.Panel pnlQueue;
+        private Bunifu.Framework.UI.BunifuTrackbar bunifuTrackbar2;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel pnlHistory;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipseHistory;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipseNextUp;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipseNowPlaying;
+        private System.Windows.Forms.Timer timerQueue;
+        private System.Windows.Forms.Timer timerHistory;
+        private System.Windows.Forms.Timer timerQueueBack;
+        private System.Windows.Forms.Timer timerHistoryBack;
+        private System.Windows.Forms.Timer timerPanelGreenHistory;
+        private System.Windows.Forms.Timer timerPanelGreenQueue;
     }
 }

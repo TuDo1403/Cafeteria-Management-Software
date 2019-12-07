@@ -42,6 +42,7 @@
             this.buttonBill = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonRefresh = new Bunifu.Framework.UI.BunifuFlatButton();
             this.labelTotal = new System.Windows.Forms.Label();
+            this.btnMau = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelectedItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +97,7 @@
             // comboBoxCategory
             // 
             this.comboBoxCategory.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxCategory.BorderRadius = 1;
+            this.comboBoxCategory.BorderRadius = 5;
             this.comboBoxCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBoxCategory.ForeColor = System.Drawing.Color.White;
             this.comboBoxCategory.Items = new string[0];
@@ -112,7 +113,7 @@
             // 
             // bunifuElipse2
             // 
-            this.bunifuElipse2.ElipseRadius = 1;
+            this.bunifuElipse2.ElipseRadius = 5;
             this.bunifuElipse2.TargetControl = this.dataGridViewSelectedItems;
             // 
             // labelMenu
@@ -129,7 +130,7 @@
             // 
             // bunifuElipse1
             // 
-            this.bunifuElipse1.ElipseRadius = 1;
+            this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this.labelMenu;
             // 
             // flowLayoutPanelMenu
@@ -138,6 +139,7 @@
             this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
             this.flowLayoutPanelMenu.Size = new System.Drawing.Size(411, 294);
             this.flowLayoutPanelMenu.TabIndex = 3;
+            this.flowLayoutPanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelMenu_Paint);
             // 
             // labelSum
             // 
@@ -233,11 +235,47 @@
             this.labelTotal.Text = "0";
             this.labelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnMau
+            // 
+            this.btnMau.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnMau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnMau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMau.BorderRadius = 4;
+            this.btnMau.ButtonText = "Nút Mẫu";
+            this.btnMau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMau.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMau.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnMau.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMau.Iconimage = null;
+            this.btnMau.Iconimage_right = null;
+            this.btnMau.Iconimage_right_Selected = null;
+            this.btnMau.Iconimage_Selected = null;
+            this.btnMau.IconMarginLeft = 0;
+            this.btnMau.IconMarginRight = 0;
+            this.btnMau.IconRightVisible = true;
+            this.btnMau.IconRightZoom = 0D;
+            this.btnMau.IconVisible = true;
+            this.btnMau.IconZoom = 90D;
+            this.btnMau.IsTab = false;
+            this.btnMau.Location = new System.Drawing.Point(27, 427);
+            this.btnMau.Name = "btnMau";
+            this.btnMau.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.btnMau.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnMau.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnMau.selected = false;
+            this.btnMau.Size = new System.Drawing.Size(130, 46);
+            this.btnMau.TabIndex = 12;
+            this.btnMau.Text = "Nút Mẫu";
+            this.btnMau.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMau.Textcolor = System.Drawing.Color.White;
+            this.btnMau.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            // 
             // UCOrderNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this.btnMau);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonBill);
             this.Controls.Add(this.labelTotal);
@@ -265,5 +303,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton buttonBill;
         private Bunifu.Framework.UI.BunifuFlatButton buttonRefresh;
         private System.Windows.Forms.Label labelTotal;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMau;
     }
 }
