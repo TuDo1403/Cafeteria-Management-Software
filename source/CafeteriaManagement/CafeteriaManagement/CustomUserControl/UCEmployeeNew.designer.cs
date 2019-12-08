@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonAdd = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonEdit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBoxDetail = new System.Windows.Forms.GroupBox();
@@ -52,12 +52,12 @@
             this.datePickerBirthday = new System.Windows.Forms.DateTimePicker();
             this.labelBirthDay = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.buttonDelete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBoxEmployees = new System.Windows.Forms.GroupBox();
             this.dataGridViewEmployeeList = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.buttonCancel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.labelName = new System.Windows.Forms.Label();
             this.groupBoxDetail.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -374,17 +374,6 @@
             this.panel1.Size = new System.Drawing.Size(349, 48);
             this.panel1.TabIndex = 30;
             // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.labelName.Location = new System.Drawing.Point(3, 10);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(57, 21);
-            this.labelName.TabIndex = 9;
-            this.labelName.Text = "Name:";
-            // 
             // textBoxName
             // 
             this.textBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -444,7 +433,7 @@
             // groupBoxEmployees
             // 
             this.groupBoxEmployees.Controls.Add(this.dataGridViewEmployeeList);
-            this.groupBoxEmployees.Location = new System.Drawing.Point(27, 223);
+            this.groupBoxEmployees.Location = new System.Drawing.Point(27, 212);
             this.groupBoxEmployees.Name = "groupBoxEmployees";
             this.groupBoxEmployees.Size = new System.Drawing.Size(769, 235);
             this.groupBoxEmployees.TabIndex = 34;
@@ -457,31 +446,31 @@
             this.dataGridViewEmployeeList.AllowUserToDeleteRows = false;
             this.dataGridViewEmployeeList.AllowUserToResizeColumns = false;
             this.dataGridViewEmployeeList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
-            this.dataGridViewEmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
+            this.dataGridViewEmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEmployeeList.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridViewEmployeeList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEmployeeList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewEmployeeList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewEmployeeList.ColumnHeadersHeight = 30;
             this.dataGridViewEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewEmployeeList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEmployeeList.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewEmployeeList.DoubleBuffered = true;
             this.dataGridViewEmployeeList.EnableHeadersVisualStyles = false;
             this.dataGridViewEmployeeList.GridColor = System.Drawing.Color.White;
@@ -536,6 +525,17 @@
             this.buttonCancel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.labelName.Location = new System.Drawing.Point(3, 16);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(57, 21);
+            this.labelName.TabIndex = 9;
+            this.labelName.Text = "Name:";
+            // 
             // UCEmployeeNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -583,7 +583,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labelBirthDay;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelName;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxName;
         private MaterialSkin.Controls.MaterialRadioButton radioButtonNone;
         private MaterialSkin.Controls.MaterialRadioButton radioButtonFemale;
@@ -596,5 +595,6 @@
         private System.Windows.Forms.DateTimePicker datePickerDateStart;
         private System.Windows.Forms.DateTimePicker datePickerBirthday;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridViewEmployeeList;
+        private System.Windows.Forms.Label labelName;
     }
 }

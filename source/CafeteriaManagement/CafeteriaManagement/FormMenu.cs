@@ -71,5 +71,10 @@ namespace CafeteriaManagement
         {
             (ProductChosen as EventHandler<PRODUCT>)?.Invoke(this, DataProvider.GetProductInfo(productName));
         }
+
+        private void flowLayoutPanelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

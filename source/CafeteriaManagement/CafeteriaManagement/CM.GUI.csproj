@@ -311,17 +311,23 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormToppingNewUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormToppingNewUpdate.Designer.cs">
+      <DependentUpon>FormToppingNewUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductInfNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductInfNew.Designer.cs">
+      <DependentUpon>FormProductInfNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProductInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormProductInfo.Designer.cs">
       <DependentUpon>FormProductInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormToppingNew.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormToppingNew.designer.cs">
-      <DependentUpon>FormToppingNew.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUCOrderManager.Topping.cs">
       <SubType>Form</SubType>
@@ -404,11 +410,14 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormToppingNewUpdate.resx">
+      <DependentUpon>FormToppingNewUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductInfNew.resx">
+      <DependentUpon>FormProductInfNew.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProductInfo.resx">
       <DependentUpon>FormProductInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormToppingNew.resx">
-      <DependentUpon>FormToppingNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUCOrderManager.Topping.resx">
       <DependentUpon>FormUCOrderManager.Topping.cs</DependentUpon>
@@ -481,6 +490,9 @@
       <Project>{ee1642d6-ac9a-4769-b5f7-fe30a2b0bfe9}</Project>
       <Name>CM.DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\daux_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

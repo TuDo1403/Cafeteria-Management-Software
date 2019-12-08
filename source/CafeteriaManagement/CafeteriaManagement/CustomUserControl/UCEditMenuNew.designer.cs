@@ -30,6 +30,7 @@ namespace CafeteriaManagement
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,6 +40,8 @@ namespace CafeteriaManagement
             this.buttonAdd = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonDelete = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dataGridViewMenu = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.bunifuElipseMenu = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,9 +50,9 @@ namespace CafeteriaManagement
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 69);
+            this.label1.Location = new System.Drawing.Point(27, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(617, 30);
+            this.label1.Size = new System.Drawing.Size(765, 30);
             this.label1.TabIndex = 5;
             this.label1.Text = "Menu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -57,7 +60,7 @@ namespace CafeteriaManagement
             // comboBoxCategory
             // 
             this.comboBoxCategory.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxCategory.BorderRadius = 1;
+            this.comboBoxCategory.BorderRadius = 4;
             this.comboBoxCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBoxCategory.ForeColor = System.Drawing.Color.White;
             this.comboBoxCategory.Items = new string[0];
@@ -93,7 +96,7 @@ namespace CafeteriaManagement
             this.buttonEdit.IconVisible = true;
             this.buttonEdit.IconZoom = 90D;
             this.buttonEdit.IsTab = false;
-            this.buttonEdit.Location = new System.Drawing.Point(683, 135);
+            this.buttonEdit.Location = new System.Drawing.Point(586, 467);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonEdit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -129,7 +132,7 @@ namespace CafeteriaManagement
             this.buttonAdd.IconVisible = true;
             this.buttonAdd.IconZoom = 90D;
             this.buttonAdd.IsTab = false;
-            this.buttonAdd.Location = new System.Drawing.Point(683, 102);
+            this.buttonAdd.Location = new System.Drawing.Point(683, 467);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonAdd.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -165,7 +168,7 @@ namespace CafeteriaManagement
             this.buttonDelete.IconVisible = true;
             this.buttonDelete.IconZoom = 90D;
             this.buttonDelete.IsTab = false;
-            this.buttonDelete.Location = new System.Drawing.Point(683, 168);
+            this.buttonDelete.Location = new System.Drawing.Point(473, 467);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonDelete.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -196,7 +199,7 @@ namespace CafeteriaManagement
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -215,7 +218,7 @@ namespace CafeteriaManagement
             this.dataGridViewMenu.GridColor = System.Drawing.Color.White;
             this.dataGridViewMenu.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridViewMenu.HeaderForeColor = System.Drawing.Color.White;
-            this.dataGridViewMenu.Location = new System.Drawing.Point(26, 102);
+            this.dataGridViewMenu.Location = new System.Drawing.Point(27, 111);
             this.dataGridViewMenu.MultiSelect = false;
             this.dataGridViewMenu.Name = "dataGridViewMenu";
             this.dataGridViewMenu.ReadOnly = true;
@@ -224,10 +227,20 @@ namespace CafeteriaManagement
             this.dataGridViewMenu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewMenu.RowTemplate.Height = 30;
             this.dataGridViewMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewMenu.Size = new System.Drawing.Size(617, 387);
+            this.dataGridViewMenu.Size = new System.Drawing.Size(765, 327);
             this.dataGridViewMenu.TabIndex = 10;
             this.dataGridViewMenu.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewMenu_RowHeaderMouseClick);
             this.dataGridViewMenu.Click += new System.EventHandler(this.DataGridViewMenu_Click);
+            // 
+            // bunifuElipseMenu
+            // 
+            this.bunifuElipseMenu.ElipseRadius = 4;
+            this.bunifuElipseMenu.TargetControl = this.label1;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 4;
+            this.bunifuElipse2.TargetControl = this.dataGridViewMenu;
             // 
             // UCEditMenuNew
             // 
@@ -257,5 +270,7 @@ namespace CafeteriaManagement
         private Bunifu.Framework.UI.BunifuFlatButton buttonAdd;
         private Bunifu.Framework.UI.BunifuFlatButton buttonDelete;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridViewMenu;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipseMenu;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
     }
 }

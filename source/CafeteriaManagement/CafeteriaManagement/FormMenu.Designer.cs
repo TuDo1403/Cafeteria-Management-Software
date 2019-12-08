@@ -49,6 +49,7 @@
             this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
             this.flowLayoutPanelMenu.Size = new System.Drawing.Size(428, 272);
             this.flowLayoutPanelMenu.TabIndex = 0;
+            this.flowLayoutPanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelMenu_Paint);
             // 
             // FormMenu
             // 
