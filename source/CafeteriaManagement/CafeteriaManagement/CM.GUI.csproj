@@ -494,6 +494,48 @@
   <ItemGroup>
     <None Include="Resources\daux_32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\horizontal_line_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle_stroked_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unchecked_checkbox_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_multiply_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_menu_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_home_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_cards_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube_play_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contacts_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_cards66_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\que_32px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

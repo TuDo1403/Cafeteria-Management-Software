@@ -117,38 +117,80 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBoxPassword" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="textBoxReEnterPassword" xml:space="preserve">
-    <value>Re-enter Password</value>
-  </data>
-  <data name="initialPrice" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="songAddedText" xml:space="preserve">
     <value>Added!</value>
   </data>
-  <data name="textBoxUsername" xml:space="preserve">
-    <value>Username</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="contacts_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contacts_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="textBoxSearchMenuText" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="songAddedCaption" xml:space="preserve">
-    <value>Notification</value>
-  </data>
-  <data name="labelTextInitializeTime" xml:space="preserve">
-    <value>0:0</value>
+  <data name="icons8_menu_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_menu_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="textBoxSearchMenuText1" xml:space="preserve">
     <value>Enter Keyword</value>
   </data>
+  <data name="textBoxSearchMenuText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="bank_cards66_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bank_cards66_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unchecked_checkbox_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unchecked_checkbox_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_48px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_48px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="textBoxEmail" xml:space="preserve">
     <value>Email</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="search_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="horizontal_line_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\horizontal_line_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="textBoxPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="youtube_play_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\youtube_play_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_multiply_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_multiply_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="textBoxReEnterPassword" xml:space="preserve">
+    <value>Re-enter Password</value>
+  </data>
+  <data name="rectangle_stroked_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rectangle_stroked_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="textBoxUsername" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="songAddedCaption" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="bank_cards_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bank_cards_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="daux_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\daux_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="labelTextInitializeTime" xml:space="preserve">
+    <value>0:0</value>
+  </data>
+  <data name="icons8_home_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_home_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="initialPrice" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="que_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\que_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

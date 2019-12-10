@@ -17,7 +17,7 @@ namespace CafeteriaManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           using var formLogin = new FormProductInfNewUpdate();
+           using var formLogin = new FormMainLosed();
             Application.Run(formLogin);
         }
     }

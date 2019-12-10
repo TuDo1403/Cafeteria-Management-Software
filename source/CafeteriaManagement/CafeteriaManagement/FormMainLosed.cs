@@ -38,5 +38,39 @@ namespace CafeteriaManagement
                 panelAnimater.ShowSync(slideMenu);
             }
         }
+
+        private void pnlHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
+
+        }
+
+     
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ucEditMenuNew1.BringToFront();
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            ucOrderNew1.BringToFront();
+        }
+
+        private void btnMusic_Click(object sender, EventArgs e)
+        {
+            ucDisplayMusicNew1.BringToFront();
+        }
+
+        private void Queue_Click(object sender, EventArgs e)
+        {
+            ucQueueBox1.BringToFront();
+        }
     }
 }
