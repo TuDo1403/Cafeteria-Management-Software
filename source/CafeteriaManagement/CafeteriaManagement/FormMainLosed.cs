@@ -12,10 +12,17 @@ namespace CafeteriaManagement
 {
     public partial class FormMainLosed : Form
     {
+        public static event EventHandler<UserControl> FormMainLoaded;
+
         public FormMainLosed()
         {
             InitializeComponent();
         }
+
+        private void FormMain_Load(object sender, EventArgs e) => OnFormLoading(ucQueueBox1);
+
+
+        private void OnFormLoading(UCQueueBox ucQueueBox1) => (FormMainLoaded as EventHandler<UserControl>)?.Invoke(this, ucQueueBox1);
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -71,6 +78,16 @@ namespace CafeteriaManagement
         private void Queue_Click(object sender, EventArgs e)
         {
             ucQueueBox1.BringToFront();
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            ucEmployeeNew1.BringToFront();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace CafeteriaManagement
+﻿using System.Windows.Forms;
+
+namespace CafeteriaManagement
 {
     partial class FormMainLosed
     {
@@ -47,10 +49,11 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelAnimater = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ucDisplayMusicNew1 = new CafeteriaManagement.UCDisplayMusicNew();
             this.ucOrderNew1 = new CafeteriaManagement.UCOrderNew();
             this.ucEditMenuNew1 = new CafeteriaManagement.UCEditMenuNew();
             this.ucQueueBox1 = new CafeteriaManagement.UCQueueBox();
+            this.ucDisplayMusicNew1 = new CafeteriaManagement.UCDisplayMusicNew();
+            this.ucEmployeeNew1 = new CafeteriaManagement.UCEmployeeNew();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -204,6 +207,7 @@
             this.btnEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployee.Textcolor = System.Drawing.Color.Silver;
             this.btnEmployee.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnMusic
             // 
@@ -347,13 +351,14 @@
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Textcolor = System.Drawing.Color.Silver;
             this.btnHome.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnMenu
             // 
             this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAnimater.SetDecoration(this.btnMenu, BunifuAnimatorNS.DecorationType.None);
             this.btnMenu.Image = global::CafeteriaManagement.Properties.Resources.icons8_menu_32;
-            this.btnMenu.Location = new System.Drawing.Point(161, 8);
+            this.btnMenu.Location = new System.Drawing.Point(161, 2);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(33, 33);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -391,26 +396,17 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ucQueueBox1);
-            this.panel1.Controls.Add(this.ucDisplayMusicNew1);
             this.panel1.Controls.Add(this.ucOrderNew1);
             this.panel1.Controls.Add(this.ucEditMenuNew1);
+            this.panel1.Controls.Add(this.ucQueueBox1);
+            this.panel1.Controls.Add(this.ucDisplayMusicNew1);
+            this.panel1.Controls.Add(this.ucEmployeeNew1);
             this.panelAnimater.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(200, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(822, 517);
             this.panel1.TabIndex = 3;
-            // 
-            // ucDisplayMusicNew1
-            // 
-            this.ucDisplayMusicNew1.BackColor = System.Drawing.Color.Silver;
-            this.panelAnimater.SetDecoration(this.ucDisplayMusicNew1, BunifuAnimatorNS.DecorationType.None);
-            this.ucDisplayMusicNew1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucDisplayMusicNew1.Location = new System.Drawing.Point(0, 0);
-            this.ucDisplayMusicNew1.Name = "ucDisplayMusicNew1";
-            this.ucDisplayMusicNew1.Size = new System.Drawing.Size(822, 517);
-            this.ucDisplayMusicNew1.TabIndex = 2;
             // 
             // ucOrderNew1
             // 
@@ -442,6 +438,25 @@
             this.ucQueueBox1.Size = new System.Drawing.Size(822, 517);
             this.ucQueueBox1.TabIndex = 3;
             // 
+            // ucDisplayMusicNew1
+            // 
+            this.ucDisplayMusicNew1.BackColor = System.Drawing.Color.Silver;
+            this.panelAnimater.SetDecoration(this.ucDisplayMusicNew1, BunifuAnimatorNS.DecorationType.None);
+            this.ucDisplayMusicNew1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDisplayMusicNew1.Location = new System.Drawing.Point(0, 0);
+            this.ucDisplayMusicNew1.Name = "ucDisplayMusicNew1";
+            this.ucDisplayMusicNew1.Size = new System.Drawing.Size(822, 517);
+            this.ucDisplayMusicNew1.TabIndex = 2;
+            // 
+            // ucEmployeeNew1
+            // 
+            this.ucEmployeeNew1.BackColor = System.Drawing.Color.Silver;
+            this.panelAnimater.SetDecoration(this.ucEmployeeNew1, BunifuAnimatorNS.DecorationType.None);
+            this.ucEmployeeNew1.Location = new System.Drawing.Point(0, 0);
+            this.ucEmployeeNew1.Name = "ucEmployeeNew1";
+            this.ucEmployeeNew1.Size = new System.Drawing.Size(822, 517);
+            this.ucEmployeeNew1.TabIndex = 4;
+            // 
             // FormMainLosed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,6 +478,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.Load += FormMain_Load;
 
         }
 
@@ -488,7 +504,6 @@
         private UCDisplayMusicNew ucDisplayMusicNew1;
         private Bunifu.Framework.UI.BunifuFlatButton Queue;
         private UCQueueBox ucQueueBox1;
-        // private UCQueueBox ucQueueBox1;
-        // private UCDisplayMusicNew ucDisplayMusicNew1;
+        private UCEmployeeNew ucEmployeeNew1;
     }
 }

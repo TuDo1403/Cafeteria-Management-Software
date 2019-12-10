@@ -32,8 +32,8 @@ namespace CafeteriaManagement
         private MusicPlayer()
         {
             windowsMediaPlayer.PlayStateChange += WindowsMediaPlayer_PlayStateChangeHandler;
-           // UCQueueBox.SongPrev += FormQueue_SongPrevHandler;
-           // UCQueueBox.SongNext += FormQueue_SongNextHandler;
+            UCQueueBox.SongPrev += FormQueue_SongPrevHandler;
+            UCQueueBox.SongNext += FormQueue_SongNextHandler;
             SongDownloader.ConvertCompleted += SongDownloader_ConvertCompletedHandler;
         }
 
@@ -44,6 +44,7 @@ namespace CafeteriaManagement
                 if (song.Title == e.Title)
                 {
                     song.IsConverted = true;
+
                     break;
                 }
             }
@@ -52,15 +53,16 @@ namespace CafeteriaManagement
         private void FormQueue_SongPrevHandler(object sender, EventArgs e)
         {
             //add last song to the beginning of the queue
-            if (PlayHistories.Count >= 1)
+            if (PlayHistories.Count >= 2)
             {
+                PlayHistories.RemoveAt(PlayHistories.Count - 1);
                 PlayList = new Queue<Song>(PlayList.Prepend(PlayHistories.Last()));
-                Play();
+                PlayNext();
             }
         }
 
 
-        private void FormQueue_SongNextHandler(object sender, EventArgs e) => Play();
+        private void FormQueue_SongNextHandler(object sender, EventArgs e) => PlayNext();
 
 
         //idea from https://multisoftextreme.blogspot.com/2009/08/windows-media-player-end-of-stream.html
@@ -73,7 +75,7 @@ namespace CafeteriaManagement
                 if (_isMediaEnded)
                 {
                     _isMediaEnded = false;
-                    Play();
+                    PlayNext();
                 }
             }
             else if (windowsMediaPlayer.playState == WMPPlayState.wmppsPaused)
@@ -84,16 +86,29 @@ namespace CafeteriaManagement
 
         public static void Play()
         {
+            if (PlayList.Peek().IsConverted)
+            {
+                if (IsPaused)
+                    IsPaused = false;
+                else
+                {
+                    windowsMediaPlayer.URL = PlayList.Peek().Url;
+                    OnSongChanging();
+                }
+
+                windowsMediaPlayer.controls.play();
+            }
+        }
+
+        public static void PlayNext()
+        {
             if (IsPaused == false && PlayList.Count >= 1 && PlayList.Peek().IsConverted)
             {
                 PlayHistories.Add(PlayList.Peek());
                 OnSongChanging();
                 windowsMediaPlayer.URL = PlayList.Dequeue().Url;
+                windowsMediaPlayer.controls.play();
             }
-            else if (IsPaused)
-                IsPaused = false;
-
-            windowsMediaPlayer.controls.play();
         }
 
         private static void OnSongChanging() => (SongChanged as EventHandler<Queue<Song>>)?.Invoke(_musicPlayer, PlayList);
