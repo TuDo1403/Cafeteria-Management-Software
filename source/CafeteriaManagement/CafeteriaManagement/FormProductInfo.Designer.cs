@@ -42,8 +42,8 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.panelTextBox = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBoxProductInfo = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
@@ -189,6 +189,14 @@
             this.panel2.Size = new System.Drawing.Size(330, 36);
             this.panel2.TabIndex = 3;
             // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBoxPrice.Location = new System.Drawing.Point(130, 5);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(197, 26);
+            this.textBoxPrice.TabIndex = 34;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.labelType);
@@ -197,14 +205,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(330, 36);
             this.panel3.TabIndex = 4;
-            // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxPrice.Location = new System.Drawing.Point(130, 5);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(197, 26);
-            this.textBoxPrice.TabIndex = 34;
             // 
             // panel4
             // 
@@ -235,9 +235,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 292);
+            this.Controls.Add(this.groupBoxProductInfo);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.groupBoxProductInfo);
             this.Name = "FormProductInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormProductInfo";

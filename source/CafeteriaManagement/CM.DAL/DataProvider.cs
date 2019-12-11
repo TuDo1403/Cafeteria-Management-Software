@@ -13,11 +13,11 @@ namespace CM.DAL
         private static readonly CMDataContext _database = new CMDataContext();
 
 
-        public static IEnumerable<string> RetrieveCategory()
+        public static List<string> RetrieveCategory()
         {
             var categories = from type in _database.PRODUCTTYPEs
                              select type.Name;
-            return categories;
+            return categories.ToList();
         }
 
 
@@ -53,6 +53,15 @@ namespace CM.DAL
                        where product.ProductId == typeId && product.IsTopping == true
                        select product.Name;
             return menu;
+        }
+
+        public static void DeleteBill(string productId)
+        {
+            var targetBillDetails = from billDetail in _database.PRODUCT_BILLs
+                                   where billDetail.ProductId == productId
+                                   select billDetail;
+            _database.PRODUCT_BILLs.DeleteAllOnSubmit(targetBillDetails);
+            _database.SubmitChanges();
         }
 
         public static string GetAccountId(string username, string hashedPassword)

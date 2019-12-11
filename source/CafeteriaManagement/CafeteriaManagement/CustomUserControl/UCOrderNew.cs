@@ -67,7 +67,7 @@ namespace CafeteriaManagement
         {
             if (SelectedList.GetSelectedItems().Count > 0)
             {
-                DataProcess.InsertBill(SelectedList.GetSelectedItems(), labelSum.Text, _currentUser);
+                DataProcess.InsertBill(SelectedList.GetSelectedItems(), labelTotal.Text, _currentUser);
                 RefreshPage();
             }
         }

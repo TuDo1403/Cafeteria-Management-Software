@@ -46,6 +46,12 @@ namespace BLL
             return string.Format(CultureInfo.InvariantCulture, "B{0:00000}", nextIndex);
         }
 
+        public static void DeleteBillBy(string productName)
+        {
+            var productId = DataProvider.GetProductIdFrom(productName);
+            DataProvider.DeleteBill(productId);
+        }
+
         public static string GetAccountId(string username, string password)
         {
             var bytesFromPassword = Encoding.UTF8.GetBytes(password);

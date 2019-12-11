@@ -46,8 +46,9 @@ namespace CafeteriaManagement
                 var result = MessageBox.Show("Do you sure you want to delete this product form database?", "Waring", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    OnProductDeleting();
+                    DataProcess.DeleteBillBy((sender as BunifuFlatButton).Text);
                     DataProcess.DeleteProduct((sender as BunifuFlatButton).Text);
+                    OnProductDeleting();
                     this.Close();
                 }
             }
@@ -62,7 +63,7 @@ namespace CafeteriaManagement
 
         private void EditProduct(object sender)
         {
-            using var formProductInfo = new FormProductInfo(DataProvider.GetProductIdFrom((sender as BunifuFlatButton).Text));
+            using var formProductInfo = new FormProductInfNew(DataProvider.GetProductIdFrom((sender as BunifuFlatButton).Text));
             OnProductChoosing((sender as BunifuFlatButton).Text);
             formProductInfo.ShowDialog();
         }

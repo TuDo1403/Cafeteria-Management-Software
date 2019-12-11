@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBoxEmployees = new System.Windows.Forms.GroupBox();
             this.dataGridViewEmployeeList = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -58,7 +59,7 @@
             this.textBoxName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.buttonAdd = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonEdit = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeList)).BeginInit();
             this.groupBoxDetail.SuspendLayout();
@@ -68,6 +69,7 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCancel
@@ -123,31 +125,31 @@
             this.dataGridViewEmployeeList.AllowUserToDeleteRows = false;
             this.dataGridViewEmployeeList.AllowUserToResizeColumns = false;
             this.dataGridViewEmployeeList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
-            this.dataGridViewEmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            this.dataGridViewEmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEmployeeList.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridViewEmployeeList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEmployeeList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewEmployeeList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewEmployeeList.ColumnHeadersHeight = 30;
             this.dataGridViewEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewEmployeeList.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEmployeeList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewEmployeeList.DoubleBuffered = true;
             this.dataGridViewEmployeeList.EnableHeadersVisualStyles = false;
             this.dataGridViewEmployeeList.GridColor = System.Drawing.Color.White;
@@ -283,6 +285,7 @@
             this.textBoxEmail.Size = new System.Drawing.Size(233, 29);
             this.textBoxEmail.TabIndex = 16;
             this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             // 
             // panel4
             // 
@@ -322,6 +325,7 @@
             this.textBoxPhone.Size = new System.Drawing.Size(233, 29);
             this.textBoxPhone.TabIndex = 16;
             this.textBoxPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxPhone.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             // 
             // panel3
             // 
@@ -463,6 +467,7 @@
             this.textBoxName.Size = new System.Drawing.Size(233, 29);
             this.textBoxName.TabIndex = 16;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             // 
             // buttonAdd
             // 
@@ -536,6 +541,10 @@
             this.buttonEdit.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonEdit.Click += new System.EventHandler(this.Button_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // UCEmployeeNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -564,6 +573,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -597,6 +607,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxName;
         private Bunifu.Framework.UI.BunifuFlatButton buttonAdd;
         private Bunifu.Framework.UI.BunifuFlatButton buttonEdit;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

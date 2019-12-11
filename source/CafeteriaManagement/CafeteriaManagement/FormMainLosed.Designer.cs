@@ -31,7 +31,7 @@ namespace CafeteriaManagement
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainLosed));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlHeader = new System.Windows.Forms.Panel();
@@ -251,7 +251,7 @@ namespace CafeteriaManagement
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.BorderRadius = 0;
-            this.btnEdit.ButtonText = "         Edit";
+            this.btnEdit.ButtonText = "         Edit Product";
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimater.SetDecoration(this.btnEdit, BunifuAnimatorNS.DecorationType.None);
             this.btnEdit.DisabledColor = System.Drawing.Color.Gray;
@@ -275,7 +275,7 @@ namespace CafeteriaManagement
             this.btnEdit.selected = false;
             this.btnEdit.Size = new System.Drawing.Size(199, 48);
             this.btnEdit.TabIndex = 4;
-            this.btnEdit.Text = "         Edit";
+            this.btnEdit.Text = "         Edit Product";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.Textcolor = System.Drawing.Color.Silver;
             this.btnEdit.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -377,22 +377,22 @@ namespace CafeteriaManagement
             // 
             this.panelAnimater.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.panelAnimater.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.panelAnimater.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.panelAnimater.DefaultAnimation = animation2;
             // 
             // panel1
             // 
@@ -417,6 +417,7 @@ namespace CafeteriaManagement
             this.ucOrderNew1.Name = "ucOrderNew1";
             this.ucOrderNew1.Size = new System.Drawing.Size(822, 517);
             this.ucOrderNew1.TabIndex = 1;
+            this.ucOrderNew1.Load += new System.EventHandler(this.ucOrderNew1_Load);
             // 
             // ucEditMenuNew1
             // 
@@ -478,7 +479,6 @@ namespace CafeteriaManagement
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.Load += FormMain_Load;
 
         }
 

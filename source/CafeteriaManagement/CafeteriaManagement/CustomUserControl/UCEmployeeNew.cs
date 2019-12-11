@@ -97,20 +97,23 @@ namespace CafeteriaManagement
             }
             else
             {
-                _clickCount = 0;
-                (sender as BunifuFlatButton).Text = _buttonName;
-                _buttonName = "";
-                CreateRecordFromUserInput();
-                ExecuteTask((sender as BunifuFlatButton));
-                RefreshEmployeesList();
-                foreach (var item in _buttons)
+                if (ValidateChildren(ValidationConstraints.Enabled))
                 {
-                    if (item != (sender as BunifuFlatButton))
+                    _clickCount = 0;
+                    (sender as BunifuFlatButton).Text = _buttonName;
+                    _buttonName = "";
+                    CreateRecordFromUserInput();
+                    ExecuteTask((sender as BunifuFlatButton));
+                    RefreshEmployeesList();
+                    foreach (var item in _buttons)
                     {
-                        item.Enabled = !item.Enabled;
+                        if (item != (sender as BunifuFlatButton))
+                        {
+                            item.Enabled = !item.Enabled;
+                        }
                     }
+                    buttonCancel.Enabled = false;
                 }
-                buttonCancel.Enabled = false;
             }
         }
 
@@ -245,6 +248,20 @@ namespace CafeteriaManagement
             if (textBoxName.Text.Length != 0)
             {
                 textBoxName.Text = textBoxName.Text.Standardlize();
+            }
+        }
+
+        private void textBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty((sender as BunifuMaterialTextbox).Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(sender as BunifuMaterialTextbox, "Cannot left this empty");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(sender as BunifuMaterialTextbox, null);
             }
         }
     }

@@ -89,5 +89,10 @@ namespace CafeteriaManagement
         {
 
         }
+
+        private void ucOrderNew1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

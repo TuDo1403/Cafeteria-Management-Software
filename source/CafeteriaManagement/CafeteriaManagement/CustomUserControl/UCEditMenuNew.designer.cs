@@ -101,7 +101,7 @@ namespace CafeteriaManagement
             this.buttonEdit.IconVisible = true;
             this.buttonEdit.IconZoom = 90D;
             this.buttonEdit.IsTab = false;
-            this.buttonEdit.Location = new System.Drawing.Point(586, 467);
+            this.buttonEdit.Location = new System.Drawing.Point(582, 467);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonEdit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));

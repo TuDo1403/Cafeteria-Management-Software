@@ -24,7 +24,7 @@ namespace CafeteriaManagement
         {
             InitializeComponent();
             LoadDataFromDatabase();
-            FormProductInfo.ProductUpdated += FormProductInfo_ProductUpdatedHandler;
+            FormProductInfNew.ProductUpdated += FormProductInfo_ProductUpdatedHandler;
             FormMenu.ProductDeleted += FormProductInfo_ProductUpdatedHandler;
         }
 
@@ -65,7 +65,7 @@ namespace CafeteriaManagement
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            using var formProductInfo = new FormProductInfo(DataProcess.GetNextProductId(), true);
+            using var formProductInfo = new FormProductInfNew(DataProcess.GetNextProductId(), true);
             formProductInfo.ShowDialog();
         }
 
@@ -99,7 +99,7 @@ namespace CafeteriaManagement
 
         private void DataGridViewMenu_Click(object sender, EventArgs e)
         {
-            using var formProductInfo = new FormProductInfo();
+            using var formProductInfo = new FormProductInfNew();
             var productName = dataGridViewMenu.SelectedRows[0].Cells[1].Value.ToString();
             OnProductChoosing(DataProvider.GetProductInfo(productName));
             formProductInfo.ShowDialog();
