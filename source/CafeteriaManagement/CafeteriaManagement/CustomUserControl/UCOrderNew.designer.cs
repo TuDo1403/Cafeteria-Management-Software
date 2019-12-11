@@ -54,7 +54,7 @@
             this.dataGridViewSelectedItems.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
             this.dataGridViewSelectedItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewSelectedItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSelectedItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewSelectedItems.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridViewSelectedItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewSelectedItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -93,6 +93,7 @@
             this.dataGridViewSelectedItems.Size = new System.Drawing.Size(347, 336);
             this.dataGridViewSelectedItems.TabIndex = 0;
             this.dataGridViewSelectedItems.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewSelectedItems_RowHeaderMouseDoubleClick);
+            this.dataGridViewSelectedItems.Click += new System.EventHandler(this.dataGridViewSelectedItems_Click);
             // 
             // comboBoxCategory
             // 

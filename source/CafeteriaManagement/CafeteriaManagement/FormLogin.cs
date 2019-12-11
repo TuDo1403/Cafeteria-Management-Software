@@ -50,20 +50,28 @@ namespace CafeteriaManagement
 
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
-            var id = DataProcess.GetAccountId(textBoxUsername.Text, textBoxPassword.Text);
-
-            if (!string.IsNullOrEmpty(id))
+            if (!ValidateChildren(ValidationConstraints.Enabled))
             {
-                AccessMainForm(id);
+                return;
+            }
+            var isValidAccount = DataProcess.ValidateAccount(textBoxUsername.Text, textBoxPassword.Text);
+
+            if (isValidAccount)
+            {
+                AccessMainForm(textBoxUsername.Text);
+            }
+            else
+            {
+                MessageBox.Show("Wrong username or password!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void AccessMainForm(string id)
+        private void AccessMainForm(string username)
         {
             this.Hide();
-            using (var formMain = new FormMain())
+            using (var formMain = new FormMainLosed())
             {
-                OnLoginSucceeding(id);
+                OnLoginSucceeding(username);
                 formMain.ShowDialog();
             }
             this.Show();
@@ -107,6 +115,36 @@ namespace CafeteriaManagement
         private void FormLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxUsername_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxUsername.Text == "Username")
+            {
+                e.Cancel = true;
+                textBoxUsername.Focus();
+                errorProvider.SetError(textBoxUsername, "Cannot left this empty!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxUsername, null);
+            }
+        }
+
+        private void textBoxPassword_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxPassword.Text == "Password")
+            {
+                e.Cancel = true;
+                textBoxPassword.Focus();
+                errorProvider.SetError(textBoxPassword, "Cannot left this empty!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxPassword, null);
+            }
         }
     }
 }

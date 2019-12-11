@@ -329,12 +329,6 @@
     <Compile Include="FormProductInfo.Designer.cs">
       <DependentUpon>FormProductInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUCOrderManager.Topping.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUCOrderManager.Topping.Designer.cs">
-      <DependentUpon>FormUCOrderManager.Topping.cs</DependentUpon>
-    </Compile>
     <Compile Include="LogIn2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -419,9 +413,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductInfo.resx">
       <DependentUpon>FormProductInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormUCOrderManager.Topping.resx">
-      <DependentUpon>FormUCOrderManager.Topping.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn2.resx">
       <DependentUpon>LogIn2.cs</DependentUpon>

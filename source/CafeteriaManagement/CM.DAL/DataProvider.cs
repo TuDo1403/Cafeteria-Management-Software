@@ -64,16 +64,11 @@ namespace CM.DAL
             _database.SubmitChanges();
         }
 
-        public static string GetAccountId(string username, string hashedPassword)
+        public static bool ValidateAccount(string username, string hashedPassword)
         {
-            var id = "";
-            if (_database.ACCOUNTs.Any(a => a.UserName == username))
-            {
-                id = (from account in _database.ACCOUNTs
-                      where account.UserName == username && account.PassWord == hashedPassword
-                      select account.Id).Single();
-            }
-            return id;
+            var isValid = false;
+            isValid = _database.ACCOUNTs.Any(a => a.UserName == username && a.PassWord == hashedPassword);
+            return isValid;
         }
 
         public static void InsertRecord(object record, string tableName)
@@ -99,10 +94,10 @@ namespace CM.DAL
             _database.SubmitChanges();
         }
 
-        public static string GetEmployeeIdFrom(string userId)
+        public static string GetEmployeeIdFrom(string username)
         {
             var employeeId = (from account in _database.ACCOUNTs
-                              where account.Id == userId
+                              where account.UserName == username
                               select account.EmployeeId).Single();
             return employeeId;
         }

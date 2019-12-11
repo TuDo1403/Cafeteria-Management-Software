@@ -25,7 +25,7 @@ namespace CafeteriaManagement
         {
             InitializeComponent();
             LoadDataFromDatabase();
-            FormTopping.ToppingsSelected += FormTopping_ToppingsSelectedHandler;
+            FormProductInfNewUpdate.ToppingsSelected += FormTopping_ToppingsSelectedHandler;
             FormLogin.LoginSucceeded += FormLogin_LoginSucceededHandler;
         }
 
@@ -104,7 +104,7 @@ namespace CafeteriaManagement
 
         private void DataGridViewSelectedItems_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            using (var formTopping = new FormTopping())
+            using (var formTopping = new FormProductInfNewUpdate())
             {
                 var menuTopping = DataProcess.RetrieveMenuToppingFrom(SelectedList.GetSelectedItems()[e.RowIndex].Name);
                 if (menuTopping != null)

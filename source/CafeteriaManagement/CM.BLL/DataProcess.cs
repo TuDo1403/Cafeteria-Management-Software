@@ -52,7 +52,7 @@ namespace BLL
             DataProvider.DeleteBill(productId);
         }
 
-        public static string GetAccountId(string username, string password)
+        public static bool ValidateAccount(string username, string password)
         {
             var bytesFromPassword = Encoding.UTF8.GetBytes(password);
             using var hashAlgorithm = MD5.Create();
@@ -65,22 +65,22 @@ namespace BLL
                 stringBuilder.Append(item.ToString("x2", CultureInfo.InvariantCulture));
             }
             var hashedPassword = stringBuilder.ToString();
-            var id = DataProvider.GetAccountId(username, hashedPassword);
-            return id;
+            var isValid = DataProvider.ValidateAccount(username, hashedPassword);
+            return isValid;
         }
 
         public static void InsertProduct(PRODUCT addedProduct) => DataProvider.InsertRecord(addedProduct, "PRODUCT");
 
 
 
-        public static void InsertBill(List<Product> list, string total, string userId)
+        public static void InsertBill(List<Product> list, string total, string userName)
         {
             var bill = new BILL()
             {
                 Id = GetNextBillId(),
                 Total = Convert.ToDecimal(total, CultureInfo.InvariantCulture),
                 DateCreated = DateTime.Today,
-                EmployeeId = DataProvider.GetEmployeeIdFrom(userId)
+                EmployeeId = DataProvider.GetEmployeeIdFrom(userName)
             };
             DataProvider.InsertRecord(bill, "BILL");
             foreach (var item in list)

@@ -45,6 +45,7 @@
             // 
             // flowLayoutPanelMenu
             // 
+            this.flowLayoutPanelMenu.AutoScroll = true;
             this.flowLayoutPanelMenu.Location = new System.Drawing.Point(6, 19);
             this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
             this.flowLayoutPanelMenu.Size = new System.Drawing.Size(428, 272);

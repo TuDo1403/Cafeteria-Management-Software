@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxUsername = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
             this.buttonLogin = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -35,6 +36,8 @@
             this.labelLostPass = new MaterialSkin.Controls.MaterialLabel();
             this.labelRegister = new MaterialSkin.Controls.MaterialLabel();
             this.textBoxPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxUsername
@@ -55,6 +58,7 @@
             this.textBoxUsername.UseSystemPasswordChar = false;
             this.textBoxUsername.Enter += new System.EventHandler(this.TextBoxUsername_Enter);
             this.textBoxUsername.Leave += new System.EventHandler(this.TextBoxUsername_Leave);
+            this.textBoxUsername.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxUsername_Validating);
             // 
             // materialCheckBox1
             // 
@@ -146,6 +150,11 @@
             this.textBoxPassword.Enter += new System.EventHandler(this.TextBoxPassword_Enter);
             this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxPassword_KeyDown);
             this.textBoxPassword.Leave += new System.EventHandler(this.TextBoxPassword_Leave);
+            this.textBoxPassword.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPassword_Validating);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // FormLogin
             // 
@@ -163,6 +172,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.FormLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +187,6 @@
         private MaterialSkin.Controls.MaterialLabel labelLostPass;
         private MaterialSkin.Controls.MaterialLabel labelRegister;
         private MaterialSkin.Controls.MaterialSingleLineTextField textBoxPassword;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
