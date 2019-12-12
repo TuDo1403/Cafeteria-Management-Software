@@ -230,7 +230,7 @@ namespace CM.DAL
             {
                 return "";
             }
-            var id = (from employee in _database.BILLs
+            var id = (from employee in _database.EMPLOYEEs
                       select employee.Id).AsEnumerable().Last();
             return id;
         }

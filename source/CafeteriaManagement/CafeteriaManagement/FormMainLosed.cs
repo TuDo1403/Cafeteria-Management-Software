@@ -17,6 +17,7 @@ namespace CafeteriaManagement
         public FormMainLosed()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             ucOrderNew1.BringToFront();
             
             

@@ -22,6 +22,7 @@ namespace CafeteriaManagement
         {
             var playSongHistory = SongDownloader.musicSavePath + @"\History.txt";
             using (var streamWriter = new StreamWriter(playSongHistory, true)) { };
+            FormMainLosed.FormMainLoaded += FormMain_FormMainLoadedHandler;
             InitializeComponent();
 
             //  InitializeComponent();
@@ -29,7 +30,7 @@ namespace CafeteriaManagement
             MaterialSkin.MaterialSkinManager.Instance.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green900, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.Green100, MaterialSkin.TextShade.WHITE);
 
             LoadHistoryToAutoCompleteSource();
-            FormMainLosed.FormMainLoaded += FormMain_FormMainLoadedHandler;
+            
         }
 
         private void FormMain_FormMainLoadedHandler(object sender, UserControl e) => _queue = e;

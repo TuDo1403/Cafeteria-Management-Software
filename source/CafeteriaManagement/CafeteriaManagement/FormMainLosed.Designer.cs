@@ -31,7 +31,7 @@ namespace CafeteriaManagement
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainLosed));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlHeader = new System.Windows.Forms.Panel();
@@ -40,6 +40,7 @@ namespace CafeteriaManagement
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.slideMenu = new System.Windows.Forms.Panel();
+            this.panelButton = new System.Windows.Forms.Panel();
             this.Queue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEmployee = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMusic = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -51,7 +52,6 @@ namespace CafeteriaManagement
             this.panelAnimater = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.panelButton = new System.Windows.Forms.Panel();
             this.ucQueueBox1 = new CafeteriaManagement.UCQueueBox();
             this.ucOrderNew1 = new CafeteriaManagement.UCOrderNew();
             this.ucEmployeeNew1 = new CafeteriaManagement.UCEmployeeNew();
@@ -155,6 +155,15 @@ namespace CafeteriaManagement
             this.slideMenu.Name = "slideMenu";
             this.slideMenu.Size = new System.Drawing.Size(200, 517);
             this.slideMenu.TabIndex = 1;
+            // 
+            // panelButton
+            // 
+            this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.panelAnimater.SetDecoration(this.panelButton, BunifuAnimatorNS.DecorationType.None);
+            this.panelButton.Location = new System.Drawing.Point(0, 76);
+            this.panelButton.Name = "panelButton";
+            this.panelButton.Size = new System.Drawing.Size(5, 48);
+            this.panelButton.TabIndex = 8;
             // 
             // Queue
             // 
@@ -396,22 +405,22 @@ namespace CafeteriaManagement
             // 
             this.panelAnimater.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.panelAnimater.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.panelAnimater.DefaultAnimation = animation4;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.panelAnimater.DefaultAnimation = animation1;
             // 
             // panel1
             // 
@@ -434,15 +443,6 @@ namespace CafeteriaManagement
             this.bunifuDragControl2.Horizontal = true;
             this.bunifuDragControl2.TargetControl = null;
             this.bunifuDragControl2.Vertical = true;
-            // 
-            // panelButton
-            // 
-            this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.panelAnimater.SetDecoration(this.panelButton, BunifuAnimatorNS.DecorationType.None);
-            this.panelButton.Location = new System.Drawing.Point(0, 76);
-            this.panelButton.Name = "panelButton";
-            this.panelButton.Size = new System.Drawing.Size(5, 48);
-            this.panelButton.TabIndex = 8;
             // 
             // ucQueueBox1
             // 
@@ -506,6 +506,7 @@ namespace CafeteriaManagement
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMainLosed";
             this.Text = "FormMainLosed";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.pnlHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToBigSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToSmallSize)).EndInit();

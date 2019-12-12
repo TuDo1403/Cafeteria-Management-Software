@@ -36,11 +36,22 @@ namespace CM.DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=OANHNGUYEN-PC\\THANHCHINGUYENPK;Initial Catalog=CAFEMANAGEMENT;User ID" +
-            "=thanhchinguyenpk;Password=1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=CAFEMANAGEMENT;User ID=thanhchinguyenpk;Pas" +
+            "sword=1")]
         public string CAFEMANAGEMENTConnectionString {
             get {
                 return ((string)(this["CAFEMANAGEMENTConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=OANHNGUYEN-PC\\THANHCHINGUYENPK;Initial Catalog=CAFEMANAGEMENT;User ID" +
+            "=thanhchinguyenpk;Password=1")]
+        public string CAFEMANAGEMENTConnectionString2 {
+            get {
+                return ((string)(this["CAFEMANAGEMENTConnectionString2"]));
             }
         }
     }

@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DatagridOnline = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.dataGridViewSearchResult = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.SearchOffine = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.DatagridOffline = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.timerPanelOnline = new System.Windows.Forms.Timer(this.components);
@@ -40,109 +41,22 @@
             this.timerGreenOffline = new System.Windows.Forms.Timer(this.components);
             this.timerGreenOnline = new System.Windows.Forms.Timer(this.components);
             this.SearchOnline = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.textBoxSearchMusic = new System.Windows.Forms.TextBox();
             this.pnlOnline = new System.Windows.Forms.Panel();
-            this.labelYoutube = new System.Windows.Forms.Label();
-            this.buttonSearch = new System.Windows.Forms.PictureBox();
-            this.dataGridViewSearchResult = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.buttonQueue = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.textBoxSearchOnline = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.PictureBox();
+            this.labelYoutube = new System.Windows.Forms.Label();
             this.lblOnline = new System.Windows.Forms.Label();
             this.pnlGreen = new System.Windows.Forms.Panel();
+            this.textBoxSearchMusic = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchResult)).BeginInit();
             this.pnlOnline.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchResult)).BeginInit();
             this.SuspendLayout();
             // 
             // DatagridOnline
             // 
             this.DatagridOnline.ElipseRadius = 5;
             this.DatagridOnline.TargetControl = this.dataGridViewSearchResult;
-            // 
-            // SearchOffine
-            // 
-            this.SearchOffine.ElipseRadius = 20;
-            // 
-            // DatagridOffline
-            // 
-            this.DatagridOffline.ElipseRadius = 5;
-            // 
-            // timerPanelOnline
-            // 
-            this.timerPanelOnline.Interval = 1;
-            this.timerPanelOnline.Tick += new System.EventHandler(this.timerPanelOnline_Tick);
-            // 
-            // timerPanelOffline
-            // 
-            this.timerPanelOffline.Interval = 2;
-            this.timerPanelOffline.Tick += new System.EventHandler(this.timerPanelOffline_Tick);
-            // 
-            // timerGreenOffline
-            // 
-            this.timerGreenOffline.Interval = 1;
-            this.timerGreenOffline.Tick += new System.EventHandler(this.timerGreenOffline_Tick);
-            // 
-            // timerGreenOnline
-            // 
-            this.timerGreenOnline.Interval = 1;
-            this.timerGreenOnline.Tick += new System.EventHandler(this.timerGreenOnline_Tick);
-            // 
-            // SearchOnline
-            // 
-            this.SearchOnline.ElipseRadius = 20;
-            this.SearchOnline.TargetControl = this.textBoxSearchOnline;
-            // 
-            // textBoxSearchMusic
-            // 
-            this.textBoxSearchMusic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxSearchMusic.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxSearchMusic.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSearchMusic.Location = new System.Drawing.Point(219, 29);
-            this.textBoxSearchMusic.Name = "textBoxSearchMusic";
-            this.textBoxSearchMusic.Size = new System.Drawing.Size(502, 13);
-            this.textBoxSearchMusic.TabIndex = 1;
-            this.textBoxSearchMusic.Text = "Enter Keyword";
-            this.textBoxSearchMusic.Enter += new System.EventHandler(this.TextBoxSearchMusic_Enter);
-            this.textBoxSearchMusic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchMusic_KeyDown);
-            this.textBoxSearchMusic.Leave += new System.EventHandler(this.TextBoxSearchMusic_Leave);
-            // 
-            // pnlOnline
-            // 
-            this.pnlOnline.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlOnline.Controls.Add(this.textBoxSearchOnline);
-            this.pnlOnline.Controls.Add(this.buttonQueue);
-            this.pnlOnline.Controls.Add(this.dataGridViewSearchResult);
-            this.pnlOnline.Controls.Add(this.buttonSearch);
-            this.pnlOnline.Controls.Add(this.labelYoutube);
-            this.pnlOnline.Location = new System.Drawing.Point(30, 66);
-            this.pnlOnline.Name = "pnlOnline";
-            this.pnlOnline.Size = new System.Drawing.Size(773, 426);
-            this.pnlOnline.TabIndex = 2;
-            // 
-            // labelYoutube
-            // 
-            this.labelYoutube.AutoSize = true;
-            this.labelYoutube.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelYoutube.Location = new System.Drawing.Point(41, 17);
-            this.labelYoutube.Name = "labelYoutube";
-            this.labelYoutube.Size = new System.Drawing.Size(84, 25);
-            this.labelYoutube.TabIndex = 4;
-            this.labelYoutube.Text = "YouTube";
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.Image = global::CafeteriaManagement.Properties.Resources.search_48px2;
-            this.buttonSearch.Location = new System.Drawing.Point(676, 9);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(33, 33);
-            this.buttonSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.buttonSearch.TabIndex = 13;
-            this.buttonSearch.TabStop = false;
-            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // dataGridViewSearchResult
             // 
@@ -161,7 +75,7 @@
             this.dataGridViewSearchResult.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewSearchResult.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
@@ -193,6 +107,56 @@
             this.dataGridViewSearchResult.Size = new System.Drawing.Size(735, 287);
             this.dataGridViewSearchResult.TabIndex = 16;
             this.dataGridViewSearchResult.DoubleClick += new System.EventHandler(this.DataGridViewSearchResult_DoubleClick);
+            // 
+            // SearchOffine
+            // 
+            this.SearchOffine.ElipseRadius = 20;
+            this.SearchOffine.TargetControl = this;
+            // 
+            // DatagridOffline
+            // 
+            this.DatagridOffline.ElipseRadius = 5;
+            this.DatagridOffline.TargetControl = this;
+            // 
+            // timerPanelOnline
+            // 
+            this.timerPanelOnline.Interval = 1;
+            this.timerPanelOnline.Tick += new System.EventHandler(this.timerPanelOnline_Tick);
+            // 
+            // timerPanelOffline
+            // 
+            this.timerPanelOffline.Interval = 2;
+            this.timerPanelOffline.Tick += new System.EventHandler(this.timerPanelOffline_Tick);
+            // 
+            // timerGreenOffline
+            // 
+            this.timerGreenOffline.Interval = 1;
+            this.timerGreenOffline.Tick += new System.EventHandler(this.timerGreenOffline_Tick);
+            // 
+            // timerGreenOnline
+            // 
+            this.timerGreenOnline.Interval = 1;
+            this.timerGreenOnline.Tick += new System.EventHandler(this.timerGreenOnline_Tick);
+            // 
+            // SearchOnline
+            // 
+            this.SearchOnline.ElipseRadius = 20;
+            this.SearchOnline.TargetControl = this.textBoxSearchMusic;
+            // 
+            // pnlOnline
+            // 
+            this.pnlOnline.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlOnline.Controls.Add(this.textBoxSearchMusic);
+            this.pnlOnline.Controls.Add(this.buttonQueue);
+            this.pnlOnline.Controls.Add(this.dataGridViewSearchResult);
+            this.pnlOnline.Controls.Add(this.buttonSearch);
+            this.pnlOnline.Controls.Add(this.labelYoutube);
+            this.pnlOnline.Location = new System.Drawing.Point(30, 66);
+            this.pnlOnline.Name = "pnlOnline";
+            this.pnlOnline.Size = new System.Drawing.Size(773, 426);
+            this.pnlOnline.TabIndex = 2;
             // 
             // buttonQueue
             // 
@@ -230,18 +194,27 @@
             this.buttonQueue.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonQueue.Click += new System.EventHandler(this.ButtonQueue_Click);
             // 
-            // textBoxSearchOnline
+            // buttonSearch
             // 
-            this.textBoxSearchOnline.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearchOnline.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxSearchOnline.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSearchOnline.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxSearchOnline.Location = new System.Drawing.Point(142, 11);
-            this.textBoxSearchOnline.Multiline = true;
-            this.textBoxSearchOnline.Name = "textBoxSearchOnline";
-            this.textBoxSearchOnline.Size = new System.Drawing.Size(502, 31);
-            this.textBoxSearchOnline.TabIndex = 19;
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearch.Image = global::CafeteriaManagement.Properties.Resources.search_48px2;
+            this.buttonSearch.Location = new System.Drawing.Point(676, 9);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(33, 33);
+            this.buttonSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonSearch.TabIndex = 13;
+            this.buttonSearch.TabStop = false;
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
+            // 
+            // labelYoutube
+            // 
+            this.labelYoutube.AutoSize = true;
+            this.labelYoutube.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelYoutube.Location = new System.Drawing.Point(41, 17);
+            this.labelYoutube.Name = "labelYoutube";
+            this.labelYoutube.Size = new System.Drawing.Size(84, 25);
+            this.labelYoutube.TabIndex = 4;
+            this.labelYoutube.Text = "YouTube";
             // 
             // lblOnline
             // 
@@ -262,21 +235,37 @@
             this.pnlGreen.Size = new System.Drawing.Size(69, 3);
             this.pnlGreen.TabIndex = 18;
             // 
+            // textBoxSearchMusic
+            // 
+            this.textBoxSearchMusic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearchMusic.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxSearchMusic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearchMusic.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBoxSearchMusic.Location = new System.Drawing.Point(142, 11);
+            this.textBoxSearchMusic.Multiline = true;
+            this.textBoxSearchMusic.Name = "textBoxSearchMusic";
+            this.textBoxSearchMusic.Size = new System.Drawing.Size(502, 31);
+            this.textBoxSearchMusic.TabIndex = 19;
+            this.textBoxSearchMusic.Text = "Enter Keyword";
+            this.textBoxSearchMusic.Enter += new System.EventHandler(this.TextBoxSearchMusic_Enter);
+            this.textBoxSearchMusic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchMusic_KeyDown);
+            this.textBoxSearchMusic.Leave += new System.EventHandler(this.TextBoxSearchMusic_Leave);
+            // 
             // UCDisplayMusicNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.Controls.Add(this.pnlOnline);
-            this.Controls.Add(this.textBoxSearchMusic);
             this.Controls.Add(this.pnlGreen);
             this.Controls.Add(this.lblOnline);
             this.Name = "UCDisplayMusicNew";
             this.Size = new System.Drawing.Size(838, 510);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchResult)).EndInit();
             this.pnlOnline.ResumeLayout(false);
             this.pnlOnline.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,13 +281,12 @@
         private System.Windows.Forms.Timer timerGreenOnline;
         private Bunifu.Framework.UI.BunifuElipse SearchOnline;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridViewSearchResult;
-        private System.Windows.Forms.TextBox textBoxSearchMusic;
-        private System.Windows.Forms.TextBox textBoxSearchOnline;
         private System.Windows.Forms.Panel pnlOnline;
         private Bunifu.Framework.UI.BunifuFlatButton buttonQueue;
         private System.Windows.Forms.PictureBox buttonSearch;
         private System.Windows.Forms.Label labelYoutube;
         private System.Windows.Forms.Label lblOnline;
         private System.Windows.Forms.Panel pnlGreen;
+        private System.Windows.Forms.TextBox textBoxSearchMusic;
     }
 }

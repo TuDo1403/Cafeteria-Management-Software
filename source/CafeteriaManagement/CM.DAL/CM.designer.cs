@@ -54,7 +54,7 @@ namespace CM.DAL
     #endregion
 		
 		public CMDataContext() : 
-				base(global::CM.DAL.Properties.Settings.Default.CAFEMANAGEMENTConnectionString1, mappingSource)
+				base(global::CM.DAL.Properties.Settings.Default.CAFEMANAGEMENTConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -154,7 +154,7 @@ namespace CM.DAL
 		
 		private string _PassWord;
 		
-		private System.Nullable<int> _AccountType;
+		private int _AccountType;
 		
 		private string _EmployeeId;
 		
@@ -172,7 +172,7 @@ namespace CM.DAL
     partial void OnUserNameChanged();
     partial void OnPassWordChanging(string value);
     partial void OnPassWordChanged();
-    partial void OnAccountTypeChanging(System.Nullable<int> value);
+    partial void OnAccountTypeChanging(int value);
     partial void OnAccountTypeChanged();
     partial void OnEmployeeIdChanging(string value);
     partial void OnEmployeeIdChanged();
@@ -204,7 +204,7 @@ namespace CM.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayName", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string DisplayName
 		{
 			get
@@ -264,8 +264,8 @@ namespace CM.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountType", DbType="Int")]
-		public System.Nullable<int> AccountType
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountType", DbType="Int NOT NULL")]
+		public int AccountType
 		{
 			get
 			{
