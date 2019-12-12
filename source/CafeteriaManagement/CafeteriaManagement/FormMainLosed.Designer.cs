@@ -31,12 +31,13 @@ namespace CafeteriaManagement
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainLosed));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.pictureBoxToBigSize = new System.Windows.Forms.PictureBox();
+            this.pictureBoxToSmallSize = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.slideMenu = new System.Windows.Forms.Panel();
             this.Queue = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -49,14 +50,16 @@ namespace CafeteriaManagement
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelAnimater = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ucOrderNew1 = new CafeteriaManagement.UCOrderNew();
-            this.ucEditMenuNew1 = new CafeteriaManagement.UCEditMenuNew();
-            this.ucQueueBox1 = new CafeteriaManagement.UCQueueBox();
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.ucDisplayMusicNew1 = new CafeteriaManagement.UCDisplayMusicNew();
+            this.ucEditMenuNew1 = new CafeteriaManagement.UCEditMenuNew();
             this.ucEmployeeNew1 = new CafeteriaManagement.UCEmployeeNew();
+            this.ucOrderNew1 = new CafeteriaManagement.UCOrderNew();
+            this.ucQueueBox1 = new CafeteriaManagement.UCQueueBox();
             this.pnlHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToBigSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToSmallSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.slideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -71,8 +74,9 @@ namespace CafeteriaManagement
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.pnlHeader.Controls.Add(this.pictureBoxToBigSize);
+            this.pnlHeader.Controls.Add(this.pictureBoxToSmallSize);
             this.pnlHeader.Controls.Add(this.pictureBox3);
-            this.pnlHeader.Controls.Add(this.pictureBox2);
             this.pnlHeader.Controls.Add(this.pictureBox1);
             this.panelAnimater.SetDecoration(this.pnlHeader, BunifuAnimatorNS.DecorationType.None);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -81,6 +85,32 @@ namespace CafeteriaManagement
             this.pnlHeader.Size = new System.Drawing.Size(1022, 44);
             this.pnlHeader.TabIndex = 0;
             this.pnlHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeader_Paint);
+            // 
+            // pictureBoxToBigSize
+            // 
+            this.pictureBoxToBigSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAnimater.SetDecoration(this.pictureBoxToBigSize, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBoxToBigSize.Image = global::CafeteriaManagement.Properties.Resources.unchecked_checkbox_48px;
+            this.pictureBoxToBigSize.Location = new System.Drawing.Point(942, 7);
+            this.pictureBoxToBigSize.Name = "pictureBoxToBigSize";
+            this.pictureBoxToBigSize.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxToBigSize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxToBigSize.TabIndex = 1;
+            this.pictureBoxToBigSize.TabStop = false;
+            this.pictureBoxToBigSize.Click += new System.EventHandler(this.pictureBoxToBigSize_Click);
+            // 
+            // pictureBoxToSmallSize
+            // 
+            this.pictureBoxToSmallSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAnimater.SetDecoration(this.pictureBoxToSmallSize, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBoxToSmallSize.Image = global::CafeteriaManagement.Properties.Resources.restore_window_32px;
+            this.pictureBoxToSmallSize.Location = new System.Drawing.Point(942, 7);
+            this.pictureBoxToSmallSize.Name = "pictureBoxToSmallSize";
+            this.pictureBoxToSmallSize.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxToSmallSize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxToSmallSize.TabIndex = 4;
+            this.pictureBoxToSmallSize.TabStop = false;
+            this.pictureBoxToSmallSize.Click += new System.EventHandler(this.pictureBoxToSmallSize_Click);
             // 
             // pictureBox3
             // 
@@ -93,19 +123,6 @@ namespace CafeteriaManagement
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelAnimater.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox2.Image = global::CafeteriaManagement.Properties.Resources.unchecked_checkbox_48px;
-            this.pictureBox2.Location = new System.Drawing.Point(942, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -132,7 +149,7 @@ namespace CafeteriaManagement
             this.slideMenu.Controls.Add(this.btnMenu);
             this.panelAnimater.SetDecoration(this.slideMenu, BunifuAnimatorNS.DecorationType.None);
             this.slideMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.slideMenu.Location = new System.Drawing.Point(0, 44);
+            this.slideMenu.Location = new System.Drawing.Point(0, 0);
             this.slideMenu.Name = "slideMenu";
             this.slideMenu.Size = new System.Drawing.Size(200, 517);
             this.slideMenu.TabIndex = 1;
@@ -355,7 +372,7 @@ namespace CafeteriaManagement
             // 
             // btnMenu
             // 
-            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAnimater.SetDecoration(this.btnMenu, BunifuAnimatorNS.DecorationType.None);
             this.btnMenu.Image = global::CafeteriaManagement.Properties.Resources.icons8_menu_32;
             this.btnMenu.Location = new System.Drawing.Point(161, 2);
@@ -377,86 +394,94 @@ namespace CafeteriaManagement
             // 
             this.panelAnimater.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.panelAnimater.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.panelAnimater.DefaultAnimation = animation2;
+            animation6.AnimateOnlyDifferences = true;
+            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
+            animation6.LeafCoeff = 0F;
+            animation6.MaxTime = 1F;
+            animation6.MinTime = 0F;
+            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
+            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
+            animation6.MosaicSize = 0;
+            animation6.Padding = new System.Windows.Forms.Padding(0);
+            animation6.RotateCoeff = 0F;
+            animation6.RotateLimit = 0F;
+            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
+            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
+            animation6.TimeCoeff = 0F;
+            animation6.TransparencyCoeff = 0F;
+            this.panelAnimater.DefaultAnimation = animation6;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ucOrderNew1);
-            this.panel1.Controls.Add(this.ucEditMenuNew1);
             this.panel1.Controls.Add(this.ucQueueBox1);
-            this.panel1.Controls.Add(this.ucDisplayMusicNew1);
+            this.panel1.Controls.Add(this.ucOrderNew1);
             this.panel1.Controls.Add(this.ucEmployeeNew1);
+            this.panel1.Controls.Add(this.ucEditMenuNew1);
+            this.panel1.Controls.Add(this.ucDisplayMusicNew1);
+            this.panel1.Controls.Add(this.slideMenu);
             this.panelAnimater.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(200, 44);
+            this.panel1.Location = new System.Drawing.Point(0, 44);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(822, 517);
+            this.panel1.Size = new System.Drawing.Size(1022, 517);
             this.panel1.TabIndex = 3;
             // 
-            // ucOrderNew1
+            // bunifuDragControl2
             // 
-            this.ucOrderNew1.BackColor = System.Drawing.Color.Silver;
-            this.panelAnimater.SetDecoration(this.ucOrderNew1, BunifuAnimatorNS.DecorationType.None);
-            this.ucOrderNew1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucOrderNew1.Location = new System.Drawing.Point(0, 0);
-            this.ucOrderNew1.Name = "ucOrderNew1";
-            this.ucOrderNew1.Size = new System.Drawing.Size(822, 517);
-            this.ucOrderNew1.TabIndex = 1;
-            this.ucOrderNew1.Load += new System.EventHandler(this.ucOrderNew1_Load);
-            // 
-            // ucEditMenuNew1
-            // 
-            this.ucEditMenuNew1.BackColor = System.Drawing.Color.Silver;
-            this.panelAnimater.SetDecoration(this.ucEditMenuNew1, BunifuAnimatorNS.DecorationType.None);
-            this.ucEditMenuNew1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucEditMenuNew1.Location = new System.Drawing.Point(0, 0);
-            this.ucEditMenuNew1.Name = "ucEditMenuNew1";
-            this.ucEditMenuNew1.Size = new System.Drawing.Size(822, 517);
-            this.ucEditMenuNew1.TabIndex = 0;
-            // 
-            // ucQueueBox1
-            // 
-            this.ucQueueBox1.BackColor = System.Drawing.Color.Silver;
-            this.panelAnimater.SetDecoration(this.ucQueueBox1, BunifuAnimatorNS.DecorationType.None);
-            this.ucQueueBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucQueueBox1.Location = new System.Drawing.Point(0, 0);
-            this.ucQueueBox1.Name = "ucQueueBox1";
-            this.ucQueueBox1.Size = new System.Drawing.Size(822, 517);
-            this.ucQueueBox1.TabIndex = 3;
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = null;
+            this.bunifuDragControl2.Vertical = true;
             // 
             // ucDisplayMusicNew1
             // 
             this.ucDisplayMusicNew1.BackColor = System.Drawing.Color.Silver;
             this.panelAnimater.SetDecoration(this.ucDisplayMusicNew1, BunifuAnimatorNS.DecorationType.None);
             this.ucDisplayMusicNew1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucDisplayMusicNew1.Location = new System.Drawing.Point(0, 0);
+            this.ucDisplayMusicNew1.Location = new System.Drawing.Point(200, 0);
             this.ucDisplayMusicNew1.Name = "ucDisplayMusicNew1";
             this.ucDisplayMusicNew1.Size = new System.Drawing.Size(822, 517);
             this.ucDisplayMusicNew1.TabIndex = 2;
+            // 
+            // ucEditMenuNew1
+            // 
+            this.ucEditMenuNew1.BackColor = System.Drawing.Color.Silver;
+            this.panelAnimater.SetDecoration(this.ucEditMenuNew1, BunifuAnimatorNS.DecorationType.None);
+            this.ucEditMenuNew1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucEditMenuNew1.Location = new System.Drawing.Point(200, 0);
+            this.ucEditMenuNew1.Name = "ucEditMenuNew1";
+            this.ucEditMenuNew1.Size = new System.Drawing.Size(822, 517);
+            this.ucEditMenuNew1.TabIndex = 3;
             // 
             // ucEmployeeNew1
             // 
             this.ucEmployeeNew1.BackColor = System.Drawing.Color.Silver;
             this.panelAnimater.SetDecoration(this.ucEmployeeNew1, BunifuAnimatorNS.DecorationType.None);
-            this.ucEmployeeNew1.Location = new System.Drawing.Point(0, 0);
+            this.ucEmployeeNew1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucEmployeeNew1.Location = new System.Drawing.Point(200, 0);
             this.ucEmployeeNew1.Name = "ucEmployeeNew1";
             this.ucEmployeeNew1.Size = new System.Drawing.Size(822, 517);
             this.ucEmployeeNew1.TabIndex = 4;
+            // 
+            // ucOrderNew1
+            // 
+            this.ucOrderNew1.BackColor = System.Drawing.Color.Silver;
+            this.panelAnimater.SetDecoration(this.ucOrderNew1, BunifuAnimatorNS.DecorationType.None);
+            this.ucOrderNew1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucOrderNew1.Location = new System.Drawing.Point(200, 0);
+            this.ucOrderNew1.Name = "ucOrderNew1";
+            this.ucOrderNew1.Size = new System.Drawing.Size(822, 517);
+            this.ucOrderNew1.TabIndex = 5;
+            // 
+            // ucQueueBox1
+            // 
+            this.ucQueueBox1.BackColor = System.Drawing.Color.Silver;
+            this.panelAnimater.SetDecoration(this.ucQueueBox1, BunifuAnimatorNS.DecorationType.None);
+            this.ucQueueBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucQueueBox1.Location = new System.Drawing.Point(200, 0);
+            this.ucQueueBox1.Name = "ucQueueBox1";
+            this.ucQueueBox1.Size = new System.Drawing.Size(822, 517);
+            this.ucQueueBox1.TabIndex = 6;
             // 
             // FormMainLosed
             // 
@@ -465,15 +490,15 @@ namespace CafeteriaManagement
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(1022, 561);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.slideMenu);
             this.Controls.Add(this.pnlHeader);
             this.panelAnimater.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMainLosed";
             this.Text = "FormMainLosed";
             this.pnlHeader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToBigSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToSmallSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.slideMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
@@ -493,17 +518,19 @@ namespace CafeteriaManagement
         private Bunifu.Framework.UI.BunifuFlatButton btnHome;
         private BunifuAnimatorNS.BunifuTransition panelAnimater;
         private System.Windows.Forms.Panel panel1;
-        private UCEditMenuNew ucEditMenuNew1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxToBigSize;
         private Bunifu.Framework.UI.BunifuFlatButton btnEmployee;
         private Bunifu.Framework.UI.BunifuFlatButton btnMusic;
         private Bunifu.Framework.UI.BunifuFlatButton btnEdit;
         private Bunifu.Framework.UI.BunifuFlatButton btnPayment;
-        private UCOrderNew ucOrderNew1;
-        private UCDisplayMusicNew ucDisplayMusicNew1;
         private Bunifu.Framework.UI.BunifuFlatButton Queue;
+        private PictureBox pictureBoxToSmallSize;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private UCQueueBox ucQueueBox1;
+        private UCOrderNew ucOrderNew1;
         private UCEmployeeNew ucEmployeeNew1;
+        private UCEditMenuNew ucEditMenuNew1;
+        private UCDisplayMusicNew ucDisplayMusicNew1;
     }
 }

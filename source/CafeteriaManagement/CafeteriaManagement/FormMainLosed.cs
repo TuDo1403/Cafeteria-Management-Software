@@ -51,12 +51,7 @@ namespace CafeteriaManagement
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-
-
-        }
+      
 
      
 
@@ -93,6 +88,20 @@ namespace CafeteriaManagement
         private void ucOrderNew1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBoxToSmallSize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            pictureBoxToBigSize.Visible = true;
+            pictureBoxToSmallSize.Visible = false;
+        }
+
+        private void pictureBoxToBigSize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            pictureBoxToBigSize.Visible = false;
+            pictureBoxToSmallSize.Visible = true;
         }
     }
 }

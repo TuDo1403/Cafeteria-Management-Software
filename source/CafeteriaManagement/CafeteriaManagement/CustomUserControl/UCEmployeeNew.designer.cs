@@ -33,48 +33,44 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonCancel = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.groupBoxEmployees = new System.Windows.Forms.GroupBox();
             this.dataGridViewEmployeeList = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.buttonDelete = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.groupBoxDetail = new System.Windows.Forms.GroupBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.datePickerDateStart = new System.Windows.Forms.DateTimePicker();
             this.labelDateStart = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxEmail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.labelPhone = new System.Windows.Forms.Label();
             this.textBoxPhone = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.radioButtonNone = new MaterialSkin.Controls.MaterialRadioButton();
             this.radioButtonFemale = new MaterialSkin.Controls.MaterialRadioButton();
             this.radioButtonMale = new MaterialSkin.Controls.MaterialRadioButton();
             this.labelGender = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.datePickerBirthday = new System.Windows.Forms.DateTimePicker();
             this.labelBirthDay = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.buttonAdd = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonEdit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBoxEmployees.SuspendLayout();
+            this.panelName = new System.Windows.Forms.Panel();
+            this.panelGender = new System.Windows.Forms.Panel();
+            this.bunifuElipsePanelName = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipsePanelGender = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipseDatagrid = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipseBirthday = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipseDateStart = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeList)).BeginInit();
-            this.groupBoxDetail.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.panelName.SuspendLayout();
+            this.panelGender.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonCancel
             // 
             this.buttonCancel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonCancel.BorderRadius = 2;
@@ -109,16 +105,6 @@
             this.buttonCancel.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
-            // groupBoxEmployees
-            // 
-            this.groupBoxEmployees.Controls.Add(this.dataGridViewEmployeeList);
-            this.groupBoxEmployees.Location = new System.Drawing.Point(30, 224);
-            this.groupBoxEmployees.Name = "groupBoxEmployees";
-            this.groupBoxEmployees.Size = new System.Drawing.Size(769, 235);
-            this.groupBoxEmployees.TabIndex = 40;
-            this.groupBoxEmployees.TabStop = false;
-            this.groupBoxEmployees.Text = "Employees";
-            // 
             // dataGridViewEmployeeList
             // 
             this.dataGridViewEmployeeList.AllowUserToAddRows = false;
@@ -127,16 +113,19 @@
             this.dataGridViewEmployeeList.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
             this.dataGridViewEmployeeList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewEmployeeList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEmployeeList.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridViewEmployeeList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEmployeeList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewEmployeeList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewEmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -155,7 +144,7 @@
             this.dataGridViewEmployeeList.GridColor = System.Drawing.Color.White;
             this.dataGridViewEmployeeList.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridViewEmployeeList.HeaderForeColor = System.Drawing.Color.White;
-            this.dataGridViewEmployeeList.Location = new System.Drawing.Point(6, 19);
+            this.dataGridViewEmployeeList.Location = new System.Drawing.Point(36, 229);
             this.dataGridViewEmployeeList.MultiSelect = false;
             this.dataGridViewEmployeeList.Name = "dataGridViewEmployeeList";
             this.dataGridViewEmployeeList.ReadOnly = true;
@@ -170,6 +159,7 @@
             // buttonDelete
             // 
             this.buttonDelete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonDelete.BorderRadius = 2;
@@ -203,37 +193,15 @@
             this.buttonDelete.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
-            // groupBoxDetail
-            // 
-            this.groupBoxDetail.Controls.Add(this.panel6);
-            this.groupBoxDetail.Controls.Add(this.panel5);
-            this.groupBoxDetail.Controls.Add(this.panel4);
-            this.groupBoxDetail.Controls.Add(this.panel3);
-            this.groupBoxDetail.Controls.Add(this.panel2);
-            this.groupBoxDetail.Controls.Add(this.panel1);
-            this.groupBoxDetail.Location = new System.Drawing.Point(30, 19);
-            this.groupBoxDetail.Name = "groupBoxDetail";
-            this.groupBoxDetail.Size = new System.Drawing.Size(769, 188);
-            this.groupBoxDetail.TabIndex = 38;
-            this.groupBoxDetail.TabStop = false;
-            this.groupBoxDetail.Text = "Detail";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.datePickerDateStart);
-            this.panel6.Controls.Add(this.labelDateStart);
-            this.panel6.Location = new System.Drawing.Point(6, 127);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(349, 48);
-            this.panel6.TabIndex = 35;
-            // 
             // datePickerDateStart
             // 
-            this.datePickerDateStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.datePickerDateStart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datePickerDateStart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.datePickerDateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerDateStart.Location = new System.Drawing.Point(95, 10);
+            this.datePickerDateStart.Location = new System.Drawing.Point(95, 114);
             this.datePickerDateStart.Name = "datePickerDateStart";
-            this.datePickerDateStart.Size = new System.Drawing.Size(232, 20);
+            this.datePickerDateStart.Size = new System.Drawing.Size(156, 29);
             this.datePickerDateStart.TabIndex = 10;
             // 
             // labelDateStart
@@ -241,27 +209,18 @@
             this.labelDateStart.AutoSize = true;
             this.labelDateStart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelDateStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.labelDateStart.Location = new System.Drawing.Point(3, 10);
+            this.labelDateStart.Location = new System.Drawing.Point(4, 113);
             this.labelDateStart.Name = "labelDateStart";
             this.labelDateStart.Size = new System.Drawing.Size(85, 21);
             this.labelDateStart.TabIndex = 9;
             this.labelDateStart.Text = "Date start:";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.labelEmail);
-            this.panel5.Controls.Add(this.textBoxEmail);
-            this.panel5.Location = new System.Drawing.Point(414, 127);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(349, 48);
-            this.panel5.TabIndex = 34;
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.labelEmail.Location = new System.Drawing.Point(3, 10);
+            this.labelEmail.Location = new System.Drawing.Point(3, 112);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(52, 21);
             this.labelEmail.TabIndex = 9;
@@ -269,6 +228,8 @@
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -279,36 +240,30 @@
             this.textBoxEmail.LineIdleColor = System.Drawing.Color.Gray;
             this.textBoxEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(117)))), ((int)(((byte)(39)))));
             this.textBoxEmail.LineThickness = 4;
-            this.textBoxEmail.Location = new System.Drawing.Point(83, 10);
+            this.textBoxEmail.Location = new System.Drawing.Point(89, 105);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(233, 29);
+            this.textBoxEmail.Size = new System.Drawing.Size(241, 29);
             this.textBoxEmail.TabIndex = 16;
             this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.labelPhone);
-            this.panel4.Controls.Add(this.textBoxPhone);
-            this.panel4.Location = new System.Drawing.Point(414, 73);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(349, 48);
-            this.panel4.TabIndex = 33;
             // 
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.labelPhone.Location = new System.Drawing.Point(3, 10);
+            this.labelPhone.Location = new System.Drawing.Point(3, 60);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(60, 21);
             this.labelPhone.TabIndex = 9;
             this.labelPhone.Text = "Phone:";
+            this.labelPhone.Click += new System.EventHandler(this.labelPhone_Click);
             // 
             // textBoxPhone
             // 
+            this.textBoxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -319,31 +274,21 @@
             this.textBoxPhone.LineIdleColor = System.Drawing.Color.Gray;
             this.textBoxPhone.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(117)))), ((int)(((byte)(39)))));
             this.textBoxPhone.LineThickness = 4;
-            this.textBoxPhone.Location = new System.Drawing.Point(83, 10);
+            this.textBoxPhone.Location = new System.Drawing.Point(89, 52);
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(233, 29);
+            this.textBoxPhone.Size = new System.Drawing.Size(241, 29);
             this.textBoxPhone.TabIndex = 16;
             this.textBoxPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxPhone.OnValueChanged += new System.EventHandler(this.textBoxPhone_OnValueChanged);
             this.textBoxPhone.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.radioButtonNone);
-            this.panel3.Controls.Add(this.radioButtonFemale);
-            this.panel3.Controls.Add(this.radioButtonMale);
-            this.panel3.Controls.Add(this.labelGender);
-            this.panel3.Location = new System.Drawing.Point(414, 19);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(349, 48);
-            this.panel3.TabIndex = 32;
             // 
             // radioButtonNone
             // 
             this.radioButtonNone.AutoSize = true;
             this.radioButtonNone.Depth = 0;
             this.radioButtonNone.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioButtonNone.Location = new System.Drawing.Point(275, 7);
+            this.radioButtonNone.Location = new System.Drawing.Point(277, 12);
             this.radioButtonNone.Margin = new System.Windows.Forms.Padding(0);
             this.radioButtonNone.MouseLocation = new System.Drawing.Point(-1, -1);
             this.radioButtonNone.MouseState = MaterialSkin.MouseState.HOVER;
@@ -354,13 +299,14 @@
             this.radioButtonNone.TabStop = true;
             this.radioButtonNone.Text = "None";
             this.radioButtonNone.UseVisualStyleBackColor = true;
+            this.radioButtonNone.CheckedChanged += new System.EventHandler(this.radioButtonNone_CheckedChanged);
             // 
             // radioButtonFemale
             // 
             this.radioButtonFemale.AutoSize = true;
             this.radioButtonFemale.Depth = 0;
             this.radioButtonFemale.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioButtonFemale.Location = new System.Drawing.Point(173, 7);
+            this.radioButtonFemale.Location = new System.Drawing.Point(175, 12);
             this.radioButtonFemale.Margin = new System.Windows.Forms.Padding(0);
             this.radioButtonFemale.MouseLocation = new System.Drawing.Point(-1, -1);
             this.radioButtonFemale.MouseState = MaterialSkin.MouseState.HOVER;
@@ -371,13 +317,14 @@
             this.radioButtonFemale.TabStop = true;
             this.radioButtonFemale.Text = "Female";
             this.radioButtonFemale.UseVisualStyleBackColor = true;
+            this.radioButtonFemale.CheckedChanged += new System.EventHandler(this.radioButtonFemale_CheckedChanged);
             // 
             // radioButtonMale
             // 
             this.radioButtonMale.AutoSize = true;
             this.radioButtonMale.Depth = 0;
             this.radioButtonMale.Font = new System.Drawing.Font("Roboto", 10F);
-            this.radioButtonMale.Location = new System.Drawing.Point(83, 7);
+            this.radioButtonMale.Location = new System.Drawing.Point(85, 12);
             this.radioButtonMale.Margin = new System.Windows.Forms.Padding(0);
             this.radioButtonMale.MouseLocation = new System.Drawing.Point(-1, -1);
             this.radioButtonMale.MouseState = MaterialSkin.MouseState.HOVER;
@@ -388,62 +335,51 @@
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "Male";
             this.radioButtonMale.UseVisualStyleBackColor = true;
+            this.radioButtonMale.CheckedChanged += new System.EventHandler(this.radioButtonMale_CheckedChanged);
             // 
             // labelGender
             // 
             this.labelGender.AutoSize = true;
             this.labelGender.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.labelGender.Location = new System.Drawing.Point(3, 10);
+            this.labelGender.Location = new System.Drawing.Point(3, 15);
             this.labelGender.Name = "labelGender";
             this.labelGender.Size = new System.Drawing.Size(69, 21);
             this.labelGender.TabIndex = 9;
             this.labelGender.Text = "Gender:";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.datePickerBirthday);
-            this.panel2.Controls.Add(this.labelBirthDay);
-            this.panel2.Location = new System.Drawing.Point(6, 73);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(349, 48);
-            this.panel2.TabIndex = 31;
+            this.labelGender.Click += new System.EventHandler(this.labelGender_Click);
             // 
             // datePickerBirthday
             // 
-            this.datePickerBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.datePickerBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datePickerBirthday.CalendarMonthBackground = System.Drawing.Color.Silver;
+            this.datePickerBirthday.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.datePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePickerBirthday.Location = new System.Drawing.Point(94, 11);
+            this.datePickerBirthday.Location = new System.Drawing.Point(95, 64);
             this.datePickerBirthday.Name = "datePickerBirthday";
-            this.datePickerBirthday.Size = new System.Drawing.Size(233, 20);
+            this.datePickerBirthday.Size = new System.Drawing.Size(156, 29);
             this.datePickerBirthday.TabIndex = 10;
+            this.datePickerBirthday.ValueChanged += new System.EventHandler(this.datePickerBirthday_ValueChanged);
             // 
             // labelBirthDay
             // 
             this.labelBirthDay.AutoSize = true;
             this.labelBirthDay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelBirthDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.labelBirthDay.Location = new System.Drawing.Point(3, 10);
+            this.labelBirthDay.Location = new System.Drawing.Point(4, 64);
             this.labelBirthDay.Name = "labelBirthDay";
             this.labelBirthDay.Size = new System.Drawing.Size(75, 21);
             this.labelBirthDay.TabIndex = 9;
             this.labelBirthDay.Text = "Birthday:";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.labelName);
-            this.panel1.Controls.Add(this.textBoxName);
-            this.panel1.Location = new System.Drawing.Point(6, 19);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(349, 48);
-            this.panel1.TabIndex = 30;
+            this.labelBirthDay.Click += new System.EventHandler(this.labelBirthDay_Click);
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.labelName.Location = new System.Drawing.Point(3, 10);
+            this.labelName.Location = new System.Drawing.Point(4, 15);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(57, 21);
             this.labelName.TabIndex = 9;
@@ -451,6 +387,8 @@
             // 
             // textBoxName
             // 
+            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -461,10 +399,10 @@
             this.textBoxName.LineIdleColor = System.Drawing.Color.Gray;
             this.textBoxName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(117)))), ((int)(((byte)(39)))));
             this.textBoxName.LineThickness = 4;
-            this.textBoxName.Location = new System.Drawing.Point(94, 10);
+            this.textBoxName.Location = new System.Drawing.Point(95, 7);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(233, 29);
+            this.textBoxName.Size = new System.Drawing.Size(240, 29);
             this.textBoxName.TabIndex = 16;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
@@ -472,6 +410,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAdd.BorderRadius = 2;
@@ -508,6 +447,7 @@
             // buttonEdit
             // 
             this.buttonEdit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.buttonEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonEdit.BorderRadius = 2;
@@ -545,35 +485,100 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // panelName
+            // 
+            this.panelName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.panelName.Controls.Add(this.textBoxName);
+            this.panelName.Controls.Add(this.labelName);
+            this.panelName.Controls.Add(this.datePickerBirthday);
+            this.panelName.Controls.Add(this.labelBirthDay);
+            this.panelName.Controls.Add(this.datePickerDateStart);
+            this.panelName.Controls.Add(this.labelDateStart);
+            this.panelName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelName.Location = new System.Drawing.Point(3, 3);
+            this.panelName.Name = "panelName";
+            this.panelName.Size = new System.Drawing.Size(365, 158);
+            this.panelName.TabIndex = 42;
+            // 
+            // panelGender
+            // 
+            this.panelGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.panelGender.Controls.Add(this.radioButtonFemale);
+            this.panelGender.Controls.Add(this.labelGender);
+            this.panelGender.Controls.Add(this.labelEmail);
+            this.panelGender.Controls.Add(this.radioButtonMale);
+            this.panelGender.Controls.Add(this.textBoxEmail);
+            this.panelGender.Controls.Add(this.labelPhone);
+            this.panelGender.Controls.Add(this.radioButtonNone);
+            this.panelGender.Controls.Add(this.textBoxPhone);
+            this.panelGender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGender.Location = new System.Drawing.Point(387, 3);
+            this.panelGender.Name = "panelGender";
+            this.panelGender.Size = new System.Drawing.Size(366, 158);
+            this.panelGender.TabIndex = 43;
+            // 
+            // bunifuElipsePanelName
+            // 
+            this.bunifuElipsePanelName.ElipseRadius = 15;
+            this.bunifuElipsePanelName.TargetControl = this.panelName;
+            // 
+            // bunifuElipsePanelGender
+            // 
+            this.bunifuElipsePanelGender.ElipseRadius = 15;
+            this.bunifuElipsePanelGender.TargetControl = this.panelGender;
+            // 
+            // bunifuElipseDatagrid
+            // 
+            this.bunifuElipseDatagrid.ElipseRadius = 5;
+            this.bunifuElipseDatagrid.TargetControl = this.dataGridViewEmployeeList;
+            // 
+            // bunifuElipseBirthday
+            // 
+            this.bunifuElipseBirthday.ElipseRadius = 5;
+            this.bunifuElipseBirthday.TargetControl = this.datePickerBirthday;
+            // 
+            // bunifuElipseDateStart
+            // 
+            this.bunifuElipseDateStart.ElipseRadius = 5;
+            this.bunifuElipseDateStart.TargetControl = this.datePickerDateStart;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.12246F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.755079F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.12246F));
+            this.tableLayoutPanel1.Controls.Add(this.panelName, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelGender, 2, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(36, 46);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(756, 164);
+            this.tableLayoutPanel1.TabIndex = 44;
+            // 
             // UCEmployeeNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.dataGridViewEmployeeList);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.groupBoxEmployees);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.groupBoxDetail);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonEdit);
             this.Name = "UCEmployeeNew";
             this.Size = new System.Drawing.Size(828, 510);
-            this.groupBoxEmployees.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeList)).EndInit();
-            this.groupBoxDetail.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.panelName.ResumeLayout(false);
+            this.panelName.PerformLayout();
+            this.panelGender.ResumeLayout(false);
+            this.panelGender.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -581,32 +586,32 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuFlatButton buttonCancel;
-        private System.Windows.Forms.GroupBox groupBoxEmployees;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridViewEmployeeList;
         private Bunifu.Framework.UI.BunifuFlatButton buttonDelete;
-        private System.Windows.Forms.GroupBox groupBoxDetail;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DateTimePicker datePickerDateStart;
         private System.Windows.Forms.Label labelDateStart;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label labelEmail;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxEmail;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label labelPhone;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxPhone;
-        private System.Windows.Forms.Panel panel3;
         private MaterialSkin.Controls.MaterialRadioButton radioButtonNone;
         private MaterialSkin.Controls.MaterialRadioButton radioButtonFemale;
         private MaterialSkin.Controls.MaterialRadioButton radioButtonMale;
         private System.Windows.Forms.Label labelGender;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker datePickerBirthday;
         private System.Windows.Forms.Label labelBirthDay;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelName;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxName;
         private Bunifu.Framework.UI.BunifuFlatButton buttonAdd;
         private Bunifu.Framework.UI.BunifuFlatButton buttonEdit;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Panel panelGender;
+        private System.Windows.Forms.Panel panelName;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipsePanelName;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipsePanelGender;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipseDatagrid;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipseBirthday;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipseDateStart;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

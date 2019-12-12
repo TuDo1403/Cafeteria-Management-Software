@@ -133,8 +133,8 @@
   <data name="textBoxSearchMenuText" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="bank_cards66_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bank_cards66_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textBoxUsername" xml:space="preserve">
+    <value>Username</value>
   </data>
   <data name="unchecked_checkbox_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unchecked_checkbox_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -144,6 +144,9 @@
   </data>
   <data name="textBoxEmail" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="restore_window_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restore_window_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +169,8 @@
   <data name="rectangle_stroked_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rectangle_stroked_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="textBoxUsername" xml:space="preserve">
-    <value>Username</value>
+  <data name="bank_cards66_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bank_cards66_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="songAddedCaption" xml:space="preserve">
     <value>Notification</value>
@@ -184,13 +187,16 @@
   <data name="icons8_home_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_home_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="list_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="que_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\que_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="initialPrice" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="que_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\que_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="list_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_48px2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_48px2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

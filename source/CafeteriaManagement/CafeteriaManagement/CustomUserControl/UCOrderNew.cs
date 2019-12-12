@@ -92,12 +92,12 @@ namespace CafeteriaManagement
 
         private void ComboBoxCategory_onItemSelected(object sender, EventArgs e)
         {
-            flowLayoutPanelMenu.Controls.Clear();
+            tableLayoutPanelMenu.Controls.Clear();
             foreach (var item in DataProvider.RetrieveMenuFrom(comboBoxCategory.selectedValue))
             {
                 var button = new BunifuFlatButton {
                     Text = item as string,
-                    Size = new Size(130, 46),
+                    Size = new Size(130, 49),
                     Activecolor = Color.FromArgb(46, 139, 87),
                     BackColor = Color.FromArgb(55, 71, 79),
                     BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch,
@@ -111,9 +111,11 @@ namespace CafeteriaManagement
                     Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79))))),
                     OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77))))),
                     OnHoverTextColor = System.Drawing.Color.White,
-                };
+                    Dock = System.Windows.Forms.DockStyle.Fill,
+            };
                 button.Click += Button_Click;
-                flowLayoutPanelMenu.Controls.Add(button);
+               // flowLayoutPanelMenu.Controls.Add(button);
+                tableLayoutPanelMenu.Controls.Add(button);
             }
         }
 
@@ -156,6 +158,11 @@ namespace CafeteriaManagement
                     }
                 };
             }
+        }
+
+        private void UCOrderNew_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

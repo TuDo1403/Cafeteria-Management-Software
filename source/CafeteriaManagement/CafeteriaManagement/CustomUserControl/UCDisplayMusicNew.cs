@@ -64,7 +64,7 @@ namespace CafeteriaManagement
 
         private void timerPanelOnline_Tick(object sender, EventArgs e)
         {
-            if (pnlOffline.Left >= 40)
+           /* if (pnlOffline.Left >= 40)
             {
                 pnlOffline.Left -= _time;
                 pnlOnline.Left -= _time;
@@ -75,7 +75,7 @@ namespace CafeteriaManagement
                 timerPanelOnline.Stop();
                 _time = 20;
             }
-
+            */
 
         }
 
@@ -87,7 +87,7 @@ namespace CafeteriaManagement
 
         private void timerPanelOffline_Tick(object sender, EventArgs e)
         {
-            if (pnlOnline.Left <= 26)
+           /* if (pnlOnline.Left <= 26)
             {
                 pnlOffline.Left += _time;
                 pnlOnline.Left += _time;
@@ -97,7 +97,7 @@ namespace CafeteriaManagement
             {
                 timerPanelOffline.Stop();
                 _time = 20;
-            }
+            }*/
 
         }
 

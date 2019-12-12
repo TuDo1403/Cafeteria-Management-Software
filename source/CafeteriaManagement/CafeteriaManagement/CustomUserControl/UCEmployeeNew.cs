@@ -264,5 +264,45 @@ namespace CafeteriaManagement
                 errorProvider.SetError(sender as BunifuMaterialTextbox, null);
             }
         }
+
+        private void labelBirthDay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void datePickerBirthday_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelGender_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonMale_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonFemale_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonNone_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPhone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPhone_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
