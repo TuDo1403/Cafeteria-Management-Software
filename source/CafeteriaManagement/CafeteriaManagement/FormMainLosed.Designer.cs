@@ -31,7 +31,7 @@ namespace CafeteriaManagement
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainLosed));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlHeader = new System.Windows.Forms.Panel();
@@ -51,11 +51,12 @@ namespace CafeteriaManagement
             this.panelAnimater = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.ucDisplayMusicNew1 = new CafeteriaManagement.UCDisplayMusicNew();
-            this.ucEditMenuNew1 = new CafeteriaManagement.UCEditMenuNew();
-            this.ucEmployeeNew1 = new CafeteriaManagement.UCEmployeeNew();
-            this.ucOrderNew1 = new CafeteriaManagement.UCOrderNew();
+            this.panelButton = new System.Windows.Forms.Panel();
             this.ucQueueBox1 = new CafeteriaManagement.UCQueueBox();
+            this.ucOrderNew1 = new CafeteriaManagement.UCOrderNew();
+            this.ucEmployeeNew1 = new CafeteriaManagement.UCEmployeeNew();
+            this.ucEditMenuNew1 = new CafeteriaManagement.UCEditMenuNew();
+            this.ucDisplayMusicNew1 = new CafeteriaManagement.UCDisplayMusicNew();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToBigSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToSmallSize)).BeginInit();
@@ -140,6 +141,7 @@ namespace CafeteriaManagement
             // slideMenu
             // 
             this.slideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.slideMenu.Controls.Add(this.panelButton);
             this.slideMenu.Controls.Add(this.Queue);
             this.slideMenu.Controls.Add(this.btnEmployee);
             this.slideMenu.Controls.Add(this.btnMusic);
@@ -156,7 +158,7 @@ namespace CafeteriaManagement
             // 
             // Queue
             // 
-            this.Queue.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.Queue.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.Queue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.Queue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Queue.BorderRadius = 0;
@@ -179,7 +181,7 @@ namespace CafeteriaManagement
             this.Queue.Location = new System.Drawing.Point(3, 314);
             this.Queue.Name = "Queue";
             this.Queue.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.Queue.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.Queue.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.Queue.OnHoverTextColor = System.Drawing.Color.White;
             this.Queue.selected = false;
             this.Queue.Size = new System.Drawing.Size(199, 48);
@@ -192,7 +194,7 @@ namespace CafeteriaManagement
             // 
             // btnEmployee
             // 
-            this.btnEmployee.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnEmployee.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.btnEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEmployee.BorderRadius = 0;
@@ -215,7 +217,7 @@ namespace CafeteriaManagement
             this.btnEmployee.Location = new System.Drawing.Point(3, 260);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.btnEmployee.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnEmployee.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.btnEmployee.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEmployee.selected = false;
             this.btnEmployee.Size = new System.Drawing.Size(199, 48);
@@ -228,7 +230,7 @@ namespace CafeteriaManagement
             // 
             // btnMusic
             // 
-            this.btnMusic.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnMusic.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.btnMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMusic.BorderRadius = 0;
@@ -251,7 +253,7 @@ namespace CafeteriaManagement
             this.btnMusic.Location = new System.Drawing.Point(3, 217);
             this.btnMusic.Name = "btnMusic";
             this.btnMusic.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.btnMusic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnMusic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.btnMusic.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMusic.selected = false;
             this.btnMusic.Size = new System.Drawing.Size(199, 48);
@@ -264,7 +266,7 @@ namespace CafeteriaManagement
             // 
             // btnEdit
             // 
-            this.btnEdit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnEdit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.BorderRadius = 0;
@@ -287,7 +289,7 @@ namespace CafeteriaManagement
             this.btnEdit.Location = new System.Drawing.Point(3, 170);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.btnEdit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnEdit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.btnEdit.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEdit.selected = false;
             this.btnEdit.Size = new System.Drawing.Size(199, 48);
@@ -300,7 +302,7 @@ namespace CafeteriaManagement
             // 
             // btnPayment
             // 
-            this.btnPayment.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPayment.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.btnPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnPayment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPayment.BorderRadius = 0;
@@ -323,7 +325,7 @@ namespace CafeteriaManagement
             this.btnPayment.Location = new System.Drawing.Point(1, 123);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.btnPayment.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnPayment.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.btnPayment.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPayment.selected = false;
             this.btnPayment.Size = new System.Drawing.Size(199, 48);
@@ -336,7 +338,7 @@ namespace CafeteriaManagement
             // 
             // btnHome
             // 
-            this.btnHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHome.BorderRadius = 0;
@@ -359,7 +361,7 @@ namespace CafeteriaManagement
             this.btnHome.Location = new System.Drawing.Point(1, 76);
             this.btnHome.Name = "btnHome";
             this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
             this.btnHome.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHome.selected = false;
             this.btnHome.Size = new System.Drawing.Size(199, 48);
@@ -394,22 +396,22 @@ namespace CafeteriaManagement
             // 
             this.panelAnimater.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.panelAnimater.Cursor = null;
-            animation6.AnimateOnlyDifferences = true;
-            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
-            animation6.LeafCoeff = 0F;
-            animation6.MaxTime = 1F;
-            animation6.MinTime = 0F;
-            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
-            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
-            animation6.MosaicSize = 0;
-            animation6.Padding = new System.Windows.Forms.Padding(0);
-            animation6.RotateCoeff = 0F;
-            animation6.RotateLimit = 0F;
-            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
-            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
-            animation6.TimeCoeff = 0F;
-            animation6.TransparencyCoeff = 0F;
-            this.panelAnimater.DefaultAnimation = animation6;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.panelAnimater.DefaultAnimation = animation4;
             // 
             // panel1
             // 
@@ -433,35 +435,24 @@ namespace CafeteriaManagement
             this.bunifuDragControl2.TargetControl = null;
             this.bunifuDragControl2.Vertical = true;
             // 
-            // ucDisplayMusicNew1
+            // panelButton
             // 
-            this.ucDisplayMusicNew1.BackColor = System.Drawing.Color.Silver;
-            this.panelAnimater.SetDecoration(this.ucDisplayMusicNew1, BunifuAnimatorNS.DecorationType.None);
-            this.ucDisplayMusicNew1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucDisplayMusicNew1.Location = new System.Drawing.Point(200, 0);
-            this.ucDisplayMusicNew1.Name = "ucDisplayMusicNew1";
-            this.ucDisplayMusicNew1.Size = new System.Drawing.Size(822, 517);
-            this.ucDisplayMusicNew1.TabIndex = 2;
+            this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.panelAnimater.SetDecoration(this.panelButton, BunifuAnimatorNS.DecorationType.None);
+            this.panelButton.Location = new System.Drawing.Point(0, 76);
+            this.panelButton.Name = "panelButton";
+            this.panelButton.Size = new System.Drawing.Size(5, 48);
+            this.panelButton.TabIndex = 8;
             // 
-            // ucEditMenuNew1
+            // ucQueueBox1
             // 
-            this.ucEditMenuNew1.BackColor = System.Drawing.Color.Silver;
-            this.panelAnimater.SetDecoration(this.ucEditMenuNew1, BunifuAnimatorNS.DecorationType.None);
-            this.ucEditMenuNew1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucEditMenuNew1.Location = new System.Drawing.Point(200, 0);
-            this.ucEditMenuNew1.Name = "ucEditMenuNew1";
-            this.ucEditMenuNew1.Size = new System.Drawing.Size(822, 517);
-            this.ucEditMenuNew1.TabIndex = 3;
-            // 
-            // ucEmployeeNew1
-            // 
-            this.ucEmployeeNew1.BackColor = System.Drawing.Color.Silver;
-            this.panelAnimater.SetDecoration(this.ucEmployeeNew1, BunifuAnimatorNS.DecorationType.None);
-            this.ucEmployeeNew1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucEmployeeNew1.Location = new System.Drawing.Point(200, 0);
-            this.ucEmployeeNew1.Name = "ucEmployeeNew1";
-            this.ucEmployeeNew1.Size = new System.Drawing.Size(822, 517);
-            this.ucEmployeeNew1.TabIndex = 4;
+            this.ucQueueBox1.BackColor = System.Drawing.Color.Silver;
+            this.panelAnimater.SetDecoration(this.ucQueueBox1, BunifuAnimatorNS.DecorationType.None);
+            this.ucQueueBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucQueueBox1.Location = new System.Drawing.Point(200, 0);
+            this.ucQueueBox1.Name = "ucQueueBox1";
+            this.ucQueueBox1.Size = new System.Drawing.Size(822, 517);
+            this.ucQueueBox1.TabIndex = 6;
             // 
             // ucOrderNew1
             // 
@@ -473,15 +464,35 @@ namespace CafeteriaManagement
             this.ucOrderNew1.Size = new System.Drawing.Size(822, 517);
             this.ucOrderNew1.TabIndex = 5;
             // 
-            // ucQueueBox1
+            // ucEmployeeNew1
             // 
-            this.ucQueueBox1.BackColor = System.Drawing.Color.Silver;
-            this.panelAnimater.SetDecoration(this.ucQueueBox1, BunifuAnimatorNS.DecorationType.None);
-            this.ucQueueBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucQueueBox1.Location = new System.Drawing.Point(200, 0);
-            this.ucQueueBox1.Name = "ucQueueBox1";
-            this.ucQueueBox1.Size = new System.Drawing.Size(822, 517);
-            this.ucQueueBox1.TabIndex = 6;
+            this.ucEmployeeNew1.BackColor = System.Drawing.Color.Silver;
+            this.panelAnimater.SetDecoration(this.ucEmployeeNew1, BunifuAnimatorNS.DecorationType.None);
+            this.ucEmployeeNew1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucEmployeeNew1.Location = new System.Drawing.Point(200, 0);
+            this.ucEmployeeNew1.Name = "ucEmployeeNew1";
+            this.ucEmployeeNew1.Size = new System.Drawing.Size(822, 517);
+            this.ucEmployeeNew1.TabIndex = 4;
+            // 
+            // ucEditMenuNew1
+            // 
+            this.ucEditMenuNew1.BackColor = System.Drawing.Color.Silver;
+            this.panelAnimater.SetDecoration(this.ucEditMenuNew1, BunifuAnimatorNS.DecorationType.None);
+            this.ucEditMenuNew1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucEditMenuNew1.Location = new System.Drawing.Point(200, 0);
+            this.ucEditMenuNew1.Name = "ucEditMenuNew1";
+            this.ucEditMenuNew1.Size = new System.Drawing.Size(822, 517);
+            this.ucEditMenuNew1.TabIndex = 3;
+            // 
+            // ucDisplayMusicNew1
+            // 
+            this.ucDisplayMusicNew1.BackColor = System.Drawing.Color.Silver;
+            this.panelAnimater.SetDecoration(this.ucDisplayMusicNew1, BunifuAnimatorNS.DecorationType.None);
+            this.ucDisplayMusicNew1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDisplayMusicNew1.Location = new System.Drawing.Point(200, 0);
+            this.ucDisplayMusicNew1.Name = "ucDisplayMusicNew1";
+            this.ucDisplayMusicNew1.Size = new System.Drawing.Size(822, 517);
+            this.ucDisplayMusicNew1.TabIndex = 2;
             // 
             // FormMainLosed
             // 
@@ -532,5 +543,6 @@ namespace CafeteriaManagement
         private UCEmployeeNew ucEmployeeNew1;
         private UCEditMenuNew ucEditMenuNew1;
         private UCDisplayMusicNew ucDisplayMusicNew1;
+        private Panel panelButton;
     }
 }

@@ -17,6 +17,9 @@ namespace CafeteriaManagement
         public FormMainLosed()
         {
             InitializeComponent();
+            ucOrderNew1.BringToFront();
+            
+            
         }
 
         private void FormMain_Load(object sender, EventArgs e) => OnFormLoading(ucQueueBox1);
@@ -57,32 +60,43 @@ namespace CafeteriaManagement
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            panelButton.Height = btnEdit.Height;
             ucEditMenuNew1.BringToFront();
+            panelButton.Top = btnEdit.Top;
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
+            panelButton.Height = btnPayment.Height;
+            panelButton.Top = btnPayment.Top;
             ucOrderNew1.BringToFront();
         }
 
         private void btnMusic_Click(object sender, EventArgs e)
         {
+            panelButton.Height = btnMusic.Height;
+            panelButton.Top =btnMusic.Top;
             ucDisplayMusicNew1.BringToFront();
         }
 
         private void Queue_Click(object sender, EventArgs e)
         {
+            panelButton.Height = Queue.Height;
+            panelButton.Top =Queue.Top;
             ucQueueBox1.BringToFront();
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
+            panelButton.Height = btnEmployee.Height;
+            panelButton.Top = btnEmployee.Top;
             ucEmployeeNew1.BringToFront();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-
+            panelButton.Height = btnHome.Height;
+            panelButton.Top = btnHome.Top;
         }
 
         private void ucOrderNew1_Load(object sender, EventArgs e)
