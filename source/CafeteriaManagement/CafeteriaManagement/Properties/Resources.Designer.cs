@@ -83,6 +83,16 @@ namespace CafeteriaManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap brigitte_tohm_EAay7Aj4jbc_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("brigitte-tohm-EAay7Aj4jbc-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contacts_32px {
             get {
                 object obj = ResourceManager.GetObject("contacts_32px", resourceCulture);

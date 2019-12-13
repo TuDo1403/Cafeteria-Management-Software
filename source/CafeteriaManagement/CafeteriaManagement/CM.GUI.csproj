@@ -47,7 +47,7 @@
       <HintPath>..\packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\..\..\..\..\Downloads\Compressed\Bunifu_UI_v1.52\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
@@ -368,6 +368,18 @@
     <Compile Include="CustomUserControl\UCOrderManager.Designer.cs">
       <DependentUpon>UCOrderManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="testRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testRegisterForm.Designer.cs">
+      <DependentUpon>testRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomUserControl\UCAccountInfo.resx">
       <DependentUpon>UCAccountInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +453,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomUserControl\UCOrderManager.resx">
       <DependentUpon>UCOrderManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testRegisterForm.resx">
+      <DependentUpon>testRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -533,6 +551,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search_48px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brigitte-tohm-EAay7Aj4jbc-unsplash.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
