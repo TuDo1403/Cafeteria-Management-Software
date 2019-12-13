@@ -20,7 +20,7 @@ Nowadays, people seem to be more under a lot of pressure from work and life, so 
 - Integrated smart music display (automatically) to suit the mood of the patron, helping to impress the customers.
 - Display music for requiring.
 ##### 5. Employee management
-- Capture the number of employees
+- Capture the number of employees.
 - Add, delete or modify information of them.
 
 > ## Roadmap
