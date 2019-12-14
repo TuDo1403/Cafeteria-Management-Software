@@ -18,7 +18,7 @@ namespace CafeteriaManagement
         public FormMain()
         {
             InitializeComponent();
-            FormLogin.LoginSucceeded += FormLogin_LoginSucceededHandler;
+            FormRegister.LoginSucceeded += FormLogin_LoginSucceededHandler;
         }
 
         private void FormLogin_LoginSucceededHandler(object sender, string e)

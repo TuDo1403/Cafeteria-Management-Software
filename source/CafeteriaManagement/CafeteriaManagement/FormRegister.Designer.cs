@@ -1,6 +1,6 @@
 ﻿namespace CafeteriaManagement
 {
-    partial class testRegisterForm
+    partial class FormRegister
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSignIn = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.buttonSignIn = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,20 +41,24 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.buttonOk = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelRegister = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxCode = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxReenterPassword = new System.Windows.Forms.TextBox();
+            this.textBoxRegisterPassword = new System.Windows.Forms.TextBox();
+            this.textBoxRegisterUsername = new System.Windows.Forms.TextBox();
+            this.buttonRegister = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.timerSignIn = new System.Windows.Forms.Timer(this.components);
             this.timerRegister = new System.Windows.Forms.Timer(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSignIn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelRegister.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -69,9 +73,9 @@
             // 
             // panelSignIn
             // 
-            this.panelSignIn.Controls.Add(this.textBox3);
-            this.panelSignIn.Controls.Add(this.textBox4);
-            this.panelSignIn.Controls.Add(this.label3);
+            this.panelSignIn.Controls.Add(this.textBoxPassword);
+            this.panelSignIn.Controls.Add(this.textBoxUsername);
+            this.panelSignIn.Controls.Add(this.buttonSignIn);
             this.panelSignIn.Controls.Add(this.panel3);
             this.panelSignIn.Controls.Add(this.panel2);
             this.panelSignIn.Location = new System.Drawing.Point(320, 193);
@@ -79,40 +83,47 @@
             this.panelSignIn.Size = new System.Drawing.Size(253, 176);
             this.panelSignIn.TabIndex = 5;
             // 
-            // textBox3
+            // textBoxPassword
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox3.Location = new System.Drawing.Point(12, 57);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(227, 19);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "password";
+            this.textBoxPassword.BackColor = System.Drawing.Color.White;
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxPassword.Location = new System.Drawing.Point(12, 57);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(227, 19);
+            this.textBoxPassword.TabIndex = 4;
+            this.textBoxPassword.Text = "Password";
+            this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
+            this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
+            this.textBoxPassword.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPassword_Validating);
             // 
-            // textBox4
+            // textBoxUsername
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox4.Location = new System.Drawing.Point(12, 8);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(227, 19);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.Text = "username";
+            this.textBoxUsername.BackColor = System.Drawing.Color.White;
+            this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxUsername.Location = new System.Drawing.Point(12, 8);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(227, 19);
+            this.textBoxUsername.TabIndex = 3;
+            this.textBoxUsername.Text = "Username";
+            this.textBoxUsername.Enter += new System.EventHandler(this.textBoxUsername_Enter);
+            this.textBoxUsername.Leave += new System.EventHandler(this.textBoxUsername_Leave);
+            this.textBoxUsername.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxUsername_Validating);
             // 
-            // label3
+            // buttonSignIn
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(88)))), ((int)(((byte)(169)))));
-            this.label3.Location = new System.Drawing.Point(8, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Sign In";
+            this.buttonSignIn.AutoSize = true;
+            this.buttonSignIn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(88)))), ((int)(((byte)(169)))));
+            this.buttonSignIn.Location = new System.Drawing.Point(8, 103);
+            this.buttonSignIn.Name = "buttonSignIn";
+            this.buttonSignIn.Size = new System.Drawing.Size(75, 26);
+            this.buttonSignIn.TabIndex = 2;
+            this.buttonSignIn.Text = "Sign In";
+            this.buttonSignIn.Click += new System.EventHandler(this.ButtonSignIn_Click);
             // 
             // panel3
             // 
@@ -139,7 +150,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(88)))), ((int)(((byte)(169)))));
             this.label1.Location = new System.Drawing.Point(313, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 37);
+            this.label1.Size = new System.Drawing.Size(169, 36);
             this.label1.TabIndex = 6;
             this.label1.Text = "Welcome to";
             // 
@@ -150,13 +161,12 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(134)))), ((int)(((byte)(89)))));
             this.label2.Location = new System.Drawing.Point(335, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(254, 90);
+            this.label2.Size = new System.Drawing.Size(253, 86);
             this.label2.TabIndex = 7;
             this.label2.Text = "Coffee\r\n    Management";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::CafeteriaManagement.Properties.Resources.daux_32;
             this.pictureBox2.Location = new System.Drawing.Point(564, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 27);
@@ -203,18 +213,44 @@
             // 
             // panelRegister
             // 
+            this.panelRegister.Controls.Add(this.panel1);
+            this.panelRegister.Controls.Add(this.textBoxCode);
             this.panelRegister.Controls.Add(this.panel7);
-            this.panelRegister.Controls.Add(this.textBox5);
-            this.panelRegister.Controls.Add(this.textBox1);
-            this.panelRegister.Controls.Add(this.textBox2);
-            this.panelRegister.Controls.Add(this.label4);
+            this.panelRegister.Controls.Add(this.textBoxReenterPassword);
+            this.panelRegister.Controls.Add(this.textBoxRegisterPassword);
+            this.panelRegister.Controls.Add(this.textBoxRegisterUsername);
+            this.panelRegister.Controls.Add(this.buttonRegister);
             this.panelRegister.Controls.Add(this.panel5);
             this.panelRegister.Controls.Add(this.panel6);
-            this.panelRegister.Location = new System.Drawing.Point(592, 193);
+            this.panelRegister.Location = new System.Drawing.Point(597, 193);
             this.panelRegister.Name = "panelRegister";
-            this.panelRegister.Size = new System.Drawing.Size(253, 176);
+            this.panelRegister.Size = new System.Drawing.Size(253, 211);
             this.panelRegister.TabIndex = 27;
             this.panelRegister.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Location = new System.Drawing.Point(13, 170);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(228, 2);
+            this.panel1.TabIndex = 6;
+            // 
+            // textBoxCode
+            // 
+            this.textBoxCode.BackColor = System.Drawing.Color.White;
+            this.textBoxCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCode.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxCode.Location = new System.Drawing.Point(12, 143);
+            this.textBoxCode.Name = "textBoxCode";
+            this.textBoxCode.Size = new System.Drawing.Size(227, 19);
+            this.textBoxCode.TabIndex = 7;
+            this.textBoxCode.Text = "Code";
+            this.textBoxCode.Enter += new System.EventHandler(this.textBoxCode_Enter);
+            this.textBoxCode.Leave += new System.EventHandler(this.textBoxCode_Leave);
+            this.textBoxCode.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxCode_Validating);
             // 
             // panel7
             // 
@@ -225,52 +261,62 @@
             this.panel7.Size = new System.Drawing.Size(228, 2);
             this.panel7.TabIndex = 2;
             // 
-            // textBox5
+            // textBoxReenterPassword
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox5.Location = new System.Drawing.Point(11, 103);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(227, 19);
-            this.textBox5.TabIndex = 5;
-            this.textBox5.Text = "confirmpassword";
+            this.textBoxReenterPassword.BackColor = System.Drawing.Color.White;
+            this.textBoxReenterPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxReenterPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxReenterPassword.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxReenterPassword.Location = new System.Drawing.Point(11, 103);
+            this.textBoxReenterPassword.Name = "textBoxReenterPassword";
+            this.textBoxReenterPassword.Size = new System.Drawing.Size(227, 19);
+            this.textBoxReenterPassword.TabIndex = 5;
+            this.textBoxReenterPassword.Text = "Re-enter Password";
+            this.textBoxReenterPassword.Enter += new System.EventHandler(this.textBoxReenterPassword_Enter);
+            this.textBoxReenterPassword.Leave += new System.EventHandler(this.textBoxReenterPassword_Leave);
+            this.textBoxReenterPassword.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxReenterPassword_Validating);
             // 
-            // textBox1
+            // textBoxRegisterPassword
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox1.Location = new System.Drawing.Point(12, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 19);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "password";
+            this.textBoxRegisterPassword.BackColor = System.Drawing.Color.White;
+            this.textBoxRegisterPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxRegisterPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRegisterPassword.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxRegisterPassword.Location = new System.Drawing.Point(12, 57);
+            this.textBoxRegisterPassword.Name = "textBoxRegisterPassword";
+            this.textBoxRegisterPassword.Size = new System.Drawing.Size(227, 19);
+            this.textBoxRegisterPassword.TabIndex = 4;
+            this.textBoxRegisterPassword.Text = "Password";
+            this.textBoxRegisterPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
+            this.textBoxRegisterPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
+            this.textBoxRegisterPassword.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPassword_Validating);
             // 
-            // textBox2
+            // textBoxRegisterUsername
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox2.Location = new System.Drawing.Point(13, 8);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(227, 19);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "username";
+            this.textBoxRegisterUsername.BackColor = System.Drawing.Color.White;
+            this.textBoxRegisterUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxRegisterUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRegisterUsername.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxRegisterUsername.Location = new System.Drawing.Point(13, 8);
+            this.textBoxRegisterUsername.Name = "textBoxRegisterUsername";
+            this.textBoxRegisterUsername.Size = new System.Drawing.Size(227, 19);
+            this.textBoxRegisterUsername.TabIndex = 3;
+            this.textBoxRegisterUsername.Text = "Username";
+            this.textBoxRegisterUsername.Enter += new System.EventHandler(this.textBoxUsername_Enter);
+            this.textBoxRegisterUsername.Leave += new System.EventHandler(this.textBoxUsername_Leave);
+            this.textBoxRegisterUsername.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxUsername_Validating);
             // 
-            // label4
+            // buttonRegister
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(134)))), ((int)(((byte)(89)))));
-            this.label4.Location = new System.Drawing.Point(8, 143);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Register";
+            this.buttonRegister.AutoSize = true;
+            this.buttonRegister.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(134)))), ((int)(((byte)(89)))));
+            this.buttonRegister.Location = new System.Drawing.Point(8, 175);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(84, 26);
+            this.buttonRegister.TabIndex = 2;
+            this.buttonRegister.Text = "Register";
+            this.buttonRegister.Click += new System.EventHandler(this.ButtonRegister_Click);
             // 
             // panel5
             // 
@@ -307,11 +353,15 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // testRegisterForm
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 453);
+            this.ClientSize = new System.Drawing.Size(601, 453);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelRegister);
             this.Controls.Add(this.buttonOk);
@@ -320,7 +370,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelSignIn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "testRegisterForm";
+            this.Name = "FormRegister";
             this.Text = "testRegisterForm";
             this.Load += new System.EventHandler(this.testRegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -329,6 +379,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelRegister.ResumeLayout(false);
             this.panelRegister.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,9 +389,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelSignIn;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.Label buttonSignIn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
@@ -349,14 +400,17 @@
         private Bunifu.Framework.UI.BunifuFlatButton buttonOk;
         private System.Windows.Forms.Panel panelRegister;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxReenterPassword;
+        private System.Windows.Forms.TextBox textBoxRegisterPassword;
+        private System.Windows.Forms.TextBox textBoxRegisterUsername;
+        private System.Windows.Forms.Label buttonRegister;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Timer timerSignIn;
         private System.Windows.Forms.Timer timerRegister;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBoxCode;
     }
 }

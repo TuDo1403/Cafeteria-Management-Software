@@ -41,13 +41,13 @@
             this.timerGreenOffline = new System.Windows.Forms.Timer(this.components);
             this.timerGreenOnline = new System.Windows.Forms.Timer(this.components);
             this.SearchOnline = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.textBoxSearchMusic = new System.Windows.Forms.TextBox();
             this.pnlOnline = new System.Windows.Forms.Panel();
             this.buttonQueue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonSearch = new System.Windows.Forms.PictureBox();
             this.labelYoutube = new System.Windows.Forms.Label();
             this.lblOnline = new System.Windows.Forms.Label();
             this.pnlGreen = new System.Windows.Forms.Panel();
-            this.textBoxSearchMusic = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchResult)).BeginInit();
             this.pnlOnline.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSearch)).BeginInit();
@@ -143,6 +143,23 @@
             this.SearchOnline.ElipseRadius = 20;
             this.SearchOnline.TargetControl = this.textBoxSearchMusic;
             // 
+            // textBoxSearchMusic
+            // 
+            this.textBoxSearchMusic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearchMusic.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxSearchMusic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearchMusic.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBoxSearchMusic.Location = new System.Drawing.Point(142, 11);
+            this.textBoxSearchMusic.Multiline = true;
+            this.textBoxSearchMusic.Name = "textBoxSearchMusic";
+            this.textBoxSearchMusic.Size = new System.Drawing.Size(502, 31);
+            this.textBoxSearchMusic.TabIndex = 19;
+            this.textBoxSearchMusic.Text = "Enter Keyword";
+            this.textBoxSearchMusic.Enter += new System.EventHandler(this.TextBoxSearchMusic_Enter);
+            this.textBoxSearchMusic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchMusic_KeyDown);
+            this.textBoxSearchMusic.Leave += new System.EventHandler(this.TextBoxSearchMusic_Leave);
+            // 
             // pnlOnline
             // 
             this.pnlOnline.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -197,7 +214,7 @@
             // buttonSearch
             // 
             this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.Image = global::CafeteriaManagement.Properties.Resources.search_48px2;
+            this.buttonSearch.Image = global::CafeteriaManagement.Properties.Resources.search_48px;
             this.buttonSearch.Location = new System.Drawing.Point(676, 9);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(33, 33);
@@ -234,23 +251,6 @@
             this.pnlGreen.Name = "pnlGreen";
             this.pnlGreen.Size = new System.Drawing.Size(69, 3);
             this.pnlGreen.TabIndex = 18;
-            // 
-            // textBoxSearchMusic
-            // 
-            this.textBoxSearchMusic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearchMusic.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxSearchMusic.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSearchMusic.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxSearchMusic.Location = new System.Drawing.Point(142, 11);
-            this.textBoxSearchMusic.Multiline = true;
-            this.textBoxSearchMusic.Name = "textBoxSearchMusic";
-            this.textBoxSearchMusic.Size = new System.Drawing.Size(502, 31);
-            this.textBoxSearchMusic.TabIndex = 19;
-            this.textBoxSearchMusic.Text = "Enter Keyword";
-            this.textBoxSearchMusic.Enter += new System.EventHandler(this.TextBoxSearchMusic_Enter);
-            this.textBoxSearchMusic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchMusic_KeyDown);
-            this.textBoxSearchMusic.Leave += new System.EventHandler(this.TextBoxSearchMusic_Leave);
             // 
             // UCDisplayMusicNew
             // 

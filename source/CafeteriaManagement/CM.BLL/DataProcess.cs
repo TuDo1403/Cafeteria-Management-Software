@@ -3,12 +3,8 @@ using CM.DTO;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BLL
+namespace CM.BLL
 {
     public static class DataProcess
     {
@@ -54,20 +50,12 @@ namespace BLL
 
         public static bool ValidateAccount(string username, string password)
         {
-            var bytesFromPassword = Encoding.UTF8.GetBytes(password);
-            using var hashAlgorithm = MD5.Create();
-            var hash = hashAlgorithm.ComputeHash(bytesFromPassword);
-
-            var stringBuilder = new StringBuilder();
-            foreach (var item in hash)
-            {
-                // convert to hexadecimal
-                stringBuilder.Append(item.ToString("x2", CultureInfo.InvariantCulture));
-            }
-            var hashedPassword = stringBuilder.ToString();
+            var hashedPassword = password.GetMD5HashedString();
             var isValid = DataProvider.ValidateAccount(username, hashedPassword);
             return isValid;
         }
+
+
 
         public static void InsertProduct(PRODUCT addedProduct) => DataProvider.InsertRecord(addedProduct, "PRODUCT");
 
@@ -101,15 +89,40 @@ namespace BLL
             DataProvider.DeleteRecord(record, "PRODUCT");
         }
 
-        public static void RegisterUser(string username, string password, string  email)
+        public static void RegisterUser(string username, string password, string code)
         {
+            var employeeId = "";
+            foreach (var id in DataProvider.GetEmployeeId())
+            {
+                if (code == id.GetMD5HashedString())
+                {
+                    employeeId = id;
+                    break;
+                }
+            }
             var account = new ACCOUNT()
             {
                 Id = GetNextAccountID(),
                 UserName = username,
-                PassWord = password,
+                PassWord = password.GetMD5HashedString(),
+                EmployeeId = employeeId
             };
             DataProvider.InsertRecord(account, "ACCOUNT");
+        }
+
+        public static bool ValidateEmployeeId(string code)
+        {
+            var result = false;
+            foreach (var id in DataProvider.GetEmployeeId())
+            {
+                if (code == id.GetMD5HashedString())
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            return result;
         }
 
         private static string GetNextAccountID()
@@ -136,7 +149,20 @@ namespace BLL
             return string.Format(CultureInfo.InvariantCulture, "E{0:0000}", nextIndex);
         }
 
+        public static bool CheckExistedAccount(string code)
+        {
+            var result = false;
+            foreach (var id in DataProvider.GetEmployeeIdFromAccountTable())
+            {
+                if (code == id.GetMD5HashedString())
+                {
+                    result = true;
+                    break;
+                }
+            }
 
+            return result;
+        }
     }
     
 }

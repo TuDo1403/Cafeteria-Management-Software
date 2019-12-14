@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CAFEMANAGEMENT" Class="CMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=OANHNGUYEN-PC\THANHCHINGUYENPK;Initial Catalog=CAFEMANAGEMENT;User ID=thanhchinguyenpk" SettingsObjectName="CM.DAL.Properties.Settings" SettingsPropertyName="CAFEMANAGEMENTConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=CAFEMANAGEMENT;Integrated Security=True" SettingsObjectName="CM.DAL.Properties.Settings" SettingsPropertyName="CAFEMANAGEMENTConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ACCOUNT" Member="ACCOUNTs">
     <Type Name="ACCOUNT">
       <Column Name="Id" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="PassWord" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="AccountType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="EmployeeId" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
       <Association Name="EMPLOYEE_ACCOUNT" Member="EMPLOYEE" ThisKey="EmployeeId" OtherKey="Id" Type="EMPLOYEE" IsForeignKey="true" />
     </Type>

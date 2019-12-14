@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
 using CM.DAL;
 using CM.DTO;
 using System.Globalization;
 using Bunifu.Framework.UI;
+using CM.BLL;
 
 namespace CafeteriaManagement
 {
@@ -25,7 +20,7 @@ namespace CafeteriaManagement
             InitializeComponent();
             LoadDataFromDatabase();
             FormProductInfNewUpdate.ToppingsSelected += FormTopping_ToppingsSelectedHandler;
-            FormLogin.LoginSucceeded += FormLogin_LoginSucceededHandler;
+            FormRegister.LoginSucceeded += FormLogin_LoginSucceededHandler;
         }
 
         private void UpdateSelectedItemsDataGrid(Product selectedItem)

@@ -140,6 +140,13 @@ namespace CM.DAL
             item.Description = updatedProduct.Description;
         }
 
+        public static IEnumerable<string> GetEmployeeIdFromAccountTable()
+        {
+            var ids = from account in _database.ACCOUNTs
+                      select account.EmployeeId;
+            return ids;
+        }
+
         public static bool IsTopping(string productName)
         {
             var isTopping = (from product in _database.PRODUCTs
@@ -240,6 +247,13 @@ namespace CM.DAL
             var employees = from employee in _database.EMPLOYEEs
                             select employee;
             return employees;
+        }
+
+        public static IEnumerable<string> GetEmployeeId()
+        {
+            var id = from employee in _database.EMPLOYEEs
+                            select employee.Id;
+            return id;
         }
 
     }

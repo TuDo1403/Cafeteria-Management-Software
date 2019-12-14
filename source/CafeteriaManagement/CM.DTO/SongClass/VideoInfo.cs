@@ -1,4 +1,4 @@
-﻿namespace CafeteriaManagement
+﻿namespace CM.DTO
 {
     //provide video info for downloading audio stream and converting it to mp3
     public class VideoInfo

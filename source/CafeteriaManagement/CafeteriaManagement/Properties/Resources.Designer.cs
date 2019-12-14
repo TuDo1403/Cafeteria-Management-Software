@@ -257,6 +257,15 @@ namespace CafeteriaManagement.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Code.
+        /// </summary>
+        internal static string textBoxCode {
+            get {
+                return ResourceManager.GetString("textBoxCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         internal static string textBoxEmail {

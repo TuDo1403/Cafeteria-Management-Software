@@ -1,4 +1,4 @@
-﻿namespace CafeteriaManagement
+﻿namespace CM.DTO
 {
     public class Video
     {

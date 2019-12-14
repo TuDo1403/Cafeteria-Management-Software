@@ -1,9 +1,13 @@
-﻿using System;
+﻿using CM.DTO;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
-namespace CafeteriaManagement
+namespace CM.BLL
 {
     public static class StringExtension
     {
@@ -68,5 +72,19 @@ namespace CafeteriaManagement
             return true;
         }
 
+        public static string GetMD5HashedString(this string input)
+        {
+            var bytesFromPassword = Encoding.UTF8.GetBytes(input);
+            using var hashAlgorithm = MD5.Create();
+            var hash = hashAlgorithm.ComputeHash(bytesFromPassword);
+
+            var stringBuilder = new StringBuilder();
+            foreach (var item in hash)
+            {
+                // convert to hexadecimal
+                stringBuilder.Append(item.ToString("x2", CultureInfo.InvariantCulture));
+            }
+            return stringBuilder.ToString();
+        }
     }
 }

@@ -26,16 +26,6 @@ namespace CM.DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=CAFEMANAGEMENT;Integrated Security=True")]
-        public string CAFEMANAGEMENTConnectionString1 {
-            get {
-                return ((string)(this["CAFEMANAGEMENTConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=CAFEMANAGEMENT;User ID=thanhchinguyenpk;Pas" +
             "sword=1")]
         public string CAFEMANAGEMENTConnectionString {
@@ -52,6 +42,27 @@ namespace CM.DAL.Properties {
         public string CAFEMANAGEMENTConnectionString2 {
             get {
                 return ((string)(this["CAFEMANAGEMENTConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-C6O1GGF\\SQLEXPRESS;Initial Catalog=CAFEMANAGEMENT;Integrated " +
+            "Security=True")]
+        public string CAFEMANAGEMENTConnectionString1 {
+            get {
+                return ((string)(this["CAFEMANAGEMENTConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=CAFEMANAGEMENT;Integrated Security=True")]
+        public string CAFEMANAGEMENTConnectionString3 {
+            get {
+                return ((string)(this["CAFEMANAGEMENTConnectionString3"]));
             }
         }
     }

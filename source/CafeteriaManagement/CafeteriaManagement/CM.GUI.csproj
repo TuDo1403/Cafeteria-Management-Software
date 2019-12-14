@@ -20,6 +20,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +62,7 @@
       <HintPath>..\packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Downloads\Compressed\Bunifu_UI_v1.52\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
@@ -257,12 +272,6 @@
     <Compile Include="CustomUserControl\UCEditMenuNew.designer.cs">
       <DependentUpon>UCEditMenuNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomUserControl\UCEmployeeManager.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomUserControl\UCEmployeeManager.Designer.cs">
-      <DependentUpon>UCEmployeeManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomUserControl\UCEmployeeNew.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -323,39 +332,15 @@
     <Compile Include="FormProductInfNew.Designer.cs">
       <DependentUpon>FormProductInfNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProductInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormProductInfo.Designer.cs">
-      <DependentUpon>FormProductInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="LogIn2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LogIn2.designer.cs">
       <DependentUpon>LogIn2.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormSignUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSignUp.designer.cs">
-      <DependentUpon>FormSignUp.cs</DependentUpon>
-    </Compile>
     <Compile Include="MusicPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CustomUserControl\UCEditMenu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomUserControl\UCEditMenu.Designer.cs">
-      <DependentUpon>UCEditMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomUserControl\UCMusicDownloader.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -368,11 +353,11 @@
     <Compile Include="CustomUserControl\UCOrderManager.Designer.cs">
       <DependentUpon>UCOrderManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="testRegisterForm.cs">
+    <Compile Include="FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="testRegisterForm.Designer.cs">
-      <DependentUpon>testRegisterForm.cs</DependentUpon>
+    <Compile Include="FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateForm\RegisterForm.cs">
       <SubType>Form</SubType>
@@ -389,9 +374,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomUserControl\UCEditMenuNew.resx">
       <DependentUpon>UCEditMenuNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomUserControl\UCEmployeeManager.resx">
-      <DependentUpon>UCEmployeeManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomUserControl\UCEmployeeNew.resx">
       <DependentUpon>UCEmployeeNew.cs</DependentUpon>
@@ -423,17 +405,8 @@
     <EmbeddedResource Include="FormProductInfNew.resx">
       <DependentUpon>FormProductInfNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProductInfo.resx">
-      <DependentUpon>FormProductInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LogIn2.resx">
       <DependentUpon>LogIn2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormSignUp.resx">
-      <DependentUpon>FormSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -445,17 +418,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="CustomUserControl\UCEditMenu.resx">
-      <DependentUpon>UCEditMenu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomUserControl\UCMusicDownloader.resx">
       <DependentUpon>UCMusicDownloader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomUserControl\UCOrderManager.resx">
       <DependentUpon>UCOrderManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="testRegisterForm.resx">
-      <DependentUpon>testRegisterForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateForm\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
@@ -554,6 +524,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\brigitte-tohm-EAay7Aj4jbc-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

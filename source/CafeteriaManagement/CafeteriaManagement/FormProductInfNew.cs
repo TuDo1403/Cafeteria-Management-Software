@@ -1,4 +1,4 @@
-﻿using BLL;
+﻿using CafeteriaManagement;
 using Bunifu.Framework.UI;
 using CM.DAL;
 using System;
@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CM.BLL;
 
 namespace CafeteriaManagement
 {
