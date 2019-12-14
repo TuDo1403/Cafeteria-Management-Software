@@ -13,7 +13,7 @@ namespace CafeteriaManagement
     {
         private readonly Timer timer = new Timer();
 
-        public static event EventHandler SongNext;
+
         public static event EventHandler SongPrev;
 
         public UCQueueBox()
@@ -38,6 +38,7 @@ namespace CafeteriaManagement
         {
             InitializeStartAndEndTimeLabels(e);
             InitializeTrackBarSongDuration(e);
+            BindPlayingSongToDataGridViewHistory();
             UpdateDataGridVIew(e);
         }
 
@@ -74,7 +75,7 @@ namespace CafeteriaManagement
             if (trackBarSongDuration.Value < trackBarSongDuration.MaximumValue)
             {
                 trackBarSongDuration.Value++;
-                //labelTime.Text = $"{trackBarSongDuration.Value / 60}:{trackBarSongDuration.Value % 60}";
+                labelTime.Text = $"{trackBarSongDuration.Value / 60}:{trackBarSongDuration.Value % 60}";
             }
             else
             {
@@ -115,11 +116,11 @@ namespace CafeteriaManagement
 
         private void BindPlayingSongToDataGridViewHistory()
         {
-            //dataGridViewHistory.Invoke((Action)delegate
-            //{
-            //    //dataGridViewHistory.DataSource = null;
-            //    //dataGridViewHistory.DataSource = MusicPlayer.PlayHistories;
-            //});
+            dataGridViewHistory.Invoke((Action)delegate
+            {
+                dataGridViewHistory.DataSource = null;
+                dataGridViewHistory.DataSource = MusicPlayer.PlayHistories;
+            });
         }
 
 
@@ -223,13 +224,24 @@ namespace CafeteriaManagement
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            if (MusicPlayer.PlayList.Peek().IsConverted)
+            MusicPlayer.CreateInstance();
+
+            if (dataGridViewPlaying.DataSource == null)
             {
-                MusicPlayer.CreateInstance();
+                var canPlay = MusicPlayer.PlayNext();
+                if (canPlay)
+                {
+                    timer.Start();
+                    buttonPlay.SendToBack();
+                }
+            }
+            else
+            {
                 MusicPlayer.Play();
                 timer.Start();
                 buttonPlay.SendToBack();
             }
+
         }
 
         private void buttonPrevious_Click(object sender, EventArgs e)
@@ -237,14 +249,13 @@ namespace CafeteriaManagement
 
         }
 
-        private void buttonNext_Click(object sender, EventArgs e)
+        private void buttonNext_Click(object sender, EventArgs e) => MusicPlayer.PlayNext();
+
+        private void ButtonPause_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void buttonPause_Click(object sender, EventArgs e)
-        {
-
+            MusicPlayer.Pause();
+            timer.Stop();
+            buttonPause.SendToBack();
         }
     }
 }

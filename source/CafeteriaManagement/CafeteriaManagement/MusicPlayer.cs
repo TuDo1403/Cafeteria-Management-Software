@@ -34,7 +34,6 @@ namespace CafeteriaManagement
         {
             windowsMediaPlayer.PlayStateChange += WindowsMediaPlayer_PlayStateChangeHandler;
             UCQueueBox.SongPrev += FormQueue_SongPrevHandler;
-            UCQueueBox.SongNext += FormQueue_SongNextHandler;
             SongDownloader.ConvertCompleted += SongDownloader_ConvertCompletedHandler;
         }
 
@@ -63,7 +62,6 @@ namespace CafeteriaManagement
         }
 
 
-        private void FormQueue_SongNextHandler(object sender, EventArgs e) => PlayNext();
 
 
         //idea from https://multisoftextreme.blogspot.com/2009/08/windows-media-player-end-of-stream.html
@@ -87,35 +85,32 @@ namespace CafeteriaManagement
 
         public static void Play()
         {
-            if (PlayList.Peek().IsConverted)
-            {
-                if (IsPaused)
-                    IsPaused = false;
-                else
-                {
-                    windowsMediaPlayer.URL = PlayList.Peek().Url;
-                    OnSongChanging();
-                }
-
-                windowsMediaPlayer.controls.play();
-            }
+            IsPaused = false;
+            windowsMediaPlayer.controls.play();
         }
 
-        public static void PlayNext()
+        public static bool PlayNext()
         {
-            if (IsPaused == false && PlayList.Count >= 1 && PlayList.Peek().IsConverted)
+            var result = false;
+            if (PlayList.Count >= 1 && PlayList.Peek().IsConverted)
             {
+                result = true;
                 PlayHistories.Add(PlayList.Peek());
                 OnSongChanging();
                 windowsMediaPlayer.URL = PlayList.Dequeue().Url;
+                
                 windowsMediaPlayer.controls.play();
             }
+            return result;
         }
 
         private static void OnSongChanging() => (SongChanged as EventHandler<Queue<Song>>)?.Invoke(_musicPlayer, PlayList);
 
 
-        public static void Pause() => windowsMediaPlayer.controls.pause();
+        public static void Pause()
+        {
+            windowsMediaPlayer.controls.pause();
+        }
 
         public static void AddSongToQueue(int searchIndex, int playIndex)
         {
@@ -134,8 +129,5 @@ namespace CafeteriaManagement
 
         private static void OnSongAdding(Song song) => (SongAdded as EventHandler<Song>)?.Invoke(_musicPlayer, song);
 
-
-
-        public static void Resume() => windowsMediaPlayer.controls.play();
     }
 }

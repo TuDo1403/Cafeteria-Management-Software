@@ -25,7 +25,6 @@ namespace CafeteriaManagement
             FormMainLosed.FormMainLoaded += FormMain_FormMainLoadedHandler;
             InitializeComponent();
 
-            //  InitializeComponent();
             MaterialSkin.MaterialSkinManager.Instance.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
             MaterialSkin.MaterialSkinManager.Instance.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green900, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.Green100, MaterialSkin.TextShade.WHITE);
 
