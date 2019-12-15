@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestCheckMark));
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuFormFadeTransition1 = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
-            this.icon = new System.Windows.Forms.PictureBox();
             this.iconDelay = new System.Windows.Forms.Timer(this.components);
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lblText = new System.Windows.Forms.Label();
+            this.icon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,16 +56,6 @@
             // 
             this.bunifuFormFadeTransition1.Delay = 1;
             this.bunifuFormFadeTransition1.TransitionEnd += new System.EventHandler(this.bunifuFormFadeTransition1_TransitionEnd);
-            // 
-            // icon
-            // 
-            this.icon.Image = global::CafeteriaManagement.Properties.Resources.checkmark;
-            this.icon.Location = new System.Drawing.Point(120, 23);
-            this.icon.Name = "icon";
-            this.icon.Size = new System.Drawing.Size(278, 211);
-            this.icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.icon.TabIndex = 0;
-            this.icon.TabStop = false;
             // 
             // iconDelay
             // 
@@ -110,12 +101,22 @@
             // lblText
             // 
             this.lblText.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblText.Location = new System.Drawing.Point(120, 198);
+            this.lblText.Location = new System.Drawing.Point(120, 204);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(278, 36);
             this.lblText.TabIndex = 2;
             this.lblText.Text = "Create Successfully";
             this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // icon
+            // 
+            this.icon.Image = ((System.Drawing.Image)(resources.GetObject("icon.Image")));
+            this.icon.Location = new System.Drawing.Point(118, 29);
+            this.icon.Name = "icon";
+            this.icon.Size = new System.Drawing.Size(280, 211);
+            this.icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.icon.TabIndex = 3;
+            this.icon.TabStop = false;
             // 
             // TestCheckMark
             // 
@@ -124,8 +125,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(499, 326);
             this.Controls.Add(this.lblText);
-            this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.icon);
+            this.Controls.Add(this.bunifuFlatButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TestCheckMark";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -140,9 +141,9 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuFormFadeTransition bunifuFormFadeTransition1;
-        private System.Windows.Forms.PictureBox icon;
         private System.Windows.Forms.Timer iconDelay;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private System.Windows.Forms.Label lblText;
+        private System.Windows.Forms.PictureBox icon;
     }
 }

@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkmark.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="que_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\que_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_pencil_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_pencil_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="textBoxSearchMenuText1" xml:space="preserve">
     <value>Enter Keyword</value>
@@ -127,11 +133,8 @@
   <data name="textBoxPassword" xml:space="preserve">
     <value>Password</value>
   </data>
-  <data name="icons8_pencil_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_pencil_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="brigitte-tohm-EAay7Aj4jbc-unsplash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brigitte-tohm-EAay7Aj4jbc-unsplash1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_lock_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_lock_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_menu_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_menu_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,20 +163,20 @@
   <data name="icons8_pause_button_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_pause_button_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="horizontal_line_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\horizontal_line_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bank_cards_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bank_cards_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="labelTextInitializeTime" xml:space="preserve">
     <value>0:0</value>
   </data>
-  <data name="pen_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pen_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="horizontal_line_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\horizontal_line_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_back1_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_back1_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pen_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pen_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="textBoxSearchMenuText" xml:space="preserve">
     <value>Search</value>
@@ -181,11 +184,11 @@
   <data name="list_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_lock_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_lock_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="68401570_2355563994763021_3477536896748355584_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\68401570_2355563994763021_3477536896748355584_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bank_cards_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bank_cards_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_lock_641" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_lock_641.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_back3_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_back3_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,17 +214,23 @@
   <data name="songAddedCaption" xml:space="preserve">
     <value>Notification</value>
   </data>
-  <data name="68401570_2355563994763021_3477536896748355584_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\68401570_2355563994763021_3477536896748355584_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="brigitte-tohm-EAay7Aj4jbc-unsplash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brigitte-tohm-EAay7Aj4jbc-unsplash1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="brigitte-tohm-EAay7Aj4jbc-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brigitte-tohm-EAay7Aj4jbc-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_lock_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_lock_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="contacts_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contacts_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_circled_play_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_circled_play_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="textBoxReEnterPassword" xml:space="preserve">
     <value>Re-enter Password</value>
@@ -238,6 +247,9 @@
   <data name="initialPrice" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="checkmark1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkmark1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="textBoxCode" xml:space="preserve">
     <value>Code</value>
   </data>
@@ -247,7 +259,7 @@
   <data name="daux_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\daux_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_lock_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_lock_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="checkmark2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkmark2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

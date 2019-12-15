@@ -621,6 +621,18 @@
   <ItemGroup>
     <None Include="Resources\icons8_lock_48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_lock_641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark2.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

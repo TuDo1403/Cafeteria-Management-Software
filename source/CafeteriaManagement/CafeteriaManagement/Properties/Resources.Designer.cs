@@ -133,6 +133,36 @@ namespace CafeteriaManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checkmark {
+            get {
+                object obj = ResourceManager.GetObject("checkmark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checkmark1 {
+            get {
+                object obj = ResourceManager.GetObject("checkmark1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checkmark2 {
+            get {
+                object obj = ResourceManager.GetObject("checkmark2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contacts_32px {
             get {
                 object obj = ResourceManager.GetObject("contacts_32px", resourceCulture);
@@ -226,6 +256,16 @@ namespace CafeteriaManagement.Properties {
         internal static System.Drawing.Bitmap icons8_lock_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8_lock_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_lock_641 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_lock_641", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
