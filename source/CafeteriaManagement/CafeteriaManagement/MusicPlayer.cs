@@ -55,8 +55,7 @@ namespace CafeteriaManagement
             //add last song to the beginning of the queue
             if (PlayHistories.Count >= 2)
             {
-                PlayHistories.RemoveAt(PlayHistories.Count - 1);
-                PlayList = new Queue<Song>(PlayList.Prepend(PlayHistories.Last()));
+                PlayList = new Queue<Song>(PlayList.Prepend(PlayHistories.Last(c => c.Url != windowsMediaPlayer.URL)));
                 PlayNext();
             }
         }
@@ -98,7 +97,7 @@ namespace CafeteriaManagement
                 PlayHistories.Add(PlayList.Peek());
                 OnSongChanging();
                 windowsMediaPlayer.URL = PlayList.Dequeue().Url;
-                
+
                 windowsMediaPlayer.controls.play();
             }
             return result;
@@ -107,10 +106,7 @@ namespace CafeteriaManagement
         private static void OnSongChanging() => (SongChanged as EventHandler<Queue<Song>>)?.Invoke(_musicPlayer, PlayList);
 
 
-        public static void Pause()
-        {
-            windowsMediaPlayer.controls.pause();
-        }
+        public static void Pause() => windowsMediaPlayer.controls.pause();
 
         public static void AddSongToQueue(int searchIndex, int playIndex)
         {

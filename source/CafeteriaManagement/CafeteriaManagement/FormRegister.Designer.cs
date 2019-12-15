@@ -95,6 +95,7 @@
             this.textBoxPassword.TabIndex = 4;
             this.textBoxPassword.Text = "Password";
             this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
+            this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxPassword_KeyDown);
             this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
             this.textBoxPassword.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxPassword_Validating);
             // 
@@ -371,6 +372,7 @@
             this.Controls.Add(this.panelSignIn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "testRegisterForm";
             this.Load += new System.EventHandler(this.testRegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

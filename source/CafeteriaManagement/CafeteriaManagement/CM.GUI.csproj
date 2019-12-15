@@ -62,7 +62,7 @@
       <HintPath>..\packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Downloads\Compressed\Bunifu_UI_v1.52\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
@@ -320,18 +320,6 @@
     <Compile Include="FormMainLosed.Designer.cs">
       <DependentUpon>FormMainLosed.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMenu.Designer.cs">
-      <DependentUpon>FormMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMain.Designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMenuNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,18 +347,6 @@
     <Compile Include="MusicPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CustomUserControl\UCMusicDownloader.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomUserControl\UCMusicDownloader.Designer.cs">
-      <DependentUpon>UCMusicDownloader.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomUserControl\UCOrderManager.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomUserControl\UCOrderManager.Designer.cs">
-      <DependentUpon>UCOrderManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,12 +405,6 @@
     <EmbeddedResource Include="FormMainLosed.resx">
       <DependentUpon>FormMainLosed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMenu.resx">
-      <DependentUpon>FormMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormMenuNew.resx">
       <DependentUpon>FormMenuNew.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,12 +427,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="CustomUserControl\UCMusicDownloader.resx">
-      <DependentUpon>UCMusicDownloader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomUserControl\UCOrderManager.resx">
-      <DependentUpon>UCOrderManager.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>

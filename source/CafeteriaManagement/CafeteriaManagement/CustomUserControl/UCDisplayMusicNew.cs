@@ -29,7 +29,7 @@ namespace CafeteriaManagement
             MaterialSkin.MaterialSkinManager.Instance.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Green900, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.Green100, MaterialSkin.TextShade.WHITE);
 
             LoadHistoryToAutoCompleteSource();
-            
+
         }
 
         private void FormMain_FormMainLoadedHandler(object sender, UserControl e) => _queue = e;
@@ -64,18 +64,18 @@ namespace CafeteriaManagement
 
         private void timerPanelOnline_Tick(object sender, EventArgs e)
         {
-           /* if (pnlOffline.Left >= 40)
-            {
-                pnlOffline.Left -= _time;
-                pnlOnline.Left -= _time;
-                _time += 1;
-            }
-            else
-            {
-                timerPanelOnline.Stop();
-                _time = 20;
-            }
-            */
+            /* if (pnlOffline.Left >= 40)
+             {
+                 pnlOffline.Left -= _time;
+                 pnlOnline.Left -= _time;
+                 _time += 1;
+             }
+             else
+             {
+                 timerPanelOnline.Stop();
+                 _time = 20;
+             }
+             */
 
         }
 
@@ -87,17 +87,17 @@ namespace CafeteriaManagement
 
         private void timerPanelOffline_Tick(object sender, EventArgs e)
         {
-           /* if (pnlOnline.Left <= 26)
-            {
-                pnlOffline.Left += _time;
-                pnlOnline.Left += _time;
-                _time += 1;
-            }
-            else
-            {
-                timerPanelOffline.Stop();
-                _time = 20;
-            }*/
+            /* if (pnlOnline.Left <= 26)
+             {
+                 pnlOffline.Left += _time;
+                 pnlOnline.Left += _time;
+                 _time += 1;
+             }
+             else
+             {
+                 timerPanelOffline.Stop();
+                 _time = 20;
+             }*/
 
         }
 
@@ -183,6 +183,8 @@ namespace CafeteriaManagement
                     dataGridViewSearchResult.Invoke((Action)delegate
                     {
                         dataGridViewSearchResult.DataSource = searchResults;
+                        dataGridViewSearchResult.Columns[2].Visible = false;
+                        dataGridViewSearchResult.Columns[3].Visible = false;
                     });
                 }).ConfigureAwait(true);
             }

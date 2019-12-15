@@ -30,6 +30,61 @@ namespace CafeteriaManagement
             _buttons.Add(buttonDelete);
 
             LoadEmployeeToControl();
+
+            textBoxPhone.Validating += TextBoxPhone_ValidatingHandler;
+            textBoxEmail.Validating += TextBoxEmail_ValidatingHandler;
+            textBoxName.Validating += TextBoxName_ValidatingHandler;
+        }
+
+        private void TextBoxName_ValidatingHandler(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBoxName.Text))
+            {
+                if (!textBoxName.Text.IsValidName())
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(textBoxName, "Wrong name format!");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(textBoxName, null);
+                }
+            }
+        }
+
+        private void TextBoxEmail_ValidatingHandler(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBoxEmail.Text))
+            {
+                if (!textBoxEmail.Text.IsValidEmail())
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(textBoxEmail, "Wrong email format!");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(textBoxEmail, null);
+                }
+            }
+        }
+
+        private void TextBoxPhone_ValidatingHandler(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBoxPhone.Text))
+            {
+                if (!textBoxPhone.Text.IsValidNumber())
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(textBoxPhone, "Wrong phone number format!");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(textBoxPhone, null);
+                }
+            }
         }
 
         private void LoadEmployeeToControl()
@@ -90,6 +145,7 @@ namespace CafeteriaManagement
                         item.Enabled = false;
                     }
                 }
+                textBoxName.Focus();
             }
             else
             {
@@ -297,6 +353,41 @@ namespace CafeteriaManagement
         }
 
         private void textBoxPhone_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridViewEmployeeList_DoubleClick(object sender, EventArgs e)
+        {
+            var cells = dataGridViewEmployeeList.SelectedRows[0].Cells;
+            var id = cells[0].Value.ToString();
+            Clipboard.SetText(id.GetMD5HashedString());
+            MessageBox.Show("Id Code copied to clipboard!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void TextBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty((sender as TextBox).Text))
+            {
+                dataGridViewEmployeeList.DataSource = null;
+                dataGridViewEmployeeList.DataSource = DataProcess.GetEmployeesSortedByName(textBoxSearch.Text);
+                LoadEmployeeToControl();
+            }
+            else
+            {
+                RefreshEmployeesList();
+            }
+        }
+
+        private void TextBoxSearch_Leave(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text.Length == 0)
+            {
+                RefreshEmployeesList();
+            }
+        }
+
+        private void UCEmployeeNew_Load(object sender, EventArgs e)
         {
 
         }

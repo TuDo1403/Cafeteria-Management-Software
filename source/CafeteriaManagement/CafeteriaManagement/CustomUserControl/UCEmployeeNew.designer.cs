@@ -60,6 +60,7 @@
             this.bunifuElipseBirthday = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipseDateStart = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelName.SuspendLayout();
@@ -116,7 +117,7 @@
             this.dataGridViewEmployeeList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewEmployeeList.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridViewEmployeeList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEmployeeList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -153,8 +154,9 @@
             this.dataGridViewEmployeeList.RowTemplate.Height = 30;
             this.dataGridViewEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEmployeeList.Size = new System.Drawing.Size(757, 210);
-            this.dataGridViewEmployeeList.TabIndex = 15;
+            this.dataGridViewEmployeeList.TabIndex = 50;
             this.dataGridViewEmployeeList.Click += new System.EventHandler(this.DataGridViewEmployeeList_Click);
+            this.dataGridViewEmployeeList.DoubleClick += new System.EventHandler(this.DataGridViewEmployeeList_DoubleClick);
             // 
             // buttonDelete
             // 
@@ -202,7 +204,7 @@
             this.datePickerDateStart.Location = new System.Drawing.Point(95, 114);
             this.datePickerDateStart.Name = "datePickerDateStart";
             this.datePickerDateStart.Size = new System.Drawing.Size(156, 29);
-            this.datePickerDateStart.TabIndex = 10;
+            this.datePickerDateStart.TabIndex = 3;
             // 
             // labelDateStart
             // 
@@ -244,7 +246,7 @@
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(241, 29);
-            this.textBoxEmail.TabIndex = 16;
+            this.textBoxEmail.TabIndex = 6;
             this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
             // 
@@ -278,7 +280,7 @@
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(241, 29);
-            this.textBoxPhone.TabIndex = 16;
+            this.textBoxPhone.TabIndex = 5;
             this.textBoxPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxPhone.OnValueChanged += new System.EventHandler(this.textBoxPhone_OnValueChanged);
             this.textBoxPhone.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
@@ -295,7 +297,7 @@
             this.radioButtonNone.Name = "radioButtonNone";
             this.radioButtonNone.Ripple = true;
             this.radioButtonNone.Size = new System.Drawing.Size(62, 30);
-            this.radioButtonNone.TabIndex = 12;
+            this.radioButtonNone.TabIndex = 4;
             this.radioButtonNone.TabStop = true;
             this.radioButtonNone.Text = "None";
             this.radioButtonNone.UseVisualStyleBackColor = true;
@@ -359,7 +361,7 @@
             this.datePickerBirthday.Location = new System.Drawing.Point(95, 64);
             this.datePickerBirthday.Name = "datePickerBirthday";
             this.datePickerBirthday.Size = new System.Drawing.Size(156, 29);
-            this.datePickerBirthday.TabIndex = 10;
+            this.datePickerBirthday.TabIndex = 2;
             this.datePickerBirthday.ValueChanged += new System.EventHandler(this.datePickerBirthday_ValueChanged);
             // 
             // labelBirthDay
@@ -403,7 +405,7 @@
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(240, 29);
-            this.textBoxName.TabIndex = 16;
+            this.textBoxName.TabIndex = 1;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxName.Leave += new System.EventHandler(this.TextBoxName_Leave);
             this.textBoxName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
@@ -560,11 +562,21 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(756, 164);
             this.tableLayoutPanel1.TabIndex = 44;
             // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(36, 471);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearch.TabIndex = 45;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
+            this.textBoxSearch.Leave += new System.EventHandler(this.TextBoxSearch_Leave);
+            // 
             // UCEmployeeNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridViewEmployeeList);
             this.Controls.Add(this.buttonCancel);
@@ -573,6 +585,7 @@
             this.Controls.Add(this.buttonEdit);
             this.Name = "UCEmployeeNew";
             this.Size = new System.Drawing.Size(828, 510);
+            this.Load += new System.EventHandler(this.UCEmployeeNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panelName.ResumeLayout(false);
@@ -581,6 +594,7 @@
             this.panelGender.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -614,5 +628,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseBirthday;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseDateStart;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox textBoxSearch;
     }
 }

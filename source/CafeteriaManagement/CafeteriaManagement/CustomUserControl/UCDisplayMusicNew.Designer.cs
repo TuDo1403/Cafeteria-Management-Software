@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DatagridOnline = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dataGridViewSearchResult = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.SearchOffine = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -42,12 +42,12 @@
             this.timerGreenOnline = new System.Windows.Forms.Timer(this.components);
             this.SearchOnline = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlOnline = new System.Windows.Forms.Panel();
+            this.textBoxSearchMusic = new System.Windows.Forms.TextBox();
             this.buttonQueue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonSearch = new System.Windows.Forms.PictureBox();
             this.labelYoutube = new System.Windows.Forms.Label();
             this.lblOnline = new System.Windows.Forms.Label();
             this.pnlGreen = new System.Windows.Forms.Panel();
-            this.textBoxSearchMusic = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchResult)).BeginInit();
             this.pnlOnline.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSearch)).BeginInit();
@@ -64,33 +64,33 @@
             this.dataGridViewSearchResult.AllowUserToDeleteRows = false;
             this.dataGridViewSearchResult.AllowUserToResizeColumns = false;
             this.dataGridViewSearchResult.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
-            this.dataGridViewSearchResult.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            this.dataGridViewSearchResult.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewSearchResult.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridViewSearchResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewSearchResult.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewSearchResult.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSearchResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSearchResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewSearchResult.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSearchResult.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSearchResult.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewSearchResult.DoubleBuffered = true;
             this.dataGridViewSearchResult.EnableHeadersVisualStyles = false;
             this.dataGridViewSearchResult.GridColor = System.Drawing.Color.White;
@@ -141,11 +141,12 @@
             // SearchOnline
             // 
             this.SearchOnline.ElipseRadius = 20;
+            this.SearchOnline.TargetControl = this;
             // 
             // pnlOnline
             // 
-            this.pnlOnline.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlOnline.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlOnline.Controls.Add(this.textBoxSearchMusic);
             this.pnlOnline.Controls.Add(this.buttonQueue);
@@ -156,6 +157,20 @@
             this.pnlOnline.Name = "pnlOnline";
             this.pnlOnline.Size = new System.Drawing.Size(773, 426);
             this.pnlOnline.TabIndex = 2;
+            // 
+            // textBoxSearchMusic
+            // 
+            this.textBoxSearchMusic.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBoxSearchMusic.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxSearchMusic.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.textBoxSearchMusic.Location = new System.Drawing.Point(131, 21);
+            this.textBoxSearchMusic.Name = "textBoxSearchMusic";
+            this.textBoxSearchMusic.Size = new System.Drawing.Size(510, 20);
+            this.textBoxSearchMusic.TabIndex = 18;
+            this.textBoxSearchMusic.Text = "Enter Keyword";
+            this.textBoxSearchMusic.Enter += new System.EventHandler(this.TextBoxSearchMusic_Enter);
+            this.textBoxSearchMusic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchMusic_KeyDown);
+            this.textBoxSearchMusic.Leave += new System.EventHandler(this.TextBoxSearchMusic_Leave);
             // 
             // buttonQueue
             // 
@@ -233,20 +248,6 @@
             this.pnlGreen.Name = "pnlGreen";
             this.pnlGreen.Size = new System.Drawing.Size(69, 3);
             this.pnlGreen.TabIndex = 18;
-            // 
-            // textBoxSearchMusic
-            // 
-            this.textBoxSearchMusic.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBoxSearchMusic.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxSearchMusic.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.textBoxSearchMusic.Location = new System.Drawing.Point(131, 21);
-            this.textBoxSearchMusic.Name = "textBoxSearchMusic";
-            this.textBoxSearchMusic.Size = new System.Drawing.Size(510, 20);
-            this.textBoxSearchMusic.TabIndex = 18;
-            this.textBoxSearchMusic.Text = "Enter Keyword";
-            this.textBoxSearchMusic.Enter += new System.EventHandler(this.TextBoxSearchMusic_Enter);
-            this.textBoxSearchMusic.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchMusic_KeyDown);
-            this.textBoxSearchMusic.Leave += new System.EventHandler(this.TextBoxSearchMusic_Leave);
             // 
             // UCDisplayMusicNew
             // 

@@ -36,7 +36,7 @@ namespace CafeteriaManagement
                 comboBoxProductType.AddItem(item);
             }
             UCEditMenuNew.ProductChosen += UCEditMenu_ProductChosenHandler;
-            FormMenu.ProductChosen += UCEditMenu_ProductChosenHandler;
+            FormMenuNew.ProductChosen += UCEditMenu_ProductChosenHandler;
         }
 
         private void UCEditMenu_ProductChosenHandler(object sender, PRODUCT e)

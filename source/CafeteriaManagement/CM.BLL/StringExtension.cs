@@ -23,7 +23,7 @@ namespace CM.BLL
 
         public static IEnumerable<Song> ToSong(this IEnumerable<string> source)
         {
-            
+
             foreach (var line in source)
             {
                 if (string.IsNullOrEmpty(line))
@@ -43,8 +43,7 @@ namespace CM.BLL
 
         public static string Standardlize(this string source)
         {
-            CatchInvalidNameException(source);
-            source = source.ToLower();
+            source = source.ToLowerInvariant();
             var columns = source.Split(' ').ToList();
             columns.RemoveAll(s => string.IsNullOrWhiteSpace(s));
             var result = "";
@@ -55,7 +54,7 @@ namespace CM.BLL
             return result.TrimEnd();
         }
 
-        private static void CatchInvalidNameException(string source)
+        public static void CatchInvalidNameException(string source)
         {
             if (!source.IsValidName())
             {
@@ -67,7 +66,7 @@ namespace CM.BLL
         {
             if (source.Any(char.IsDigit))
                 return false;
-            if (!source.Contains(" "))
+            if (source != "Admin" && !source.Contains(" "))
                 return false;
             return true;
         }
@@ -85,6 +84,52 @@ namespace CM.BLL
                 stringBuilder.Append(item.ToString("x2", CultureInfo.InvariantCulture));
             }
             return stringBuilder.ToString();
+        }
+
+        public static bool IsValidNumber(this string input)
+        {
+            if (!input.StartsWith("0"))
+            {
+                return false;
+            }
+            if (!input.All(char.IsDigit))
+            {
+                return false;
+            }
+            if (input.Length > 12 || input.Length < 10)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool IsValidEmail(this string email)
+        {
+            if (email[0] == '@')
+            {
+                return false;
+            }
+            if (!email.Contains("@"))
+            {
+                return false;
+            }
+            if (!email.Contains("."))
+            {
+                return false;
+            }
+            if (email.Length < 3)
+            {
+                return false;
+            }
+            foreach (var character in Path.GetInvalidFileNameChars())
+            {
+                if (email.Contains(character))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

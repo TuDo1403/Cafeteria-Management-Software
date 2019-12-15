@@ -69,11 +69,6 @@
             this.timerHistoryBack = new System.Windows.Forms.Timer(this.components);
             this.timerPanelGreenHistory = new System.Windows.Forms.Timer(this.components);
             this.timerPanelGreenQueue = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlQueue.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,11 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNextUp)).BeginInit();
             this.pnlHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGreen
@@ -130,8 +120,8 @@
             // 
             // pnlQueue
             // 
-            this.pnlQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlQueue.Controls.Add(this.labelDuration);
             this.pnlQueue.Controls.Add(this.labelTime);
@@ -355,8 +345,8 @@
             this.dataGridViewPlaying.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
             this.dataGridViewPlaying.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewPlaying.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewPlaying.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewPlaying.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPlaying.BackgroundColor = System.Drawing.Color.Gray;
@@ -429,8 +419,8 @@
             this.dataGridViewNextUp.AllowUserToResizeRows = false;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gray;
             this.dataGridViewNextUp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewNextUp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewNextUp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewNextUp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNextUp.BackgroundColor = System.Drawing.Color.Gray;
@@ -513,7 +503,7 @@
             this.dataGridViewHistory.GridColor = System.Drawing.Color.White;
             this.dataGridViewHistory.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridViewHistory.HeaderForeColor = System.Drawing.Color.White;
-            this.dataGridViewHistory.Location = new System.Drawing.Point(42, 25);
+            this.dataGridViewHistory.Location = new System.Drawing.Point(3, 20);
             this.dataGridViewHistory.MultiSelect = false;
             this.dataGridViewHistory.Name = "dataGridViewHistory";
             this.dataGridViewHistory.ReadOnly = true;
@@ -521,7 +511,7 @@
             this.dataGridViewHistory.RowHeadersVisible = false;
             this.dataGridViewHistory.RowTemplate.Height = 30;
             this.dataGridViewHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHistory.Size = new System.Drawing.Size(735, 303);
+            this.dataGridViewHistory.Size = new System.Drawing.Size(779, 303);
             this.dataGridViewHistory.TabIndex = 34;
             // 
             // bunifuElipseHistory
@@ -569,63 +559,11 @@
             this.timerPanelGreenQueue.Interval = 1;
             this.timerPanelGreenQueue.Tick += new System.EventHandler(this.timerPanelGreenQueue_Tick);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(3, 272);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(261, 62);
-            this.panel2.TabIndex = 40;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::CafeteriaManagement.Properties.Resources.icons8_back3_32;
-            this.pictureBox4.Location = new System.Drawing.Point(54, 17);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(37, 37);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::CafeteriaManagement.Properties.Resources.icons8_forward3_32;
-            this.pictureBox3.Location = new System.Drawing.Point(188, 17);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 37);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::CafeteriaManagement.Properties.Resources.icons8_circled_play_32;
-            this.pictureBox2.Location = new System.Drawing.Point(123, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(37, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CafeteriaManagement.Properties.Resources.icons8_pause_button_32;
-            this.pictureBox1.Location = new System.Drawing.Point(123, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // UCQueueBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlHistory);
             this.Controls.Add(this.pnlQueue);
             this.Controls.Add(this.pnlGreen);
@@ -643,11 +581,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNextUp)).EndInit();
             this.pnlHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,10 +618,5 @@
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

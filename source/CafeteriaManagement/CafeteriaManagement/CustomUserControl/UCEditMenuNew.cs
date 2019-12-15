@@ -17,7 +17,7 @@ namespace CafeteriaManagement
             InitializeComponent();
             LoadDataFromDatabase();
             FormProductInfNew.ProductUpdated += FormProductInfo_ProductUpdatedHandler;
-            FormMenu.ProductDeleted += FormProductInfo_ProductUpdatedHandler;
+            FormMenuNew.ProductDeleted += FormProductInfo_ProductUpdatedHandler;
         }
 
         private void LoadDataFromDatabase()
@@ -42,6 +42,8 @@ namespace CafeteriaManagement
             dataGridViewMenu.DataSource = null;
             dataGridViewMenu.DataSource = products;
             dataGridViewMenu.Columns[6].Visible = false;
+            dataGridViewMenu.Columns[2].Visible = false;
+            dataGridViewMenu.Columns[5].Visible = false;
         }
 
         private void UCEditMenuNew_Load(object sender, EventArgs e)
@@ -51,7 +53,7 @@ namespace CafeteriaManagement
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            using var formMenu = new FormMenu(comboBoxCategory.selectedValue);
+            using var formMenu = new FormMenuNew(comboBoxCategory.selectedValue);
             formMenu.ShowDialog();
         }
 
@@ -63,7 +65,7 @@ namespace CafeteriaManagement
 
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            using var formMenu = new FormMenu(comboBoxCategory.selectedValue, true);
+            using var formMenu = new FormMenuNew(comboBoxCategory.selectedValue, true);
             formMenu.ShowDialog();
         }
 
@@ -79,6 +81,8 @@ namespace CafeteriaManagement
             dataGridViewMenu.DataSource = null;
             dataGridViewMenu.DataSource = products;
             dataGridViewMenu.Columns[6].Visible = false;
+            dataGridViewMenu.Columns[2].Visible = false;
+            dataGridViewMenu.Columns[5].Visible = false;
         }
 
 
@@ -98,5 +102,29 @@ namespace CafeteriaManagement
         }
 
         private void OnProductChoosing(PRODUCT product) => (ProductChosen as EventHandler<PRODUCT>)?.Invoke(this, product);
+
+        private void TextBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty((sender as TextBox).Text))
+            {
+                dataGridViewMenu.DataSource = null;
+                dataGridViewMenu.DataSource = DataProcess.GetProductSortedByName(textBoxSearch.Text, comboBoxCategory.selectedValue);
+                dataGridViewMenu.Columns[6].Visible = false;
+                dataGridViewMenu.Columns[2].Visible = false;
+                dataGridViewMenu.Columns[5].Visible = false;
+            }
+            else
+            {
+                FormProductInfo_ProductUpdatedHandler(sender, e);
+            }
+        }
+
+        private void TextBoxSearch_Leave(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text.Length == 0)
+            {
+                FormProductInfo_ProductUpdatedHandler(sender, e);
+            }
+        }
     }
 }

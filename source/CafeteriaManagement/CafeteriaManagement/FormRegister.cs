@@ -196,7 +196,7 @@ namespace CafeteriaManagement
             textBoxRegisterPassword.CausesValidation = true;
             textBoxCode.CausesValidation = true;
             textBoxReenterPassword.CausesValidation = true;
-            
+
             if (!ValidateChildren(ValidationConstraints.Enabled))
             {
                 return;
@@ -291,6 +291,12 @@ namespace CafeteriaManagement
             }
         }
 
-
+        private void TextBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ButtonSignIn_Click(sender, e);
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ using CM.DTO;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace CM.BLL
 {
@@ -18,7 +19,7 @@ namespace CM.BLL
             return DataProvider.RetrieveMenuToppingFrom(productName);
         }
 
-       
+
         public static string GetNextProductId()
         {
             var lastId = DataProvider.GetLastProductId();
@@ -61,8 +62,12 @@ namespace CM.BLL
 
 
 
-        public static void InsertBill(List<Product> list, string total, string userName)
+        public static void InsertBillAndBillDetails(List<Product> list, string total, string userName)
         {
+            if (list == null)
+            {
+                throw new ArgumentNullException(nameof(list));
+            }
             var bill = new BILL()
             {
                 Id = GetNextBillId(),
@@ -91,18 +96,13 @@ namespace CM.BLL
 
         public static void RegisterUser(string username, string password, string code)
         {
-            var employeeId = "";
-            foreach (var id in DataProvider.GetEmployeeId())
-            {
-                if (code == id.GetMD5HashedString())
-                {
-                    employeeId = id;
-                    break;
-                }
-            }
+            var employeeId = (from id in DataProvider.GetEmployeeId()
+                              where id.GetMD5HashedString() == code
+                              select id).Single();
             var account = new ACCOUNT()
             {
                 Id = GetNextAccountID(),
+                AccountType = 0,
                 UserName = username,
                 PassWord = password.GetMD5HashedString(),
                 EmployeeId = employeeId
@@ -110,18 +110,26 @@ namespace CM.BLL
             DataProvider.InsertRecord(account, "ACCOUNT");
         }
 
+        public static List<PRODUCT> GetProductSortedByName(string text, string categoryName)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                throw new ArgumentNullException(nameof(text));
+            }
+            var productsName = DataProvider.RetrieveMenuFrom(categoryName);
+            var productsList = new List<PRODUCT>();
+            foreach (var name in productsName)
+            {
+                productsList.Add(DataProvider.GetProductInfo(name));
+            }
+            var products = productsList.Where(c => c.Name.ToLower().StartsWith(text.ToLower())).ToList();
+            return products;
+        }
+
         public static bool ValidateEmployeeId(string code)
         {
             var result = false;
-            foreach (var id in DataProvider.GetEmployeeId())
-            {
-                if (code == id.GetMD5HashedString())
-                {
-                    result = true;
-                    break;
-                }
-            }
-
+            result = DataProvider.GetEmployeeId().Any(c => c.GetMD5HashedString() == code);
             return result;
         }
 
@@ -152,17 +160,20 @@ namespace CM.BLL
         public static bool CheckExistedAccount(string code)
         {
             var result = false;
-            foreach (var id in DataProvider.GetEmployeeIdFromAccountTable())
-            {
-                if (code == id.GetMD5HashedString())
-                {
-                    result = true;
-                    break;
-                }
-            }
-
+            result = DataProvider.GetEmployeeIdFromAccountTable().Any(c => c.GetMD5HashedString() == code);
             return result;
         }
+
+        public static List<EMPLOYEE> GetEmployeesSortedByName(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                throw new ArgumentNullException(nameof(text));
+            }
+
+            var employees = DataProvider.GetEMPLOYEEs().Where(c => c.Name.ToLower().StartsWith(text.ToLower())).ToList();
+            return employees;
+        }
     }
-    
+
 }

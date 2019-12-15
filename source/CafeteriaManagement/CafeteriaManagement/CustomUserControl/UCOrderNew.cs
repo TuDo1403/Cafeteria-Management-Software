@@ -68,7 +68,7 @@ namespace CafeteriaManagement
         {
             if (SelectedList.GetSelectedItems().Count > 0)
             {
-                DataProcess.InsertBill(SelectedList.GetSelectedItems(), labelTotal.Text, _currentUser);
+                DataProcess.InsertBillAndBillDetails(SelectedList.GetSelectedItems(), labelTotal.Text, _currentUser);
                 RefreshPage();
             }
         }
@@ -90,7 +90,8 @@ namespace CafeteriaManagement
             tableLayoutPanelMenu.Controls.Clear();
             foreach (var item in DataProvider.RetrieveMenuFrom(comboBoxCategory.selectedValue))
             {
-                var button = new BunifuFlatButton {
+                var button = new BunifuFlatButton
+                {
                     Text = item as string,
                     Size = new Size(130, 49),
                     Activecolor = Color.FromArgb(46, 139, 87),
@@ -107,9 +108,9 @@ namespace CafeteriaManagement
                     OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77))))),
                     OnHoverTextColor = System.Drawing.Color.White,
                     Dock = System.Windows.Forms.DockStyle.Fill,
-            };
+                };
                 button.Click += Button_Click;
-               // flowLayoutPanelMenu.Controls.Add(button);
+                // flowLayoutPanelMenu.Controls.Add(button);
                 tableLayoutPanelMenu.Controls.Add(button);
             }
         }
@@ -125,7 +126,7 @@ namespace CafeteriaManagement
 
         private void DataGridViewSelectedItems_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+
         }
 
         private void OnItemChoosing(IEnumerable<string> menuTopping, string name)
