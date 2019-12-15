@@ -63,6 +63,26 @@ namespace CafeteriaManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _68401570_2355563994763021_3477536896748355584_n {
+            get {
+                object obj = ResourceManager.GetObject("68401570_2355563994763021_3477536896748355584_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _79880961_457562791629806_4186385454695710720_n {
+            get {
+                object obj = ResourceManager.GetObject("79880961_457562791629806_4186385454695710720_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bank_cards_48px {
             get {
                 object obj = ResourceManager.GetObject("bank_cards_48px", resourceCulture);
@@ -86,6 +106,26 @@ namespace CafeteriaManagement.Properties {
         internal static System.Drawing.Bitmap brigitte_tohm_EAay7Aj4jbc_unsplash {
             get {
                 object obj = ResourceManager.GetObject("brigitte-tohm-EAay7Aj4jbc-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap brigitte_tohm_EAay7Aj4jbc_unsplash1 {
+            get {
+                object obj = ResourceManager.GetObject("brigitte-tohm-EAay7Aj4jbc-unsplash1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap brigitte_tohm_EAay7Aj4jbc_unsplash2 {
+            get {
+                object obj = ResourceManager.GetObject("brigitte-tohm-EAay7Aj4jbc-unsplash2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +163,69 @@ namespace CafeteriaManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_back1_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_back1_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_back3_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_back3_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_circled_play_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_circled_play_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_forward3_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_forward3_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_home_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_home_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_lock_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_lock_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_lock_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_lock_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +246,46 @@ namespace CafeteriaManagement.Properties {
         internal static System.Drawing.Bitmap icons8_multiply_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_multiply_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ok_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_ok_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pause_button_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_pause_button_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pause_button_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_pause_button_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pencil_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_pencil_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -174,6 +314,16 @@ namespace CafeteriaManagement.Properties {
         internal static System.Drawing.Bitmap list_32px {
             get {
                 object obj = ResourceManager.GetObject("list_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pen_48 {
+            get {
+                object obj = ResourceManager.GetObject("pen_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
