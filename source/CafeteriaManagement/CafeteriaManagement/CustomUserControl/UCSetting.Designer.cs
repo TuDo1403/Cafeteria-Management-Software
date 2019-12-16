@@ -247,7 +247,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CafeteriaManagement.Properties.Resources._68401570_2355563994763021_3477536896748355584_n;
-            this.pictureBox1.Location = new System.Drawing.Point(376, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(351, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 99);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
