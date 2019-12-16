@@ -12,6 +12,7 @@ using CM.BLL;
 using System.IO;
 using System.Data.Linq;
 using System.Drawing.Imaging;
+using Bunifu.Framework.UI;
 
 namespace CafeteriaManagement.CustomUserControl
 {
@@ -20,14 +21,84 @@ namespace CafeteriaManagement.CustomUserControl
         private ACCOUNT _currentUser;
         private EMPLOYEE _currentEmployee;
         private ACCOUNT_IMAGE _accountImage;
-        private Image _image;
         private string _imagePath;
+
 
         public UCSetting()
         {
             InitializeComponent();
+            foreach (Control control in panelChangePassword.Controls)
+            {
+                control.Enabled = !control.Enabled;
+            }
             FormRegister.LoginSucceeded += FormRegister_LoginSucceededHandler;
+            FormMainLosed.PasswordChangeNeeded += FormMainLosed_PasswordChangeNeededHandler;
+            FormMainLosed.EditProfileNeeded += FormMainLosed_EditProfileNeededHandler;
+            textBoxCurrentPassword.Validating += TextBox_Validating;
+            textBoxPasswordCurrent.Validating += TextBoxCurrentPassword_Validating;
+            textBoxReenterPassword.Validating += TextBoxReenterPassword_ValidatingHandler;
+            textBoxNewPassword.Validating += TextBoxNewPassword_ValidatingHandler;
             AutoValidate = AutoValidate.Disable;
+        }
+
+        private void TextBoxNewPassword_ValidatingHandler(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBoxNewPassword.Text))
+            {
+                if (textBoxPasswordCurrent.Text == textBoxNewPassword.Text)
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(textBoxNewPassword, "Dupplicate with current password!");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(textBoxNewPassword, null);
+                }
+            }
+            
+        }
+
+        private void TextBoxReenterPassword_ValidatingHandler(object sender, CancelEventArgs e)
+        {
+            if (textBoxNewPassword.Text != textBoxReenterPassword.Text)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(textBoxReenterPassword, "Re-enter password not match!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(textBoxReenterPassword, null);
+            }
+        }
+
+        private void FormMainLosed_EditProfileNeededHandler(object sender, EventArgs e)
+        {
+            foreach (Control control in panelChangePassword.Controls)
+            {
+                control.Enabled = false;
+            }
+            foreach (Control control in panelEditProfile.Controls)
+            {
+                control.Enabled = true;
+            }
+            buttonSave.BringToFront();
+            panelEditProfile.BringToFront();
+        }
+
+        private void FormMainLosed_PasswordChangeNeededHandler(object sender, EventArgs e)
+        {
+            foreach (Control control in panelEditProfile.Controls)
+            {
+                control.Enabled = false;
+            }
+            foreach (Control control in panelChangePassword.Controls)
+            {
+                control.Enabled = true;
+            }
+            buttonChangePassword.BringToFront();
+            panelChangePassword.BringToFront();
         }
 
         private void FormRegister_LoginSucceededHandler(object sender, string e)
@@ -42,9 +113,7 @@ namespace CafeteriaManagement.CustomUserControl
                 stream.Write(image, image.Length, 0);
                 pictureBox1.Image = Image.FromStream(stream);
             }
-            
 
-            
             textBoxUsername.Text = _currentUser.UserName;
             textBoxPhone.Text = _currentEmployee.PhoneNumber;
             textBoxEmail.Text = _currentEmployee.Email;
@@ -63,12 +132,12 @@ namespace CafeteriaManagement.CustomUserControl
             }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void Label6_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void bunifuMaterialTextbox3_OnValueChanged(object sender, EventArgs e)
+        private void BunifuMaterialTextbox3_OnValueChanged(object sender, EventArgs e)
         {
 
         }
@@ -83,6 +152,7 @@ namespace CafeteriaManagement.CustomUserControl
                 pictureBox1.Image = Image.FromFile(imageAddress);
                 _imagePath = imageAddress;
             }
+            openFileDialog.Dispose();
         }
 
         private void InitializeOpenFileDialog(ref OpenFileDialog openFileDialog)
@@ -129,12 +199,12 @@ namespace CafeteriaManagement.CustomUserControl
 
         private void EditAccountImageRecord()
         {
-            using var memoryStream = new MemoryStream();
-            var currentImage = Image.FromFile(_imagePath);
-            currentImage.Save(memoryStream, ImageFormat.Jpeg);
-            var bytes = memoryStream.ToArray();
-            var binary = new Binary(bytes);
-            _accountImage.Img = binary;
+            if (_imagePath != null)
+            {
+                var bytes = File.ReadAllBytes(_imagePath);
+                var binary = new Binary(bytes);
+                _accountImage.Img = binary;
+            }
         }
 
         private void EditEmployeeRecord()
@@ -161,19 +231,76 @@ namespace CafeteriaManagement.CustomUserControl
             _currentUser.DisplayName = textBoxDisplayName.Text;
         }
 
-        private void textBoxCurrentPassword_OnValueChanged(object sender, EventArgs e)
+        private void TextBoxCurrentPassword_OnValueChanged(object sender, EventArgs e)
         {
-            textBoxCurrentPassword.isPassword = true;
+            (sender as BunifuMaterialTextbox).isPassword = true;
         }
 
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             labelChangeImage.Visible = true;
         }
 
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        private void PictureBox1_MouseLeave(object sender, EventArgs e)
         {
             labelChangeImage.Visible = false;
+        }
+
+        private void TextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty((sender as BunifuMaterialTextbox).Text))
+            {
+                e.Cancel = true;
+                errorProvider.SetError(sender as BunifuMaterialTextbox, "Cannot left this empty");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(sender as BunifuMaterialTextbox, null);
+            }
+        }
+
+        private void TextBoxPhone_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBoxPhone.Text))
+            {
+                if (!textBoxPhone.Text.IsValidNumber())
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(textBoxPhone, "Wrong phone number format!");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(textBoxPhone, null);
+                }
+            }
+        }
+
+        private void TextBoxEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBoxEmail.Text))
+            {
+                if (!textBoxEmail.Text.IsValidEmail())
+                {
+                    e.Cancel = true;
+                    errorProvider.SetError(textBoxEmail, "Wrong email format!");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider.SetError(textBoxEmail, null);
+                }
+            }
+        }
+
+        private void ButtonChangePassword_Click(object sender, EventArgs e)
+        {
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                _currentUser.PassWord = textBoxNewPassword.Text;
+                DataProvider.UpdateAccount(_currentUser);
+            }
         }
     }
 }

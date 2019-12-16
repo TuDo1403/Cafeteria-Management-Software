@@ -108,9 +108,9 @@ namespace CM.BLL
                 PassWord = password.GetMD5HashedString(),
                 EmployeeId = employeeId
             };
-            var accountImage = new ACCOUNT_IMAGE { Id = GetNextAccountID() };
-            DataProvider.InsertRecord(accountImage, "ACCOUNT_IMAGE");
+            var accountImage = new ACCOUNT_IMAGE { Id = GetNextAccountID(), Img = null };
             DataProvider.InsertRecord(account, "ACCOUNT");
+            DataProvider.InsertRecord(accountImage, "ACCOUNT_IMAGE");
         }
 
         public static List<PRODUCT> GetProductSortedByName(string text, string categoryName)

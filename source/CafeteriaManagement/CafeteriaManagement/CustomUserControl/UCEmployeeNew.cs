@@ -14,7 +14,7 @@ namespace CafeteriaManagement
     {
         private int _clickCount = 0;
         private EMPLOYEE _employee;
-        private List<BunifuFlatButton> _buttons = new List<BunifuFlatButton>();
+        private readonly List<BunifuFlatButton> _buttons = new List<BunifuFlatButton>();
         private string _employeeId;
         private string _buttonName;
 
@@ -303,7 +303,7 @@ namespace CafeteriaManagement
             }
         }
 
-        private void textBox_Validating(object sender, CancelEventArgs e)
+        private void TextBox_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty((sender as BunifuMaterialTextbox).Text))
             {
@@ -317,42 +317,42 @@ namespace CafeteriaManagement
             }
         }
 
-        private void labelBirthDay_Click(object sender, EventArgs e)
+        private void LabelBirthDay_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void datePickerBirthday_ValueChanged(object sender, EventArgs e)
+        private void DatePickerBirthday_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void labelGender_Click(object sender, EventArgs e)
+        private void LabelGender_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void radioButtonMale_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonMale_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void radioButtonFemale_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonFemale_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void radioButtonNone_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonNone_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void labelPhone_Click(object sender, EventArgs e)
+        private void LabelPhone_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBoxPhone_OnValueChanged(object sender, EventArgs e)
+        private void TextBoxPhone_OnValueChanged(object sender, EventArgs e)
         {
 
         }

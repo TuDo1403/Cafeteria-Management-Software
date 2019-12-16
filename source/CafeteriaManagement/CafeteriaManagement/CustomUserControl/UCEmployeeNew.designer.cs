@@ -248,7 +248,7 @@
             this.textBoxEmail.Size = new System.Drawing.Size(241, 29);
             this.textBoxEmail.TabIndex = 6;
             this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
+            this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // labelPhone
             // 
@@ -260,7 +260,7 @@
             this.labelPhone.Size = new System.Drawing.Size(60, 21);
             this.labelPhone.TabIndex = 9;
             this.labelPhone.Text = "Phone:";
-            this.labelPhone.Click += new System.EventHandler(this.labelPhone_Click);
+            this.labelPhone.Click += new System.EventHandler(this.LabelPhone_Click);
             // 
             // textBoxPhone
             // 
@@ -282,8 +282,8 @@
             this.textBoxPhone.Size = new System.Drawing.Size(241, 29);
             this.textBoxPhone.TabIndex = 5;
             this.textBoxPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textBoxPhone.OnValueChanged += new System.EventHandler(this.textBoxPhone_OnValueChanged);
-            this.textBoxPhone.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
+            this.textBoxPhone.OnValueChanged += new System.EventHandler(this.TextBoxPhone_OnValueChanged);
+            this.textBoxPhone.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // radioButtonNone
             // 
@@ -301,7 +301,7 @@
             this.radioButtonNone.TabStop = true;
             this.radioButtonNone.Text = "None";
             this.radioButtonNone.UseVisualStyleBackColor = true;
-            this.radioButtonNone.CheckedChanged += new System.EventHandler(this.radioButtonNone_CheckedChanged);
+            this.radioButtonNone.CheckedChanged += new System.EventHandler(this.RadioButtonNone_CheckedChanged);
             // 
             // radioButtonFemale
             // 
@@ -319,7 +319,7 @@
             this.radioButtonFemale.TabStop = true;
             this.radioButtonFemale.Text = "Female";
             this.radioButtonFemale.UseVisualStyleBackColor = true;
-            this.radioButtonFemale.CheckedChanged += new System.EventHandler(this.radioButtonFemale_CheckedChanged);
+            this.radioButtonFemale.CheckedChanged += new System.EventHandler(this.RadioButtonFemale_CheckedChanged);
             // 
             // radioButtonMale
             // 
@@ -337,7 +337,7 @@
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "Male";
             this.radioButtonMale.UseVisualStyleBackColor = true;
-            this.radioButtonMale.CheckedChanged += new System.EventHandler(this.radioButtonMale_CheckedChanged);
+            this.radioButtonMale.CheckedChanged += new System.EventHandler(this.RadioButtonMale_CheckedChanged);
             // 
             // labelGender
             // 
@@ -349,7 +349,7 @@
             this.labelGender.Size = new System.Drawing.Size(69, 21);
             this.labelGender.TabIndex = 9;
             this.labelGender.Text = "Gender:";
-            this.labelGender.Click += new System.EventHandler(this.labelGender_Click);
+            this.labelGender.Click += new System.EventHandler(this.LabelGender_Click);
             // 
             // datePickerBirthday
             // 
@@ -362,7 +362,7 @@
             this.datePickerBirthday.Name = "datePickerBirthday";
             this.datePickerBirthday.Size = new System.Drawing.Size(156, 29);
             this.datePickerBirthday.TabIndex = 2;
-            this.datePickerBirthday.ValueChanged += new System.EventHandler(this.datePickerBirthday_ValueChanged);
+            this.datePickerBirthday.ValueChanged += new System.EventHandler(this.DatePickerBirthday_ValueChanged);
             // 
             // labelBirthDay
             // 
@@ -374,7 +374,7 @@
             this.labelBirthDay.Size = new System.Drawing.Size(75, 21);
             this.labelBirthDay.TabIndex = 9;
             this.labelBirthDay.Text = "Birthday:";
-            this.labelBirthDay.Click += new System.EventHandler(this.labelBirthDay_Click);
+            this.labelBirthDay.Click += new System.EventHandler(this.LabelBirthDay_Click);
             // 
             // labelName
             // 
@@ -408,7 +408,7 @@
             this.textBoxName.TabIndex = 1;
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxName.Leave += new System.EventHandler(this.TextBoxName_Leave);
-            this.textBoxName.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_Validating);
+            this.textBoxName.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // buttonAdd
             // 

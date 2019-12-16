@@ -13,6 +13,8 @@ namespace CafeteriaManagement
     public partial class FormMainLosed : Form
     {
         public static event EventHandler<UserControl> FormMainLoaded;
+        public static event EventHandler PasswordChangeNeeded;
+        public static event EventHandler EditProfileNeeded;
 
         public FormMainLosed()
         {
@@ -28,12 +30,12 @@ namespace CafeteriaManagement
 
         private void OnFormLoading(UCQueueBox ucQueueBox1) => (FormMainLoaded as EventHandler<UserControl>)?.Invoke(this, ucQueueBox1);
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void BtnMenu_Click(object sender, EventArgs e)
         {
             if (slideMenu.Width == 50)
             {
@@ -50,7 +52,7 @@ namespace CafeteriaManagement
             }
         }
 
-        private void pnlHeader_Paint(object sender, PaintEventArgs e)
+        private void PnlHeader_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -59,7 +61,7 @@ namespace CafeteriaManagement
 
 
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
             panelButton.Height = btnEdit.Height;
             ucEditMenuNew1.BringToFront();
@@ -122,7 +124,10 @@ namespace CafeteriaManagement
         private void labelEditProfile_Click(object sender, EventArgs e)
         {
             ucSetting1.BringToFront();
+            OnEditProfileNeeding();
         }
+
+        private void OnEditProfileNeeding() => (EditProfileNeeded as EventHandler).Invoke(this, EventArgs.Empty);
 
         private void labelLogOut_Click(object sender, EventArgs e)
         {
@@ -134,5 +139,13 @@ namespace CafeteriaManagement
                 }
             }
         }
+
+        private void labelChangePassword_Click(object sender, EventArgs e)
+        {
+            ucSetting1.BringToFront();
+            OnPassWordChangeNeeding();
+        }
+
+        private void OnPassWordChangeNeeding() => (PasswordChangeNeeded as EventHandler).Invoke(this, EventArgs.Empty);
     }
 }

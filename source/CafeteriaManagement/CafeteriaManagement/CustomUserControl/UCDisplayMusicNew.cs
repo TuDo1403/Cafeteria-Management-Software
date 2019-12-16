@@ -14,7 +14,6 @@ namespace CafeteriaManagement
 {
     public partial class UCDisplayMusicNew : UserControl
     {
-        private int _time = 20;
         private UserControl _queue;
         private int _queueCount = 0;
 
@@ -50,19 +49,19 @@ namespace CafeteriaManagement
         }
 
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void lblOnline_Click(object sender, EventArgs e)
+        private void LblOnline_Click(object sender, EventArgs e)
         {
 
             timerPanelOffline.Start();
             timerGreenOnline.Start();
         }
 
-        private void timerPanelOnline_Tick(object sender, EventArgs e)
+        private void TimerPanelOnline_Tick(object sender, EventArgs e)
         {
             /* if (pnlOffline.Left >= 40)
              {
@@ -79,13 +78,13 @@ namespace CafeteriaManagement
 
         }
 
-        private void lblOffline_Click(object sender, EventArgs e)
+        private void LblOffline_Click(object sender, EventArgs e)
         {
             timerPanelOnline.Start();
             timerGreenOffline.Start();
         }
 
-        private void timerPanelOffline_Tick(object sender, EventArgs e)
+        private void TimerPanelOffline_Tick(object sender, EventArgs e)
         {
             /* if (pnlOnline.Left <= 26)
              {
@@ -101,7 +100,7 @@ namespace CafeteriaManagement
 
         }
 
-        private void timerGreenOffline_Tick(object sender, EventArgs e)
+        private void TimerGreenOffline_Tick(object sender, EventArgs e)
         {
             if (pnlGreen.Left <= 125)
             {
@@ -113,7 +112,7 @@ namespace CafeteriaManagement
             }
         }
 
-        private void timerGreenOnline_Tick(object sender, EventArgs e)
+        private void TimerGreenOnline_Tick(object sender, EventArgs e)
         {
             if (pnlGreen.Left >= 25)
             {

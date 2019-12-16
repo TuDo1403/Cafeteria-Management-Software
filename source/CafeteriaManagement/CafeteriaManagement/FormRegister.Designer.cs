@@ -249,9 +249,9 @@
             this.textBoxCode.Size = new System.Drawing.Size(227, 19);
             this.textBoxCode.TabIndex = 7;
             this.textBoxCode.Text = "Code";
-            this.textBoxCode.Enter += new System.EventHandler(this.textBoxCode_Enter);
-            this.textBoxCode.Leave += new System.EventHandler(this.textBoxCode_Leave);
-            this.textBoxCode.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxCode_Validating);
+            this.textBoxCode.Enter += new System.EventHandler(this.TextBoxCode_Enter);
+            this.textBoxCode.Leave += new System.EventHandler(this.TextBoxCode_Leave);
+            this.textBoxCode.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxCode_Validating);
             // 
             // panel7
             // 

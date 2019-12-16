@@ -17,7 +17,7 @@ namespace CafeteriaManagement.CustomUserControl
             InitializeComponent();
         }
 
-        private void timerChart_Tick(object sender, EventArgs e)
+        private void TimerChart_Tick(object sender, EventArgs e)
         {
             timerChart.Stop();
 

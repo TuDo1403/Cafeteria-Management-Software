@@ -248,7 +248,7 @@
             // 
             // timerChart
             // 
-            this.timerChart.Tick += new System.EventHandler(this.timerChart_Tick);
+            this.timerChart.Tick += new System.EventHandler(this.TimerChart_Tick);
             // 
             // UCStaticChart
             // 

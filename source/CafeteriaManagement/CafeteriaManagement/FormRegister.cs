@@ -33,7 +33,7 @@ namespace CafeteriaManagement
             textBoxUsername_Leave(textBoxRegisterUsername, EventArgs.Empty);
             textBoxPassword_Leave(textBoxRegisterPassword, EventArgs.Empty);
             textBoxReenterPassword_Leave(textBoxReenterPassword, EventArgs.Empty);
-            textBoxCode_Leave(textBoxCode, EventArgs.Empty);
+            TextBoxCode_Leave(textBoxCode, EventArgs.Empty);
 
             errorProvider.Clear();
         }
@@ -255,7 +255,7 @@ namespace CafeteriaManagement
             }
         }
 
-        private void textBoxCode_Enter(object sender, EventArgs e)
+        private void TextBoxCode_Enter(object sender, EventArgs e)
         {
             if (textBoxCode.Text == "Code")
             {
@@ -264,7 +264,7 @@ namespace CafeteriaManagement
             }
         }
 
-        private void textBoxCode_Leave(object sender, EventArgs e)
+        private void TextBoxCode_Leave(object sender, EventArgs e)
         {
             if (textBoxCode.Text.Length == 0)
             {
@@ -273,7 +273,7 @@ namespace CafeteriaManagement
             }
         }
 
-        private void textBoxCode_Validating(object sender, CancelEventArgs e)
+        private void TextBoxCode_Validating(object sender, CancelEventArgs e)
         {
             if (!DataProcess.ValidateEmployeeId(textBoxCode.Text))
             {

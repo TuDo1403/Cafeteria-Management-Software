@@ -39,6 +39,10 @@ namespace CM.DAL
             {
                 return database.ACCOUNTs;
             }
+            if (tableName == "ACCOUNT_IMAGE")
+            {
+                return database.ACCOUNT_IMAGEs;
+            }
             return null;
         }
     }

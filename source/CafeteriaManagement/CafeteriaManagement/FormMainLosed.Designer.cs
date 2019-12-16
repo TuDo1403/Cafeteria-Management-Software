@@ -42,7 +42,7 @@ namespace CafeteriaManagement
             this.slideMenu = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelLogOut = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelChangePassword = new System.Windows.Forms.Label();
             this.labelEditProfile = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelButton = new System.Windows.Forms.Panel();
@@ -56,13 +56,13 @@ namespace CafeteriaManagement
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelAnimater = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.ucSetting1 = new CafeteriaManagement.CustomUserControl.UCSetting();
             this.ucQueueBox1 = new CafeteriaManagement.UCQueueBox();
             this.ucOrderNew1 = new CafeteriaManagement.UCOrderNew();
             this.ucEmployeeNew1 = new CafeteriaManagement.UCEmployeeNew();
             this.ucEditMenuNew1 = new CafeteriaManagement.UCEditMenuNew();
             this.ucDisplayMusicNew1 = new CafeteriaManagement.UCDisplayMusicNew();
-            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToBigSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToSmallSize)).BeginInit();
@@ -93,7 +93,7 @@ namespace CafeteriaManagement
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(1022, 44);
             this.pnlHeader.TabIndex = 0;
-            this.pnlHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeader_Paint);
+            this.pnlHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlHeader_Paint);
             // 
             // pictureBoxToBigSize
             // 
@@ -144,7 +144,7 @@ namespace CafeteriaManagement
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // slideMenu
             // 
@@ -169,7 +169,7 @@ namespace CafeteriaManagement
             // panel2
             // 
             this.panel2.Controls.Add(this.labelLogOut);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.labelChangePassword);
             this.panel2.Controls.Add(this.labelEditProfile);
             this.panelAnimater.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.panel2.Location = new System.Drawing.Point(62, 405);
@@ -190,17 +190,18 @@ namespace CafeteriaManagement
             this.labelLogOut.Text = "Log out";
             this.labelLogOut.Click += new System.EventHandler(this.labelLogOut_Click);
             // 
-            // label2
+            // labelChangePassword
             // 
-            this.label2.AutoSize = true;
-            this.panelAnimater.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(3, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "PassWord";
+            this.labelChangePassword.AutoSize = true;
+            this.panelAnimater.SetDecoration(this.labelChangePassword, BunifuAnimatorNS.DecorationType.None);
+            this.labelChangePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChangePassword.ForeColor = System.Drawing.Color.Silver;
+            this.labelChangePassword.Location = new System.Drawing.Point(3, 34);
+            this.labelChangePassword.Name = "labelChangePassword";
+            this.labelChangePassword.Size = new System.Drawing.Size(82, 21);
+            this.labelChangePassword.TabIndex = 12;
+            this.labelChangePassword.Text = "PassWord";
+            this.labelChangePassword.Click += new System.EventHandler(this.labelChangePassword_Click);
             // 
             // labelEditProfile
             // 
@@ -375,7 +376,7 @@ namespace CafeteriaManagement
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.Textcolor = System.Drawing.Color.Silver;
             this.btnEdit.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnPayment
             // 
@@ -460,7 +461,7 @@ namespace CafeteriaManagement
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMenu.TabIndex = 1;
             this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.btnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // bunifuDragControl1
             // 
@@ -505,6 +506,13 @@ namespace CafeteriaManagement
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1022, 517);
             this.panel1.TabIndex = 3;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = null;
+            this.bunifuDragControl2.Vertical = true;
             // 
             // ucSetting1
             // 
@@ -566,13 +574,6 @@ namespace CafeteriaManagement
             this.ucDisplayMusicNew1.Size = new System.Drawing.Size(822, 517);
             this.ucDisplayMusicNew1.TabIndex = 2;
             // 
-            // bunifuDragControl2
-            // 
-            this.bunifuDragControl2.Fixed = true;
-            this.bunifuDragControl2.Horizontal = true;
-            this.bunifuDragControl2.TargetControl = null;
-            this.bunifuDragControl2.Vertical = true;
-            // 
             // FormMainLosed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -629,7 +630,7 @@ namespace CafeteriaManagement
         private Panel panelButton;
         private Panel panel2;
         private Label labelLogOut;
-        private Label label2;
+        private Label labelChangePassword;
         private Label labelEditProfile;
         private PictureBox pictureBox2;
         private CustomUserControl.UCSetting ucSetting1;

@@ -121,22 +121,22 @@
             // timerPanelOnline
             // 
             this.timerPanelOnline.Interval = 1;
-            this.timerPanelOnline.Tick += new System.EventHandler(this.timerPanelOnline_Tick);
+            this.timerPanelOnline.Tick += new System.EventHandler(this.TimerPanelOnline_Tick);
             // 
             // timerPanelOffline
             // 
             this.timerPanelOffline.Interval = 2;
-            this.timerPanelOffline.Tick += new System.EventHandler(this.timerPanelOffline_Tick);
+            this.timerPanelOffline.Tick += new System.EventHandler(this.TimerPanelOffline_Tick);
             // 
             // timerGreenOffline
             // 
             this.timerGreenOffline.Interval = 1;
-            this.timerGreenOffline.Tick += new System.EventHandler(this.timerGreenOffline_Tick);
+            this.timerGreenOffline.Tick += new System.EventHandler(this.TimerGreenOffline_Tick);
             // 
             // timerGreenOnline
             // 
             this.timerGreenOnline.Interval = 1;
-            this.timerGreenOnline.Tick += new System.EventHandler(this.timerGreenOnline_Tick);
+            this.timerGreenOnline.Tick += new System.EventHandler(this.TimerGreenOnline_Tick);
             // 
             // SearchOnline
             // 
@@ -239,7 +239,7 @@
             this.lblOnline.Size = new System.Drawing.Size(68, 25);
             this.lblOnline.TabIndex = 3;
             this.lblOnline.Text = "Online";
-            this.lblOnline.Click += new System.EventHandler(this.lblOnline_Click);
+            this.lblOnline.Click += new System.EventHandler(this.LblOnline_Click);
             // 
             // pnlGreen
             // 
