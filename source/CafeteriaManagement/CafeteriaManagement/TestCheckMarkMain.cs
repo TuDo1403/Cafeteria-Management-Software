@@ -26,5 +26,30 @@ namespace CafeteriaManagement
         {
 
         }
+
+        private void label1_MouseMove(object sender, MouseEventArgs e)
+        {
+            label1.Visible = false;
+        }
+
+        private void label1_MouseUp(object sender, MouseEventArgs e)
+        {
+           // label1.Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            label1.Visible = true;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Visible = false;
+        }
     }
 }

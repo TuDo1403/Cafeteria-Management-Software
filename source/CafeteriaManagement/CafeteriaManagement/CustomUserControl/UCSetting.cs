@@ -26,5 +26,15 @@ namespace CafeteriaManagement.CustomUserControl
         {
 
         }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblChange.Visible = true;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            lblChange.Visible = false;
+        }
     }
 }
