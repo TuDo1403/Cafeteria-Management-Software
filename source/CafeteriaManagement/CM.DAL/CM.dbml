@@ -8,6 +8,7 @@
       <Column Name="PassWord" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="AccountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="EmployeeId" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Association Name="ACCOUNT_ACCOUNT_IMAGE" Member="ACCOUNT_IMAGE" ThisKey="Id" OtherKey="Id" Type="ACCOUNT_IMAGE" Cardinality="One" />
       <Association Name="EMPLOYEE_ACCOUNT" Member="EMPLOYEE" ThisKey="EmployeeId" OtherKey="Id" Type="EMPLOYEE" IsForeignKey="true" />
     </Type>
   </Table>
@@ -70,6 +71,13 @@
       <Column Name="Id" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Association Name="PRODUCTTYPE_PRODUCT" Member="PRODUCTs" ThisKey="Id" OtherKey="ProductId" Type="PRODUCT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ACCOUNT_IMAGE" Member="ACCOUNT_IMAGEs">
+    <Type Name="ACCOUNT_IMAGE">
+      <Column Name="Id" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Img" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="ACCOUNT_ACCOUNT_IMAGE" Member="ACCOUNT" ThisKey="Id" OtherKey="Id" Type="ACCOUNT" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

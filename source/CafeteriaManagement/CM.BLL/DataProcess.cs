@@ -49,11 +49,12 @@ namespace CM.BLL
             DataProvider.DeleteBill(productId);
         }
 
-        public static bool ValidateAccount(string username, string password)
+        public static string ValidateAccount(string username, string password)
         {
+            var userId = "";
             var hashedPassword = password.GetMD5HashedString();
-            var isValid = DataProvider.ValidateAccount(username, hashedPassword);
-            return isValid;
+            userId = DataProvider.ValidateAccount(username, hashedPassword);
+            return userId;
         }
 
 
@@ -107,6 +108,8 @@ namespace CM.BLL
                 PassWord = password.GetMD5HashedString(),
                 EmployeeId = employeeId
             };
+            var accountImage = new ACCOUNT_IMAGE { Id = GetNextAccountID() };
+            DataProvider.InsertRecord(accountImage, "ACCOUNT_IMAGE");
             DataProvider.InsertRecord(account, "ACCOUNT");
         }
 

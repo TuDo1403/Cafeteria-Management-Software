@@ -40,6 +40,11 @@ namespace CafeteriaManagement
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.slideMenu = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.labelLogOut = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelEditProfile = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelButton = new System.Windows.Forms.Panel();
             this.Queue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEmployee = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -51,27 +56,23 @@ namespace CafeteriaManagement
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelAnimater = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ucSetting1 = new CafeteriaManagement.CustomUserControl.UCSetting();
             this.ucQueueBox1 = new CafeteriaManagement.UCQueueBox();
             this.ucOrderNew1 = new CafeteriaManagement.UCOrderNew();
             this.ucEmployeeNew1 = new CafeteriaManagement.UCEmployeeNew();
             this.ucEditMenuNew1 = new CafeteriaManagement.UCEditMenuNew();
             this.ucDisplayMusicNew1 = new CafeteriaManagement.UCDisplayMusicNew();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToBigSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToSmallSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.slideMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -164,6 +165,64 @@ namespace CafeteriaManagement
             this.slideMenu.Name = "slideMenu";
             this.slideMenu.Size = new System.Drawing.Size(200, 517);
             this.slideMenu.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.labelLogOut);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.labelEditProfile);
+            this.panelAnimater.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
+            this.panel2.Location = new System.Drawing.Point(62, 405);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(132, 100);
+            this.panel2.TabIndex = 12;
+            // 
+            // labelLogOut
+            // 
+            this.labelLogOut.AutoSize = true;
+            this.panelAnimater.SetDecoration(this.labelLogOut, BunifuAnimatorNS.DecorationType.None);
+            this.labelLogOut.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogOut.ForeColor = System.Drawing.Color.Silver;
+            this.labelLogOut.Location = new System.Drawing.Point(3, 67);
+            this.labelLogOut.Name = "labelLogOut";
+            this.labelLogOut.Size = new System.Drawing.Size(67, 21);
+            this.labelLogOut.TabIndex = 13;
+            this.labelLogOut.Text = "Log out";
+            this.labelLogOut.Click += new System.EventHandler(this.labelLogOut_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.panelAnimater.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.Location = new System.Drawing.Point(3, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "PassWord";
+            // 
+            // labelEditProfile
+            // 
+            this.labelEditProfile.AutoSize = true;
+            this.panelAnimater.SetDecoration(this.labelEditProfile, BunifuAnimatorNS.DecorationType.None);
+            this.labelEditProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEditProfile.ForeColor = System.Drawing.Color.Silver;
+            this.labelEditProfile.Location = new System.Drawing.Point(3, 0);
+            this.labelEditProfile.Name = "labelEditProfile";
+            this.labelEditProfile.Size = new System.Drawing.Size(90, 21);
+            this.labelEditProfile.TabIndex = 11;
+            this.labelEditProfile.Text = "Edit Proflie";
+            this.labelEditProfile.Click += new System.EventHandler(this.labelEditProfile_Click);
+            // 
+            // pictureBox2
+            // 
+            this.panelAnimater.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox2.Location = new System.Drawing.Point(9, 472);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // panelButton
             // 
@@ -433,6 +492,7 @@ namespace CafeteriaManagement
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ucSetting1);
             this.panel1.Controls.Add(this.ucQueueBox1);
             this.panel1.Controls.Add(this.ucOrderNew1);
             this.panel1.Controls.Add(this.ucEmployeeNew1);
@@ -445,6 +505,16 @@ namespace CafeteriaManagement
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1022, 517);
             this.panel1.TabIndex = 3;
+            // 
+            // ucSetting1
+            // 
+            this.ucSetting1.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.ucSetting1.BackColor = System.Drawing.Color.Silver;
+            this.panelAnimater.SetDecoration(this.ucSetting1, BunifuAnimatorNS.DecorationType.None);
+            this.ucSetting1.Location = new System.Drawing.Point(200, 0);
+            this.ucSetting1.Name = "ucSetting1";
+            this.ucSetting1.Size = new System.Drawing.Size(819, 517);
+            this.ucSetting1.TabIndex = 7;
             // 
             // ucQueueBox1
             // 
@@ -503,62 +573,6 @@ namespace CafeteriaManagement
             this.bunifuDragControl2.TargetControl = null;
             this.bunifuDragControl2.Vertical = true;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panelAnimater.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
-            this.panel2.Location = new System.Drawing.Point(62, 405);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(132, 100);
-            this.panel2.TabIndex = 12;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.panelAnimater.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(3, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 21);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Log out";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.panelAnimater.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(3, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "PassWord";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.panelAnimater.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Edit Proflie";
-            // 
-            // pictureBox2
-            // 
-            this.panelAnimater.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox2.Location = new System.Drawing.Point(9, 472);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 35);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
             // FormMainLosed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,11 +592,11 @@ namespace CafeteriaManagement
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.slideMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -614,9 +628,10 @@ namespace CafeteriaManagement
         private UCDisplayMusicNew ucDisplayMusicNew1;
         private Panel panelButton;
         private Panel panel2;
-        private Label label3;
+        private Label labelLogOut;
         private Label label2;
-        private Label label1;
+        private Label labelEditProfile;
         private PictureBox pictureBox2;
+        private CustomUserControl.UCSetting ucSetting1;
     }
 }

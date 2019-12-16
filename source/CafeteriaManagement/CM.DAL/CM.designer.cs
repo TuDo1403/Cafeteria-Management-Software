@@ -51,6 +51,9 @@ namespace CM.DAL
     partial void InsertPRODUCTTYPE(PRODUCTTYPE instance);
     partial void UpdatePRODUCTTYPE(PRODUCTTYPE instance);
     partial void DeletePRODUCTTYPE(PRODUCTTYPE instance);
+    partial void InsertACCOUNT_IMAGE(ACCOUNT_IMAGE instance);
+    partial void UpdateACCOUNT_IMAGE(ACCOUNT_IMAGE instance);
+    partial void DeleteACCOUNT_IMAGE(ACCOUNT_IMAGE instance);
     #endregion
 		
 		public CMDataContext() : 
@@ -138,6 +141,14 @@ namespace CM.DAL
 				return this.GetTable<PRODUCTTYPE>();
 			}
 		}
+		
+		public System.Data.Linq.Table<ACCOUNT_IMAGE> ACCOUNT_IMAGEs
+		{
+			get
+			{
+				return this.GetTable<ACCOUNT_IMAGE>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ACCOUNT")]
@@ -157,6 +168,8 @@ namespace CM.DAL
 		private System.Nullable<int> _AccountType;
 		
 		private string _EmployeeId;
+		
+		private EntityRef<ACCOUNT_IMAGE> _ACCOUNT_IMAGE;
 		
 		private EntityRef<EMPLOYEE> _EMPLOYEE;
 		
@@ -180,6 +193,7 @@ namespace CM.DAL
 		
 		public ACCOUNT()
 		{
+			this._ACCOUNT_IMAGE = default(EntityRef<ACCOUNT_IMAGE>);
 			this._EMPLOYEE = default(EntityRef<EMPLOYEE>);
 			OnCreated();
 		}
@@ -304,6 +318,35 @@ namespace CM.DAL
 					this._EmployeeId = value;
 					this.SendPropertyChanged("EmployeeId");
 					this.OnEmployeeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ACCOUNT_ACCOUNT_IMAGE", Storage="_ACCOUNT_IMAGE", ThisKey="Id", OtherKey="Id", IsUnique=true, IsForeignKey=false)]
+		public ACCOUNT_IMAGE ACCOUNT_IMAGE
+		{
+			get
+			{
+				return this._ACCOUNT_IMAGE.Entity;
+			}
+			set
+			{
+				ACCOUNT_IMAGE previousValue = this._ACCOUNT_IMAGE.Entity;
+				if (((previousValue != value) 
+							|| (this._ACCOUNT_IMAGE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ACCOUNT_IMAGE.Entity = null;
+						previousValue.ACCOUNT = null;
+					}
+					this._ACCOUNT_IMAGE.Entity = value;
+					if ((value != null))
+					{
+						value.ACCOUNT = this;
+					}
+					this.SendPropertyChanged("ACCOUNT_IMAGE");
 				}
 			}
 		}
@@ -1585,6 +1628,133 @@ namespace CM.DAL
 		{
 			this.SendPropertyChanging();
 			entity.PRODUCTTYPE = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ACCOUNT_IMAGE")]
+	public partial class ACCOUNT_IMAGE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Id;
+		
+		private System.Data.Linq.Binary _Img;
+		
+		private EntityRef<ACCOUNT> _ACCOUNT;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(string value);
+    partial void OnIdChanged();
+    partial void OnImgChanging(System.Data.Linq.Binary value);
+    partial void OnImgChanged();
+    #endregion
+		
+		public ACCOUNT_IMAGE()
+		{
+			this._ACCOUNT = default(EntityRef<ACCOUNT>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					if (this._ACCOUNT.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Img", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Img
+		{
+			get
+			{
+				return this._Img;
+			}
+			set
+			{
+				if ((this._Img != value))
+				{
+					this.OnImgChanging(value);
+					this.SendPropertyChanging();
+					this._Img = value;
+					this.SendPropertyChanged("Img");
+					this.OnImgChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ACCOUNT_ACCOUNT_IMAGE", Storage="_ACCOUNT", ThisKey="Id", OtherKey="Id", IsForeignKey=true)]
+		public ACCOUNT ACCOUNT
+		{
+			get
+			{
+				return this._ACCOUNT.Entity;
+			}
+			set
+			{
+				ACCOUNT previousValue = this._ACCOUNT.Entity;
+				if (((previousValue != value) 
+							|| (this._ACCOUNT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ACCOUNT.Entity = null;
+						previousValue.ACCOUNT_IMAGE = null;
+					}
+					this._ACCOUNT.Entity = value;
+					if ((value != null))
+					{
+						value.ACCOUNT_IMAGE = this;
+						this._Id = value.Id;
+					}
+					else
+					{
+						this._Id = default(string);
+					}
+					this.SendPropertyChanged("ACCOUNT");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

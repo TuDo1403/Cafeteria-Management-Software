@@ -19,8 +19,8 @@ namespace CafeteriaManagement
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             ucOrderNew1.BringToFront();
-            
-            
+
+
         }
 
         private void FormMain_Load(object sender, EventArgs e) => OnFormLoading(ucQueueBox1);
@@ -35,7 +35,7 @@ namespace CafeteriaManagement
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            if(slideMenu.Width==50)
+            if (slideMenu.Width == 50)
             {
                 slideMenu.Visible = false;
                 slideMenu.Width = 200;
@@ -55,9 +55,9 @@ namespace CafeteriaManagement
 
         }
 
-      
 
-     
+
+
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -76,14 +76,14 @@ namespace CafeteriaManagement
         private void btnMusic_Click(object sender, EventArgs e)
         {
             panelButton.Height = btnMusic.Height;
-            panelButton.Top =btnMusic.Top;
+            panelButton.Top = btnMusic.Top;
             ucDisplayMusicNew1.BringToFront();
         }
 
         private void Queue_Click(object sender, EventArgs e)
         {
             panelButton.Height = Queue.Height;
-            panelButton.Top =Queue.Top;
+            panelButton.Top = Queue.Top;
             ucQueueBox1.BringToFront();
         }
 
@@ -114,9 +114,25 @@ namespace CafeteriaManagement
 
         private void pictureBoxToBigSize_Click(object sender, EventArgs e)
         {
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;
             pictureBoxToBigSize.Visible = false;
             pictureBoxToSmallSize.Visible = true;
+        }
+
+        private void labelEditProfile_Click(object sender, EventArgs e)
+        {
+            ucSetting1.BringToFront();
+        }
+
+        private void labelLogOut_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Name != "FormRegister")
+                {
+                    form.Close();
+                }
+            }
         }
     }
 }

@@ -1,10 +1,6 @@
 ﻿using CM.DTO;
-using System;
 using System.Collections.Generic;
-using System.Data.Linq;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CM.DAL
 {
@@ -32,15 +28,22 @@ namespace CM.DAL
             return menu;
         }
 
+        public static ACCOUNT_IMAGE GetAccountImageBy(string id) => _database.ACCOUNT_IMAGEs.Where(c => c.Id == id).SingleOrDefault();
+
+        public static EMPLOYEE GetCurrentEmployee(string id)
+        {
+            return _database.EMPLOYEEs.Where(c => c.Id == id).Single();
+        }
+
         public static Product RetrieveProductFrom(string productName)
-        {   
+        {
             var item = (from product in _database.PRODUCTs
-                       where product.Name == productName
-                       select new Product()
-                       {
-                           Name = product.Name,
-                           Price = (int)product.Price
-                       }).FirstOrDefault();
+                        where product.Name == productName
+                        select new Product()
+                        {
+                            Name = product.Name,
+                            Price = (int)product.Price
+                        }).FirstOrDefault();
             return item;
         }
 
@@ -58,16 +61,20 @@ namespace CM.DAL
         public static void DeleteBill(string productId)
         {
             var targetBillDetails = from billDetail in _database.PRODUCT_BILLs
-                                   where billDetail.ProductId == productId
-                                   select billDetail;
+                                    where billDetail.ProductId == productId
+                                    select billDetail;
             _database.PRODUCT_BILLs.DeleteAllOnSubmit(targetBillDetails);
             _database.SubmitChanges();
         }
 
-        public static bool ValidateAccount(string username, string hashedPassword)
+        public static string ValidateAccount(string username, string hashedPassword)
         {
-            var isValid = false;
-            isValid = _database.ACCOUNTs.Any(a => a.UserName == username && a.PassWord == hashedPassword);
+            var isValid = "";
+            
+            if (_database.ACCOUNTs.Any(a => a.UserName == username && a.PassWord == hashedPassword))
+            {
+                isValid = _database.ACCOUNTs.Where(a => a.UserName == username && a.PassWord == hashedPassword).SingleOrDefault().Id;
+            }
             return isValid;
         }
 
@@ -94,12 +101,19 @@ namespace CM.DAL
             _database.SubmitChanges();
         }
 
-        public static string GetEmployeeIdFrom(string username)
+        public static string GetEmployeeIdFrom(string accountId)
         {
             var employeeId = (from account in _database.ACCOUNTs
-                              where account.UserName == username
+                              where account.Id == accountId
                               select account.EmployeeId).Single();
             return employeeId;
+        }
+
+        public static void UpdateAccountImage(ACCOUNT_IMAGE updatedRecord)
+        {
+            var target = _database.ACCOUNT_IMAGEs.Where(c => c.Id == updatedRecord.Id).Single();
+            target.Img = updatedRecord.Img;
+            _database.SubmitChanges();
         }
 
         public static void UpdateEmployee(EMPLOYEE updatedEmployee)
@@ -140,12 +154,27 @@ namespace CM.DAL
             item.Description = updatedProduct.Description;
         }
 
+        public static void UpdateAccount(ACCOUNT updatedAccount)
+        {
+            var targetAccount = _database.ACCOUNTs.Where(c => c.Id == updatedAccount.Id).Single();
+            UpdateAccountMember(updatedAccount, ref targetAccount);
+            _database.SubmitChanges();
+        }
+
+        private static void UpdateAccountMember(ACCOUNT updatedAccount, ref ACCOUNT targetAccount)
+        {
+            targetAccount.DisplayName = targetAccount.DisplayName;
+            targetAccount.UserName = targetAccount.UserName;
+            targetAccount.PassWord = targetAccount.PassWord;
+        }
+
         public static IEnumerable<string> GetEmployeeIdFromAccountTable()
         {
             var ids = from account in _database.ACCOUNTs
                       select account.EmployeeId;
             return ids;
         }
+
 
         public static bool IsTopping(string productName)
         {
@@ -252,9 +281,11 @@ namespace CM.DAL
         public static IEnumerable<string> GetEmployeeId()
         {
             var id = from employee in _database.EMPLOYEEs
-                            select employee.Id;
+                     select employee.Id;
             return id;
         }
+
+        public static ACCOUNT GetACCOUNTFrom(string accountId) => _database.ACCOUNTs.Where(c => c.Id == accountId).SingleOrDefault();
 
     }
 }

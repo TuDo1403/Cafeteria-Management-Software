@@ -1,4 +1,5 @@
 ﻿using CM.BLL;
+using CM.DAL;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -164,11 +165,11 @@ namespace CafeteriaManagement
             {
                 return;
             }
-            var isValidAccount = DataProcess.ValidateAccount(textBoxUsername.Text, textBoxPassword.Text);
+            var accountId = DataProcess.ValidateAccount(textBoxUsername.Text, textBoxPassword.Text);
 
-            if (isValidAccount)
+            if (!string.IsNullOrEmpty(accountId))
             {
-                AccessMainForm(textBoxUsername.Text);
+                AccessMainForm(accountId);
             }
             else
             {
@@ -176,12 +177,12 @@ namespace CafeteriaManagement
             }
         }
 
-        private void AccessMainForm(string username)
+        private void AccessMainForm(string accountId)
         {
             this.Hide();
             using (var formMain = new FormMainLosed())
             {
-                OnLoginSucceeding(username);
+                OnLoginSucceeding(accountId);
                 formMain.ShowDialog();
             }
             this.Show();
