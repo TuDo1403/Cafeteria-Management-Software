@@ -57,11 +57,11 @@
             this.radioButtonMale = new MaterialSkin.Controls.MaterialRadioButton();
             this.radioButtonNone = new MaterialSkin.Controls.MaterialRadioButton();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.buttonSave = new System.Windows.Forms.Button();
             this.textBoxDisplayName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.labelDisplayName = new System.Windows.Forms.Label();
             this.panelEditProfile = new System.Windows.Forms.Panel();
-            this.buttonChangePassword = new System.Windows.Forms.Button();
+            this.buttonChangePassword = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.buttonSave = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -182,7 +182,7 @@
             // 
             // bunifuElipseAvata
             // 
-            this.bunifuElipseAvata.ElipseRadius = 100;
+            this.bunifuElipseAvata.ElipseRadius = 200;
             this.bunifuElipseAvata.TargetControl = this.pictureBox1;
             // 
             // pictureBox2
@@ -202,7 +202,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label3.Location = new System.Drawing.Point(201, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 26);
+            this.label3.Size = new System.Drawing.Size(110, 25);
             this.label3.TabIndex = 19;
             this.label3.Text = "Edit Profile";
             // 
@@ -213,7 +213,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label4.Location = new System.Drawing.Point(195, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 26);
+            this.label4.Size = new System.Drawing.Size(169, 25);
             this.label4.TabIndex = 21;
             this.label4.Text = "Change Password";
             // 
@@ -340,8 +340,8 @@
             this.labelChangeImage.AutoSize = true;
             this.labelChangeImage.Depth = 0;
             this.labelChangeImage.Font = new System.Drawing.Font("Roboto", 11F);
-            this.labelChangeImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.labelChangeImage.Location = new System.Drawing.Point(100, 353);
+            this.labelChangeImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelChangeImage.Location = new System.Drawing.Point(100, 354);
             this.labelChangeImage.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelChangeImage.Name = "labelChangeImage";
             this.labelChangeImage.Size = new System.Drawing.Size(106, 19);
@@ -464,16 +464,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(707, 431);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 41;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
-            // 
             // textBoxDisplayName
             // 
             this.textBoxDisplayName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -524,30 +514,94 @@
             this.panelEditProfile.Controls.Add(this.label3);
             this.panelEditProfile.Controls.Add(this.labelPassword);
             this.panelEditProfile.Controls.Add(this.textBoxCurrentPassword);
-            this.panelEditProfile.Location = new System.Drawing.Point(290, 84);
+            this.panelEditProfile.Location = new System.Drawing.Point(296, 84);
             this.panelEditProfile.Name = "panelEditProfile";
-            this.panelEditProfile.Size = new System.Drawing.Size(492, 322);
+            this.panelEditProfile.Size = new System.Drawing.Size(492, 354);
             this.panelEditProfile.TabIndex = 44;
             // 
             // buttonChangePassword
             // 
-            this.buttonChangePassword.Location = new System.Drawing.Point(707, 431);
+            this.buttonChangePassword.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.buttonChangePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.buttonChangePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonChangePassword.BorderRadius = 2;
+            this.buttonChangePassword.ButtonText = "Save";
+            this.buttonChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonChangePassword.DisabledColor = System.Drawing.Color.Gray;
+            this.buttonChangePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonChangePassword.Iconcolor = System.Drawing.Color.Transparent;
+            this.buttonChangePassword.Iconimage = null;
+            this.buttonChangePassword.Iconimage_right = null;
+            this.buttonChangePassword.Iconimage_right_Selected = null;
+            this.buttonChangePassword.Iconimage_Selected = null;
+            this.buttonChangePassword.IconMarginLeft = 0;
+            this.buttonChangePassword.IconMarginRight = 0;
+            this.buttonChangePassword.IconRightVisible = true;
+            this.buttonChangePassword.IconRightZoom = 0D;
+            this.buttonChangePassword.IconVisible = true;
+            this.buttonChangePassword.IconZoom = 90D;
+            this.buttonChangePassword.IsTab = false;
+            this.buttonChangePassword.Location = new System.Drawing.Point(708, 466);
             this.buttonChangePassword.Name = "buttonChangePassword";
-            this.buttonChangePassword.Size = new System.Drawing.Size(75, 23);
-            this.buttonChangePassword.TabIndex = 45;
+            this.buttonChangePassword.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.buttonChangePassword.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.buttonChangePassword.OnHoverTextColor = System.Drawing.Color.White;
+            this.buttonChangePassword.selected = false;
+            this.buttonChangePassword.Size = new System.Drawing.Size(80, 27);
+            this.buttonChangePassword.TabIndex = 46;
             this.buttonChangePassword.Text = "Save";
-            this.buttonChangePassword.UseVisualStyleBackColor = true;
-            this.buttonChangePassword.Click += new System.EventHandler(this.ButtonChangePassword_Click);
+            this.buttonChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonChangePassword.Textcolor = System.Drawing.Color.White;
+            this.buttonChangePassword.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonChangePassword.Click += new System.EventHandler(this.buttonChangePassword_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSave.BorderRadius = 2;
+            this.buttonSave.ButtonText = "Save";
+            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave.DisabledColor = System.Drawing.Color.Gray;
+            this.buttonSave.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonSave.Iconcolor = System.Drawing.Color.Transparent;
+            this.buttonSave.Iconimage = null;
+            this.buttonSave.Iconimage_right = null;
+            this.buttonSave.Iconimage_right_Selected = null;
+            this.buttonSave.Iconimage_Selected = null;
+            this.buttonSave.IconMarginLeft = 0;
+            this.buttonSave.IconMarginRight = 0;
+            this.buttonSave.IconRightVisible = true;
+            this.buttonSave.IconRightZoom = 0D;
+            this.buttonSave.IconVisible = true;
+            this.buttonSave.IconZoom = 90D;
+            this.buttonSave.IsTab = false;
+            this.buttonSave.Location = new System.Drawing.Point(708, 466);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.buttonSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.buttonSave.OnHoverTextColor = System.Drawing.Color.White;
+            this.buttonSave.selected = false;
+            this.buttonSave.Size = new System.Drawing.Size(80, 27);
+            this.buttonSave.TabIndex = 47;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonSave.Textcolor = System.Drawing.Color.White;
+            this.buttonSave.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // UCSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.labelChangeImage);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonChangePassword);
             this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.labelChangeImage);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelEditProfile);
             this.Controls.Add(this.panelChangePassword);
             this.Name = "UCSetting";
@@ -596,10 +650,10 @@
         private MaterialSkin.Controls.MaterialRadioButton radioButtonMale;
         private MaterialSkin.Controls.MaterialRadioButton radioButtonNone;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private System.Windows.Forms.Button buttonSave;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textBoxDisplayName;
         private System.Windows.Forms.Label labelDisplayName;
         private System.Windows.Forms.Panel panelEditProfile;
-        private System.Windows.Forms.Button buttonChangePassword;
+        private Bunifu.Framework.UI.BunifuFlatButton buttonChangePassword;
+        private Bunifu.Framework.UI.BunifuFlatButton buttonSave;
     }
 }

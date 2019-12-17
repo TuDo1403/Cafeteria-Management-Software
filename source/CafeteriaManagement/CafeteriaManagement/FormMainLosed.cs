@@ -147,5 +147,13 @@ namespace CafeteriaManagement
         }
 
         private void OnPassWordChangeNeeding() => (PasswordChangeNeeded as EventHandler).Invoke(this, EventArgs.Empty);
+
+        private void btnStatic_Click(object sender, EventArgs e)
+        {
+
+            panelButton.Height = btnStatic.Height;
+            panelButton.Top = btnStatic.Top;
+            ucStaticNew1.BringToFront();
+        }
     }
 }

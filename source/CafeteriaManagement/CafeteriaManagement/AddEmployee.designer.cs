@@ -33,10 +33,13 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelName = new System.Windows.Forms.Panel();
+            this.materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
             this.textBoxName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.labelName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.datePickerBirthday = new System.Windows.Forms.DateTimePicker();
             this.labelBirthDay = new System.Windows.Forms.Label();
@@ -46,9 +49,6 @@
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxEmail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.buttonAdd = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
             this.panel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -109,6 +109,23 @@
             this.panelName.Name = "panelName";
             this.panelName.Size = new System.Drawing.Size(365, 158);
             this.panelName.TabIndex = 43;
+            // 
+            // materialRadioButton3
+            // 
+            this.materialRadioButton3.AutoSize = true;
+            this.materialRadioButton3.Depth = 0;
+            this.materialRadioButton3.Font = new System.Drawing.Font("Roboto", 10F);
+            this.materialRadioButton3.Location = new System.Drawing.Point(176, 63);
+            this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRadioButton3.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRadioButton3.Name = "materialRadioButton3";
+            this.materialRadioButton3.Ripple = true;
+            this.materialRadioButton3.Size = new System.Drawing.Size(74, 30);
+            this.materialRadioButton3.TabIndex = 11;
+            this.materialRadioButton3.TabStop = true;
+            this.materialRadioButton3.Text = "Female";
+            this.materialRadioButton3.UseVisualStyleBackColor = true;
             // 
             // textBoxName
             // 
@@ -173,6 +190,40 @@
             this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(241, 29);
             this.bunifuMaterialTextbox1.TabIndex = 16;
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // materialRadioButton1
+            // 
+            this.materialRadioButton1.AutoSize = true;
+            this.materialRadioButton1.Depth = 0;
+            this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
+            this.materialRadioButton1.Location = new System.Drawing.Point(278, 63);
+            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRadioButton1.Name = "materialRadioButton1";
+            this.materialRadioButton1.Ripple = true;
+            this.materialRadioButton1.Size = new System.Drawing.Size(62, 30);
+            this.materialRadioButton1.TabIndex = 12;
+            this.materialRadioButton1.TabStop = true;
+            this.materialRadioButton1.Text = "None";
+            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            // 
+            // materialRadioButton2
+            // 
+            this.materialRadioButton2.AutoSize = true;
+            this.materialRadioButton2.Depth = 0;
+            this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
+            this.materialRadioButton2.Location = new System.Drawing.Point(86, 63);
+            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRadioButton2.Name = "materialRadioButton2";
+            this.materialRadioButton2.Ripple = true;
+            this.materialRadioButton2.Size = new System.Drawing.Size(59, 30);
+            this.materialRadioButton2.TabIndex = 10;
+            this.materialRadioButton2.TabStop = true;
+            this.materialRadioButton2.Text = "Male";
+            this.materialRadioButton2.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -312,57 +363,6 @@
             this.buttonAdd.Textcolor = System.Drawing.Color.White;
             this.buttonAdd.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             // 
-            // materialRadioButton2
-            // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton2.Location = new System.Drawing.Point(86, 63);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(59, 30);
-            this.materialRadioButton2.TabIndex = 10;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Male";
-            this.materialRadioButton2.UseVisualStyleBackColor = true;
-            // 
-            // materialRadioButton1
-            // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton1.Location = new System.Drawing.Point(278, 63);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(62, 30);
-            this.materialRadioButton1.TabIndex = 12;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Text = "None";
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // materialRadioButton3
-            // 
-            this.materialRadioButton3.AutoSize = true;
-            this.materialRadioButton3.Depth = 0;
-            this.materialRadioButton3.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton3.Location = new System.Drawing.Point(176, 63);
-            this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton3.Name = "materialRadioButton3";
-            this.materialRadioButton3.Ripple = true;
-            this.materialRadioButton3.Size = new System.Drawing.Size(74, 30);
-            this.materialRadioButton3.TabIndex = 11;
-            this.materialRadioButton3.TabStop = true;
-            this.materialRadioButton3.Text = "Female";
-            this.materialRadioButton3.UseVisualStyleBackColor = true;
-            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,6 +376,7 @@
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddEmployee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddEmployee";
             this.panel1.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);

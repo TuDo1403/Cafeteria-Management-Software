@@ -62,11 +62,14 @@
       <HintPath>..\packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\..\..\..\..\Downloads\Compressed\Bunifu_UI_v1.52\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\..\Downloads\iTextSharp_5.4.4\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="LtGt, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LtGt.1.0.1\lib\net45\LtGt.dll</HintPath>
@@ -119,6 +122,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
       <Private>True</Private>
@@ -256,6 +260,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aaaaaaaTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="aaaaaaaTest.Designer.cs">
+      <DependentUpon>aaaaaaaTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,11 +326,17 @@
     <Compile Include="CustomUserControl\UCStaticChart.Designer.cs">
       <DependentUpon>UCStaticChart.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAnnouncement.cs">
+    <Compile Include="CustomUserControl\UCStaticNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControl\UCStaticNew.Designer.cs">
+      <DependentUpon>UCStaticNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAnnouncementNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAnnouncement.designer.cs">
-      <DependentUpon>FormAnnouncement.cs</DependentUpon>
+    <Compile Include="FormAnnouncementNew.Designer.cs">
+      <DependentUpon>FormAnnouncementNew.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMainLosed.cs">
       <SubType>Form</SubType>
@@ -379,6 +395,9 @@
     <Compile Include="UpdateForm\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="aaaaaaaTest.resx">
+      <DependentUpon>aaaaaaaTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,8 +429,11 @@
     <EmbeddedResource Include="CustomUserControl\UCStaticChart.resx">
       <DependentUpon>UCStaticChart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAnnouncement.resx">
-      <DependentUpon>FormAnnouncement.cs</DependentUpon>
+    <EmbeddedResource Include="CustomUserControl\UCStaticNew.resx">
+      <DependentUpon>UCStaticNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnnouncementNew.resx">
+      <DependentUpon>FormAnnouncementNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainLosed.resx">
       <DependentUpon>FormMainLosed.cs</DependentUpon>
@@ -607,6 +629,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checkmark2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_settings_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_settings_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bar_chart_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bar_chart_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_window_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

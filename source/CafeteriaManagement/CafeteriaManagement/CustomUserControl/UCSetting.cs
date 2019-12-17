@@ -83,7 +83,7 @@ namespace CafeteriaManagement.CustomUserControl
             {
                 control.Enabled = true;
             }
-            buttonSave.BringToFront();
+         //   buttonSave.BringToFront();
             panelEditProfile.BringToFront();
         }
 
@@ -183,19 +183,7 @@ namespace CafeteriaManagement.CustomUserControl
             }
         }
 
-        private void ButtonSave_Click(object sender, EventArgs e)
-        {
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                EditAccountRecord();
-                EditEmployeeRecord();
-                EditAccountImageRecord();
-                DataProvider.UpdateEmployee(_currentEmployee);
-                DataProvider.UpdateAccount(_currentUser);
-                DataProvider.UpdateAccountImage(_accountImage);
-                MessageBox.Show("Edit Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+     
 
         private void EditAccountImageRecord()
         {
@@ -294,12 +282,27 @@ namespace CafeteriaManagement.CustomUserControl
             }
         }
 
-        private void ButtonChangePassword_Click(object sender, EventArgs e)
+        private void buttonChangePassword_Click(object sender, EventArgs e)
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 _currentUser.PassWord = textBoxNewPassword.Text;
                 DataProvider.UpdateAccount(_currentUser);
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                EditAccountRecord();
+                EditEmployeeRecord();
+                EditAccountImageRecord();
+                DataProvider.UpdateEmployee(_currentEmployee);
+                DataProvider.UpdateAccount(_currentUser);
+                DataProvider.UpdateAccountImage(_accountImage);
+                MessageBox.Show("Edit Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

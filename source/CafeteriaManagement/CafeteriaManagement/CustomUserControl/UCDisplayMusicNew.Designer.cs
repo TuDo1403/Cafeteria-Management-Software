@@ -66,8 +66,8 @@
             this.dataGridViewSearchResult.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
             this.dataGridViewSearchResult.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridViewSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewSearchResult.BackgroundColor = System.Drawing.Color.Gray;
@@ -145,8 +145,8 @@
             // 
             // pnlOnline
             // 
-            this.pnlOnline.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlOnline.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlOnline.Controls.Add(this.textBoxSearchMusic);
             this.pnlOnline.Controls.Add(this.buttonQueue);
@@ -162,10 +162,12 @@
             // 
             this.textBoxSearchMusic.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.textBoxSearchMusic.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxSearchMusic.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchMusic.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.textBoxSearchMusic.Location = new System.Drawing.Point(131, 21);
+            this.textBoxSearchMusic.Location = new System.Drawing.Point(131, 17);
+            this.textBoxSearchMusic.Multiline = true;
             this.textBoxSearchMusic.Name = "textBoxSearchMusic";
-            this.textBoxSearchMusic.Size = new System.Drawing.Size(510, 20);
+            this.textBoxSearchMusic.Size = new System.Drawing.Size(510, 29);
             this.textBoxSearchMusic.TabIndex = 18;
             this.textBoxSearchMusic.Text = "Enter Keyword";
             this.textBoxSearchMusic.Enter += new System.EventHandler(this.TextBoxSearchMusic_Enter);

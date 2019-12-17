@@ -75,12 +75,12 @@
             // 
             this.panelSignIn.Controls.Add(this.textBoxPassword);
             this.panelSignIn.Controls.Add(this.textBoxUsername);
-            this.panelSignIn.Controls.Add(this.buttonSignIn);
+            this.panelSignIn.Controls.Add(this.buttonOk);
             this.panelSignIn.Controls.Add(this.panel3);
             this.panelSignIn.Controls.Add(this.panel2);
             this.panelSignIn.Location = new System.Drawing.Point(320, 193);
             this.panelSignIn.Name = "panelSignIn";
-            this.panelSignIn.Size = new System.Drawing.Size(253, 176);
+            this.panelSignIn.Size = new System.Drawing.Size(253, 211);
             this.panelSignIn.TabIndex = 5;
             // 
             // textBoxPassword
@@ -119,9 +119,9 @@
             this.buttonSignIn.AutoSize = true;
             this.buttonSignIn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(88)))), ((int)(((byte)(169)))));
-            this.buttonSignIn.Location = new System.Drawing.Point(8, 103);
+            this.buttonSignIn.Location = new System.Drawing.Point(315, 419);
             this.buttonSignIn.Name = "buttonSignIn";
-            this.buttonSignIn.Size = new System.Drawing.Size(75, 26);
+            this.buttonSignIn.Size = new System.Drawing.Size(75, 25);
             this.buttonSignIn.TabIndex = 2;
             this.buttonSignIn.Text = "Sign In";
             this.buttonSignIn.Click += new System.EventHandler(this.ButtonSignIn_Click);
@@ -151,7 +151,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(88)))), ((int)(((byte)(169)))));
             this.label1.Location = new System.Drawing.Point(313, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 36);
+            this.label1.Size = new System.Drawing.Size(171, 37);
             this.label1.TabIndex = 6;
             this.label1.Text = "Welcome to";
             // 
@@ -162,15 +162,16 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(134)))), ((int)(((byte)(89)))));
             this.label2.Location = new System.Drawing.Point(335, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(253, 86);
+            this.label2.Size = new System.Drawing.Size(254, 90);
             this.label2.TabIndex = 7;
             this.label2.Text = "Coffee\r\n    Management";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(564, 5);
+            this.pictureBox2.Image = global::CafeteriaManagement.Properties.Resources.icons8_delete_32;
+            this.pictureBox2.Location = new System.Drawing.Point(573, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox2.Size = new System.Drawing.Size(23, 23);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -198,7 +199,7 @@
             this.buttonOk.IconVisible = true;
             this.buttonOk.IconZoom = 90D;
             this.buttonOk.IsTab = false;
-            this.buttonOk.Location = new System.Drawing.Point(493, 402);
+            this.buttonOk.Location = new System.Drawing.Point(159, 173);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonOk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -314,7 +315,7 @@
             this.buttonRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(134)))), ((int)(((byte)(89)))));
             this.buttonRegister.Location = new System.Drawing.Point(8, 175);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(84, 26);
+            this.buttonRegister.Size = new System.Drawing.Size(84, 25);
             this.buttonRegister.TabIndex = 2;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.Click += new System.EventHandler(this.ButtonRegister_Click);
@@ -365,8 +366,8 @@
             this.ClientSize = new System.Drawing.Size(601, 453);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelRegister);
-            this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.buttonSignIn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelSignIn);
