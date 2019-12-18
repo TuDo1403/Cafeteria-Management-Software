@@ -1,4 +1,5 @@
 ﻿using CM.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,6 +29,50 @@ namespace CM.DAL
             return menu;
         }
 
+        public static bool IsAccountIdAdmin(string e)
+        {
+            var isAdmin = false;
+            var accountType = (_database.ACCOUNTs.Where(c => c.Id == e)).SingleOrDefault().AccountType;
+            if (accountType == 1)
+            {
+                isAdmin = true;
+            }
+            return isAdmin;
+        }
+
+        public static int GetTotalIncomeFromBill(int year)
+        {
+            var yearlyIncome = 0;
+            if (_database.BILLs.Any(c => c.DateCreated.Value.Year == year))
+            {
+                yearlyIncome = (int)_database.BILLs.Where(c => c.DateCreated.Value.Year == year).Sum(c => c.Total);
+            }
+            return yearlyIncome;
+        }
+
+        public static int CountAllBills(int year) => _database.BILLs.Count(c => c.DateCreated.Value.Year == year);
+
+        public static IEnumerable<BILL> GetBILLS(int year, int currentPageIndex = 1)
+        {
+            int rowsEachPage = 5;
+            var query = from bill in _database.BILLs
+                        where bill.DateCreated.Value.Year == year
+                        select bill;
+            var query1 = from bill in _database.BILLs
+                         where bill.DateCreated.Value.Year == year
+                         select bill;
+            var result = query.Take(rowsEachPage * currentPageIndex).Except(query1.Take((currentPageIndex - 1) * rowsEachPage));
+            return result;
+        }
+
+        public static IEnumerable<IncomePerMonth> GetIncomeFromBillEachMonth(int year = 1)
+        {
+            var query = _database.BILLs.Where(c => c.DateCreated.Value.Year == year)
+                                       .GroupBy(c => c.DateCreated.Value.Month)
+                                       .OrderBy(c => c.Key)
+                                       .Select(c => new IncomePerMonth { Month = c.Key, Point = c.Sum(b => b.Total) });
+            return query;
+        }
         public static ACCOUNT_IMAGE GetAccountImageBy(string id) => _database.ACCOUNT_IMAGEs.Where(c => c.Id == id).SingleOrDefault();
 
         public static EMPLOYEE GetCurrentEmployee(string id)
@@ -70,7 +115,7 @@ namespace CM.DAL
         public static string ValidateAccount(string username, string hashedPassword)
         {
             var isValid = "";
-            
+
             if (_database.ACCOUNTs.Any(a => a.UserName == username && a.PassWord == hashedPassword))
             {
                 isValid = _database.ACCOUNTs.Where(a => a.UserName == username && a.PassWord == hashedPassword).SingleOrDefault().Id;

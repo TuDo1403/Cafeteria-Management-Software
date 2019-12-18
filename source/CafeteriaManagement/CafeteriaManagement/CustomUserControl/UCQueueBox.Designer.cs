@@ -49,20 +49,15 @@
             this.labelTime = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNext = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlay = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPause = new System.Windows.Forms.PictureBox();
+            this.buttonPrev = new System.Windows.Forms.PictureBox();
+            this.buttonNext = new System.Windows.Forms.PictureBox();
+            this.buttonPlay = new System.Windows.Forms.PictureBox();
+            this.buttonPause = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewPlaying = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label3 = new System.Windows.Forms.Label();
             this.trackBarSongDuration = new Bunifu.Framework.UI.BunifuTrackbar();
             this.dataGridViewNextUp = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonPause = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.buttonPrevious = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.buttonNext = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.buttonPlay = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnlHistory = new System.Windows.Forms.Panel();
             this.dataGridViewHistory = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuElipseHistory = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -74,17 +69,15 @@
             this.timerHistoryBack = new System.Windows.Forms.Timer(this.components);
             this.timerPanelGreenHistory = new System.Windows.Forms.Timer(this.components);
             this.timerPanelGreenQueue = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlQueue.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPause)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonPrev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonPlay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonPause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlaying)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNextUp)).BeginInit();
-            this.panel1.SuspendLayout();
             this.pnlHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory)).BeginInit();
             this.SuspendLayout();
@@ -189,57 +182,58 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.pictureBoxNext);
-            this.panel2.Controls.Add(this.pictureBoxPlay);
-            this.panel2.Controls.Add(this.pictureBoxPause);
+            this.panel2.Controls.Add(this.buttonPrev);
+            this.panel2.Controls.Add(this.buttonNext);
+            this.panel2.Controls.Add(this.buttonPlay);
+            this.panel2.Controls.Add(this.buttonPause);
             this.panel2.Location = new System.Drawing.Point(223, 345);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(338, 45);
             this.panel2.TabIndex = 44;
             // 
-            // pictureBox4
+            // buttonPrev
             // 
-            this.pictureBox4.Image = global::CafeteriaManagement.Properties.Resources.icons8_back3_32;
-            this.pictureBox4.Location = new System.Drawing.Point(87, 8);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(37, 37);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
+            this.buttonPrev.Image = global::CafeteriaManagement.Properties.Resources.icons8_back3_32;
+            this.buttonPrev.Location = new System.Drawing.Point(87, 8);
+            this.buttonPrev.Name = "buttonPrev";
+            this.buttonPrev.Size = new System.Drawing.Size(37, 37);
+            this.buttonPrev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonPrev.TabIndex = 3;
+            this.buttonPrev.TabStop = false;
+            this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
             // 
-            // pictureBoxNext
+            // buttonNext
             // 
-            this.pictureBoxNext.Image = global::CafeteriaManagement.Properties.Resources.icons8_forward3_32;
-            this.pictureBoxNext.Location = new System.Drawing.Point(221, 8);
-            this.pictureBoxNext.Name = "pictureBoxNext";
-            this.pictureBoxNext.Size = new System.Drawing.Size(37, 37);
-            this.pictureBoxNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxNext.TabIndex = 2;
-            this.pictureBoxNext.TabStop = false;
-            this.pictureBoxNext.Click += new System.EventHandler(this.pictureBoxNext_Click);
+            this.buttonNext.Image = global::CafeteriaManagement.Properties.Resources.icons8_forward3_32;
+            this.buttonNext.Location = new System.Drawing.Point(221, 8);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(37, 37);
+            this.buttonNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonNext.TabIndex = 2;
+            this.buttonNext.TabStop = false;
+            this.buttonNext.Click += new System.EventHandler(this.pictureBoxNext_Click);
             // 
-            // pictureBoxPlay
+            // buttonPlay
             // 
-            this.pictureBoxPlay.Image = global::CafeteriaManagement.Properties.Resources.icons8_circled_play_32;
-            this.pictureBoxPlay.Location = new System.Drawing.Point(156, 8);
-            this.pictureBoxPlay.Name = "pictureBoxPlay";
-            this.pictureBoxPlay.Size = new System.Drawing.Size(37, 37);
-            this.pictureBoxPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPlay.TabIndex = 1;
-            this.pictureBoxPlay.TabStop = false;
-            this.pictureBoxPlay.Click += new System.EventHandler(this.pictureBoxPlay_Click);
+            this.buttonPlay.Image = global::CafeteriaManagement.Properties.Resources.icons8_circled_play_32;
+            this.buttonPlay.Location = new System.Drawing.Point(156, 8);
+            this.buttonPlay.Name = "buttonPlay";
+            this.buttonPlay.Size = new System.Drawing.Size(37, 37);
+            this.buttonPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonPlay.TabIndex = 1;
+            this.buttonPlay.TabStop = false;
+            this.buttonPlay.Click += new System.EventHandler(this.pictureBoxPlay_Click);
             // 
-            // pictureBoxPause
+            // buttonPause
             // 
-            this.pictureBoxPause.Image = global::CafeteriaManagement.Properties.Resources.icons8_pause_button_32;
-            this.pictureBoxPause.Location = new System.Drawing.Point(156, 8);
-            this.pictureBoxPause.Name = "pictureBoxPause";
-            this.pictureBoxPause.Size = new System.Drawing.Size(37, 37);
-            this.pictureBoxPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPause.TabIndex = 0;
-            this.pictureBoxPause.TabStop = false;
-            this.pictureBoxPause.Click += new System.EventHandler(this.pictureBoxPause_Click);
+            this.buttonPause.Image = global::CafeteriaManagement.Properties.Resources.icons8_pause_button_32;
+            this.buttonPause.Location = new System.Drawing.Point(156, 8);
+            this.buttonPause.Name = "buttonPause";
+            this.buttonPause.Size = new System.Drawing.Size(37, 37);
+            this.buttonPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonPause.TabIndex = 0;
+            this.buttonPause.TabStop = false;
+            this.buttonPause.Click += new System.EventHandler(this.pictureBoxPause_Click);
             // 
             // label4
             // 
@@ -374,159 +368,6 @@
             this.dataGridViewNextUp.Size = new System.Drawing.Size(779, 160);
             this.dataGridViewNextUp.TabIndex = 34;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.buttonPlay);
-            this.panel1.Controls.Add(this.buttonPause);
-            this.panel1.Controls.Add(this.buttonPrevious);
-            this.panel1.Controls.Add(this.buttonNext);
-            this.panel1.Location = new System.Drawing.Point(288, 8);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 45);
-            this.panel1.TabIndex = 43;
-            // 
-            // buttonPause
-            // 
-            this.buttonPause.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonPause.BorderRadius = 5;
-            this.buttonPause.ButtonText = "Pause";
-            this.buttonPause.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPause.DisabledColor = System.Drawing.Color.Gray;
-            this.buttonPause.Iconcolor = System.Drawing.Color.Transparent;
-            this.buttonPause.Iconimage = null;
-            this.buttonPause.Iconimage_right = null;
-            this.buttonPause.Iconimage_right_Selected = null;
-            this.buttonPause.Iconimage_Selected = null;
-            this.buttonPause.IconMarginLeft = 0;
-            this.buttonPause.IconMarginRight = 0;
-            this.buttonPause.IconRightVisible = true;
-            this.buttonPause.IconRightZoom = 0D;
-            this.buttonPause.IconVisible = true;
-            this.buttonPause.IconZoom = 90D;
-            this.buttonPause.IsTab = false;
-            this.buttonPause.Location = new System.Drawing.Point(131, 6);
-            this.buttonPause.Name = "buttonPause";
-            this.buttonPause.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPause.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.buttonPause.OnHoverTextColor = System.Drawing.Color.White;
-            this.buttonPause.selected = false;
-            this.buttonPause.Size = new System.Drawing.Size(81, 34);
-            this.buttonPause.TabIndex = 39;
-            this.buttonPause.Text = "Pause";
-            this.buttonPause.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonPause.Textcolor = System.Drawing.Color.White;
-            this.buttonPause.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonPause.Click += new System.EventHandler(this.ButtonPause_Click);
-            // 
-            // buttonPrevious
-            // 
-            this.buttonPrevious.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPrevious.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonPrevious.BorderRadius = 5;
-            this.buttonPrevious.ButtonText = "Previous";
-            this.buttonPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPrevious.DisabledColor = System.Drawing.Color.Gray;
-            this.buttonPrevious.Iconcolor = System.Drawing.Color.Transparent;
-            this.buttonPrevious.Iconimage = null;
-            this.buttonPrevious.Iconimage_right = null;
-            this.buttonPrevious.Iconimage_right_Selected = null;
-            this.buttonPrevious.Iconimage_Selected = null;
-            this.buttonPrevious.IconMarginLeft = 0;
-            this.buttonPrevious.IconMarginRight = 0;
-            this.buttonPrevious.IconRightVisible = true;
-            this.buttonPrevious.IconRightZoom = 0D;
-            this.buttonPrevious.IconVisible = true;
-            this.buttonPrevious.IconZoom = 90D;
-            this.buttonPrevious.IsTab = false;
-            this.buttonPrevious.Location = new System.Drawing.Point(18, 7);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPrevious.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.buttonPrevious.OnHoverTextColor = System.Drawing.Color.White;
-            this.buttonPrevious.selected = false;
-            this.buttonPrevious.Size = new System.Drawing.Size(81, 34);
-            this.buttonPrevious.TabIndex = 36;
-            this.buttonPrevious.Text = "Previous";
-            this.buttonPrevious.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonPrevious.Textcolor = System.Drawing.Color.White;
-            this.buttonPrevious.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonNext.BorderRadius = 5;
-            this.buttonNext.ButtonText = "Next";
-            this.buttonNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonNext.DisabledColor = System.Drawing.Color.Gray;
-            this.buttonNext.Iconcolor = System.Drawing.Color.Transparent;
-            this.buttonNext.Iconimage = null;
-            this.buttonNext.Iconimage_right = null;
-            this.buttonNext.Iconimage_right_Selected = null;
-            this.buttonNext.Iconimage_Selected = null;
-            this.buttonNext.IconMarginLeft = 0;
-            this.buttonNext.IconMarginRight = 0;
-            this.buttonNext.IconRightVisible = true;
-            this.buttonNext.IconRightZoom = 0D;
-            this.buttonNext.IconVisible = true;
-            this.buttonNext.IconZoom = 90D;
-            this.buttonNext.IsTab = false;
-            this.buttonNext.Location = new System.Drawing.Point(244, 6);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonNext.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.buttonNext.OnHoverTextColor = System.Drawing.Color.White;
-            this.buttonNext.selected = false;
-            this.buttonNext.Size = new System.Drawing.Size(81, 34);
-            this.buttonNext.TabIndex = 37;
-            this.buttonNext.Text = "Next";
-            this.buttonNext.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonNext.Textcolor = System.Drawing.Color.White;
-            this.buttonNext.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // buttonPlay
-            // 
-            this.buttonPlay.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonPlay.BorderRadius = 5;
-            this.buttonPlay.ButtonText = "Play";
-            this.buttonPlay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPlay.DisabledColor = System.Drawing.Color.Gray;
-            this.buttonPlay.Iconcolor = System.Drawing.Color.Transparent;
-            this.buttonPlay.Iconimage = null;
-            this.buttonPlay.Iconimage_right = null;
-            this.buttonPlay.Iconimage_right_Selected = null;
-            this.buttonPlay.Iconimage_Selected = null;
-            this.buttonPlay.IconMarginLeft = 0;
-            this.buttonPlay.IconMarginRight = 0;
-            this.buttonPlay.IconRightVisible = true;
-            this.buttonPlay.IconRightZoom = 0D;
-            this.buttonPlay.IconVisible = true;
-            this.buttonPlay.IconZoom = 90D;
-            this.buttonPlay.IsTab = false;
-            this.buttonPlay.Location = new System.Drawing.Point(131, 6);
-            this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPlay.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.buttonPlay.OnHoverTextColor = System.Drawing.Color.White;
-            this.buttonPlay.selected = false;
-            this.buttonPlay.Size = new System.Drawing.Size(81, 34);
-            this.buttonPlay.TabIndex = 35;
-            this.buttonPlay.Text = "Play";
-            this.buttonPlay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonPlay.Textcolor = System.Drawing.Color.White;
-            this.buttonPlay.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
-            // 
             // pnlHistory
             // 
             this.pnlHistory.Controls.Add(this.dataGridViewHistory);
@@ -626,27 +467,16 @@
             this.timerPanelGreenQueue.Interval = 1;
             this.timerPanelGreenQueue.Tick += new System.EventHandler(this.timerPanelGreenQueue_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 315);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "chua co previous";
-            // 
             // UCQueueBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlHistory);
             this.Controls.Add(this.pnlQueue);
             this.Controls.Add(this.pnlGreen);
             this.Controls.Add(this.lblOffline);
             this.Controls.Add(this.lblOnline);
-            this.Controls.Add(this.panel1);
             this.Name = "UCQueueBox";
             this.Size = new System.Drawing.Size(828, 510);
             this.Load += new System.EventHandler(this.UCQueueBox_Load);
@@ -655,13 +485,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPause)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonPrev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonPlay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonPause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlaying)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNextUp)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.pnlHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory)).EndInit();
             this.ResumeLayout(false);
@@ -678,9 +507,6 @@
         private Bunifu.Framework.UI.BunifuElipse NextUp;
         private System.Windows.Forms.Panel pnlQueue;
         private Bunifu.Framework.UI.BunifuTrackbar trackBarSongDuration;
-        private Bunifu.Framework.UI.BunifuFlatButton buttonNext;
-        private Bunifu.Framework.UI.BunifuFlatButton buttonPrevious;
-        private Bunifu.Framework.UI.BunifuFlatButton buttonPlay;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridViewNextUp;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridViewPlaying;
         private System.Windows.Forms.Label label3;
@@ -696,16 +522,13 @@
         private System.Windows.Forms.Timer timerHistoryBack;
         private System.Windows.Forms.Timer timerPanelGreenHistory;
         private System.Windows.Forms.Timer timerPanelGreenQueue;
-        private Bunifu.Framework.UI.BunifuFlatButton buttonPause;
         private System.Windows.Forms.Label labelDuration;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBoxNext;
-        private System.Windows.Forms.PictureBox pictureBoxPlay;
-        private System.Windows.Forms.PictureBox pictureBoxPause;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox buttonPrev;
+        private System.Windows.Forms.PictureBox buttonNext;
+        private System.Windows.Forms.PictureBox buttonPlay;
+        private System.Windows.Forms.PictureBox buttonPause;
     }
 }

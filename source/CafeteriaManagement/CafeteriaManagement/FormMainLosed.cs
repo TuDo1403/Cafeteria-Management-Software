@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CM.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,9 +21,20 @@ namespace CafeteriaManagement
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            FormRegister.LoginSucceeded += FormRegister_LoginSucceededHandler;
             ucOrderNew1.BringToFront();
+        }
 
-
+        private void FormRegister_LoginSucceededHandler(object sender, string e)
+        {
+            var isAdmin = DataProvider.IsAccountIdAdmin(e);
+            if (!isAdmin)
+            {
+                btnStatic.Visible = false;
+                btnEmployee.Visible = false;
+                btnMenu.Visible = false;
+                btnEdit.Visible = false;
+            }
         }
 
         private void FormMain_Load(object sender, EventArgs e)

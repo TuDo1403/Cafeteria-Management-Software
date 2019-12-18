@@ -153,16 +153,6 @@ namespace CafeteriaManagement
         }
 
 
-        private void DataGridViewSearchResult_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            _queueCount++;
-            MusicPlayer.CreateInstance();
-            SongDownloader.CreateInstance().DownloadSongBy(e.RowIndex, _queueCount);
-            MusicPlayer.AddSongToQueue(e.RowIndex, _queueCount);
-            MessageBox.Show(Properties.Resources.songAddedText, Properties.Resources.songAddedCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-
         private void ButtonQueue_Click(object sender, EventArgs e) => _queue.BringToFront();
 
 
@@ -210,7 +200,8 @@ namespace CafeteriaManagement
             MusicPlayer.CreateInstance();
             SongDownloader.CreateInstance().DownloadSongBy(rowIndex, _queueCount);
             MusicPlayer.AddSongToQueue(rowIndex, _queueCount);
-            MessageBox.Show(Properties.Resources.songAddedText, Properties.Resources.songAddedCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            using var result = new FormAnnouncementNew();
+            result.ShowMessage(Properties.Resources.songAddedText, Properties.Resources.songAddedCaption, false);
         }
     }
 }

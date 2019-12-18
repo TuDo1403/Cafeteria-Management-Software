@@ -42,6 +42,7 @@
             this.buttonRefresh = new Bunifu.Framework.UI.BunifuFlatButton();
             this.labelTotal = new System.Windows.Forms.Label();
             this.tableLayoutPanelMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxShowBill = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelectedItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -256,11 +257,22 @@
             this.tableLayoutPanelMenu.Size = new System.Drawing.Size(411, 309);
             this.tableLayoutPanelMenu.TabIndex = 13;
             // 
+            // checkBoxShowBill
+            // 
+            this.checkBoxShowBill.AutoSize = true;
+            this.checkBoxShowBill.Location = new System.Drawing.Point(726, 38);
+            this.checkBoxShowBill.Name = "checkBoxShowBill";
+            this.checkBoxShowBill.Size = new System.Drawing.Size(69, 17);
+            this.checkBoxShowBill.TabIndex = 14;
+            this.checkBoxShowBill.Text = "Show Bill";
+            this.checkBoxShowBill.UseVisualStyleBackColor = true;
+            // 
             // UCOrderNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this.checkBoxShowBill);
             this.Controls.Add(this.tableLayoutPanelMenu);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonBill);
@@ -289,5 +301,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton buttonRefresh;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenu;
+        private System.Windows.Forms.CheckBox checkBoxShowBill;
     }
 }

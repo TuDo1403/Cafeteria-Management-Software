@@ -60,6 +60,15 @@ namespace CafeteriaManagement
             }
         }
 
+        public static void PlayPrev()
+        {
+            if (PlayHistories.Count >= 2)
+            {
+                PlayList = new Queue<Song>(PlayList.Prepend(PlayHistories.Last(c => c.Url != windowsMediaPlayer.URL)));
+                PlayNext();
+            }
+        }
+
 
 
 

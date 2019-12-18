@@ -202,7 +202,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label3.Location = new System.Drawing.Point(201, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 25);
+            this.label3.Size = new System.Drawing.Size(110, 26);
             this.label3.TabIndex = 19;
             this.label3.Text = "Edit Profile";
             // 
@@ -213,7 +213,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label4.Location = new System.Drawing.Point(195, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 25);
+            this.label4.Size = new System.Drawing.Size(169, 26);
             this.label4.TabIndex = 21;
             this.label4.Text = "Change Password";
             // 
@@ -598,12 +598,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.buttonChangePassword);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelChangeImage);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelEditProfile);
             this.Controls.Add(this.panelChangePassword);
+            this.Controls.Add(this.buttonChangePassword);
             this.Name = "UCSetting";
             this.Size = new System.Drawing.Size(837, 510);
             this.Load += new System.EventHandler(this.UCSetting_Load);

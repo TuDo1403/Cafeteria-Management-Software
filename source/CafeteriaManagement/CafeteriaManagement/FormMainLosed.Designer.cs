@@ -58,6 +58,9 @@ namespace CafeteriaManagement
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelAnimater = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.TestAnimation = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.bunifuFormFadeTransitionFormMain = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.ucHome1 = new CafeteriaManagement.CustomUserControl.UCHome();
             this.ucStaticNew1 = new CafeteriaManagement.CustomUserControl.UCStaticNew();
             this.ucSetting1 = new CafeteriaManagement.CustomUserControl.UCSetting();
@@ -66,9 +69,6 @@ namespace CafeteriaManagement
             this.ucEmployeeNew1 = new CafeteriaManagement.UCEmployeeNew();
             this.ucEditMenuNew1 = new CafeteriaManagement.UCEditMenuNew();
             this.ucDisplayMusicNew1 = new CafeteriaManagement.UCDisplayMusicNew();
-            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.TestAnimation = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.bunifuFormFadeTransitionFormMain = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToBigSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToSmallSize)).BeginInit();
@@ -185,7 +185,7 @@ namespace CafeteriaManagement
             this.btnStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnStatic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStatic.BorderRadius = 0;
-            this.btnStatic.ButtonText = "         Static";
+            this.btnStatic.ButtonText = "         Statistic";
             this.btnStatic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimater.SetDecoration(this.btnStatic, BunifuAnimatorNS.DecorationType.None);
             this.TestAnimation.SetDecoration(this.btnStatic, BunifuAnimatorNS.DecorationType.None);
@@ -202,7 +202,7 @@ namespace CafeteriaManagement
             this.btnStatic.IconVisible = true;
             this.btnStatic.IconZoom = 42D;
             this.btnStatic.IsTab = false;
-            this.btnStatic.Location = new System.Drawing.Point(1, 351);
+            this.btnStatic.Location = new System.Drawing.Point(3, 347);
             this.btnStatic.Name = "btnStatic";
             this.btnStatic.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnStatic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
@@ -210,7 +210,7 @@ namespace CafeteriaManagement
             this.btnStatic.selected = false;
             this.btnStatic.Size = new System.Drawing.Size(199, 48);
             this.btnStatic.TabIndex = 13;
-            this.btnStatic.Text = "         Static";
+            this.btnStatic.Text = "         Statistic";
             this.btnStatic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStatic.Textcolor = System.Drawing.Color.Silver;
             this.btnStatic.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -314,7 +314,7 @@ namespace CafeteriaManagement
             this.Queue.IconVisible = true;
             this.Queue.IconZoom = 42D;
             this.Queue.IsTab = false;
-            this.Queue.Location = new System.Drawing.Point(3, 306);
+            this.Queue.Location = new System.Drawing.Point(3, 213);
             this.Queue.Name = "Queue";
             this.Queue.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.Queue.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
@@ -351,7 +351,7 @@ namespace CafeteriaManagement
             this.btnEmployee.IconVisible = true;
             this.btnEmployee.IconZoom = 42D;
             this.btnEmployee.IsTab = false;
-            this.btnEmployee.Location = new System.Drawing.Point(3, 260);
+            this.btnEmployee.Location = new System.Drawing.Point(1, 258);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnEmployee.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
@@ -388,7 +388,7 @@ namespace CafeteriaManagement
             this.btnMusic.IconVisible = true;
             this.btnMusic.IconZoom = 42D;
             this.btnMusic.IsTab = false;
-            this.btnMusic.Location = new System.Drawing.Point(3, 215);
+            this.btnMusic.Location = new System.Drawing.Point(1, 168);
             this.btnMusic.Name = "btnMusic";
             this.btnMusic.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnMusic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
@@ -425,7 +425,7 @@ namespace CafeteriaManagement
             this.btnEdit.IconVisible = true;
             this.btnEdit.IconZoom = 42D;
             this.btnEdit.IsTab = false;
-            this.btnEdit.Location = new System.Drawing.Point(3, 170);
+            this.btnEdit.Location = new System.Drawing.Point(1, 302);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.btnEdit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(36)))), ((int)(((byte)(40)))));
@@ -574,6 +574,38 @@ namespace CafeteriaManagement
             this.panel1.Size = new System.Drawing.Size(1022, 517);
             this.panel1.TabIndex = 3;
             // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = null;
+            this.bunifuDragControl2.Vertical = true;
+            // 
+            // TestAnimation
+            // 
+            this.TestAnimation.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndRotate;
+            this.TestAnimation.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(30);
+            animation2.RotateCoeff = 0.5F;
+            animation2.RotateLimit = 0.2F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.TestAnimation.DefaultAnimation = animation2;
+            // 
+            // bunifuFormFadeTransitionFormMain
+            // 
+            this.bunifuFormFadeTransitionFormMain.Delay = 1;
+            // 
             // ucHome1
             // 
             this.ucHome1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -659,38 +691,6 @@ namespace CafeteriaManagement
             this.ucDisplayMusicNew1.Name = "ucDisplayMusicNew1";
             this.ucDisplayMusicNew1.Size = new System.Drawing.Size(822, 517);
             this.ucDisplayMusicNew1.TabIndex = 2;
-            // 
-            // bunifuDragControl2
-            // 
-            this.bunifuDragControl2.Fixed = true;
-            this.bunifuDragControl2.Horizontal = true;
-            this.bunifuDragControl2.TargetControl = null;
-            this.bunifuDragControl2.Vertical = true;
-            // 
-            // TestAnimation
-            // 
-            this.TestAnimation.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndRotate;
-            this.TestAnimation.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(30);
-            animation2.RotateCoeff = 0.5F;
-            animation2.RotateLimit = 0.2F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.TestAnimation.DefaultAnimation = animation2;
-            // 
-            // bunifuFormFadeTransitionFormMain
-            // 
-            this.bunifuFormFadeTransitionFormMain.Delay = 1;
             // 
             // FormMainLosed
             // 

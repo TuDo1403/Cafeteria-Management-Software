@@ -17,12 +17,14 @@ namespace CafeteriaManagement
         private readonly List<BunifuFlatButton> _buttons = new List<BunifuFlatButton>();
         private string _employeeId;
         private string _buttonName;
+        private int _dialogueResult;
 
 
 
         public UCEmployeeNew()
         {
             InitializeComponent();
+            FormAnnouncementNew.DialogueResultReturned += FormAnnouncementNew_DialogueResultReturnedHandler;
             dataGridViewEmployeeList.DataSource = DataProvider.GetEMPLOYEEs();
 
             _buttons.Add(buttonAdd);
@@ -34,6 +36,11 @@ namespace CafeteriaManagement
             textBoxPhone.Validating += TextBoxPhone_ValidatingHandler;
             textBoxEmail.Validating += TextBoxEmail_ValidatingHandler;
             textBoxName.Validating += TextBoxName_ValidatingHandler;
+        }
+
+        private void FormAnnouncementNew_DialogueResultReturnedHandler(object sender, int e)
+        {
+            _dialogueResult = e;
         }
 
         private void TextBoxName_ValidatingHandler(object sender, CancelEventArgs e)
@@ -186,7 +193,9 @@ namespace CafeteriaManagement
             {
                 DataProvider.UpdateEmployee(_employee);
             }
-            MessageBox.Show($"Employee {button.Name.Remove(0, 6)}ed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            using var result = new FormAnnouncementNew();
+            result.ShowMessage($"Employee {button.Name.Remove(0, 6)}ed!", "Success", false);
+
         }
 
         private void CreateRecordFromUserInput()
@@ -242,8 +251,9 @@ namespace CafeteriaManagement
 
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Do you want to delete this record?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            using var result = new FormAnnouncementNew();
+            result.ShowMessage("Do you want to delete this record?", "Warning!", true);
+            if (_dialogueResult == 1)
             {
                 DataProvider.DeleteEmployee(dataGridViewEmployeeList.SelectedRows[0].Cells[0].Value.ToString());
                 RefreshEmployeesList();
@@ -362,7 +372,8 @@ namespace CafeteriaManagement
             var cells = dataGridViewEmployeeList.SelectedRows[0].Cells;
             var id = cells[0].Value.ToString();
             Clipboard.SetText(id.GetMD5HashedString());
-            MessageBox.Show("Id Code copied to clipboard!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            using var result = new FormAnnouncementNew();
+            result.ShowMessage("Id Code copied to clipboard!", "Information", false);
         }
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)

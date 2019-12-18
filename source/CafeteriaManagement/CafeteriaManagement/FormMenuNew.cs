@@ -18,14 +18,21 @@ namespace CafeteriaManagement
         public static event EventHandler<PRODUCT> ProductChosen;
         public static event EventHandler ProductDeleted;
         private bool _isDeleting;
+        private int _dialogueResult;
 
 
 
         public FormMenuNew(string typeMenu, bool isDeleting = false)
         {
             InitializeComponent();
+            FormAnnouncementNew.DialogueResultReturned += FormAnnouncementNew_DialogueResultReturnedHandler;
             LoadDataFromDatabase(typeMenu);
             _isDeleting = isDeleting;
+        }
+
+        private void FormAnnouncementNew_DialogueResultReturnedHandler(object sender, int e)
+        {
+            _dialogueResult = e;
         }
 
         private void LoadDataFromDatabase(string typeMenu)
@@ -43,12 +50,17 @@ namespace CafeteriaManagement
         {
             if (_isDeleting)
             {
-                var result = MessageBox.Show("Do you sure you want to delete this product form database?", "Waring", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
+                using var result = new FormAnnouncementNew();
+                result.ShowMessage("Do you sure you want to delete this product from database?", "Warning", true);
+                if (_dialogueResult == 1)
                 {
                     DataProcess.DeleteBillBy((sender as BunifuFlatButton).Text);
                     DataProcess.DeleteProduct((sender as BunifuFlatButton).Text);
                     OnProductDeleting();
+                    this.Close();
+                }
+                else
+                {
                     this.Close();
                 }
             }

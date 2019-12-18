@@ -104,7 +104,7 @@
             this.dataGridViewSearchResult.RowHeadersVisible = false;
             this.dataGridViewSearchResult.RowTemplate.Height = 30;
             this.dataGridViewSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSearchResult.Size = new System.Drawing.Size(735, 287);
+            this.dataGridViewSearchResult.Size = new System.Drawing.Size(735, 308);
             this.dataGridViewSearchResult.TabIndex = 16;
             this.dataGridViewSearchResult.DoubleClick += new System.EventHandler(this.DataGridViewSearchResult_DoubleClick);
             // 
@@ -165,9 +165,8 @@
             this.textBoxSearchMusic.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchMusic.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.textBoxSearchMusic.Location = new System.Drawing.Point(131, 17);
-            this.textBoxSearchMusic.Multiline = true;
             this.textBoxSearchMusic.Name = "textBoxSearchMusic";
-            this.textBoxSearchMusic.Size = new System.Drawing.Size(510, 29);
+            this.textBoxSearchMusic.Size = new System.Drawing.Size(510, 25);
             this.textBoxSearchMusic.TabIndex = 18;
             this.textBoxSearchMusic.Text = "Enter Keyword";
             this.textBoxSearchMusic.Enter += new System.EventHandler(this.TextBoxSearchMusic_Enter);

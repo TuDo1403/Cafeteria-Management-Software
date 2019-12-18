@@ -173,7 +173,8 @@ namespace CafeteriaManagement
             }
             else
             {
-                MessageBox.Show("Wrong username or password!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                using var result = new FormAnnouncementNew();
+                result.ShowMessage("Wrong username or password!", "Error!", false);
             }
         }
 

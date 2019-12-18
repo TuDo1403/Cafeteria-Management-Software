@@ -302,7 +302,8 @@ namespace CafeteriaManagement.CustomUserControl
                 DataProvider.UpdateEmployee(_currentEmployee);
                 DataProvider.UpdateAccount(_currentUser);
                 DataProvider.UpdateAccountImage(_accountImage);
-                MessageBox.Show("Edit Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                using var result = new FormAnnouncementNew();
+                result.ShowMessage("Edit Successfully", "Information", false);
             }
         }
     }

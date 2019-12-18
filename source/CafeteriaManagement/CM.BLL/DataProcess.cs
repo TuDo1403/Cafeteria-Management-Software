@@ -73,7 +73,7 @@ namespace CM.BLL
             {
                 Id = GetNextBillId(),
                 Total = Convert.ToDecimal(total, CultureInfo.InvariantCulture),
-                DateCreated = DateTime.Today,
+                DateCreated = DateTime.Today.AddMonths(-9),
                 EmployeeId = DataProvider.GetEmployeeIdFrom(userName)
             };
             DataProvider.InsertRecord(bill, "BILL");
@@ -127,6 +127,17 @@ namespace CM.BLL
             }
             var products = productsList.Where(c => c.Name.ToLower().StartsWith(text.ToLower())).ToList();
             return products;
+        }
+
+        public static IEnumerable<BILL> GetBillsSortedById(string text, int currentYear, int currentPageIndex)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                throw new ArgumentNullException(nameof(text));
+            }
+
+            var employees = DataProvider.GetBILLS(currentYear, currentPageIndex).Where(c => c.Id.ToLower().StartsWith(text.ToLower())).ToList();
+            return employees;
         }
 
         public static bool ValidateEmployeeId(string code)

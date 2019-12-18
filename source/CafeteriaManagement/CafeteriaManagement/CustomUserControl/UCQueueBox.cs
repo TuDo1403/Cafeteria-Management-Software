@@ -294,5 +294,10 @@ namespace CafeteriaManagement
             timer.Stop();
             buttonPause.SendToBack();
         }
+
+        private void buttonPrev_Click(object sender, EventArgs e)
+        {
+            MusicPlayer.PlayPrev();
+        }
     }
 }
