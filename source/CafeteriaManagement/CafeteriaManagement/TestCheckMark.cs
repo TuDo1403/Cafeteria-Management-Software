@@ -32,7 +32,8 @@ namespace CafeteriaManagement
         {
             icon.Enabled = false;
             iconDelay.Stop();
-            bunifuFlatButton1.Visible = true;
+            // bunifuFlatButton1.Visible = true;
+            this.Close();
         }
 
         private void bunifuFormFadeTransition1_TransitionEnd(object sender, EventArgs e)

@@ -33,6 +33,7 @@ namespace CafeteriaManagement
             this.components = new System.ComponentModel.Container();
             BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainLosed));
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.pictureBoxToBigSize = new System.Windows.Forms.PictureBox();
@@ -57,6 +58,7 @@ namespace CafeteriaManagement
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelAnimater = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ucHome1 = new CafeteriaManagement.CustomUserControl.UCHome();
             this.ucStaticNew1 = new CafeteriaManagement.CustomUserControl.UCStaticNew();
             this.ucSetting1 = new CafeteriaManagement.CustomUserControl.UCSetting();
             this.ucQueueBox1 = new CafeteriaManagement.UCQueueBox();
@@ -65,6 +67,8 @@ namespace CafeteriaManagement
             this.ucEditMenuNew1 = new CafeteriaManagement.UCEditMenuNew();
             this.ucDisplayMusicNew1 = new CafeteriaManagement.UCDisplayMusicNew();
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.TestAnimation = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.bunifuFormFadeTransitionFormMain = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToBigSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToSmallSize)).BeginInit();
@@ -89,6 +93,7 @@ namespace CafeteriaManagement
             this.pnlHeader.Controls.Add(this.pictureBoxToSmallSize);
             this.pnlHeader.Controls.Add(this.pictureBox3);
             this.pnlHeader.Controls.Add(this.pictureBox1);
+            this.TestAnimation.SetDecoration(this.pnlHeader, BunifuAnimatorNS.DecorationType.None);
             this.panelAnimater.SetDecoration(this.pnlHeader, BunifuAnimatorNS.DecorationType.None);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
@@ -101,6 +106,7 @@ namespace CafeteriaManagement
             // 
             this.pictureBoxToBigSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAnimater.SetDecoration(this.pictureBoxToBigSize, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.pictureBoxToBigSize, BunifuAnimatorNS.DecorationType.None);
             this.pictureBoxToBigSize.Image = global::CafeteriaManagement.Properties.Resources.unchecked_checkbox_48px;
             this.pictureBoxToBigSize.Location = new System.Drawing.Point(942, 7);
             this.pictureBoxToBigSize.Name = "pictureBoxToBigSize";
@@ -114,6 +120,7 @@ namespace CafeteriaManagement
             // 
             this.pictureBoxToSmallSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAnimater.SetDecoration(this.pictureBoxToSmallSize, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.pictureBoxToSmallSize, BunifuAnimatorNS.DecorationType.None);
             this.pictureBoxToSmallSize.Image = global::CafeteriaManagement.Properties.Resources.restore_window_32px;
             this.pictureBoxToSmallSize.Location = new System.Drawing.Point(942, 7);
             this.pictureBoxToSmallSize.Name = "pictureBoxToSmallSize";
@@ -127,6 +134,7 @@ namespace CafeteriaManagement
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAnimater.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox3.Image = global::CafeteriaManagement.Properties.Resources.horizontal_line_48px;
             this.pictureBox3.Location = new System.Drawing.Point(904, 7);
             this.pictureBox3.Name = "pictureBox3";
@@ -139,6 +147,7 @@ namespace CafeteriaManagement
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAnimater.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox1.Image = global::CafeteriaManagement.Properties.Resources.daux_32;
             this.pictureBox1.Location = new System.Drawing.Point(978, 7);
             this.pictureBox1.Name = "pictureBox1";
@@ -162,6 +171,7 @@ namespace CafeteriaManagement
             this.slideMenu.Controls.Add(this.btnPayment);
             this.slideMenu.Controls.Add(this.btnHome);
             this.slideMenu.Controls.Add(this.btnMenu);
+            this.TestAnimation.SetDecoration(this.slideMenu, BunifuAnimatorNS.DecorationType.None);
             this.panelAnimater.SetDecoration(this.slideMenu, BunifuAnimatorNS.DecorationType.None);
             this.slideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.slideMenu.Location = new System.Drawing.Point(0, 0);
@@ -178,6 +188,7 @@ namespace CafeteriaManagement
             this.btnStatic.ButtonText = "         Static";
             this.btnStatic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimater.SetDecoration(this.btnStatic, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.btnStatic, BunifuAnimatorNS.DecorationType.None);
             this.btnStatic.DisabledColor = System.Drawing.Color.Gray;
             this.btnStatic.Iconcolor = System.Drawing.Color.Transparent;
             this.btnStatic.Iconimage = global::CafeteriaManagement.Properties.Resources.icons8_bar_chart_32;
@@ -210,6 +221,7 @@ namespace CafeteriaManagement
             this.panel2.Controls.Add(this.labelLogOut);
             this.panel2.Controls.Add(this.labelChangePassword);
             this.panel2.Controls.Add(this.labelEditProfile);
+            this.TestAnimation.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.panelAnimater.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.panel2.Location = new System.Drawing.Point(62, 420);
             this.panel2.Name = "panel2";
@@ -220,6 +232,7 @@ namespace CafeteriaManagement
             // 
             this.labelLogOut.AutoSize = true;
             this.panelAnimater.SetDecoration(this.labelLogOut, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.labelLogOut, BunifuAnimatorNS.DecorationType.None);
             this.labelLogOut.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogOut.ForeColor = System.Drawing.Color.Silver;
             this.labelLogOut.Location = new System.Drawing.Point(3, 67);
@@ -233,6 +246,7 @@ namespace CafeteriaManagement
             // 
             this.labelChangePassword.AutoSize = true;
             this.panelAnimater.SetDecoration(this.labelChangePassword, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.labelChangePassword, BunifuAnimatorNS.DecorationType.None);
             this.labelChangePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelChangePassword.ForeColor = System.Drawing.Color.Silver;
             this.labelChangePassword.Location = new System.Drawing.Point(3, 34);
@@ -246,6 +260,7 @@ namespace CafeteriaManagement
             // 
             this.labelEditProfile.AutoSize = true;
             this.panelAnimater.SetDecoration(this.labelEditProfile, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.labelEditProfile, BunifuAnimatorNS.DecorationType.None);
             this.labelEditProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEditProfile.ForeColor = System.Drawing.Color.Silver;
             this.labelEditProfile.Location = new System.Drawing.Point(3, 0);
@@ -258,6 +273,7 @@ namespace CafeteriaManagement
             // pictureBox2
             // 
             this.panelAnimater.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox2.Image = global::CafeteriaManagement.Properties.Resources.icons8_settings_321;
             this.pictureBox2.Location = new System.Drawing.Point(12, 479);
             this.pictureBox2.Name = "pictureBox2";
@@ -268,6 +284,7 @@ namespace CafeteriaManagement
             // panelButton
             // 
             this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.TestAnimation.SetDecoration(this.panelButton, BunifuAnimatorNS.DecorationType.None);
             this.panelAnimater.SetDecoration(this.panelButton, BunifuAnimatorNS.DecorationType.None);
             this.panelButton.Location = new System.Drawing.Point(0, 76);
             this.panelButton.Name = "panelButton";
@@ -283,6 +300,7 @@ namespace CafeteriaManagement
             this.Queue.ButtonText = "         Queue";
             this.Queue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimater.SetDecoration(this.Queue, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.Queue, BunifuAnimatorNS.DecorationType.None);
             this.Queue.DisabledColor = System.Drawing.Color.Gray;
             this.Queue.Iconcolor = System.Drawing.Color.Transparent;
             this.Queue.Iconimage = global::CafeteriaManagement.Properties.Resources.que_32px;
@@ -319,6 +337,7 @@ namespace CafeteriaManagement
             this.btnEmployee.ButtonText = "         Employee";
             this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimater.SetDecoration(this.btnEmployee, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.btnEmployee, BunifuAnimatorNS.DecorationType.None);
             this.btnEmployee.DisabledColor = System.Drawing.Color.Gray;
             this.btnEmployee.Iconcolor = System.Drawing.Color.Transparent;
             this.btnEmployee.Iconimage = global::CafeteriaManagement.Properties.Resources.contacts_32px;
@@ -355,6 +374,7 @@ namespace CafeteriaManagement
             this.btnMusic.ButtonText = "         Music";
             this.btnMusic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimater.SetDecoration(this.btnMusic, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.btnMusic, BunifuAnimatorNS.DecorationType.None);
             this.btnMusic.DisabledColor = System.Drawing.Color.Gray;
             this.btnMusic.Iconcolor = System.Drawing.Color.Transparent;
             this.btnMusic.Iconimage = global::CafeteriaManagement.Properties.Resources.youtube_play_48px;
@@ -391,6 +411,7 @@ namespace CafeteriaManagement
             this.btnEdit.ButtonText = "         Edit Product";
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimater.SetDecoration(this.btnEdit, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.btnEdit, BunifuAnimatorNS.DecorationType.None);
             this.btnEdit.DisabledColor = System.Drawing.Color.Gray;
             this.btnEdit.Iconcolor = System.Drawing.Color.Transparent;
             this.btnEdit.Iconimage = global::CafeteriaManagement.Properties.Resources.list_32px;
@@ -427,6 +448,7 @@ namespace CafeteriaManagement
             this.btnPayment.ButtonText = "         Payment";
             this.btnPayment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimater.SetDecoration(this.btnPayment, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.btnPayment, BunifuAnimatorNS.DecorationType.None);
             this.btnPayment.DisabledColor = System.Drawing.Color.Gray;
             this.btnPayment.Iconcolor = System.Drawing.Color.Transparent;
             this.btnPayment.Iconimage = global::CafeteriaManagement.Properties.Resources.bank_cards66_48px;
@@ -463,6 +485,7 @@ namespace CafeteriaManagement
             this.btnHome.ButtonText = "         Home";
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelAnimater.SetDecoration(this.btnHome, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.btnHome, BunifuAnimatorNS.DecorationType.None);
             this.btnHome.DisabledColor = System.Drawing.Color.Gray;
             this.btnHome.Iconcolor = System.Drawing.Color.Transparent;
             this.btnHome.Iconimage = global::CafeteriaManagement.Properties.Resources.icons8_home_32;
@@ -494,6 +517,7 @@ namespace CafeteriaManagement
             // 
             this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAnimater.SetDecoration(this.btnMenu, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.btnMenu, BunifuAnimatorNS.DecorationType.None);
             this.btnMenu.Image = global::CafeteriaManagement.Properties.Resources.icons8_menu_32;
             this.btnMenu.Location = new System.Drawing.Point(161, 2);
             this.btnMenu.Name = "btnMenu";
@@ -522,7 +546,7 @@ namespace CafeteriaManagement
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
             animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
             animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.Padding = new System.Windows.Forms.Padding(0);
             animation1.RotateCoeff = 0F;
             animation1.RotateLimit = 0F;
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
@@ -533,6 +557,7 @@ namespace CafeteriaManagement
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ucHome1);
             this.panel1.Controls.Add(this.ucStaticNew1);
             this.panel1.Controls.Add(this.ucSetting1);
             this.panel1.Controls.Add(this.ucQueueBox1);
@@ -541,6 +566,7 @@ namespace CafeteriaManagement
             this.panel1.Controls.Add(this.ucEditMenuNew1);
             this.panel1.Controls.Add(this.ucDisplayMusicNew1);
             this.panel1.Controls.Add(this.slideMenu);
+            this.TestAnimation.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panelAnimater.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 44);
@@ -548,10 +574,21 @@ namespace CafeteriaManagement
             this.panel1.Size = new System.Drawing.Size(1022, 517);
             this.panel1.TabIndex = 3;
             // 
+            // ucHome1
+            // 
+            this.ucHome1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panelAnimater.SetDecoration(this.ucHome1, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.ucHome1, BunifuAnimatorNS.DecorationType.None);
+            this.ucHome1.Location = new System.Drawing.Point(200, 0);
+            this.ucHome1.Name = "ucHome1";
+            this.ucHome1.Size = new System.Drawing.Size(828, 510);
+            this.ucHome1.TabIndex = 9;
+            // 
             // ucStaticNew1
             // 
             this.ucStaticNew1.BackColor = System.Drawing.Color.Silver;
             this.panelAnimater.SetDecoration(this.ucStaticNew1, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.ucStaticNew1, BunifuAnimatorNS.DecorationType.None);
             this.ucStaticNew1.Location = new System.Drawing.Point(200, 0);
             this.ucStaticNew1.Name = "ucStaticNew1";
             this.ucStaticNew1.Size = new System.Drawing.Size(828, 510);
@@ -562,6 +599,7 @@ namespace CafeteriaManagement
             this.ucSetting1.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ucSetting1.BackColor = System.Drawing.Color.Silver;
             this.panelAnimater.SetDecoration(this.ucSetting1, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.ucSetting1, BunifuAnimatorNS.DecorationType.None);
             this.ucSetting1.Location = new System.Drawing.Point(200, 0);
             this.ucSetting1.Name = "ucSetting1";
             this.ucSetting1.Size = new System.Drawing.Size(819, 517);
@@ -571,6 +609,7 @@ namespace CafeteriaManagement
             // 
             this.ucQueueBox1.BackColor = System.Drawing.Color.Silver;
             this.panelAnimater.SetDecoration(this.ucQueueBox1, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.ucQueueBox1, BunifuAnimatorNS.DecorationType.None);
             this.ucQueueBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucQueueBox1.Location = new System.Drawing.Point(200, 0);
             this.ucQueueBox1.Name = "ucQueueBox1";
@@ -581,6 +620,7 @@ namespace CafeteriaManagement
             // 
             this.ucOrderNew1.BackColor = System.Drawing.Color.Silver;
             this.panelAnimater.SetDecoration(this.ucOrderNew1, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.ucOrderNew1, BunifuAnimatorNS.DecorationType.None);
             this.ucOrderNew1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucOrderNew1.Location = new System.Drawing.Point(200, 0);
             this.ucOrderNew1.Name = "ucOrderNew1";
@@ -591,6 +631,7 @@ namespace CafeteriaManagement
             // 
             this.ucEmployeeNew1.BackColor = System.Drawing.Color.Silver;
             this.panelAnimater.SetDecoration(this.ucEmployeeNew1, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.ucEmployeeNew1, BunifuAnimatorNS.DecorationType.None);
             this.ucEmployeeNew1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucEmployeeNew1.Location = new System.Drawing.Point(200, 0);
             this.ucEmployeeNew1.Name = "ucEmployeeNew1";
@@ -601,6 +642,7 @@ namespace CafeteriaManagement
             // 
             this.ucEditMenuNew1.BackColor = System.Drawing.Color.Silver;
             this.panelAnimater.SetDecoration(this.ucEditMenuNew1, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.ucEditMenuNew1, BunifuAnimatorNS.DecorationType.None);
             this.ucEditMenuNew1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucEditMenuNew1.Location = new System.Drawing.Point(200, 0);
             this.ucEditMenuNew1.Name = "ucEditMenuNew1";
@@ -611,6 +653,7 @@ namespace CafeteriaManagement
             // 
             this.ucDisplayMusicNew1.BackColor = System.Drawing.Color.Silver;
             this.panelAnimater.SetDecoration(this.ucDisplayMusicNew1, BunifuAnimatorNS.DecorationType.None);
+            this.TestAnimation.SetDecoration(this.ucDisplayMusicNew1, BunifuAnimatorNS.DecorationType.None);
             this.ucDisplayMusicNew1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucDisplayMusicNew1.Location = new System.Drawing.Point(200, 0);
             this.ucDisplayMusicNew1.Name = "ucDisplayMusicNew1";
@@ -624,6 +667,31 @@ namespace CafeteriaManagement
             this.bunifuDragControl2.TargetControl = null;
             this.bunifuDragControl2.Vertical = true;
             // 
+            // TestAnimation
+            // 
+            this.TestAnimation.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndRotate;
+            this.TestAnimation.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(30);
+            animation2.RotateCoeff = 0.5F;
+            animation2.RotateLimit = 0.2F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.TestAnimation.DefaultAnimation = animation2;
+            // 
+            // bunifuFormFadeTransitionFormMain
+            // 
+            this.bunifuFormFadeTransitionFormMain.Delay = 1;
+            // 
             // FormMainLosed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,6 +700,7 @@ namespace CafeteriaManagement
             this.ClientSize = new System.Drawing.Size(1022, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlHeader);
+            this.TestAnimation.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.panelAnimater.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMainLosed";
@@ -686,5 +755,8 @@ namespace CafeteriaManagement
         private CustomUserControl.UCSetting ucSetting1;
         private Bunifu.Framework.UI.BunifuFlatButton btnStatic;
         private CustomUserControl.UCStaticNew ucStaticNew1;
+        private BunifuAnimatorNS.BunifuTransition TestAnimation;
+        private CustomUserControl.UCHome ucHome1;
+        private Bunifu.Framework.UI.BunifuFormFadeTransition bunifuFormFadeTransitionFormMain;
     }
 }

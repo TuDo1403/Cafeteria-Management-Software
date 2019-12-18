@@ -25,7 +25,11 @@ namespace CafeteriaManagement
 
         }
 
-        private void FormMain_Load(object sender, EventArgs e) => OnFormLoading(ucQueueBox1);
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            bunifuFormFadeTransitionFormMain.ShowAsyc(this);
+            OnFormLoading(ucQueueBox1);
+        }
 
 
         private void OnFormLoading(UCQueueBox ucQueueBox1) => (FormMainLoaded as EventHandler<UserControl>)?.Invoke(this, ucQueueBox1);
@@ -72,7 +76,14 @@ namespace CafeteriaManagement
         {
             panelButton.Height = btnPayment.Height;
             panelButton.Top = btnPayment.Top;
+          //  ucHome1.BringToFront();
             ucOrderNew1.BringToFront();
+            
+            //
+            //  TestAnimation.ShowSync()
+           // ucOrderNew1.Visible = false;
+           // TestAnimation.ShowSync(ucOrderNew1);
+            // panelAnimater.ShowSync(slideMenu);
         }
 
         private void btnMusic_Click(object sender, EventArgs e)

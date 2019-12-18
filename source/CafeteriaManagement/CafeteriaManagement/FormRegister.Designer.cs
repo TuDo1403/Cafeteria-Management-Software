@@ -33,13 +33,12 @@
             this.panelSignIn = new System.Windows.Forms.Panel();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.buttonSignIn = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonSignIn = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.buttonOk = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelRegister = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxCode = new System.Windows.Forms.TextBox();
@@ -54,6 +53,9 @@
             this.timerRegister = new System.Windows.Forms.Timer(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bunifuFormFadeTransitionFormRegister = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
+            this.btnKichHoat = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSignIn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,9 +77,9 @@
             // 
             this.panelSignIn.Controls.Add(this.textBoxPassword);
             this.panelSignIn.Controls.Add(this.textBoxUsername);
-            this.panelSignIn.Controls.Add(this.buttonOk);
             this.panelSignIn.Controls.Add(this.panel3);
             this.panelSignIn.Controls.Add(this.panel2);
+            this.panelSignIn.Controls.Add(this.buttonSignIn);
             this.panelSignIn.Location = new System.Drawing.Point(320, 193);
             this.panelSignIn.Name = "panelSignIn";
             this.panelSignIn.Size = new System.Drawing.Size(253, 211);
@@ -114,18 +116,6 @@
             this.textBoxUsername.Leave += new System.EventHandler(this.textBoxUsername_Leave);
             this.textBoxUsername.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxUsername_Validating);
             // 
-            // buttonSignIn
-            // 
-            this.buttonSignIn.AutoSize = true;
-            this.buttonSignIn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(88)))), ((int)(((byte)(169)))));
-            this.buttonSignIn.Location = new System.Drawing.Point(315, 419);
-            this.buttonSignIn.Name = "buttonSignIn";
-            this.buttonSignIn.Size = new System.Drawing.Size(75, 25);
-            this.buttonSignIn.TabIndex = 2;
-            this.buttonSignIn.Text = "Sign In";
-            this.buttonSignIn.Click += new System.EventHandler(this.ButtonSignIn_Click);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
@@ -143,6 +133,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(227, 2);
             this.panel2.TabIndex = 0;
+            // 
+            // buttonSignIn
+            // 
+            this.buttonSignIn.AutoSize = true;
+            this.buttonSignIn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(88)))), ((int)(((byte)(169)))));
+            this.buttonSignIn.Location = new System.Drawing.Point(7, 103);
+            this.buttonSignIn.Name = "buttonSignIn";
+            this.buttonSignIn.Size = new System.Drawing.Size(75, 25);
+            this.buttonSignIn.TabIndex = 2;
+            this.buttonSignIn.Text = "Sign In";
+            this.buttonSignIn.Click += new System.EventHandler(this.ButtonSignIn_Click);
             // 
             // label1
             // 
@@ -177,42 +179,6 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // buttonOk
-            // 
-            this.buttonOk.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.buttonOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonOk.BorderRadius = 2;
-            this.buttonOk.ButtonText = "OK";
-            this.buttonOk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonOk.DisabledColor = System.Drawing.Color.Gray;
-            this.buttonOk.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonOk.Iconcolor = System.Drawing.Color.Transparent;
-            this.buttonOk.Iconimage = null;
-            this.buttonOk.Iconimage_right = null;
-            this.buttonOk.Iconimage_right_Selected = null;
-            this.buttonOk.Iconimage_Selected = null;
-            this.buttonOk.IconMarginLeft = 0;
-            this.buttonOk.IconMarginRight = 0;
-            this.buttonOk.IconRightVisible = true;
-            this.buttonOk.IconRightZoom = 0D;
-            this.buttonOk.IconVisible = true;
-            this.buttonOk.IconZoom = 90D;
-            this.buttonOk.IsTab = false;
-            this.buttonOk.Location = new System.Drawing.Point(159, 173);
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.buttonOk.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.buttonOk.OnHoverTextColor = System.Drawing.Color.White;
-            this.buttonOk.selected = false;
-            this.buttonOk.Size = new System.Drawing.Size(80, 27);
-            this.buttonOk.TabIndex = 26;
-            this.buttonOk.Text = "OK";
-            this.buttonOk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonOk.Textcolor = System.Drawing.Color.White;
-            this.buttonOk.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
-            // 
             // panelRegister
             // 
             this.panelRegister.Controls.Add(this.panel1);
@@ -224,7 +190,7 @@
             this.panelRegister.Controls.Add(this.buttonRegister);
             this.panelRegister.Controls.Add(this.panel5);
             this.panelRegister.Controls.Add(this.panel6);
-            this.panelRegister.Location = new System.Drawing.Point(597, 193);
+            this.panelRegister.Location = new System.Drawing.Point(596, 193);
             this.panelRegister.Name = "panelRegister";
             this.panelRegister.Size = new System.Drawing.Size(253, 211);
             this.panelRegister.TabIndex = 27;
@@ -359,15 +325,41 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // bunifuFormFadeTransitionFormRegister
+            // 
+            this.bunifuFormFadeTransitionFormRegister.Delay = 1;
+            // 
+            // btnKichHoat
+            // 
+            this.btnKichHoat.AutoSize = true;
+            this.btnKichHoat.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnKichHoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(134)))), ((int)(((byte)(89)))));
+            this.btnKichHoat.Location = new System.Drawing.Point(491, 421);
+            this.btnKichHoat.Name = "btnKichHoat";
+            this.btnKichHoat.Size = new System.Drawing.Size(84, 25);
+            this.btnKichHoat.TabIndex = 27;
+            this.btnKichHoat.Text = "Register";
+            this.btnKichHoat.Click += new System.EventHandler(this.btnKichHoat_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkGray;
+            this.panel4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel4.Location = new System.Drawing.Point(314, 419);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(269, 1);
+            this.panel4.TabIndex = 28;
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 453);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.btnKichHoat);
             this.Controls.Add(this.panelRegister);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.buttonSignIn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelSignIn);
@@ -400,7 +392,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Bunifu.Framework.UI.BunifuFlatButton buttonOk;
         private System.Windows.Forms.Panel panelRegister;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox textBoxReenterPassword;
@@ -415,5 +406,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxCode;
+        private Bunifu.Framework.UI.BunifuFormFadeTransition bunifuFormFadeTransitionFormRegister;
+        private System.Windows.Forms.Label btnKichHoat;
+        private System.Windows.Forms.Panel panel4;
     }
 }

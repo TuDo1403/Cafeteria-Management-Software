@@ -40,7 +40,7 @@ namespace CafeteriaManagement
 
         private void testRegisterForm_Load(object sender, EventArgs e)
         {
-
+            bunifuFormFadeTransitionFormRegister.ShowAsyc(this);
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
@@ -180,6 +180,7 @@ namespace CafeteriaManagement
         private void AccessMainForm(string accountId)
         {
             this.Hide();
+            TestCheckMark.showDialog("Login Successfully");
             using (var formMain = new FormMainLosed())
             {
                 OnLoginSucceeding(accountId);
@@ -203,7 +204,8 @@ namespace CafeteriaManagement
                 return;
             }
             DataProcess.RegisterUser(textBoxRegisterUsername.Text, textBoxRegisterPassword.Text, textBoxCode.Text);
-            MessageBox.Show("Register sucessfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // MessageBox.Show("Register sucessfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            TestCheckMark.showDialog("Register successfully");
         }
 
         private void textBoxUsername_Validating(object sender, CancelEventArgs e)
@@ -299,5 +301,25 @@ namespace CafeteriaManagement
                 ButtonSignIn_Click(sender, e);
             }
         }
+
+        private void btnKichHoat_Click(object sender, EventArgs e)
+        {
+
+            if (panelSignIn.Left >= 320)
+            {
+                timerSignIn.Start();
+                btnKichHoat.Text = "Log In";
+                btnKichHoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(88)))), ((int)(((byte)(169)))));
+            }
+            else
+            {
+                timerRegister.Start();
+                btnKichHoat.Text = "Register";
+                btnKichHoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(134)))), ((int)(((byte)(89)))));
+            }
+            SetRegisterControlsStatus(!textBoxRegisterUsername.Enabled);
+            SetSignInControlsStatus(!textBoxUsername.Enabled);
+           
+       }
     }
 }
