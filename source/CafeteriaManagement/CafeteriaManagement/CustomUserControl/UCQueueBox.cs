@@ -249,10 +249,47 @@ namespace CafeteriaManagement
 
         }
 
-        private void buttonNext_Click(object sender, EventArgs e) => MusicPlayer.PlayNext();
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            MusicPlayer.PlayNext();
+        }
 
         private void ButtonPause_Click(object sender, EventArgs e)
         {
+            MusicPlayer.Pause();
+            timer.Stop();
+            buttonPause.SendToBack();
+        }
+
+        private void pictureBoxNext_Click(object sender, EventArgs e)
+        {
+            MusicPlayer.PlayNext();
+        }
+
+        private void pictureBoxPlay_Click(object sender, EventArgs e)
+        {
+            MusicPlayer.CreateInstance();
+
+            if (dataGridViewPlaying.DataSource == null)
+            {
+                var canPlay = MusicPlayer.PlayNext();
+                if (canPlay)
+                {
+                    timer.Start();
+                    buttonPlay.SendToBack();
+                }
+            }
+            else
+            {
+                MusicPlayer.Play();
+                timer.Start();
+                buttonPlay.SendToBack();
+            }
+        }
+
+        private void pictureBoxPause_Click(object sender, EventArgs e)
+        {
+
             MusicPlayer.Pause();
             timer.Stop();
             buttonPause.SendToBack();
