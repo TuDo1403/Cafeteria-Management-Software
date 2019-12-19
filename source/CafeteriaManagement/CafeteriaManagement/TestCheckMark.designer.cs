@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestCheckMark));
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuFormFadeTransition1 = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.iconDelay = new System.Windows.Forms.Timer(this.components);
             this.lblText = new System.Windows.Forms.Label();
             this.icon = new System.Windows.Forms.PictureBox();
@@ -51,13 +50,9 @@
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // bunifuFormFadeTransition1
-            // 
-            this.bunifuFormFadeTransition1.Delay = 1;
-            this.bunifuFormFadeTransition1.TransitionEnd += new System.EventHandler(this.bunifuFormFadeTransition1_TransitionEnd);
-            // 
             // iconDelay
             // 
+            this.iconDelay.Enabled = true;
             this.iconDelay.Interval = 2000;
             this.iconDelay.Tick += new System.EventHandler(this.iconDelay_Tick);
             // 
@@ -102,7 +97,6 @@
         #endregion
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private Bunifu.Framework.UI.BunifuFormFadeTransition bunifuFormFadeTransition1;
         private System.Windows.Forms.Timer iconDelay;
         private System.Windows.Forms.Label lblText;
         private System.Windows.Forms.PictureBox icon;

@@ -40,7 +40,7 @@ namespace CafeteriaManagement
 
         private void testRegisterForm_Load(object sender, EventArgs e)
         {
-            bunifuFormFadeTransitionFormRegister.ShowAsyc(this);
+            //bunifuFormFadeTransitionFormRegister.ShowAsyc(this);
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
@@ -181,10 +181,11 @@ namespace CafeteriaManagement
         private void AccessMainForm(string accountId)
         {
             this.Hide();
-            TestCheckMark.showDialog("Login Successfully");
+            
             using (var formMain = new FormMainLosed())
             {
                 OnLoginSucceeding(accountId);
+                TestCheckMark.showDialog("Login Successfully");
                 formMain.ShowDialog();
             }
             this.Show();

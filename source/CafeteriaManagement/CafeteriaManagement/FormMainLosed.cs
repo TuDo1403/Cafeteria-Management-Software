@@ -39,7 +39,7 @@ namespace CafeteriaManagement
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            bunifuFormFadeTransitionFormMain.ShowAsyc(this);
+            //bunifuFormFadeTransitionFormMain.ShowAsyc(this);
             OnFormLoading(ucQueueBox1);
         }
 
