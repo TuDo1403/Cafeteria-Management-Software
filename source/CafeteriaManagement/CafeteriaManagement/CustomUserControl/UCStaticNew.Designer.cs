@@ -56,6 +56,7 @@
             this.labelCurrentYear = new MaterialSkin.Controls.MaterialLabel();
             this.buttonPreviousYear = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonNextYear = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuElipseDatagrid = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ChartStatic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBill)).BeginInit();
             this.panelOverview.SuspendLayout();
@@ -64,6 +65,7 @@
             // 
             // ChartStatic
             // 
+            this.ChartStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ChartStatic.BackColor = System.Drawing.Color.Transparent;
             chartArea2.AxisX.IsLabelAutoFit = false;
             chartArea2.AxisX.LabelAutoFitMinFontSize = 12;
@@ -87,7 +89,7 @@
             legend2.Enabled = false;
             legend2.Name = "Legend1";
             this.ChartStatic.Legends.Add(legend2);
-            this.ChartStatic.Location = new System.Drawing.Point(215, 59);
+            this.ChartStatic.Location = new System.Drawing.Point(228, 50);
             this.ChartStatic.Name = "ChartStatic";
             series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
@@ -96,7 +98,7 @@
             series2.Legend = "Legend1";
             series2.Name = "ChartLine";
             this.ChartStatic.Series.Add(series2);
-            this.ChartStatic.Size = new System.Drawing.Size(589, 242);
+            this.ChartStatic.Size = new System.Drawing.Size(576, 220);
             this.ChartStatic.TabIndex = 0;
             this.ChartStatic.Text = "chart1";
             // 
@@ -108,8 +110,8 @@
             this.dataGridBill.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
             this.dataGridBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridBill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridBill.BackgroundColor = System.Drawing.Color.Gray;
@@ -130,7 +132,7 @@
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(135)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridBill.DefaultCellStyle = dataGridViewCellStyle6;
@@ -139,7 +141,7 @@
             this.dataGridBill.GridColor = System.Drawing.Color.White;
             this.dataGridBill.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridBill.HeaderForeColor = System.Drawing.Color.White;
-            this.dataGridBill.Location = new System.Drawing.Point(34, 288);
+            this.dataGridBill.Location = new System.Drawing.Point(34, 272);
             this.dataGridBill.MultiSelect = false;
             this.dataGridBill.Name = "dataGridBill";
             this.dataGridBill.ReadOnly = true;
@@ -157,7 +159,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label3.Location = new System.Drawing.Point(3, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 26);
+            this.label3.Size = new System.Drawing.Size(95, 25);
             this.label3.TabIndex = 52;
             this.label3.Text = "Overview";
             // 
@@ -170,9 +172,9 @@
             this.panelOverview.Controls.Add(this.label1);
             this.panelOverview.Controls.Add(this.labelDateStart);
             this.panelOverview.Controls.Add(this.label3);
-            this.panelOverview.Location = new System.Drawing.Point(34, 59);
+            this.panelOverview.Location = new System.Drawing.Point(34, 50);
             this.panelOverview.Name = "panelOverview";
-            this.panelOverview.Size = new System.Drawing.Size(188, 223);
+            this.panelOverview.Size = new System.Drawing.Size(188, 207);
             this.panelOverview.TabIndex = 53;
             // 
             // labelTotalIncome
@@ -236,8 +238,9 @@
             // 
             // textBoxSearch
             // 
+            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.Location = new System.Drawing.Point(621, 18);
+            this.textBoxSearch.Location = new System.Drawing.Point(621, 9);
             this.textBoxSearch.Multiline = true;
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(183, 25);
@@ -247,8 +250,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::CafeteriaManagement.Properties.Resources.icons8_search_32;
-            this.pictureBox1.Location = new System.Drawing.Point(589, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(589, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -283,7 +287,7 @@
             this.buttonNext.IconVisible = true;
             this.buttonNext.IconZoom = 90D;
             this.buttonNext.IsTab = false;
-            this.buttonNext.Location = new System.Drawing.Point(630, 479);
+            this.buttonNext.Location = new System.Drawing.Point(621, 469);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonNext.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -320,7 +324,7 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(715, 479);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(715, 469);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -337,7 +341,7 @@
             // bunifuFlatButton2
             // 
             this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuFlatButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton2.BorderRadius = 2;
@@ -357,7 +361,7 @@
             this.bunifuFlatButton2.IconVisible = true;
             this.bunifuFlatButton2.IconZoom = 90D;
             this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(34, 479);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(34, 469);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -373,7 +377,7 @@
             // buttonPrevious
             // 
             this.buttonPrevious.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonPrevious.BorderRadius = 2;
@@ -393,7 +397,7 @@
             this.buttonPrevious.IconVisible = true;
             this.buttonPrevious.IconZoom = 90D;
             this.buttonPrevious.IsTab = false;
-            this.buttonPrevious.Location = new System.Drawing.Point(120, 479);
+            this.buttonPrevious.Location = new System.Drawing.Point(130, 469);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonPrevious.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -409,11 +413,12 @@
             // 
             // labelCurrentPageIndex
             // 
+            this.labelCurrentPageIndex.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelCurrentPageIndex.AutoSize = true;
             this.labelCurrentPageIndex.Depth = 0;
             this.labelCurrentPageIndex.Font = new System.Drawing.Font("Roboto", 11F);
-            this.labelCurrentPageIndex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelCurrentPageIndex.Location = new System.Drawing.Point(406, 479);
+            this.labelCurrentPageIndex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.labelCurrentPageIndex.Location = new System.Drawing.Point(406, 469);
             this.labelCurrentPageIndex.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelCurrentPageIndex.Name = "labelCurrentPageIndex";
             this.labelCurrentPageIndex.Size = new System.Drawing.Size(17, 19);
@@ -425,8 +430,8 @@
             this.labelCurrentYear.AutoSize = true;
             this.labelCurrentYear.Depth = 0;
             this.labelCurrentYear.Font = new System.Drawing.Font("Roboto", 11F);
-            this.labelCurrentYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelCurrentYear.Location = new System.Drawing.Point(98, 35);
+            this.labelCurrentYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.labelCurrentYear.Location = new System.Drawing.Point(98, 26);
             this.labelCurrentYear.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelCurrentYear.Name = "labelCurrentYear";
             this.labelCurrentYear.Size = new System.Drawing.Size(41, 19);
@@ -436,7 +441,6 @@
             // buttonPreviousYear
             // 
             this.buttonPreviousYear.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonPreviousYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPreviousYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonPreviousYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonPreviousYear.BorderRadius = 2;
@@ -456,7 +460,7 @@
             this.buttonPreviousYear.IconVisible = true;
             this.buttonPreviousYear.IconZoom = 90D;
             this.buttonPreviousYear.IsTab = false;
-            this.buttonPreviousYear.Location = new System.Drawing.Point(42, 37);
+            this.buttonPreviousYear.Location = new System.Drawing.Point(42, 28);
             this.buttonPreviousYear.Name = "buttonPreviousYear";
             this.buttonPreviousYear.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonPreviousYear.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -473,7 +477,6 @@
             // buttonNextYear
             // 
             this.buttonNextYear.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.buttonNextYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonNextYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonNextYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonNextYear.BorderRadius = 2;
@@ -493,7 +496,7 @@
             this.buttonNextYear.IconVisible = true;
             this.buttonNextYear.IconZoom = 90D;
             this.buttonNextYear.IsTab = false;
-            this.buttonNextYear.Location = new System.Drawing.Point(173, 37);
+            this.buttonNextYear.Location = new System.Drawing.Point(173, 28);
             this.buttonNextYear.Name = "buttonNextYear";
             this.buttonNextYear.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.buttonNextYear.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -506,6 +509,11 @@
             this.buttonNextYear.Textcolor = System.Drawing.Color.White;
             this.buttonNextYear.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttonNextYear.Click += new System.EventHandler(this.ButtonNextYear_Click);
+            // 
+            // bunifuElipseDatagrid
+            // 
+            this.bunifuElipseDatagrid.ElipseRadius = 5;
+            this.bunifuElipseDatagrid.TargetControl = this.dataGridBill;
             // 
             // UCStaticNew
             // 
@@ -560,5 +568,6 @@
         private MaterialSkin.Controls.MaterialLabel labelCurrentYear;
         private Bunifu.Framework.UI.BunifuFlatButton buttonPreviousYear;
         private Bunifu.Framework.UI.BunifuFlatButton buttonNextYear;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipseDatagrid;
     }
 }

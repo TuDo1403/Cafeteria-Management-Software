@@ -127,8 +127,9 @@ namespace CafeteriaManagement
 
         private void lblOnline_Click(object sender, EventArgs e)
         {
-            timerHistoryBack.Start();
+            /*timerHistoryBack.Start();*/
             timerPanelGreenQueue.Start();
+            pnlQueue.BringToFront();
             
         }
 
@@ -139,8 +140,9 @@ namespace CafeteriaManagement
 
             // timerHistory.Start();
 
-            timerQueue.Start();
-            timerPanelGreenHistory.Start();
+            /* timerQueue.Start();*/
+             timerPanelGreenHistory.Start();
+            pnlHistory.BringToFront();
 
         }
         

@@ -259,10 +259,13 @@
             // 
             // checkBoxShowBill
             // 
+            this.checkBoxShowBill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxShowBill.AutoSize = true;
-            this.checkBoxShowBill.Location = new System.Drawing.Point(726, 38);
+            this.checkBoxShowBill.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxShowBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.checkBoxShowBill.Location = new System.Drawing.Point(459, 465);
             this.checkBoxShowBill.Name = "checkBoxShowBill";
-            this.checkBoxShowBill.Size = new System.Drawing.Size(69, 17);
+            this.checkBoxShowBill.Size = new System.Drawing.Size(90, 24);
             this.checkBoxShowBill.TabIndex = 14;
             this.checkBoxShowBill.Text = "Show Bill";
             this.checkBoxShowBill.UseVisualStyleBackColor = true;

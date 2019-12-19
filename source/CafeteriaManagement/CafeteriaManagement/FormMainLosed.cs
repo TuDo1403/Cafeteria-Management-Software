@@ -22,7 +22,7 @@ namespace CafeteriaManagement
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             FormRegister.LoginSucceeded += FormRegister_LoginSucceededHandler;
-            ucOrderNew1.BringToFront();
+            ucHome1.BringToFront();
         }
 
         private void FormRegister_LoginSucceededHandler(object sender, string e)
@@ -123,6 +123,7 @@ namespace CafeteriaManagement
         {
             panelButton.Height = btnHome.Height;
             panelButton.Top = btnHome.Top;
+            ucHome1.BringToFront();
         }
 
         private void ucOrderNew1_Load(object sender, EventArgs e)
@@ -177,6 +178,51 @@ namespace CafeteriaManagement
             panelButton.Height = btnStatic.Height;
             panelButton.Top = btnStatic.Top;
             ucStaticNew1.BringToFront();
+        }
+
+        private void pictureBoxSetting_Click(object sender, EventArgs e)
+        {
+            if (pnlSetting.Top > 400)
+            {
+                timerSettingUp.Start();
+            }
+            else
+            {
+                timerSettingDown.Start();
+            }
+        }
+
+        private void timerSettingUp_Tick(object sender, EventArgs e)
+        {
+            if (pnlSetting.Top > 400)
+            {
+                pnlSetting.Top -= 5;
+            }
+            else
+                timerSettingUp.Stop();
+        }
+
+        private void timerSettingDown_Tick(object sender, EventArgs e)
+        {
+            if (pnlSetting.Top < 500)
+                pnlSetting.Top += 5;
+            else
+                timerSettingDown.Stop();
+        }
+
+        private void pictureBoxSetting_MouseMove(object sender, MouseEventArgs e)
+        {
+            pictureBoxSetting.Size = new System.Drawing.Size(31, 31);
+        }
+
+        private void pictureBoxSetting_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxSetting.Size = new System.Drawing.Size(28, 28);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

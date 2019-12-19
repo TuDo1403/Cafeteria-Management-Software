@@ -171,7 +171,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CafeteriaManagement.Properties.Resources._68401570_2355563994763021_3477536896748355584_n;
+            this.pictureBox1.Image = global::CafeteriaManagement.Properties.Resources.ohlala;
             this.pictureBox1.Location = new System.Drawing.Point(56, 137);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 200);
@@ -202,7 +202,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label3.Location = new System.Drawing.Point(201, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 26);
+            this.label3.Size = new System.Drawing.Size(110, 25);
             this.label3.TabIndex = 19;
             this.label3.Text = "Edit Profile";
             // 
@@ -213,7 +213,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label4.Location = new System.Drawing.Point(195, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 26);
+            this.label4.Size = new System.Drawing.Size(169, 25);
             this.label4.TabIndex = 21;
             this.label4.Text = "Change Password";
             // 
@@ -340,7 +340,7 @@
             this.labelChangeImage.AutoSize = true;
             this.labelChangeImage.Depth = 0;
             this.labelChangeImage.Font = new System.Drawing.Font("Roboto", 11F);
-            this.labelChangeImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelChangeImage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.labelChangeImage.Location = new System.Drawing.Point(100, 354);
             this.labelChangeImage.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelChangeImage.Name = "labelChangeImage";
