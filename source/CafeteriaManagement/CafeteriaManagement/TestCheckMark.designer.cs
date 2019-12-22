@@ -53,7 +53,7 @@
             // iconDelay
             // 
             this.iconDelay.Enabled = true;
-            this.iconDelay.Interval = 2000;
+            this.iconDelay.Interval = 4500;
             this.iconDelay.Tick += new System.EventHandler(this.iconDelay_Tick);
             // 
             // lblText

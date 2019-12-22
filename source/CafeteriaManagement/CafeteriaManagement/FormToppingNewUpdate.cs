@@ -68,5 +68,10 @@ namespace CafeteriaManagement
         }
 
         private void OnToppingsSelecting(List<string> selectedToppings) => (ToppingsSelected as EventHandler<List<string>>)?.Invoke(this, selectedToppings);
+
+        private void flowLayoutPanelTopping_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

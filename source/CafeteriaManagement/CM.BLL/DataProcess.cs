@@ -73,7 +73,7 @@ namespace CM.BLL
             {
                 Id = GetNextBillId(),
                 Total = Convert.ToDecimal(total, CultureInfo.InvariantCulture),
-                DateCreated = DateTime.Today.AddMonths(-9),
+                DateCreated = DateTime.Today.AddMonths(-10),
                 EmployeeId = DataProvider.GetEmployeeIdFrom(userName)
             };
             DataProvider.InsertRecord(bill, "BILL");

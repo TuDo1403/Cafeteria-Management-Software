@@ -88,7 +88,7 @@ namespace CafeteriaManagement
             try
             {
                 DataTable dtbl = MakeDataTable(list);
-                ExportDataTableToPdf(dtbl, @$"C:\Users\{Environment.UserName}\Documents\{nextBillId}.pdf", nextBillId);
+                ExportDataTableToPdf(dtbl, @$"C:\Users\{Environment.UserName}\Documents\{nextBillId}.pdf", nextBillId, text);
                 if (checkBoxShowBill.Checked)
                 {
                     System.Diagnostics.Process.Start(@$"C:\Users\{Environment.UserName}\Documents\{nextBillId}.pdf");
@@ -206,7 +206,7 @@ namespace CafeteriaManagement
         }
 
 
-        void ExportDataTableToPdf(DataTable dtblTable, String strPdfPath, string strHeader)
+        void ExportDataTableToPdf(DataTable dtblTable, String strPdfPath, string strHeader, string totalPrice)
         {
             FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
             Document document = new Document();
@@ -260,6 +260,18 @@ namespace CafeteriaManagement
             }
 
             document.Add(table);
+
+
+            Paragraph prgAutho = new Paragraph();
+            BaseFont btnAutho = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            Font fntAutho = new Font(btnAutho, 10, 2, BaseColor.BLACK);
+            prgAutho.Alignment = Element.ALIGN_RIGHT;
+            prgAutho.Add(new Chunk( "TOTAL: "+totalPrice, fntAutho));
+
+            document.Add(prgAutho);
+
+
+
             document.Close();
             writer.Close();
             fs.Close();

@@ -143,12 +143,13 @@
             this.flowLayoutPanelTopping.Name = "flowLayoutPanelTopping";
             this.flowLayoutPanelTopping.Size = new System.Drawing.Size(388, 142);
             this.flowLayoutPanelTopping.TabIndex = 51;
+            this.flowLayoutPanelTopping.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelTopping_Paint);
             // 
             // FormProductInfNewUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(431, 279);
             this.Controls.Add(this.flowLayoutPanelTopping);
             this.Controls.Add(this.panel1);

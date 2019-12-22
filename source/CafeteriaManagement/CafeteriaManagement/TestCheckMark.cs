@@ -26,7 +26,7 @@ namespace CafeteriaManagement
         private void _timer_TickHandler(object sender, EventArgs e)
         {
             tick += 1;
-            if (tick == 1000)
+            if (tick == 5000)
             {
                 _timer.Stop();
                 this.Close();
