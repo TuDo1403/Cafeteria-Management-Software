@@ -62,7 +62,7 @@
       <HintPath>..\packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\..\..\..\..\Downloads\Compressed\Bunifu_UI_v1.52\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="FastMember, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FastMember.1.5.0\lib\net461\FastMember.dll</HintPath>
@@ -72,7 +72,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\..\..\..\..\Downloads\Compressed\itextsharp\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\iTextSharp_5.4.4\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="LtGt, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LtGt.1.0.1\lib\net45\LtGt.dll</HintPath>
