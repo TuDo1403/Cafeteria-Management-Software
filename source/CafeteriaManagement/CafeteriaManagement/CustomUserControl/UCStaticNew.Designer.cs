@@ -130,7 +130,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridBill.DefaultCellStyle = dataGridViewCellStyle3;
@@ -157,7 +157,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label3.Location = new System.Drawing.Point(3, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 26);
+            this.label3.Size = new System.Drawing.Size(95, 25);
             this.label3.TabIndex = 52;
             this.label3.Text = "Overview";
             // 

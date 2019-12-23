@@ -276,5 +276,10 @@ namespace CafeteriaManagement
             writer.Close();
             fs.Close();
         }
+
+        private void dataGridViewSelectedItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

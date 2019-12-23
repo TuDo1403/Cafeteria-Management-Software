@@ -45,6 +45,8 @@
             this.NowPlaying = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.NextUp = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlQueue = new System.Windows.Forms.Panel();
+            this.labelDuration = new System.Windows.Forms.Label();
+            this.labelTime = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonPrev = new System.Windows.Forms.PictureBox();
@@ -56,8 +58,6 @@
             this.trackBarSongDuration = new Bunifu.Framework.UI.BunifuTrackbar();
             this.dataGridViewNextUp = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label4 = new System.Windows.Forms.Label();
-            this.labelDuration = new System.Windows.Forms.Label();
-            this.labelTime = new System.Windows.Forms.Label();
             this.pnlHistory = new System.Windows.Forms.Panel();
             this.dataGridViewHistory = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuElipseHistory = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -134,6 +134,28 @@
             this.pnlQueue.Name = "pnlQueue";
             this.pnlQueue.Size = new System.Drawing.Size(785, 434);
             this.pnlQueue.TabIndex = 31;
+            // 
+            // labelDuration
+            // 
+            this.labelDuration.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelDuration.AutoSize = true;
+            this.labelDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDuration.Location = new System.Drawing.Point(726, 401);
+            this.labelDuration.Name = "labelDuration";
+            this.labelDuration.Size = new System.Drawing.Size(22, 17);
+            this.labelDuration.TabIndex = 41;
+            this.labelDuration.Text = "-:-";
+            // 
+            // labelTime
+            // 
+            this.labelTime.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelTime.AutoSize = true;
+            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTime.Location = new System.Drawing.Point(57, 401);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(22, 17);
+            this.labelTime.TabIndex = 40;
+            this.labelTime.Text = "-:-";
             // 
             // tableLayoutPanel1
             // 
@@ -244,7 +266,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewPlaying.DefaultCellStyle = dataGridViewCellStyle3;
@@ -318,7 +340,7 @@
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(135)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(116)))), ((int)(((byte)(116)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewNextUp.DefaultCellStyle = dataGridViewCellStyle6;
@@ -347,28 +369,6 @@
             this.label4.Size = new System.Drawing.Size(120, 25);
             this.label4.TabIndex = 31;
             this.label4.Text = "Now Playing";
-            // 
-            // labelDuration
-            // 
-            this.labelDuration.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.labelDuration.AutoSize = true;
-            this.labelDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDuration.Location = new System.Drawing.Point(726, 401);
-            this.labelDuration.Name = "labelDuration";
-            this.labelDuration.Size = new System.Drawing.Size(22, 17);
-            this.labelDuration.TabIndex = 41;
-            this.labelDuration.Text = "-:-";
-            // 
-            // labelTime
-            // 
-            this.labelTime.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.labelTime.AutoSize = true;
-            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTime.Location = new System.Drawing.Point(57, 401);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(22, 17);
-            this.labelTime.TabIndex = 40;
-            this.labelTime.Text = "-:-";
             // 
             // pnlHistory
             // 
