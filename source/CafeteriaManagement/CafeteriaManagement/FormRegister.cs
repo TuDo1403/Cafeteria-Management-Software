@@ -38,12 +38,12 @@ namespace CafeteriaManagement
             errorProvider.Clear();
         }
 
-        private void testRegisterForm_Load(object sender, EventArgs e)
+        private void TestRegisterForm_Load(object sender, EventArgs e)
         {
             //bunifuFormFadeTransitionFormRegister.ShowAsyc(this);
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
+        private void ButtonOk_Click(object sender, EventArgs e)
         {
             if (panelSignIn.Left >= 320)
                 timerSignIn.Start();

@@ -32,6 +32,8 @@ namespace CM.BLL
             return string.Format(CultureInfo.InvariantCulture, "PD{0:000}", nextIndex);
         }
 
+
+
         public static string GetNextBillId()
         {
             var lastId = DataProvider.GetLastBillId();
@@ -51,9 +53,8 @@ namespace CM.BLL
 
         public static string ValidateAccount(string username, string password)
         {
-            var userId = "";
             var hashedPassword = password.GetMD5HashedString();
-            userId = DataProvider.ValidateAccount(username, hashedPassword);
+            string userId = DataProvider.ValidateAccount(username, hashedPassword);
             return userId;
         }
 
@@ -178,7 +179,7 @@ namespace CM.BLL
             return result;
         }
 
-        public static List<EMPLOYEE> GetEmployeesSortedByName(string text)
+        public static List<Employee> GetEmployeesSortedByName(string text)
         {
             if (string.IsNullOrEmpty(text))
             {
@@ -186,7 +187,59 @@ namespace CM.BLL
             }
 
             var employees = DataProvider.GetEMPLOYEEs().Where(c => c.Name.ToLower().StartsWith(text.ToLower())).ToList();
-            return employees;
+            var employeesList = new List<Employee>();
+            foreach (var employee in employees)
+            {
+                var gender = "";
+                if (employee.Gender == true)
+                {
+                    gender = "Male";
+                }
+                else if (employee.Gender == false)
+                {
+                    gender = "Female";
+                }
+                employeesList.Add(new Employee()
+                {
+                    Name = employee.Name,
+                    Id = employee.Id,
+                    Gender = gender,
+                    Birthday = (DateTime)employee.Birthday,
+                    Datestart = (DateTime)employee.Daystart,
+                    PhoneNumber = employee.PhoneNumber,
+                    Email = employee.Email
+                });
+            }
+            return employeesList;
+        }
+
+        public static List<Employee> GetEMPLOYEEs()
+        {
+            var employees = DataProvider.GetEMPLOYEEs();
+            var employeesList = new List<Employee>();
+            foreach (var employee in employees)
+            {
+                var gender = "";
+                if (employee.Gender == true)
+                {
+                    gender = "Male";
+                }
+                else if (employee.Gender == false)
+                {
+                    gender = "Female";
+                }
+                employeesList.Add(new Employee()
+                {
+                    Name = employee.Name,
+                    Id = employee.Id,
+                    Gender = gender,
+                    Birthday = (DateTime)employee.Birthday,
+                    Datestart = (DateTime)employee.Daystart,
+                    PhoneNumber = employee.PhoneNumber,
+                    Email = employee.Email
+                });
+            }
+            return employeesList;
         }
     }
 

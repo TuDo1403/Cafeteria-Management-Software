@@ -25,7 +25,7 @@ namespace CafeteriaManagement
         {
             InitializeComponent();
             FormAnnouncementNew.DialogueResultReturned += FormAnnouncementNew_DialogueResultReturnedHandler;
-            dataGridViewEmployeeList.DataSource = DataProvider.GetEMPLOYEEs();
+            dataGridViewEmployeeList.DataSource = DataProcess.GetEMPLOYEEs();
 
             _buttons.Add(buttonAdd);
             _buttons.Add(buttonEdit);
@@ -179,7 +179,7 @@ namespace CafeteriaManagement
         private void RefreshEmployeesList()
         {
             dataGridViewEmployeeList.DataSource = null;
-            dataGridViewEmployeeList.DataSource = DataProvider.GetEMPLOYEEs();
+            dataGridViewEmployeeList.DataSource = DataProcess.GetEMPLOYEEs();
             LoadEmployeeToControl();
         }
 
@@ -276,11 +276,11 @@ namespace CafeteriaManagement
             {
                 radioButtonNone.Checked = true;
             }
-            else if (cells[4].Value.ToString() == "True")
+            else if (cells[4].Value.ToString() == "Male")
             {
                 radioButtonMale.Checked = true;
             }
-            else if (cells[4].Value.ToString() == "False")
+            else if (cells[4].Value.ToString() == "Female")
             {
                 radioButtonFemale.Checked = true;
             }

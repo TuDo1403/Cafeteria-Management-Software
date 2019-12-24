@@ -367,7 +367,7 @@
             this.Name = "FormRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "testRegisterForm";
-            this.Load += new System.EventHandler(this.testRegisterForm_Load);
+            this.Load += new System.EventHandler(this.TestRegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSignIn.ResumeLayout(false);
             this.panelSignIn.PerformLayout();
